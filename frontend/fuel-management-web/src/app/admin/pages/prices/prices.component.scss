@@ -1,0 +1,55 @@
+.page-wrap {
+	display: grid;
+	gap: 1rem;
+}
+
+.page-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 0.8rem;
+}
+
+.card {
+	border: 1px solid var(--border-color);
+	border-radius: 16px;
+	background: #ffffff;
+	padding: 1rem;
+	box-shadow: var(--card-shadow);
+}
+
+.grid-three {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 0.7rem;
+}
+
+label {
+	display: grid;
+	gap: 0.3rem;
+}
+
+.table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.table th,
+.table td {
+	text-align: left;
+	border-bottom: 1px solid var(--border-color);
+	padding: 0.5rem;
+}
+
+.note {
+	margin-top: 0.65rem;
+	font-size: 0.86rem;
+	color: #0f7e41;
+}
+
+@media (max-width: 980px) {
+	.grid-three {
+		grid-template-columns: 1fr;
+	}
+}

@@ -1,0 +1,59 @@
+<section class="page-wrap">
+	<header class="page-header">
+		<h1>Dealer Dashboard</h1>
+		<div class="quick-actions">
+			<a routerLink="/dealer/sales/new" class="primary-btn">New Sale</a>
+			<a routerLink="/dealer/inventory" class="outline-btn">Replenishment Request</a>
+			<a routerLink="/dealer/shift-summary" class="outline-btn">Shift Summary</a>
+		</div>
+	</header>
+
+	<div class="kpi-grid">
+		<app-kpi-card
+			*ngFor="let kpi of kpis"
+			[title]="kpi.title"
+			[value]="kpi.value"
+			[subtitle]="kpi.subtitle"
+			[trend]="kpi.trend"
+			[tone]="kpi.tone"
+		></app-kpi-card>
+	</div>
+
+	<article class="card danger" *ngFor="let warning of lowStockWarnings">
+		{{ warning }}
+	</article>
+
+	<div class="grid-two">
+		<article class="card">
+			<h2>Tank Level Gauges</h2>
+			<div class="tank-grid">
+				<app-tank-gauge fuelType="Petrol A" [currentLevel]="6800" [capacity]="10000"></app-tank-gauge>
+				<app-tank-gauge fuelType="Diesel B" [currentLevel]="1800" [capacity]="9000"></app-tank-gauge>
+				<app-tank-gauge fuelType="Premium C" [currentLevel]="2900" [capacity]="7000"></app-tank-gauge>
+			</div>
+		</article>
+
+		<article class="card">
+			<h2>Pump Status Grid</h2>
+			<div class="pump-grid">
+				<div class="pump-card" *ngFor="let pump of pumps">
+					<strong>{{ pump.name }}</strong>
+					<span [class]="pump.status.toLowerCase()">{{ pump.status }}</span>
+				</div>
+			</div>
+		</article>
+	</div>
+
+	<div class="grid-two">
+		<article class="card">
+			<h2>Hourly Sales Chart</h2>
+			<div class="bars">
+				<span *ngFor="let value of hourlySales" [style.height.%]="(value / 650) * 100">{{ value }}</span>
+			</div>
+		</article>
+		<article class="card">
+			<h2>Recent Transactions</h2>
+			<app-recent-transactions></app-recent-transactions>
+		</article>
+	</div>
+</section>

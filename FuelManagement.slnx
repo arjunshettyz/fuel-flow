@@ -1,0 +1,35 @@
+<Solution>
+  <Folder Name="/src/" />
+  <Folder Name="/src/Gateway/">
+    <Project Path="src/Gateway/FuelManagement.Gateway/FuelManagement.Gateway.csproj" />
+  </Folder>
+  <Folder Name="/src/Services/" />
+  <Folder Name="/src/Services/Audit/">
+    <Project Path="src/Services/Audit/FuelManagement.Audit.API/FuelManagement.Audit.API.csproj" />
+  </Folder>
+  <Folder Name="/src/Services/FraudDetection/">
+    <Project Path="src/Services/FraudDetection/FuelManagement.FraudDetection.API/FuelManagement.FraudDetection.API.csproj" />
+  </Folder>
+  <Folder Name="/src/Services/Identity/">
+    <Project Path="src/Services/Identity/FuelManagement.Identity.API/FuelManagement.Identity.API.csproj" />
+  </Folder>
+  <Folder Name="/src/Services/Inventory/">
+    <Project Path="src/Services/Inventory/FuelManagement.Inventory.API/FuelManagement.Inventory.API.csproj" />
+  </Folder>
+  <Folder Name="/src/Services/Notification/">
+    <Project Path="src/Services/Notification/FuelManagement.Notification.API/FuelManagement.Notification.API.csproj" />
+  </Folder>
+  <Folder Name="/src/Services/Reporting/">
+    <Project Path="src/Services/Reporting/FuelManagement.Reporting.API/FuelManagement.Reporting.API.csproj" />
+  </Folder>
+  <Folder Name="/src/Services/Sales/">
+    <Project Path="src/Services/Sales/FuelManagement.Sales.API/FuelManagement.Sales.API.csproj" />
+  </Folder>
+  <Folder Name="/src/Services/Station/">
+    <Project Path="src/Services/Station/FuelManagement.Station.API/FuelManagement.Station.API.csproj" />
+  </Folder>
+  <Folder Name="/src/Shared/">
+    <Project Path="src/Shared/FuelManagement.Common/FuelManagement.Common.csproj" />
+    <Project Path="src/Shared/FuelManagement.Contracts/FuelManagement.Contracts.csproj" />
+  </Folder>
+</Solution>

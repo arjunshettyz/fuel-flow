@@ -1,0 +1,18 @@
+<div class="lang-toggle" role="group" aria-label="Language switcher">
+	<button
+		type="button"
+		class="lang-btn"
+		[class.active]="language === 'en'"
+		(click)="setLanguage('en')"
+	>
+		English
+	</button>
+	<button
+		type="button"
+		class="lang-btn"
+		[class.active]="language === 'hi'"
+		(click)="setLanguage('hi')"
+	>
+		Hindi
+	</button>
+</div>

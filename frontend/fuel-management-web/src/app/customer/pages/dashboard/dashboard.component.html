@@ -1,0 +1,57 @@
+<section class="page-wrap">
+	<header class="page-header">
+		<h1>Customer Dashboard</h1>
+		<nav>
+			<a routerLink="/customer/prices">Price Viewer</a>
+			<a routerLink="/customer/transactions">Transactions</a>
+			<a routerLink="/customer/stations">Nearby Stations</a>
+		</nav>
+	</header>
+
+	<div class="grid-two">
+		<article class="card">
+			<h2>Live Fuel Price Ticker</h2>
+			<app-price-ticker></app-price-ticker>
+		</article>
+
+		<article class="card loyalty">
+			<h2>Loyalty Points</h2>
+			<div class="points">{{ loyaltyPoints | number }}</div>
+			<p>Redemption value: {{ redemptionValue | currency: 'INR' : 'symbol' : '1.0-0' }}</p>
+		</article>
+	</div>
+
+	<div class="grid-two">
+		<article class="card">
+			<h2>Recent Transactions</h2>
+			<ul class="tx-list">
+				<li *ngFor="let row of recentTransactions">
+					<strong>{{ row.date }}</strong>
+					<span>{{ row.station }} · {{ row.fuel }}</span>
+					<span>{{ row.amount | currency: 'INR' : 'symbol' : '1.0-0' }}</span>
+				</li>
+			</ul>
+			<a routerLink="/customer/transactions">View full history</a>
+		</article>
+
+		<article class="card">
+			<h2>Quick Receipt Download</h2>
+			<p>Enter receipt number and download PDF instantly.</p>
+			<div class="receipt-inline">
+				<input type="text" placeholder="Receipt no (e.g. REC-20260329-A1B2)" />
+				<button class="primary-btn" routerLink="/customer/receipts">Download</button>
+			</div>
+		</article>
+	</div>
+
+	<article class="card">
+		<h2>Nearby Stations with Stock Status</h2>
+		<app-station-map></app-station-map>
+	</article>
+
+	<article class="card promo-card">
+		<h2>Promotions</h2>
+		<p>{{ promotions[promoIndex] }}</p>
+		<button class="outline-btn" (click)="nextPromo()">Next Offer</button>
+	</article>
+</section>

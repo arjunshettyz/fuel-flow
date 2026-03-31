@@ -1,0 +1,8 @@
+<article class="kpi-card" [attr.data-tone]="tone">
+	<h4>{{ title }}</h4>
+	<div class="value">{{ value }}</div>
+	<div class="meta">
+		<span>{{ subtitle }}</span>
+		<span class="trend" *ngIf="trend">{{ trend }}</span>
+	</div>
+</article>

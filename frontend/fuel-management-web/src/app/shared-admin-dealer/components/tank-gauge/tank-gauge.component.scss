@@ -1,0 +1,41 @@
+.tank-card {
+	border: 1px solid rgba(198, 218, 236, 0.94);
+	border-radius: 14px;
+	padding: 0.8rem;
+	background: linear-gradient(150deg, rgba(255, 255, 255, 0.72), rgba(235, 246, 255, 0.44));
+	-webkit-backdrop-filter: blur(8px);
+	backdrop-filter: blur(8px);
+}
+
+.head {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 0.5rem;
+}
+
+.bar {
+	height: 10px;
+	border-radius: 999px;
+	background: rgba(224, 233, 243, 0.86);
+	overflow: hidden;
+}
+
+.fill {
+	height: 100%;
+	border-radius: 999px;
+	background: linear-gradient(90deg, #1a9d72, #39c9a1);
+}
+
+.warning .fill {
+	background: linear-gradient(90deg, #c28f22, #f0bc46);
+}
+
+.critical .fill {
+	background: linear-gradient(90deg, #cd4a2d, #f07c5f);
+}
+
+.meta {
+	margin-top: 0.45rem;
+	font-size: 0.78rem;
+	opacity: 0.75;
+}

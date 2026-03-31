@@ -1,0 +1,43 @@
+.page-wrap {
+	display: grid;
+}
+
+.card {
+	background: #ffffff;
+	border: 1px solid var(--border-color);
+	border-radius: 16px;
+	padding: 1rem;
+	box-shadow: var(--card-shadow);
+}
+
+.pump-grid {
+	margin-top: 0.7rem;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: 0.7rem;
+}
+
+.pump-card {
+	border: 1px solid var(--border-color);
+	border-radius: 12px;
+	padding: 0.7rem;
+	display: grid;
+	gap: 0.45rem;
+}
+
+h3 {
+	margin: 0;
+	font-size: 1rem;
+}
+
+.active {
+	color: #0f8e4d;
+}
+
+.maintenance {
+	color: #be7b00;
+}
+
+.offline {
+	color: #cb4c26;
+}

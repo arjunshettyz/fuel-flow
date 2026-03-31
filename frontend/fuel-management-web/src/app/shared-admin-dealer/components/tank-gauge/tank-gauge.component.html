@@ -1,0 +1,10 @@
+<div class="tank-card" [ngClass]="statusClass">
+	<div class="head">
+		<strong>{{ fuelType }}</strong>
+		<span>{{ percent }}%</span>
+	</div>
+	<div class="bar">
+		<div class="fill" [style.width.%]="percent"></div>
+	</div>
+	<div class="meta">{{ currentLevel | number: '1.0-0' }} L / {{ capacity | number: '1.0-0' }} L</div>
+</div>

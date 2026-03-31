@@ -1,0 +1,6 @@
+@FuelManagement.Notification.API_HostAddress = http://localhost:5198
+
+GET {{FuelManagement.Notification.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

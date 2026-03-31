@@ -1,0 +1,85 @@
+<section class="page-wrap">
+	<header class="page-header">
+		<h1>New Sales Entry</h1>
+		<a routerLink="/dealer/dashboard">Back to Dashboard</a>
+	</header>
+
+	<article class="card">
+		<form [formGroup]="form" (ngSubmit)="submit()" class="sales-form">
+			<div class="grid-two">
+				<label>
+					Pump
+					<select formControlName="pumpId">
+						<option *ngFor="let pump of pumps" [value]="pump.id">{{ pump.name }} · {{ pump.fuelType }}</option>
+					</select>
+				</label>
+
+				<label>
+					Fuel Type
+					<input type="text" formControlName="fuelType" />
+				</label>
+			</div>
+
+			<div class="grid-two">
+				<label>
+					Quantity (L)
+					<input type="number" step="0.01" formControlName="quantityLitres" />
+				</label>
+
+				<label>
+					Total Amount
+					<input type="number" step="0.01" formControlName="totalAmount" />
+				</label>
+			</div>
+
+			<div class="preset-row">
+				<span>Quick Amount:</span>
+				<button class="outline-btn" type="button" *ngFor="let amount of quickAmounts" (click)="applyQuickAmount(amount)">
+					INR {{ amount }}
+				</button>
+			</div>
+
+			<label>
+				Vehicle Number
+				<input type="text" formControlName="vehicleNumber" placeholder="KA01AB1234" />
+			</label>
+			<small class="error" *ngIf="form.controls.vehicleNumber.touched && form.controls.vehicleNumber.invalid">
+				Use valid Indian registration format.
+			</small>
+
+			<div class="grid-two">
+				<label>
+					Payment Method
+					<select formControlName="paymentMethod">
+						<option *ngFor="let method of paymentMethods" [value]="method">{{ method }}</option>
+					</select>
+				</label>
+
+				<label *ngIf="form.controls.paymentMethod.value !== 'Cash'">
+					UPI/Card Reference
+					<input type="text" formControlName="reference" />
+				</label>
+			</div>
+
+			<div class="grid-two">
+				<label>
+					Customer Phone (optional)
+					<input type="text" formControlName="customerPhone" />
+				</label>
+				<div class="lookup">
+					<button type="button" class="outline-btn" (click)="lookupCustomer()">Lookup Customer</button>
+					<small>{{ customerLookupName }}</small>
+				</div>
+			</div>
+
+			<div class="price-box">
+				<strong>Live Price:</strong> INR {{ currentPricePerLitre | number: '1.2-2' }} / litre
+			</div>
+
+			<div class="warning" *ngIf="stockWarning">{{ stockWarning }}</div>
+			<div class="ok-banner" *ngIf="submitSuccess">{{ submitSuccess }}</div>
+
+			<button class="primary-btn" type="submit">Submit and Print</button>
+		</form>
+	</article>
+</section>

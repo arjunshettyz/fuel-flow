@@ -1,0 +1,71 @@
+<section class="page-wrap">
+	<header class="page-header">
+		<h1>Fuel Price Viewer</h1>
+		<a routerLink="/customer/dashboard">Back to Dashboard</a>
+	</header>
+
+	<article class="card">
+		<h2>Current Prices</h2>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Fuel Type</th>
+					<th>Current Price</th>
+					<th>Change</th>
+					<th>Last Updated</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let row of rows">
+					<td>{{ row.fuelType }}</td>
+					<td>{{ row.current | currency: 'INR' : 'symbol' : '1.2-2' }}</td>
+					<td [class.up]="row.deltaFromYesterday > 0" [class.down]="row.deltaFromYesterday < 0">
+						{{ row.deltaFromYesterday > 0 ? '+' : '' }}{{ row.deltaFromYesterday | number: '1.2-2' }}
+					</td>
+					<td>{{ row.lastUpdated }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</article>
+
+	<div class="grid-two">
+		<article class="card">
+			<h2>30 Day Trend (sample)</h2>
+			<div class="trend-line">
+				<span *ngFor="let point of thirtyDayTrend" [style.height.%]="(point - 95) * 20">{{ point }}</span>
+			</div>
+		</article>
+
+		<article class="card">
+			<h2>Price Drop Alert</h2>
+			<p>Subscribe to alert when Petrol falls below your target.</p>
+			<label>
+				Alert target
+				<input type="number" [(ngModel)]="dropAlertTarget" />
+			</label>
+			<button class="primary-btn" type="button">Subscribe</button>
+		</article>
+	</div>
+
+	<article class="card">
+		<h2>Station-specific Pricing</h2>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Station</th>
+					<th>Petrol</th>
+					<th>Diesel</th>
+					<th>CNG</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let station of stationSpecificPricing">
+					<td>{{ station.station }}</td>
+					<td>{{ station.petrol | number: '1.2-2' }}</td>
+					<td>{{ station.diesel | number: '1.2-2' }}</td>
+					<td>{{ station.cng | number: '1.2-2' }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</article>
+</section>

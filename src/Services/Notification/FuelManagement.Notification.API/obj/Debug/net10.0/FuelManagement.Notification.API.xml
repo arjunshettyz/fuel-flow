@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FuelManagement.Notification.API</name>
+    </assembly>
+    <members>
+        <member name="M:FuelManagement.Notification.API.Controllers.NotificationsController.Send(FuelManagement.Notification.API.Controllers.SendNotificationRequest)">
+            <summary>Send a notification manually</summary>
+        </member>
+        <member name="M:FuelManagement.Notification.API.Controllers.NotificationsController.Logs(System.String,System.String,System.String,System.Int32,System.Int32)">
+            <summary>Get notification history with filters</summary>
+        </member>
+        <member name="T:FuelManagement.Notification.API.Migrations.InitialCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:FuelManagement.Notification.API.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FuelManagement.Notification.API.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FuelManagement.Notification.API.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Program">
+            <summary>
+            Auto-generated public partial Program class for top-level statement apps.
+            </summary>
+        </member>
+    </members>
+</doc>

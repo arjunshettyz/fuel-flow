@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FuelManagement.Station.API</name>
+    </assembly>
+    <members>
+        <member name="M:FuelManagement.Station.API.Controllers.StationsController.GetAll(System.String,System.String,System.Nullable{System.Boolean})">
+            <summary>Get all fuel stations with optional city/state filter</summary>
+        </member>
+        <member name="M:FuelManagement.Station.API.Controllers.StationsController.Get(System.Guid)">
+            <summary>Get station by ID</summary>
+        </member>
+        <member name="M:FuelManagement.Station.API.Controllers.StationsController.Nearby(System.Double,System.Double,System.Double)">
+            <summary>Find nearby stations within a radius (km) using Haversine formula</summary>
+        </member>
+        <member name="M:FuelManagement.Station.API.Controllers.StationsController.Create(FuelManagement.Station.API.Controllers.CreateStationRequest)">
+            <summary>Create a new station (Admin only)</summary>
+        </member>
+        <member name="M:FuelManagement.Station.API.Controllers.StationsController.Update(System.Guid,FuelManagement.Station.API.Controllers.CreateStationRequest)">
+            <summary>Update station details (Admin)</summary>
+        </member>
+        <member name="M:FuelManagement.Station.API.Controllers.StationsController.Deactivate(System.Guid)">
+            <summary>Deactivate a station (Admin)</summary>
+        </member>
+        <member name="M:FuelManagement.Station.API.Controllers.StationsController.SetHours(System.Guid,System.Collections.Generic.List{FuelManagement.Station.API.Controllers.SetHoursRequest})">
+            <summary>Set operating hours for a station</summary>
+        </member>
+        <member name="T:FuelManagement.Station.API.Migrations.InitialCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:FuelManagement.Station.API.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FuelManagement.Station.API.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FuelManagement.Station.API.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

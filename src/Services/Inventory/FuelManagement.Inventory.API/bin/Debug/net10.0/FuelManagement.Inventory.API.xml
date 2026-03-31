@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FuelManagement.Inventory.API</name>
+    </assembly>
+    <members>
+        <member name="M:FuelManagement.Inventory.API.Controllers.TanksController.GetAll(System.Nullable{System.Guid},System.String)">
+            <summary>Get all fuel tanks with optional station filter</summary>
+        </member>
+        <member name="M:FuelManagement.Inventory.API.Controllers.TanksController.List(System.Nullable{System.Guid},System.String)">
+            <summary>Compatibility alias for list-style clients.</summary>
+        </member>
+        <member name="M:FuelManagement.Inventory.API.Controllers.TanksController.Get(System.Guid)">
+            <summary>Get a specific fuel tank by ID</summary>
+        </member>
+        <member name="M:FuelManagement.Inventory.API.Controllers.TanksController.Create(FuelManagement.Inventory.API.Controllers.CreateTankRequest)">
+            <summary>Create a new fuel tank (Admin only)</summary>
+        </member>
+        <member name="M:FuelManagement.Inventory.API.Controllers.TanksController.UpdateLevel(System.Guid,FuelManagement.Inventory.API.Controllers.UpdateLevelRequest)">
+            <summary>Update fuel level in tank (Dealer/Admin)</summary>
+        </member>
+        <member name="M:FuelManagement.Inventory.API.Controllers.TanksController.UpdatePrice(System.Guid,FuelManagement.Inventory.API.Controllers.UpdatePriceRequest)">
+            <summary>Update fuel price for a tank</summary>
+        </member>
+        <member name="M:FuelManagement.Inventory.API.Controllers.AlertsController.GetAll(System.Nullable{System.Boolean})">
+            <summary>Get all active stock alerts</summary>
+        </member>
+        <member name="M:FuelManagement.Inventory.API.Controllers.AlertsController.Create(FuelManagement.Inventory.API.Controllers.CreateAlertRequest)">
+            <summary>Create a stock alert for a tank</summary>
+        </member>
+        <member name="M:FuelManagement.Inventory.API.Controllers.AlertsController.Deactivate(System.Guid)">
+            <summary>Deactivate an alert</summary>
+        </member>
+        <member name="M:FuelManagement.Inventory.API.Controllers.ReplenishmentController.GetAll(System.String)">
+            <summary>Get all replenishment orders</summary>
+        </member>
+        <member name="M:FuelManagement.Inventory.API.Controllers.ReplenishmentController.Create(FuelManagement.Inventory.API.Controllers.CreateReplenishmentRequest)">
+            <summary>Create a new replenishment order</summary>
+        </member>
+        <member name="M:FuelManagement.Inventory.API.Controllers.ReplenishmentController.UpdateStatus(System.Guid,FuelManagement.Inventory.API.Controllers.UpdateOrderStatusRequest)">
+            <summary>Update replenishment order status (Admin)</summary>
+        </member>
+        <member name="T:FuelManagement.Inventory.API.Migrations.InitialCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:FuelManagement.Inventory.API.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FuelManagement.Inventory.API.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FuelManagement.Inventory.API.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Program">
+            <summary>
+            Auto-generated public partial Program class for top-level statement apps.
+            </summary>
+        </member>
+    </members>
+</doc>

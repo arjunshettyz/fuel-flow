@@ -1,0 +1,28 @@
+<section class="page-wrap">
+	<article class="card">
+		<h1>Nearby Stations</h1>
+		<app-station-map></app-station-map>
+	</article>
+
+	<article class="card">
+		<h2>Closest 5 Stations</h2>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Station</th>
+					<th>City</th>
+					<th>Distance (km)</th>
+					<th>Stock</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let station of stations">
+					<td>{{ station.name }}</td>
+					<td>{{ station.city }}</td>
+					<td>{{ station.distanceKm }}</td>
+					<td><span class="status" [ngClass]="station.stockStatus.toLowerCase()">{{ station.stockStatus }}</span></td>
+				</tr>
+			</tbody>
+		</table>
+	</article>
+</section>

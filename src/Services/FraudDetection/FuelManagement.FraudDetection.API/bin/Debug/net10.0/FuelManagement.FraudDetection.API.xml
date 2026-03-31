@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FuelManagement.FraudDetection.API</name>
+    </assembly>
+    <members>
+        <member name="M:FuelManagement.FraudDetection.API.Controllers.FraudController.GetAlerts(System.String,System.Nullable{System.Boolean},System.Int32,System.Int32)">
+            <summary>Get all fraud alerts with optional filters</summary>
+        </member>
+        <member name="M:FuelManagement.FraudDetection.API.Controllers.FraudController.Resolve(System.Guid,FuelManagement.FraudDetection.API.Controllers.ResolveAlertRequest)">
+            <summary>Resolve a fraud alert</summary>
+        </member>
+        <member name="M:FuelManagement.FraudDetection.API.Controllers.FraudController.GetRules">
+            <summary>Get all fraud detection rules</summary>
+        </member>
+        <member name="M:FuelManagement.FraudDetection.API.Controllers.FraudController.CreateRule(FuelManagement.FraudDetection.API.Controllers.CreateRuleRequest)">
+            <summary>Create a new fraud detection rule</summary>
+        </member>
+        <member name="M:FuelManagement.FraudDetection.API.Controllers.FraudController.ToggleRule(System.Guid)">
+            <summary>Toggle a fraud rule active/inactive</summary>
+        </member>
+        <member name="M:FuelManagement.FraudDetection.API.Controllers.FraudController.Analyze(FuelManagement.FraudDetection.API.Controllers.AnalyzeRequest)">
+            <summary>Analyze a transaction for fraud patterns (inline check)</summary>
+        </member>
+        <member name="T:FuelManagement.FraudDetection.API.Migrations.InitialCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:FuelManagement.FraudDetection.API.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FuelManagement.FraudDetection.API.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FuelManagement.FraudDetection.API.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Program">
+            <summary>
+            Auto-generated public partial Program class for top-level statement apps.
+            </summary>
+        </member>
+    </members>
+</doc>

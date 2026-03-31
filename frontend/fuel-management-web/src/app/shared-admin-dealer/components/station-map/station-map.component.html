@@ -1,0 +1,17 @@
+<section class="map-wrap">
+	<div class="map-box">
+		<p>Google Maps Embed Placeholder</p>
+	</div>
+	<ul class="legend">
+		<li><span class="dot green"></span> Available</li>
+		<li><span class="dot yellow"></span> Low</li>
+		<li><span class="dot red"></span> Out</li>
+	</ul>
+	<div class="stations">
+		<div class="station" *ngFor="let station of stations">
+			<span class="dot" [ngClass]="station.stockHealth"></span>
+			<strong>{{ station.name }}</strong>
+			<span>{{ station.city }}</span>
+		</div>
+	</div>
+</section>

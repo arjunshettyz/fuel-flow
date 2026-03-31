@@ -1,0 +1,29 @@
+:host { display: block; min-height: 100vh; }
+.app-root { position: relative; min-height: 100vh; isolation: isolate; }
+.bg-orb {
+  position: fixed; border-radius: 50%; pointer-events: none;
+  z-index: -1; filter: blur(80px); opacity: .5;
+  animation: orb-drift 20s ease-in-out infinite;
+}
+.bg-orb-1 {
+  width: clamp(300px,40vw,600px); aspect-ratio: 1; top: -10%; left: -10%;
+  background: radial-gradient(circle,rgba(59,130,246,.25),transparent 70%);
+  animation-duration: 22s;
+}
+.bg-orb-2 {
+  width: clamp(250px,35vw,500px); aspect-ratio: 1; top: 30%; right: -8%;
+  background: radial-gradient(circle,rgba(139,92,246,.2),transparent 70%);
+  animation-duration: 28s; animation-delay: -8s;
+}
+.bg-orb-3 {
+  width: clamp(200px,30vw,400px); aspect-ratio: 1; bottom: -5%; left: 35%;
+  background: radial-gradient(circle,rgba(16,185,129,.15),transparent 70%);
+  animation-duration: 25s; animation-delay: -14s;
+}
+.bg-grid {
+  position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size: 40px 40px;
+}

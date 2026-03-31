@@ -1,0 +1,33 @@
+{
+  "version": 2,
+  "dgSpecHash": "9QEsqWBX1BU=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Arjun\\Desktop\\sprintproj\\src\\Gateway\\FuelManagement.Gateway\\FuelManagement.Gateway.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Arjun\\.nuget\\packages\\fluentvalidation\\11.11.0\\fluentvalidation.11.11.0.nupkg.sha512",
+    "C:\\Users\\Arjun\\.nuget\\packages\\ipaddressrange\\6.1.0\\ipaddressrange.6.1.0.nupkg.sha512",
+    "C:\\Users\\Arjun\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\9.0.3\\microsoft.aspnetcore.authentication.jwtbearer.9.0.3.nupkg.sha512",
+    "C:\\Users\\Arjun\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\8.0.12\\microsoft.aspnetcore.jsonpatch.8.0.12.nupkg.sha512",
+    "C:\\Users\\Arjun\\.nuget\\packages\\microsoft.aspnetcore.middlewareanalysis\\8.0.12\\microsoft.aspnetcore.middlewareanalysis.8.0.12.nupkg.sha512",
+    "C:\\Users\\Arjun\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\8.0.12\\microsoft.aspnetcore.mvc.newtonsoftjson.8.0.12.nupkg.sha512",
+    "C:\\Users\\Arjun\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\Arjun\\.nuget\\packages\\microsoft.extensions.diagnosticadapter\\3.1.32\\microsoft.extensions.diagnosticadapter.3.1.32.nupkg.sha512",
+    "C:\\Users\\Arjun\\.nuget\\packages\\microsoft.identitymodel.abstractions\\8.0.1\\microsoft.identitymodel.abstractions.8.0.1.nupkg.sha512",
+    "C:\\Users\\Arjun\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\8.0.1\\microsoft.identitymodel.jsonwebtokens.8.0.1.nupkg.sha512",
+    "C:\\Users\\Arjun\\.nuget\\packages\\microsoft.identitymodel.logging\\8.0.1\\microsoft.identitymodel.logging.8.0.1.nupkg.sha512",
+    "C:\\Users\\Arjun\\.nuget\\packages\\microsoft.identitymodel.protocols\\8.0.1\\microsoft.identitymodel.protocols.8.0.1.nupkg.sha512",
+    "C:\\Users\\Arjun\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\8.0.1\\microsoft.identitymodel.protocols.openidconnect.8.0.1.nupkg.sha512",
+    "C:\\Users\\Arjun\\.nuget\\packages\\microsoft.identitymodel.tokens\\8.0.1\\microsoft.identitymodel.tokens.8.0.1.nupkg.sha512",
+    "C:\\Users\\Arjun\\.nuget\\packages\\microsoft.openapi\\1.6.23\\microsoft.openapi.1.6.23.nupkg.sha512",
+    "C:\\Users\\Arjun\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\Arjun\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
+    "C:\\Users\\Arjun\\.nuget\\packages\\ocelot\\23.4.3\\ocelot.23.4.3.nupkg.sha512",
+    "C:\\Users\\Arjun\\.nuget\\packages\\rabbitmq.client\\7.1.2\\rabbitmq.client.7.1.2.nupkg.sha512",
+    "C:\\Users\\Arjun\\.nuget\\packages\\swashbuckle.aspnetcore\\8.1.1\\swashbuckle.aspnetcore.8.1.1.nupkg.sha512",
+    "C:\\Users\\Arjun\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\8.1.1\\swashbuckle.aspnetcore.swagger.8.1.1.nupkg.sha512",
+    "C:\\Users\\Arjun\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\8.1.1\\swashbuckle.aspnetcore.swaggergen.8.1.1.nupkg.sha512",
+    "C:\\Users\\Arjun\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\8.1.1\\swashbuckle.aspnetcore.swaggerui.8.1.1.nupkg.sha512",
+    "C:\\Users\\Arjun\\.nuget\\packages\\system.identitymodel.tokens.jwt\\8.0.1\\system.identitymodel.tokens.jwt.8.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

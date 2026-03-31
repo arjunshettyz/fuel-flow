@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "293LQQ7nvrE=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Arjun\\Desktop\\sprintproj\\src\\Shared\\FuelManagement.Common\\FuelManagement.Common.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Arjun\\.nuget\\packages\\rabbitmq.client\\7.1.2\\rabbitmq.client.7.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}

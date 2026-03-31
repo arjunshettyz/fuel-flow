@@ -1,0 +1,12 @@
+C:\Users\Arjun\Desktop\sprintproj\src\Shared\FuelManagement.Common\bin\Debug\net9.0\FuelManagement.Common.deps.json
+C:\Users\Arjun\Desktop\sprintproj\src\Shared\FuelManagement.Common\bin\Debug\net9.0\FuelManagement.Common.dll
+C:\Users\Arjun\Desktop\sprintproj\src\Shared\FuelManagement.Common\bin\Debug\net9.0\FuelManagement.Common.pdb
+C:\Users\Arjun\Desktop\sprintproj\src\Shared\FuelManagement.Common\obj\Debug\net9.0\FuelManagement.Common.csproj.AssemblyReference.cache
+C:\Users\Arjun\Desktop\sprintproj\src\Shared\FuelManagement.Common\obj\Debug\net9.0\FuelManagement.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Arjun\Desktop\sprintproj\src\Shared\FuelManagement.Common\obj\Debug\net9.0\FuelManagement.Common.AssemblyInfoInputs.cache
+C:\Users\Arjun\Desktop\sprintproj\src\Shared\FuelManagement.Common\obj\Debug\net9.0\FuelManagement.Common.AssemblyInfo.cs
+C:\Users\Arjun\Desktop\sprintproj\src\Shared\FuelManagement.Common\obj\Debug\net9.0\FuelManagement.Common.csproj.CoreCompileInputs.cache
+C:\Users\Arjun\Desktop\sprintproj\src\Shared\FuelManagement.Common\obj\Debug\net9.0\FuelManagement.Common.dll
+C:\Users\Arjun\Desktop\sprintproj\src\Shared\FuelManagement.Common\obj\Debug\net9.0\refint\FuelManagement.Common.dll
+C:\Users\Arjun\Desktop\sprintproj\src\Shared\FuelManagement.Common\obj\Debug\net9.0\FuelManagement.Common.pdb
+C:\Users\Arjun\Desktop\sprintproj\src\Shared\FuelManagement.Common\obj\Debug\net9.0\ref\FuelManagement.Common.dll

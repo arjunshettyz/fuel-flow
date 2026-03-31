@@ -1,0 +1,49 @@
+.page-wrap {
+	display: grid;
+	gap: 1rem;
+}
+
+.card {
+	background: #ffffff;
+	border: 1px solid var(--border-color);
+	border-radius: 16px;
+	padding: 1rem;
+	box-shadow: var(--card-shadow);
+}
+
+.table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.table th,
+.table td {
+	border-bottom: 1px solid var(--border-color);
+	text-align: left;
+	padding: 0.55rem;
+}
+
+.status {
+	display: inline-block;
+	min-width: 72px;
+	text-align: center;
+	border-radius: 999px;
+	padding: 0.25rem 0.5rem;
+	font-size: 0.78rem;
+	font-weight: 700;
+}
+
+.green {
+	background: #e6f8ef;
+	color: #0d8d4b;
+}
+
+.yellow {
+	background: #fff6e5;
+	color: #b06f00;
+}
+
+.red {
+	background: #fff0eb;
+	color: #c04722;
+}

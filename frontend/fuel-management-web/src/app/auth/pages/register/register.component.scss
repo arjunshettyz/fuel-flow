@@ -1,0 +1,151 @@
+.auth-page {
+	min-height: 100vh;
+	padding: 1rem;
+	display: grid;
+	place-items: center;
+}
+
+.auth-shell {
+	width: min(980px, 100%);
+	display: grid;
+	gap: 0.9rem;
+}
+
+.register-header {
+	display: grid;
+	gap: 0.45rem;
+	padding: 0.3rem 0.2rem;
+}
+
+.back-home {
+	font-size: 0.82rem;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+}
+
+.register-kicker {
+	margin: 0;
+	font-size: 0.77rem;
+	font-weight: 700;
+	letter-spacing: 0.11em;
+	text-transform: uppercase;
+	color: #49617c;
+}
+
+h1,
+h3 {
+	margin: 0;
+}
+
+.register-header p {
+	margin: 0;
+	max-width: 66ch;
+	color: var(--muted-color);
+}
+
+.auth-card {
+	width: 100%;
+	background: rgba(255, 255, 255, 0.9);
+	border: 1px solid rgba(207, 220, 232, 0.92);
+	border-radius: 24px;
+	padding: clamp(1rem, 2.2vw, 1.35rem);
+	box-shadow: var(--card-shadow-soft);
+	-webkit-backdrop-filter: blur(6px);
+	backdrop-filter: blur(6px);
+}
+
+form {
+	display: grid;
+	gap: 0.85rem;
+}
+
+.grid-2 {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 0.75rem;
+}
+
+label {
+	display: grid;
+	gap: 0.35rem;
+	font-weight: 600;
+	font-size: 0.9rem;
+}
+
+.dealer-block {
+	border: 1px dashed #b8cfde;
+	border-radius: 14px;
+	padding: 0.8rem;
+	display: grid;
+	gap: 0.6rem;
+	background: rgba(236, 244, 251, 0.72);
+}
+
+.aadhaar-mask {
+	display: grid;
+	align-items: end;
+	padding: 0.82rem;
+	border-radius: 12px;
+	background: #f4f9fc;
+	border: 1px solid var(--border-color);
+	font-family: 'Syne', sans-serif;
+}
+
+.otp-row {
+	display: grid;
+	grid-template-columns: auto 1fr auto;
+	gap: 0.7rem;
+	align-items: end;
+}
+
+.checkbox-row {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	font-weight: 500;
+}
+
+.checkbox-row input {
+	width: auto;
+}
+
+.error,
+.error-banner {
+	color: #cf4b21;
+}
+
+.error-banner,
+.ok-banner {
+	border-radius: 12px;
+	padding: 0.55rem 0.65rem;
+	font-size: 0.9rem;
+}
+
+.error-banner {
+	background: #fff3ec;
+	border: 1px solid #ffd1bf;
+}
+
+.ok,
+.ok-banner {
+	color: #0b8748;
+}
+
+.ok-banner {
+	background: #eefcf4;
+	border: 1px solid #bbebcd;
+}
+
+.register-footer {
+	margin-top: 0.5rem;
+	font-size: 0.88rem;
+	color: var(--muted-color);
+}
+
+@media (max-width: 768px) {
+	.grid-2,
+	.otp-row {
+		grid-template-columns: 1fr;
+	}
+}

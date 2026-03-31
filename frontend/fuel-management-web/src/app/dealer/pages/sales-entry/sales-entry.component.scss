@@ -1,0 +1,84 @@
+.page-wrap {
+	display: grid;
+	gap: 1rem;
+}
+
+.page-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 0.8rem;
+}
+
+.card {
+	background: #ffffff;
+	border: 1px solid var(--border-color);
+	border-radius: 16px;
+	padding: 1rem;
+	box-shadow: var(--card-shadow);
+}
+
+.sales-form {
+	display: grid;
+	gap: 0.8rem;
+}
+
+.grid-two {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 0.7rem;
+}
+
+label {
+	display: grid;
+	gap: 0.35rem;
+	font-size: 0.9rem;
+	font-weight: 600;
+}
+
+.preset-row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	align-items: center;
+}
+
+.lookup {
+	display: grid;
+	align-content: end;
+	gap: 0.25rem;
+}
+
+.price-box {
+	border-radius: 10px;
+	border: 1px solid #bbe6d5;
+	background: #ecfbf3;
+	padding: 0.55rem 0.65rem;
+}
+
+.warning {
+	border-radius: 10px;
+	border: 1px solid #ffccb5;
+	background: #fff2e9;
+	color: #c24923;
+	padding: 0.55rem 0.65rem;
+}
+
+.ok-banner {
+	border-radius: 10px;
+	border: 1px solid #b9e9c7;
+	background: #edfcef;
+	color: #0f7f42;
+	padding: 0.55rem 0.65rem;
+}
+
+.error {
+	color: #c84a24;
+}
+
+@media (max-width: 900px) {
+	.grid-two {
+		grid-template-columns: 1fr;
+	}
+}

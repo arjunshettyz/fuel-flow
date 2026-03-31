@@ -1,0 +1,47 @@
+.ticker-wrap {
+	display: grid;
+	gap: 0.5rem;
+	padding: 0.2rem;
+}
+
+.ticker-row {
+	display: grid;
+	grid-template-columns: 1fr auto auto;
+	align-items: center;
+	gap: 0.75rem;
+	padding: 0.55rem 0.6rem;
+	border-radius: 12px;
+	border: 1px solid rgba(198, 219, 236, 0.86);
+	background: rgba(255, 255, 255, 0.46);
+}
+
+.fuel {
+	font-weight: 600;
+}
+
+.price {
+	font-variant-numeric: tabular-nums;
+	font-weight: 700;
+}
+
+.delta {
+	font-size: 0.85rem;
+	font-weight: 600;
+	border-radius: 999px;
+	padding: 0.2rem 0.45rem;
+	background: rgba(255, 255, 255, 0.66);
+}
+
+.delta.up {
+	color: #0a8a48;
+}
+
+.delta.down {
+	color: #c9491f;
+}
+
+.updated {
+	font-size: 0.78rem;
+	opacity: 0.74;
+	padding-left: 0.15rem;
+}

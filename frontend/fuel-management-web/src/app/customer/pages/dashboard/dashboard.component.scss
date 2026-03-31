@@ -1,0 +1,65 @@
+.page-wrap {
+	display: grid;
+	gap: 1rem;
+}
+
+.page-header {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 0.8rem;
+	align-items: center;
+}
+
+.page-header nav {
+	display: flex;
+	gap: 0.8rem;
+	flex-wrap: wrap;
+}
+
+.grid-two {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 1rem;
+}
+
+.card {
+	background: #ffffff;
+	border: 1px solid var(--border-color);
+	border-radius: 16px;
+	padding: 1rem;
+	box-shadow: var(--card-shadow);
+}
+
+.tx-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: grid;
+	gap: 0.45rem;
+}
+
+.tx-list li {
+	display: grid;
+	gap: 0.15rem;
+	border-bottom: 1px dashed var(--border-color);
+	padding-bottom: 0.4rem;
+}
+
+.points {
+	font-size: 2rem;
+	font-weight: 700;
+}
+
+.receipt-inline {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	gap: 0.6rem;
+}
+
+@media (max-width: 860px) {
+	.grid-two,
+	.receipt-inline {
+		grid-template-columns: 1fr;
+	}
+}

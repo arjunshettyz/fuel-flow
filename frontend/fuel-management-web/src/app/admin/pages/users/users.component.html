@@ -1,0 +1,58 @@
+<section class="page-wrap">
+	<header class="page-header">
+		<h1>User Management</h1>
+		<button class="primary-btn" type="button">Create User</button>
+	</header>
+
+	<article class="card filter-row">
+		<label>
+			Filter by role
+			<select [(ngModel)]="roleFilter">
+				<option value="">All</option>
+				<option value="Customer">Customer</option>
+				<option value="Dealer">Dealer</option>
+				<option value="Auditor">Auditor</option>
+			</select>
+		</label>
+	</article>
+
+	<article class="card">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Phone</th>
+					<th>Role</th>
+					<th>Status</th>
+					<th>Last Login</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let user of filteredUsers">
+					<td>{{ user.name }}</td>
+					<td>{{ user.email }}</td>
+					<td>{{ user.phone }}</td>
+					<td>
+						<select [(ngModel)]="user.role" aria-label="Assign role">
+							<option>Customer</option>
+							<option>Dealer</option>
+							<option>Auditor</option>
+							<option>Admin</option>
+						</select>
+					</td>
+					<td>
+						<span [class]="user.status.toLowerCase()">{{ user.status }}</span>
+					</td>
+					<td>{{ user.lastLogin }}</td>
+					<td class="action-row">
+						<button class="text-btn" type="button">Profile</button>
+						<button class="text-btn" type="button" (click)="toggleStatus(user)">{{ user.status === 'Active' ? 'Lock' : 'Unlock' }}</button>
+						<button class="text-btn" type="button">Deactivate</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</article>
+</section>

@@ -1,0 +1,6 @@
+@FuelManagement.Gateway_HostAddress = http://localhost:5179
+
+GET {{FuelManagement.Gateway_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

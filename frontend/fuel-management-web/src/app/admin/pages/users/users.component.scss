@@ -1,0 +1,60 @@
+.page-wrap {
+	display: grid;
+	gap: 1rem;
+}
+
+.page-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 0.8rem;
+}
+
+.card {
+	background: #ffffff;
+	border: 1px solid var(--border-color);
+	border-radius: 16px;
+	padding: 1rem;
+	box-shadow: var(--card-shadow);
+}
+
+.table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.table th,
+.table td {
+	text-align: left;
+	border-bottom: 1px solid var(--border-color);
+	padding: 0.5rem;
+}
+
+.action-row {
+	display: flex;
+	gap: 0.4rem;
+}
+
+.text-btn {
+	border: none;
+	background: none;
+	color: var(--primary-color);
+	cursor: pointer;
+	padding: 0;
+}
+
+.active {
+	color: #0e8c4c;
+}
+
+.locked {
+	color: #c34b25;
+}
+
+@media (max-width: 1100px) {
+	.table {
+		display: block;
+		overflow-x: auto;
+	}
+}

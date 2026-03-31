@@ -1,0 +1,61 @@
+<section class="page-wrap">
+	<header class="page-header">
+		<h1>Fuel Price Management</h1>
+		<button class="primary-btn" type="button">Bulk Update</button>
+	</header>
+
+	<article class="card">
+		<h2>Current Prices</h2>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Fuel Type</th>
+					<th>Price</th>
+					<th>Effective Date</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let row of currentPrices">
+					<td>{{ row.fuelType }}</td>
+					<td>{{ row.price | currency: 'INR' : 'symbol' : '1.2-2' }}</td>
+					<td>{{ row.effectiveDate }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</article>
+
+	<article class="card update-form">
+		<h2>Update Price</h2>
+		<div class="grid-three">
+			<label>Fuel Type <select><option>Petrol</option><option>Diesel</option><option>CNG</option></select></label>
+			<label>New Price <input type="number" step="0.01" /></label>
+			<label>Effective At <input type="datetime-local" /></label>
+		</div>
+		<button class="primary-btn" type="button">Save Price</button>
+		<p class="note">On save, SMS/Email notification will be sent to all dealers.</p>
+	</article>
+
+	<article class="card">
+		<h2>Price History</h2>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Fuel Type</th>
+					<th>Old</th>
+					<th>New</th>
+					<th>Effective</th>
+					<th>Changed By</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let row of history">
+					<td>{{ row.fuelType }}</td>
+					<td>{{ row.oldPrice }}</td>
+					<td>{{ row.newPrice }}</td>
+					<td>{{ row.effectiveAt }}</td>
+					<td>{{ row.changedBy }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</article>
+</section>

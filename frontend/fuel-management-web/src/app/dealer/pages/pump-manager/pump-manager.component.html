@@ -1,0 +1,12 @@
+<section class="page-wrap">
+	<article class="card">
+		<h1>Pump Manager</h1>
+		<div class="pump-grid">
+			<div class="pump-card" *ngFor="let pump of pumps">
+				<h3>{{ pump.code }} · {{ pump.fuelType }}</h3>
+				<span [class]="pump.status.toLowerCase()">{{ pump.status }}</span>
+				<button class="outline-btn" type="button" (click)="toggleStatus(pump)">Cycle Status</button>
+			</div>
+		</div>
+	</article>
+</section>

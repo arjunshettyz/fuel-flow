@@ -1,0 +1,58 @@
+<section class="page-wrap">
+	<header class="page-header">
+		<h1>Admin Dashboard</h1>
+		<div class="quick-actions">
+			<a routerLink="/admin/prices" class="primary-btn">Update Prices</a>
+			<a routerLink="/admin/reports" class="outline-btn">Generate Report</a>
+			<a routerLink="/admin/fraud" class="outline-btn">View Alerts</a>
+		</div>
+	</header>
+
+	<div class="kpi-grid">
+		<app-kpi-card
+			*ngFor="let kpi of kpis"
+			[title]="kpi.title"
+			[value]="kpi.value"
+			[subtitle]="kpi.subtitle"
+			[trend]="kpi.trend"
+			[tone]="kpi.tone"
+		></app-kpi-card>
+	</div>
+
+	<div class="grid-two">
+		<article class="card">
+			<h2>All-Stations Stock Map</h2>
+			<app-station-map></app-station-map>
+		</article>
+
+		<article class="card">
+			<h2>Fraud Alerts Panel</h2>
+			<ul class="feed">
+				<li *ngFor="let item of activityFeed">{{ item }}</li>
+			</ul>
+			<a routerLink="/admin/fraud">Open Fraud Center</a>
+		</article>
+	</div>
+
+	<div class="grid-two">
+		<article class="card">
+			<h2>Top Performing Stations</h2>
+			<div class="bars">
+				<div class="bar" *ngFor="let station of topStations">
+					<span>{{ station.name }}</span>
+					<div class="track"><i [style.width.%]="station.revenue"></i></div>
+				</div>
+			</div>
+		</article>
+
+		<article class="card">
+			<h2>Fuel Type Distribution</h2>
+			<div class="pie-list">
+				<div *ngFor="let row of fuelDistribution">
+					<span>{{ row.fuel }}</span>
+					<strong>{{ row.share }}%</strong>
+				</div>
+			</div>
+		</article>
+	</div>
+</section>

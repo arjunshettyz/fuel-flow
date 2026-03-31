@@ -1,0 +1,93 @@
+<section class="page-wrap">
+	<header class="page-header">
+		<h1>Fuel Inventory Management</h1>
+	</header>
+
+	<article class="card">
+		<h2>Tank List</h2>
+		<div class="tank-grid">
+			<div class="tank-card" *ngFor="let tank of tanks">
+				<div class="head">
+					<strong>{{ tank.fuelType }}</strong>
+					<span>{{ tank.updatedAt }}</span>
+				</div>
+				<div class="bar">
+					<div class="fill" [style.width.%]="(tank.currentLevel / tank.capacity) * 100"></div>
+				</div>
+				<small>{{ tank.currentLevel }} / {{ tank.capacity }} L</small>
+			</div>
+		</div>
+	</article>
+
+	<div class="grid-two">
+		<article class="card">
+			<h2>Dip Reading Entry</h2>
+			<form class="form-grid">
+				<label>
+					Tank
+					<select>
+						<option *ngFor="let tank of tanks">{{ tank.fuelType }}</option>
+					</select>
+				</label>
+				<label>
+					Dip Reading (L)
+					<input type="number" />
+				</label>
+				<button class="primary-btn" type="button">Save Reading</button>
+			</form>
+		</article>
+
+		<article class="card">
+			<h2>Stock Loading Entry</h2>
+			<form class="form-grid">
+				<label>Tanker Number <input type="text" /></label>
+				<label>Invoice Number <input type="text" /></label>
+				<label>Quantity Loaded (L) <input type="number" /></label>
+				<button class="primary-btn" type="button">Record Delivery</button>
+			</form>
+		</article>
+	</div>
+
+	<div class="grid-two">
+		<article class="card">
+			<h2>Stock History Timeline</h2>
+			<div class="timeline">
+				<span *ngFor="let value of stockTimeline" [style.height.%]="value"></span>
+			</div>
+		</article>
+
+		<article class="card">
+			<h2>Request Replenishment</h2>
+			<form class="form-grid">
+				<label>Fuel Type <select><option>Petrol</option><option>Diesel</option></select></label>
+				<label>Quantity (L) <input type="number" /></label>
+				<label>Urgency <select><option>Normal</option><option>High</option><option>Critical</option></select></label>
+				<button class="primary-btn" type="button">Submit Request</button>
+			</form>
+		</article>
+	</div>
+
+	<article class="card">
+		<h2>Variance History</h2>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Date</th>
+					<th>Tank</th>
+					<th>Dip Reading</th>
+					<th>System Reading</th>
+					<th>Variance</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let row of varianceRows">
+					<td>{{ row.date }}</td>
+					<td>{{ row.tank }}</td>
+					<td>{{ row.dipReading }}</td>
+					<td>{{ row.systemReading }}</td>
+					<td>{{ row.variance }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</article>
+</section>

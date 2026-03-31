@@ -1,0 +1,18 @@
+<section class="page-wrap">
+	<article class="card">
+		<h1>Receipt Viewer</h1>
+		<p>Enter receipt number and download PDF copy.</p>
+		<div class="lookup-row">
+			<input type="text" [(ngModel)]="receiptNumber" placeholder="Receipt no" />
+			<button class="primary-btn" type="button" (click)="search()">Search</button>
+		</div>
+
+		<div class="result" *ngIf="result">
+			<strong>{{ receiptNumber }}</strong>
+			<span>{{ result.station }}</span>
+			<span>{{ result.date }}</span>
+			<span>{{ result.amount | currency: 'INR' : 'symbol' : '1.0-0' }}</span>
+			<button class="outline-btn" type="button">Download PDF</button>
+		</div>
+	</article>
+</section>

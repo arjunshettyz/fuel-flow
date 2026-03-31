@@ -1,0 +1,52 @@
+<section class="page-wrap">
+	<header class="page-header">
+		<h1>Fraud Alerts</h1>
+		<button class="outline-btn" type="button">Bulk Dismiss Low Severity</button>
+	</header>
+
+	<div class="grid-two">
+		<article class="card">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Alert ID</th>
+						<th>Station</th>
+						<th>Rule</th>
+						<th>Severity</th>
+						<th>Transaction</th>
+						<th>Timestamp</th>
+						<th>Status</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let alert of alerts">
+						<td>{{ alert.alertId }}</td>
+						<td>{{ alert.station }}</td>
+						<td>{{ alert.rule }}</td>
+						<td><span class="badge" [ngClass]="alert.severity.toLowerCase()">{{ alert.severity }}</span></td>
+						<td>{{ alert.transactionId }}</td>
+						<td>{{ alert.timestamp }}</td>
+						<td>{{ alert.status }}</td>
+						<td class="action-row">
+							<button class="text-btn" type="button" (click)="openDetails(alert)">Detail</button>
+							<button class="text-btn" type="button" (click)="mark(alert, 'Dismissed')">Dismiss</button>
+							<button class="text-btn" type="button" (click)="mark(alert, 'Under Review')">Investigate</button>
+							<button class="text-btn" type="button" (click)="mark(alert, 'Escalated')">Escalate</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</article>
+
+		<aside class="card" *ngIf="selectedAlert">
+			<h2>Alert Detail</h2>
+			<p><strong>{{ selectedAlert.alertId }}</strong> at {{ selectedAlert.station }}</p>
+			<p>Rule: {{ selectedAlert.rule }}</p>
+			<p>Transaction: {{ selectedAlert.transactionId }}</p>
+			<p>Severity: {{ selectedAlert.severity }}</p>
+			<p>Status: {{ selectedAlert.status }}</p>
+			<p>Reason: Trigger exceeded threshold for configured detection rule.</p>
+		</aside>
+	</div>
+</section>

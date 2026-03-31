@@ -1,0 +1,51 @@
+<section class="page-wrap">
+	<header class="page-header">
+		<h1>Reports</h1>
+		<button class="outline-btn" type="button">Schedule Report</button>
+	</header>
+
+	<article class="card filter-grid">
+		<label>
+			Report Type
+			<select [(ngModel)]="reportType">
+				<option>Sales Summary</option>
+				<option>Inventory Summary</option>
+				<option>Station Performance</option>
+				<option>Compliance (PPAC)</option>
+				<option>Dealer-wise</option>
+				<option>Custom</option>
+			</select>
+		</label>
+		<label>From Date <input type="date" /></label>
+		<label>To Date <input type="date" /></label>
+		<label>Station <input type="text" placeholder="All or multi-select" /></label>
+		<label>Fuel Type <input type="text" placeholder="Petrol, Diesel..." /></label>
+	</article>
+
+	<article class="card">
+		<h2>Preview Data</h2>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Station</th>
+					<th>Fuel Type</th>
+					<th>Litres</th>
+					<th>Revenue</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let row of previewRows">
+					<td>{{ row.station }}</td>
+					<td>{{ row.fuelType }}</td>
+					<td>{{ row.litres }}</td>
+					<td>{{ row.revenue | currency: 'INR' : 'symbol' : '1.0-0' }}</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="actions">
+			<button class="primary-btn" type="button">Download PDF</button>
+			<button class="outline-btn" type="button">Download Excel</button>
+			<button class="outline-btn" type="button">Fraud Analytics Report</button>
+		</div>
+	</article>
+</section>

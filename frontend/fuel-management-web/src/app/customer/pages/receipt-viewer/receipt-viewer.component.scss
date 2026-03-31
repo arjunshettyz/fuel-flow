@@ -1,0 +1,32 @@
+.page-wrap {
+	display: grid;
+}
+
+.card {
+	background: #ffffff;
+	border: 1px solid var(--border-color);
+	border-radius: 16px;
+	padding: 1rem;
+	box-shadow: var(--card-shadow);
+}
+
+.lookup-row {
+	margin-top: 0.75rem;
+	display: grid;
+	grid-template-columns: 1fr auto;
+	gap: 0.55rem;
+}
+
+.result {
+	margin-top: 1rem;
+	display: grid;
+	gap: 0.2rem;
+	border-top: 1px dashed var(--border-color);
+	padding-top: 0.7rem;
+}
+
+@media (max-width: 720px) {
+	.lookup-row {
+		grid-template-columns: 1fr;
+	}
+}

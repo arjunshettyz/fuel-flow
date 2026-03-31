@@ -1,0 +1,130 @@
+<section class="auth-page">
+	<div class="auth-shell">
+		<header class="register-header">
+			<a class="back-home" routerLink="/">Back to landing</a>
+			<p class="register-kicker">Frictionless Onboarding</p>
+			<h1>Create your FuelFlow account</h1>
+			<p>Customer and dealer onboarding with secure email OTP verification.</p>
+		</header>
+
+		<div class="auth-card register-card">
+			<form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+				<div class="grid-2">
+					<label>
+						Full Name
+						<input type="text" formControlName="fullName" />
+						<small class="error" *ngIf="form.controls.fullName.touched && form.controls.fullName.hasError('required')">Full name is required.</small>
+						<small class="error" *ngIf="form.controls.fullName.touched && form.controls.fullName.hasError('minlength')">Full name must be at least 3 characters.</small>
+					</label>
+
+					<label>
+						Mobile Number
+						<input type="tel" formControlName="mobileNumber" />
+						<small *ngIf="form.controls.mobileNumber.pending">Checking number...</small>
+						<small class="error" *ngIf="form.controls.mobileNumber.touched && form.controls.mobileNumber.hasError('required')">Mobile number is required.</small>
+						<small class="error" *ngIf="form.controls.mobileNumber.touched && form.controls.mobileNumber.hasError('pattern')">Enter a valid Indian mobile number.</small>
+						<small class="error" *ngIf="form.controls.mobileNumber.hasError('duplicate')">Mobile is already registered.</small>
+					</label>
+
+					<label>
+						Email
+						<input type="email" formControlName="email" />
+						<small *ngIf="form.controls.email.pending">Checking email...</small>
+						<small class="error" *ngIf="form.controls.email.touched && form.controls.email.hasError('required')">Email is required.</small>
+						<small class="error" *ngIf="form.controls.email.touched && form.controls.email.hasError('email')">Enter a valid email address.</small>
+						<small class="error" *ngIf="form.controls.email.hasError('duplicate')">Email is already registered.</small>
+					</label>
+
+					<label>
+						Role
+						<select formControlName="role">
+							<option value="Customer">Customer</option>
+							<option value="Dealer">Dealer</option>
+						</select>
+					</label>
+				</div>
+
+				<div class="grid-2">
+					<label>
+						Password
+						<input type="password" formControlName="password" />
+						<small class="error" *ngIf="form.controls.password.touched && form.controls.password.hasError('required')">Password is required.</small>
+						<small class="error" *ngIf="form.controls.password.touched && form.controls.password.hasError('minlength')">Password must be at least 8 characters.</small>
+						<small class="error" *ngIf="form.controls.password.touched && form.controls.password.hasError('pattern')">Use letters, numbers, and a special character.</small>
+					</label>
+					<label>
+						Confirm Password
+						<input type="password" formControlName="confirmPassword" />
+						<small class="error" *ngIf="form.controls.confirmPassword.touched && form.controls.confirmPassword.hasError('required')">Confirm your password.</small>
+					</label>
+				</div>
+				<small class="error" *ngIf="form.hasError('passwordMismatch')">Passwords must match.</small>
+
+				<div class="dealer-block" *ngIf="form.controls.role.value === 'Dealer'">
+					<h3>Dealer Station Details</h3>
+					<div class="grid-2">
+						<label>
+							Station License Number
+							<input type="text" formControlName="stationLicenseNumber" />
+							<small class="error" *ngIf="form.controls.stationLicenseNumber.touched && form.controls.stationLicenseNumber.hasError('required')">License number is required for dealers.</small>
+						</label>
+						<label>
+							Station Name
+							<input type="text" formControlName="stationName" />
+							<small class="error" *ngIf="form.controls.stationName.touched && form.controls.stationName.hasError('required')">Station name is required for dealers.</small>
+						</label>
+					</div>
+					<label>
+						Station Address
+						<textarea rows="2" formControlName="stationAddress"></textarea>
+						<small class="error" *ngIf="form.controls.stationAddress.touched && form.controls.stationAddress.hasError('required')">Station address is required for dealers.</small>
+					</label>
+				</div>
+
+				<div class="grid-2">
+					<label>
+						Aadhaar (Last 4, optional)
+						<input type="text" maxlength="4" formControlName="aadhaarLast4" />
+						<small class="error" *ngIf="form.controls.aadhaarLast4.touched && form.controls.aadhaarLast4.hasError('pattern')">Enter exactly 4 digits.</small>
+					</label>
+					<div class="aadhaar-mask">Masked: {{ aadhaarMask }}</div>
+				</div>
+
+				<div class="otp-row">
+					<button class="outline-btn" type="button" (click)="sendOtp()" [disabled]="isSendingOtp || form.controls.email.invalid">
+						{{ isSendingOtp ? 'Sending OTP...' : 'Send Email OTP' }}
+					</button>
+					<label>
+						Enter OTP
+						<input type="text" formControlName="otp" maxlength="6" />
+						<small class="error" *ngIf="form.controls.otp.touched && form.controls.otp.hasError('required')">OTP is required.</small>
+						<small class="error" *ngIf="form.controls.otp.touched && form.controls.otp.hasError('pattern')">OTP must be 6 digits.</small>
+					</label>
+					<button class="outline-btn" type="button" (click)="verifyOtp()" [disabled]="isVerifyingOtp || !otpSent">
+						{{ isVerifyingOtp ? 'Verifying...' : 'Verify OTP' }}
+					</button>
+				</div>
+				<small *ngIf="!otpSent">OTP will be sent to your registered email address.</small>
+				<small *ngIf="otpSent && !otpVerified">OTP sent to email. Please verify before creating account.</small>
+				<small class="ok" *ngIf="otpSent && otpVerified">Email OTP verified.</small>
+
+				<label class="checkbox-row">
+					<input type="checkbox" formControlName="termsAccepted" />
+					I agree to Terms and Conditions
+				</label>
+				<small class="error" *ngIf="form.controls.termsAccepted.touched && form.controls.termsAccepted.hasError('required')">You must accept terms and conditions.</small>
+
+				<div class="error-banner" *ngIf="submitError">{{ submitError }}</div>
+				<div class="ok-banner" *ngIf="submitSuccess">{{ submitSuccess }}</div>
+
+				<button class="primary-btn" type="submit" [disabled]="isSubmitting || isVerifyingOtp || isSendingOtp">
+					{{ isSubmitting ? 'Creating account...' : 'Create account' }}
+				</button>
+			</form>
+
+			<footer class="register-footer">
+				<span>Already have an account? <a routerLink="/auth/login">Login</a></span>
+			</footer>
+		</div>
+	</div>
+</section>

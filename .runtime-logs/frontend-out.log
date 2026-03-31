@@ -1,0 +1,50 @@
+
+> fuel-management-web@0.0.0 start
+> ng serve
+
+Initial chunk files | Names           |  Raw size
+polyfills.js        | polyfills       |  88.09 kB | 
+main.js             | main            |  26.07 kB | 
+styles.css          | styles          |  14.42 kB | 
+chunk-H6JSD3PO.js   | -               |   3.64 kB | 
+chunk-4E2JY3TT.js   | -               | 754 bytes | 
+
+                    | Initial total   | 132.95 kB
+
+Lazy chunk files    | Names           |  Raw size
+chunk-GC5VH2Z2.js   | auth-module     |  70.76 kB | 
+chunk-CL3LMLTH.js   | admin-module    |  53.65 kB | 
+chunk-QG6MMCBL.js   | dealer-module   |  45.34 kB | 
+chunk-HSKHAJNF.js   | customer-module |  42.87 kB | 
+chunk-ZZAH55WK.js   | -               |  14.12 kB | 
+chunk-4VEGL66L.js   | -               |  13.13 kB | 
+
+Application bundle generation complete. [22.448 seconds]
+
+Watch mode enabled. Watching for file changes...
+  ➜  Local:   http://localhost:4200/
+  ➜  press h + enter to show help
+Application bundle generation failed. [5.488 seconds]
+
+Application bundle generation failed. [1.251 seconds]
+
+Application bundle generation failed. [3.272 seconds]
+
+Initial chunk files | Names           |  Raw size
+polyfills.js        | polyfills       |  88.09 kB | 
+chunk-YRV65LWH.js   | -               |  44.31 kB | 
+main.js             | main            |  26.04 kB | 
+styles.css          | styles          |  14.42 kB | 
+
+                    | Initial total   | 172.86 kB
+
+Lazy chunk files    | Names           |  Raw size
+chunk-WIVZR5KM.js   | auth-module     |  70.70 kB | 
+chunk-D2AEG7N5.js   | admin-module    |  53.62 kB | 
+chunk-XGFV3XXD.js   | dealer-module   |  45.31 kB | 
+chunk-P24TFEHP.js   | customer-module |  42.84 kB | 
+chunk-UDXAVRZJ.js   | -               |  14.12 kB | 
+
+Application bundle generation complete. [4.615 seconds]
+
+Page reload sent to client(s).

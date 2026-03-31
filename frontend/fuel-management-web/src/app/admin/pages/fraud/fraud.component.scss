@@ -1,0 +1,86 @@
+.page-wrap {
+	display: grid;
+	gap: 1rem;
+}
+
+.page-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 0.8rem;
+}
+
+.grid-two {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	gap: 1rem;
+}
+
+.card {
+	background: #ffffff;
+	border: 1px solid var(--border-color);
+	border-radius: 16px;
+	padding: 1rem;
+	box-shadow: var(--card-shadow);
+}
+
+.table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.table th,
+.table td {
+	text-align: left;
+	border-bottom: 1px solid var(--border-color);
+	padding: 0.45rem;
+}
+
+.badge {
+	display: inline-block;
+	border-radius: 999px;
+	padding: 0.2rem 0.45rem;
+	font-size: 0.74rem;
+	font-weight: 700;
+}
+
+.high {
+	background: #ffece6;
+	color: #c14523;
+}
+
+.medium {
+	background: #fff7e7;
+	color: #ba7700;
+}
+
+.low {
+	background: #fffbe9;
+	color: #8d8400;
+}
+
+.action-row {
+	display: grid;
+	gap: 0.15rem;
+}
+
+.text-btn {
+	border: none;
+	background: none;
+	color: var(--primary-color);
+	cursor: pointer;
+	text-align: left;
+	padding: 0;
+}
+
+@media (max-width: 1200px) {
+	.grid-two {
+		grid-template-columns: 1fr;
+	}
+
+	.table {
+		display: block;
+		overflow-x: auto;
+	}
+}

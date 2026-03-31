@@ -1,0 +1,10 @@
+<div class="ticker-wrap">
+	<div class="ticker-row" *ngFor="let item of prices">
+		<span class="fuel">{{ item.fuelType }}</span>
+		<span class="price">{{ item.price | number: '1.2-2' }}</span>
+		<span class="delta" [class.up]="item.delta > 0" [class.down]="item.delta < 0">
+			{{ item.delta > 0 ? '+' : '' }}{{ item.delta | number: '1.2-2' }}
+		</span>
+	</div>
+	<div class="updated">Updated {{ now | date: 'short' }}</div>
+</div>

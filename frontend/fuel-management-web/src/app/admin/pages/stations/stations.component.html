@@ -1,0 +1,49 @@
+<section class="page-wrap">
+	<header class="page-header">
+		<h1>Station Management</h1>
+		<div class="actions">
+			<button class="primary-btn" type="button">Add Station</button>
+			<button class="outline-btn" type="button">Station Map View</button>
+		</div>
+	</header>
+
+	<article class="card">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Code</th>
+					<th>Name</th>
+					<th>City</th>
+					<th>Dealer</th>
+					<th>Active Pumps</th>
+					<th>Stock Health</th>
+					<th>Status</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let station of stations">
+					<td>{{ station.code }}</td>
+					<td>{{ station.name }}</td>
+					<td>{{ station.city }}</td>
+					<td>{{ station.dealer }}</td>
+					<td>{{ station.activePumps }}</td>
+					<td>{{ station.stockHealth }}</td>
+					<td>{{ station.active ? 'Active' : 'Inactive' }}</td>
+					<td class="action-row">
+						<button class="text-btn" type="button">View</button>
+						<button class="text-btn" type="button">Edit</button>
+						<button class="text-btn" type="button" (click)="toggleStation(station)">
+							{{ station.active ? 'Deactivate' : 'Activate' }}
+						</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</article>
+
+	<article class="card">
+		<h2>All Stations Map</h2>
+		<app-station-map></app-station-map>
+	</article>
+</section>

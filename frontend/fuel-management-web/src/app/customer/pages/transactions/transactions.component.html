@@ -1,0 +1,78 @@
+<section class="page-wrap">
+	<header class="page-header">
+		<h1>Transaction History</h1>
+		<div class="export-actions">
+			<button class="outline-btn" type="button">Export CSV</button>
+			<button class="outline-btn" type="button">Export Excel</button>
+		</div>
+	</header>
+
+	<article class="card filter-grid">
+		<label>
+			Fuel Type
+			<select [(ngModel)]="filters.fuelType">
+				<option value="">All</option>
+				<option value="Petrol">Petrol</option>
+				<option value="Diesel">Diesel</option>
+				<option value="CNG">CNG</option>
+				<option value="Premium Petrol">Premium Petrol</option>
+			</select>
+		</label>
+
+		<label>
+			Station
+			<select [(ngModel)]="filters.station">
+				<option value="">All</option>
+				<option value="MG Road Fuel Hub">MG Road Fuel Hub</option>
+				<option value="HSR Sector 2">HSR Sector 2</option>
+				<option value="Indiranagar 100ft">Indiranagar 100ft</option>
+			</select>
+		</label>
+
+		<label>
+			Sort By
+			<select [(ngModel)]="filters.sortBy">
+				<option value="dateDesc">Date (DESC)</option>
+				<option value="amount">Amount</option>
+			</select>
+		</label>
+	</article>
+
+	<article class="card">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Date</th>
+					<th>Station</th>
+					<th>Fuel</th>
+					<th>Quantity</th>
+					<th>Amount</th>
+					<th>Payment</th>
+					<th>Receipt</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let row of pageRows">
+					<td>{{ row.date }}</td>
+					<td>{{ row.station }}</td>
+					<td>{{ row.fuelType }}</td>
+					<td>{{ row.quantity }}</td>
+					<td>{{ row.amount | currency: 'INR' : 'symbol' : '1.0-0' }}</td>
+					<td>{{ row.paymentMethod }}</td>
+					<td><button class="text-btn" type="button">PDF</button></td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="7">Total spent in selected range: {{ totalSpent | currency: 'INR' : 'symbol' : '1.0-0' }}</td>
+				</tr>
+			</tfoot>
+		</table>
+
+		<div class="pager">
+			<button class="outline-btn" type="button" (click)="prevPage()">Previous</button>
+			<span>Page {{ page }} / {{ totalPages }}</span>
+			<button class="outline-btn" type="button" (click)="nextPage()">Next</button>
+		</div>
+	</article>
+</section>

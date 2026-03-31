@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FuelManagement.Sales.API</name>
+    </assembly>
+    <members>
+        <member name="M:FuelManagement.Sales.API.Controllers.TransactionsController.Create(FuelManagement.Sales.API.Controllers.CreateTransactionRequest)">
+            <summary>Record a new fuel sale transaction</summary>
+        </member>
+        <member name="M:FuelManagement.Sales.API.Controllers.TransactionsController.GetAll(System.Nullable{System.Guid},System.String,System.String,System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.Int32,System.Int32)">
+            <summary>Get all transactions with filtering</summary>
+        </member>
+        <member name="M:FuelManagement.Sales.API.Controllers.TransactionsController.List(System.Nullable{System.Guid},System.String,System.String,System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.Int32,System.Int32)">
+            <summary>Compatibility alias for list-style clients.</summary>
+        </member>
+        <member name="M:FuelManagement.Sales.API.Controllers.TransactionsController.Get(System.Guid)">
+            <summary>Get transaction by ID</summary>
+        </member>
+        <member name="M:FuelManagement.Sales.API.Controllers.TransactionsController.ByStation(System.Guid,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>Get transactions for a specific station</summary>
+        </member>
+        <member name="M:FuelManagement.Sales.API.Controllers.TransactionsController.Summary(System.Nullable{System.Guid},System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>Get sales summary (total amount, litres) for a station/date range</summary>
+        </member>
+        <member name="M:FuelManagement.Sales.API.Controllers.PumpsController.GetAll(System.Nullable{System.Guid})">
+            <summary>Get all pumps with optional station filter</summary>
+        </member>
+        <member name="M:FuelManagement.Sales.API.Controllers.PumpsController.Create(FuelManagement.Sales.API.Controllers.CreatePumpRequest)">
+            <summary>Add a new pump (Admin only)</summary>
+        </member>
+        <member name="M:FuelManagement.Sales.API.Controllers.PumpsController.Update(System.Guid,FuelManagement.Sales.API.Controllers.UpdatePumpRequest)">
+            <summary>Update pump status (Admin/Dealer)</summary>
+        </member>
+        <member name="T:FuelManagement.Sales.API.Migrations.InitialCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:FuelManagement.Sales.API.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FuelManagement.Sales.API.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FuelManagement.Sales.API.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Program">
+            <summary>
+            Auto-generated public partial Program class for top-level statement apps.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FuelManagement.Identity.API</name>
+    </assembly>
+    <members>
+        <member name="M:FuelManagement.Identity.API.Controllers.AuthController.SendEmailOtp(FuelManagement.Identity.API.DTOs.SendEmailOtpRequest,System.Threading.CancellationToken)">
+            <summary>Send OTP to email for Register/Login flows</summary>
+        </member>
+        <member name="M:FuelManagement.Identity.API.Controllers.AuthController.VerifyEmailOtp(FuelManagement.Identity.API.DTOs.VerifyEmailOtpRequest,System.Threading.CancellationToken)">
+            <summary>Verify OTP sent to email</summary>
+        </member>
+        <member name="M:FuelManagement.Identity.API.Controllers.AuthController.Register(FuelManagement.Identity.API.DTOs.RegisterRequest)">
+            <summary>Register a new user</summary>
+        </member>
+        <member name="M:FuelManagement.Identity.API.Controllers.AuthController.Login(FuelManagement.Identity.API.DTOs.LoginRequest)">
+            <summary>Login and obtain JWT tokens</summary>
+        </member>
+        <member name="M:FuelManagement.Identity.API.Controllers.AuthController.LoginWithOtp(FuelManagement.Identity.API.DTOs.LoginWithOtpRequest,System.Threading.CancellationToken)">
+            <summary>Login using email OTP</summary>
+        </member>
+        <member name="M:FuelManagement.Identity.API.Controllers.AuthController.Refresh">
+            <summary>Refresh the access token using the refresh token cookie</summary>
+        </member>
+        <member name="M:FuelManagement.Identity.API.Controllers.AuthController.Logout">
+            <summary>Logout and revoke the refresh token</summary>
+        </member>
+        <member name="M:FuelManagement.Identity.API.Controllers.UsersController.GetAll(System.String,System.Int32,System.Int32)">
+            <summary>Get all users (Admin only)</summary>
+        </member>
+        <member name="M:FuelManagement.Identity.API.Controllers.UsersController.Get(System.Guid)">
+            <summary>Get user by ID</summary>
+        </member>
+        <member name="M:FuelManagement.Identity.API.Controllers.UsersController.Update(System.Guid,FuelManagement.Identity.API.DTOs.UpdateUserRequest)">
+            <summary>Update user profile</summary>
+        </member>
+        <member name="M:FuelManagement.Identity.API.Controllers.UsersController.Deactivate(System.Guid)">
+            <summary>Deactivate a user (Admin only)</summary>
+        </member>
+        <member name="M:FuelManagement.Identity.API.Controllers.UsersController.ChangeRole(System.Guid,FuelManagement.Identity.API.DTOs.ChangeRoleRequest)">
+            <summary>Change user role (Admin only)</summary>
+        </member>
+        <member name="T:FuelManagement.Identity.API.Migrations.InitialCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:FuelManagement.Identity.API.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FuelManagement.Identity.API.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FuelManagement.Identity.API.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

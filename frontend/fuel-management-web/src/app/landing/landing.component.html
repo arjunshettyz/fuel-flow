@@ -1,0 +1,76 @@
+<main class="landing">
+  <header class="landing-nav">
+    <a class="brand" routerLink="/">
+      <span class="brand-mark" aria-hidden="true">FM</span>
+      <span class="brand-text">Fuel<span>Flow</span></span>
+    </a>
+
+    <nav class="nav-actions" aria-label="Primary navigation">
+      <a class="outline-btn" routerLink="/auth/login">Login</a>
+      <a class="primary-btn" routerLink="/auth/register">Sign Up</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">Smart Fuel Operations Platform</p>
+      <h1>Power your stations with precision, speed, and complete visibility.</h1>
+      <p class="lead">
+        FuelFlow gives admins, dealers, and customers one connected experience for fuel pricing, inventory,
+        fraud detection, and transaction trust.
+      </p>
+
+      <div class="hero-actions">
+        <a class="primary-btn" routerLink="/auth/register">Launch Your Workspace</a>
+        <a class="outline-btn" routerLink="/auth/login">I Already Have an Account</a>
+      </div>
+
+      <ul class="trust-strip">
+        <li>Live inventory intelligence</li>
+        <li>Role-based dashboards</li>
+        <li>Real-time fraud protection</li>
+      </ul>
+    </div>
+
+    <aside class="hero-panel">
+      <p class="panel-title">Network Pulse</p>
+      <div class="pulse-grid">
+        <article *ngFor="let stat of stats" class="pulse-card">
+          <strong>{{ stat.value }}</strong>
+          <span>{{ stat.label }}</span>
+        </article>
+      </div>
+      <div class="panel-callout">
+        <p>Next best action</p>
+        <strong>Update diesel pricing for 6 high-demand stations.</strong>
+      </div>
+    </aside>
+  </div>
+
+  <div class="feature-grid">
+    <article *ngFor="let feature of features" class="feature-card">
+      <span>{{ feature.tag }}</span>
+      <h2>{{ feature.title }}</h2>
+      <p>{{ feature.description }}</p>
+    </article>
+  </div>
+
+  <div class="journey">
+    <article *ngFor="let step of steps; index as idx" class="journey-step">
+      <span class="step-index">0{{ idx + 1 }}</span>
+      <h3>{{ step.title }}</h3>
+      <p>{{ step.detail }}</p>
+    </article>
+  </div>
+
+  <div class="cta-band">
+    <div>
+      <p class="eyebrow">Ready to modernize your fuel operations?</p>
+      <h2>Start with secure login and onboarding in minutes.</h2>
+    </div>
+    <div class="cta-actions">
+      <a class="primary-btn" routerLink="/auth/register">Create Account</a>
+      <a class="outline-btn" routerLink="/auth/login">Continue to Login</a>
+    </div>
+  </div>
+</main>

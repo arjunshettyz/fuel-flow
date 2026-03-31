@@ -1,0 +1,33 @@
+.tx-table-wrap {
+	overflow-x: auto;
+	border-radius: 14px;
+	border: 1px solid rgba(198, 219, 236, 0.88);
+	background: rgba(255, 255, 255, 0.46);
+}
+
+.tx-table {
+	width: 100%;
+	border-collapse: separate;
+	border-spacing: 0;
+	font-size: 0.85rem;
+}
+
+.tx-table th,
+.tx-table td {
+	text-align: left;
+	border-bottom: 1px solid rgba(198, 219, 236, 0.86);
+	padding: 0.55rem;
+	white-space: nowrap;
+}
+
+.tx-table th {
+	font-size: 0.75rem;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	opacity: 0.8;
+	background: rgba(10, 44, 65, 0.08);
+}
+
+.tx-table tbody tr:nth-child(even) {
+	background: rgba(255, 255, 255, 0.34);
+}

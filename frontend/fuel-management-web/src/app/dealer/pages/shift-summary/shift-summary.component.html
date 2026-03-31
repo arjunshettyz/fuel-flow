@@ -1,0 +1,19 @@
+<section class="page-wrap">
+	<article class="card">
+		<h1>Current Shift Summary</h1>
+		<div class="stats-grid">
+			<div><strong>{{ totals.litres | number }}</strong><span>Litres Sold</span></div>
+			<div><strong>{{ totals.revenue | currency: 'INR' : 'symbol' : '1.0-0' }}</strong><span>Revenue</span></div>
+			<div><strong>{{ totals.transactions }}</strong><span>Transactions</span></div>
+		</div>
+	</article>
+
+	<article class="card">
+		<h2>Payment Split</h2>
+		<ul class="split-list">
+			<li>UPI: {{ totals.upi }}%</li>
+			<li>Card: {{ totals.card }}%</li>
+			<li>Cash: {{ totals.cash }}%</li>
+		</ul>
+	</article>
+</section>

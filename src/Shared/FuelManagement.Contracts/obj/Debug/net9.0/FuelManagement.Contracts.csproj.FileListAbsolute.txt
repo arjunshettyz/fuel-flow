@@ -1,0 +1,11 @@
+C:\Users\Arjun\Desktop\sprintproj\src\Shared\FuelManagement.Contracts\bin\Debug\net9.0\FuelManagement.Contracts.deps.json
+C:\Users\Arjun\Desktop\sprintproj\src\Shared\FuelManagement.Contracts\bin\Debug\net9.0\FuelManagement.Contracts.dll
+C:\Users\Arjun\Desktop\sprintproj\src\Shared\FuelManagement.Contracts\bin\Debug\net9.0\FuelManagement.Contracts.pdb
+C:\Users\Arjun\Desktop\sprintproj\src\Shared\FuelManagement.Contracts\obj\Debug\net9.0\FuelManagement.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Arjun\Desktop\sprintproj\src\Shared\FuelManagement.Contracts\obj\Debug\net9.0\FuelManagement.Contracts.AssemblyInfoInputs.cache
+C:\Users\Arjun\Desktop\sprintproj\src\Shared\FuelManagement.Contracts\obj\Debug\net9.0\FuelManagement.Contracts.AssemblyInfo.cs
+C:\Users\Arjun\Desktop\sprintproj\src\Shared\FuelManagement.Contracts\obj\Debug\net9.0\FuelManagement.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\Arjun\Desktop\sprintproj\src\Shared\FuelManagement.Contracts\obj\Debug\net9.0\FuelManagement.Contracts.dll
+C:\Users\Arjun\Desktop\sprintproj\src\Shared\FuelManagement.Contracts\obj\Debug\net9.0\refint\FuelManagement.Contracts.dll
+C:\Users\Arjun\Desktop\sprintproj\src\Shared\FuelManagement.Contracts\obj\Debug\net9.0\FuelManagement.Contracts.pdb
+C:\Users\Arjun\Desktop\sprintproj\src\Shared\FuelManagement.Contracts\obj\Debug\net9.0\ref\FuelManagement.Contracts.dll

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FuelManagement.Audit.API</name>
+    </assembly>
+    <members>
+        <member name="M:FuelManagement.Audit.API.Controllers.AuditController.GetLogs(System.String,System.String,System.String,System.String,System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.Int32,System.Int32)">
+            <summary>Query the system-wide audit trail (Admin only)</summary>
+        </member>
+        <member name="M:FuelManagement.Audit.API.Controllers.AuditController.GetEntityHistory(System.String,System.String)">
+            <summary>Get complete audit history for a specific entity</summary>
+        </member>
+        <member name="M:FuelManagement.Audit.API.Controllers.AuditController.Write(FuelManagement.Audit.API.Controllers.WriteAuditRequest)">
+            <summary>Write an audit event (called by other services or via Gateway)</summary>
+        </member>
+        <member name="T:FuelManagement.Audit.API.Models.AuditLog">
+            <summary>Immutable audit log — no updates or deletes allowed</summary>
+        </member>
+        <member name="T:Program">
+            <summary>
+            Auto-generated public partial Program class for top-level statement apps.
+            </summary>
+        </member>
+    </members>
+</doc>

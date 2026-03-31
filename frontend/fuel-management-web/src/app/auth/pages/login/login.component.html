@@ -1,0 +1,84 @@
+<section class="auth-page">
+	<div class="auth-layout">
+		<aside class="auth-showcase">
+			<a class="brand" routerLink="/">
+				<span class="brand-mark" aria-hidden="true">FM</span>
+				<span class="brand-text">Fuel<span>Flow</span></span>
+			</a>
+
+			<p class="eyebrow">Secure Access Layer</p>
+			<h1>Sign in to your intelligent fuel operations workspace.</h1>
+			<p class="showcase-copy">
+				Monitor stations, detect anomalies, and manage pricing from one secure platform built for scale.
+			</p>
+
+			<ul class="showcase-list">
+				<li>Role-based dashboards for admin, dealer, and customer journeys</li>
+				<li>Real-time fraud alerts and transaction transparency</li>
+				<li>Fast OTP-enabled authentication and account recovery</li>
+			</ul>
+
+			<div class="sample-credentials">
+				<strong>Quick Demo Access:</strong>
+				<div class="sample-buttons">
+					<button type="button" (click)="loadSample('admin')">Load Admin</button>
+					<button type="button" (click)="loadSample('customer')">Load Customer</button>
+				</div>
+			</div>
+		</aside>
+
+		<div class="auth-card">
+			<header class="auth-header">
+				<div>
+					<p class="card-kicker">Welcome Back</p>
+					<h2>Login</h2>
+					<p>Use your email or mobile number to continue.</p>
+				</div>
+				<app-language-toggle></app-language-toggle>
+			</header>
+
+			<form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+				<label>
+					Email or Mobile
+					<input type="text" formControlName="identifier" placeholder="name@example.com or 9876543210" />
+				</label>
+				<small class="error" *ngIf="form.controls.identifier.touched && form.controls.identifier.invalid">
+					Enter a valid email address or Indian mobile number.
+				</small>
+
+				<label>
+					Password
+					<div class="password-wrap">
+						<input [type]="showPassword ? 'text' : 'password'" formControlName="password" placeholder="Enter password" />
+						<button type="button" (click)="togglePasswordVisibility()">
+							{{ showPassword ? 'Hide' : 'Show' }}
+						</button>
+					</div>
+				</label>
+				<small class="error" *ngIf="form.controls.password.touched && form.controls.password.invalid">
+					Password must be at least 8 characters.
+				</small>
+
+				<label class="checkbox-row">
+					<input type="checkbox" formControlName="rememberMe" />
+					Remember me
+				</label>
+
+				<div class="error-banner" *ngIf="errorMessage">{{ errorMessage }}</div>
+				<div class="lockout" *ngIf="isLockedOut">
+					Account temporarily locked. Try again in {{ lockoutRemaining }}s.
+				</div>
+
+				<div class="submit-row">
+					<button class="primary-btn" type="submit" [disabled]="isLockedOut">Login</button>
+					<button class="outline-btn" type="button" (click)="loginWithOtp()">Login with OTP</button>
+				</div>
+			</form>
+
+			<footer class="auth-footer">
+				<a routerLink="/auth/forgot-password">Forgot password?</a>
+				<span>New here? <a routerLink="/auth/register">Create account</a></span>
+			</footer>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FuelManagement.Reporting.API</name>
+    </assembly>
+    <members>
+        <member name="M:FuelManagement.Reporting.API.Controllers.ReportsController.Dashboard">
+            <summary>Get dashboard KPIs summary</summary>
+        </member>
+        <member name="M:FuelManagement.Reporting.API.Controllers.ReportsController.GetAll(System.String,System.String)">
+            <summary>List all reports</summary>
+        </member>
+        <member name="M:FuelManagement.Reporting.API.Controllers.ReportsController.Generate(FuelManagement.Reporting.API.Controllers.GenerateReportRequest)">
+            <summary>Request report generation (PDF or Excel)</summary>
+        </member>
+        <member name="M:FuelManagement.Reporting.API.Controllers.ReportsController.Download(System.Guid)">
+            <summary>Download a generated report file</summary>
+        </member>
+        <member name="T:FuelManagement.Reporting.API.Migrations.InitialCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:FuelManagement.Reporting.API.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FuelManagement.Reporting.API.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FuelManagement.Reporting.API.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>
