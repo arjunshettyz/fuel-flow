@@ -5,6 +5,7 @@ import { NearbyStationsComponent } from './pages/nearby-stations/nearby-stations
 import { PricesComponent } from './pages/prices/prices.component';
 import { ReceiptViewerComponent } from './pages/receipt-viewer/receipt-viewer.component';
 import { TransactionsComponent } from './pages/transactions/transactions.component';
+import { OrdersComponent } from './pages/orders/orders.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,10 @@ const routes: Routes = [
   {
     path: 'transactions',
     component: TransactionsComponent,
+  },
+  {
+    path: 'orders',
+    component: OrdersComponent,
   },
   {
     path: 'receipts',

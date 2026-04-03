@@ -20,6 +20,7 @@ export class OtpVerifyComponent {
   readonly form = this.fb.nonNullable.group({
     email: ['', [Validators.required, Validators.email]],
     otp: ['', [Validators.required, Validators.pattern(/^\d{6}$/)]],
+    role: ['Customer', [Validators.required]],
   });
 
   constructor(
@@ -30,7 +31,8 @@ export class OtpVerifyComponent {
   ) {
     const identifier = route.snapshot.queryParamMap.get('identifier') ?? route.snapshot.queryParamMap.get('email') ?? '';
     const email = identifier.includes('@') ? identifier.trim().toLowerCase() : '';
-    this.form.patchValue({ email });
+    const role = route.snapshot.queryParamMap.get('role') ?? 'Customer';
+    this.form.patchValue({ email, role });
   }
 
   sendOtp(): void {
@@ -75,7 +77,7 @@ export class OtpVerifyComponent {
       return;
     }
 
-    const { email, otp } = this.form.getRawValue();
+    const { email, otp, role } = this.form.getRawValue();
     this.isSubmitting = true;
     this.message = '';
     this.infoMessage = '';
@@ -92,6 +94,12 @@ export class OtpVerifyComponent {
       .subscribe((response) => {
         this.isSubmitting = false;
         if (!response) {
+          return;
+        }
+
+        if (response.user.role.toLowerCase() !== role.toLowerCase()) {
+          this.auth.clearSession();
+          this.message = `This account is registered as ${response.user.role}. Please login as ${response.user.role}.`;
           return;
         }
 

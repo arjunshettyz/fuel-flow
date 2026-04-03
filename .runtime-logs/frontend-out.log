@@ -2,49 +2,560 @@
 > fuel-management-web@0.0.0 start
 > ng serve
 
-Initial chunk files | Names           |  Raw size
-polyfills.js        | polyfills       |  88.09 kB | 
-main.js             | main            |  26.07 kB | 
-styles.css          | styles          |  14.42 kB | 
-chunk-H6JSD3PO.js   | -               |   3.64 kB | 
-chunk-4E2JY3TT.js   | -               | 754 bytes | 
-
-                    | Initial total   | 132.95 kB
-
-Lazy chunk files    | Names           |  Raw size
-chunk-GC5VH2Z2.js   | auth-module     |  70.76 kB | 
-chunk-CL3LMLTH.js   | admin-module    |  53.65 kB | 
-chunk-QG6MMCBL.js   | dealer-module   |  45.34 kB | 
-chunk-HSKHAJNF.js   | customer-module |  42.87 kB | 
-chunk-ZZAH55WK.js   | -               |  14.12 kB | 
-chunk-4VEGL66L.js   | -               |  13.13 kB | 
-
-Application bundle generation complete. [22.448 seconds]
+Application bundle generation failed. [12.116 seconds]
 
 Watch mode enabled. Watching for file changes...
+Initial chunk files | Names           |  Raw size
+polyfills.js        | polyfills       |  88.09 kB | 
+chunk-PQV5GF5J.js   | -               |  50.82 kB | 
+main.js             | main            |  37.15 kB | 
+styles.css          | styles          |  21.95 kB | 
+
+                    | Initial total   | 198.01 kB
+
+Lazy chunk files    | Names           |  Raw size
+chunk-SMNVBFLA.js   | auth-module     |  70.76 kB | 
+chunk-M65GND77.js   | admin-module    |  53.66 kB | 
+chunk-5Z4LZLDL.js   | dealer-module   |  45.31 kB | 
+chunk-EPWXFIAX.js   | customer-module |  42.85 kB | 
+chunk-YHSYUX65.js   | -               |  14.12 kB | 
+
+Application bundle generation complete. [5.032 seconds]
+
   ➜  Local:   http://localhost:4200/
   ➜  press h + enter to show help
-Application bundle generation failed. [5.488 seconds]
 
-Application bundle generation failed. [1.251 seconds]
+No output file changes.
 
-Application bundle generation failed. [3.272 seconds]
+Application bundle generation complete. [1.683 seconds]
+
+Initial chunk files | Names           | Raw size
+chunk-X6OQC7YJ.js   | -               | 50.82 kB | 
+main.js             | main            | 37.15 kB | 
+
+Lazy chunk files    | Names           | Raw size
+chunk-KJWPA6DS.js   | auth-module     | 70.76 kB | 
+chunk-6GFZJSIR.js   | admin-module    | 53.66 kB | 
+chunk-ETFMSH7G.js   | dealer-module   | 45.31 kB | 
+chunk-Z3DOTHNV.js   | customer-module | 42.85 kB | 
+chunk-SFUFJVWB.js   | -               | 14.12 kB | 
+
+Application bundle generation complete. [3.120 seconds]
+
+Page reload sent to client(s).
+
+No output file changes.
+
+Application bundle generation complete. [0.944 seconds]
+
+Initial chunk files | Names  | Raw size
+styles.css          | styles | 21.94 kB | 
+
+Application bundle generation complete. [11.092 seconds]
+
+HMR update sent to client(s).
+
+No output file changes.
+
+Application bundle generation complete. [0.912 seconds]
+
+Initial chunk files | Names           | Raw size
+chunk-X7NEHVDJ.js   | -               | 50.94 kB | 
+main.js             | main            | 37.15 kB | 
+
+Lazy chunk files    | Names           | Raw size
+chunk-ABUNXUPO.js   | auth-module     | 70.76 kB | 
+chunk-5IVB2TXW.js   | admin-module    | 53.66 kB | 
+chunk-LP47CJZQ.js   | dealer-module   | 45.31 kB | 
+chunk-LB3PESO6.js   | customer-module | 42.85 kB | 
+chunk-LJSTWTSU.js   | -               | 14.12 kB | 
+
+Application bundle generation complete. [55.170 seconds]
+
+Page reload sent to client(s).
+Initial chunk files | Names           | Raw size
+chunk-UO7QONV7.js   | -               | 51.07 kB | 
+main.js             | main            | 37.15 kB | 
+
+Lazy chunk files    | Names           | Raw size
+chunk-CXHF42T5.js   | auth-module     | 70.76 kB | 
+chunk-7LWLTLWZ.js   | admin-module    | 53.66 kB | 
+chunk-AWCLTPH5.js   | dealer-module   | 45.31 kB | 
+chunk-NEOJOZNC.js   | customer-module | 42.85 kB | 
+chunk-TMT2RZZO.js   | -               | 14.12 kB | 
+
+Application bundle generation complete. [31.388 seconds]
+
+Page reload sent to client(s).
+
+No output file changes.
+
+Application bundle generation complete. [19.684 seconds]
+
+Initial chunk files | Names           | Raw size
+chunk-AU7KW6ML.js   | -               | 51.06 kB | 
+main.js             | main            | 37.15 kB | 
+
+Lazy chunk files    | Names           | Raw size
+chunk-R5BWD3TM.js   | auth-module     | 70.76 kB | 
+chunk-6UJZ7TUV.js   | admin-module    | 53.66 kB | 
+chunk-53E3MMVC.js   | dealer-module   | 45.31 kB | 
+chunk-BEXYPVS4.js   | customer-module | 42.85 kB | 
+chunk-PZI2S3DU.js   | -               | 14.12 kB | 
+
+Application bundle generation complete. [52.843 seconds]
+
+Page reload sent to client(s).
+
+No output file changes.
+
+Application bundle generation complete. [0.874 seconds]
+
+Initial chunk files | Names       | Raw size
+main.js             | main        | 37.15 kB | 
+
+Lazy chunk files    | Names       | Raw size
+chunk-GMS34JIQ.js   | auth-module | 71.36 kB | 
+
+Application bundle generation complete. [5.435 seconds]
+
+Page reload sent to client(s).
+
+No output file changes.
+
+Application bundle generation complete. [3.958 seconds]
+
+Initial chunk files | Names       | Raw size
+main.js             | main        | 37.15 kB | 
+
+Lazy chunk files    | Names       | Raw size
+chunk-TRNOOJXC.js   | auth-module | 72.68 kB | 
+
+Application bundle generation complete. [0.856 seconds]
+
+Page reload sent to client(s).
+Initial chunk files | Names       | Raw size
+main.js             | main        | 37.15 kB | 
+
+Lazy chunk files    | Names       | Raw size
+chunk-B2AOJEH5.js   | auth-module | 73.61 kB | 
+
+Application bundle generation complete. [1.177 seconds]
+
+Page reload sent to client(s).
+
+No output file changes.
+
+Application bundle generation complete. [0.973 seconds]
+
+Initial chunk files | Names       | Raw size
+main.js             | main        | 37.15 kB | 
+
+Lazy chunk files    | Names       | Raw size
+chunk-PBAFG7DQ.js   | auth-module | 74.12 kB | 
+
+Application bundle generation complete. [0.941 seconds]
+
+Page reload sent to client(s).
+Initial chunk files | Names       | Raw size
+main.js             | main        | 37.15 kB | 
+
+Lazy chunk files    | Names       | Raw size
+chunk-TKSUUEWP.js   | auth-module | 74.11 kB | 
+
+Application bundle generation complete. [1.689 seconds]
+
+Page reload sent to client(s).
+
+No output file changes.
+
+Application bundle generation complete. [1.073 seconds]
+
+Initial chunk files | Names       | Raw size
+main.js             | main        | 37.15 kB | 
+
+Lazy chunk files    | Names       | Raw size
+chunk-ZWSXC7HV.js   | auth-module | 74.48 kB | 
+
+Application bundle generation complete. [2.721 seconds]
+
+Page reload sent to client(s).
+Initial chunk files | Names       | Raw size
+main.js             | main        | 37.15 kB | 
+
+Lazy chunk files    | Names       | Raw size
+chunk-ES2IM567.js   | auth-module | 76.01 kB | 
+
+Application bundle generation complete. [2.260 seconds]
+
+Page reload sent to client(s).
+Initial chunk files | Names       | Raw size
+main.js             | main        | 37.15 kB | 
+
+Lazy chunk files    | Names       | Raw size
+chunk-ATUBRYT2.js   | auth-module | 76.93 kB | 
+
+Application bundle generation complete. [10.171 seconds]
+
+Page reload sent to client(s).
+
+No output file changes.
+
+Application bundle generation complete. [0.926 seconds]
+
+Application bundle generation failed. [4.172 seconds]
 
 Initial chunk files | Names           |  Raw size
 polyfills.js        | polyfills       |  88.09 kB | 
-chunk-YRV65LWH.js   | -               |  44.31 kB | 
-main.js             | main            |  26.04 kB | 
-styles.css          | styles          |  14.42 kB | 
+chunk-AU7KW6ML.js   | -               |  51.06 kB | 
+main.js             | main            |  37.15 kB | 
+styles.css          | styles          |  21.94 kB | 
 
-                    | Initial total   | 172.86 kB
+                    | Initial total   | 198.23 kB
 
 Lazy chunk files    | Names           |  Raw size
-chunk-WIVZR5KM.js   | auth-module     |  70.70 kB | 
-chunk-D2AEG7N5.js   | admin-module    |  53.62 kB | 
-chunk-XGFV3XXD.js   | dealer-module   |  45.31 kB | 
-chunk-P24TFEHP.js   | customer-module |  42.84 kB | 
-chunk-UDXAVRZJ.js   | -               |  14.12 kB | 
+chunk-ATUBRYT2.js   | auth-module     |  76.93 kB | 
+chunk-OIBX5GHV.js   | customer-module |  66.54 kB | 
+chunk-6UJZ7TUV.js   | admin-module    |  53.66 kB | 
+chunk-53E3MMVC.js   | dealer-module   |  45.31 kB | 
+chunk-PZI2S3DU.js   | -               |  14.12 kB | 
 
-Application bundle generation complete. [4.615 seconds]
+Application bundle generation complete. [1.586 seconds]
 
 Page reload sent to client(s).
+
+No output file changes.
+
+Application bundle generation complete. [5.399 seconds]
+
+Initial chunk files | Names           | Raw size
+chunk-WHQ5OQ5Y.js   | -               | 51.11 kB | 
+main.js             | main            | 37.15 kB | 
+
+Lazy chunk files    | Names           | Raw size
+chunk-2U5VTTNN.js   | auth-module     | 76.93 kB | 
+chunk-PVISPXSM.js   | customer-module | 66.54 kB | 
+chunk-DEAMKLFZ.js   | admin-module    | 53.66 kB | 
+chunk-A3IUTFVH.js   | dealer-module   | 45.31 kB | 
+chunk-OLQTEQML.js   | -               | 14.12 kB | 
+
+Application bundle generation complete. [1.399 seconds]
+
+Page reload sent to client(s).
+
+No output file changes.
+
+Application bundle generation complete. [0.995 seconds]
+
+Application bundle generation failed. [1.123 seconds]
+
+Application bundle generation failed. [0.656 seconds]
+
+Application bundle generation failed. [0.699 seconds]
+
+Application bundle generation failed. [0.730 seconds]
+
+Application bundle generation failed. [4.266 seconds]
+
+Application bundle generation failed. [4.358 seconds]
+
+Application bundle generation failed. [0.728 seconds]
+
+Application bundle generation failed. [0.767 seconds]
+
+Application bundle generation failed. [0.965 seconds]
+
+Initial chunk files | Names           |  Raw size
+polyfills.js        | polyfills       |  88.09 kB | 
+chunk-SF24Z5BD.js   | -               |  74.98 kB | 
+main.js             | main            |  37.22 kB | 
+styles.css          | styles          |  21.94 kB | 
+
+                    | Initial total   | 222.22 kB
+
+Lazy chunk files    | Names           |  Raw size
+chunk-FMXT7R5Q.js   | auth-module     |  76.93 kB | 
+chunk-ZEJZZV4F.js   | customer-module |  68.91 kB | 
+chunk-6DSPJVRF.js   | admin-module    |  53.66 kB | 
+chunk-Y2CFKV2C.js   | dealer-module   |  45.85 kB | 
+chunk-S3BP5DCF.js   | -               |  14.12 kB | 
+
+Application bundle generation complete. [10.733 seconds]
+
+Page reload sent to client(s).
+Initial chunk files | Names | Raw size
+main.js             | main  | 37.23 kB | 
+
+Application bundle generation complete. [1.090 seconds]
+
+Page reload sent to client(s).
+
+No output file changes.
+
+Application bundle generation complete. [0.598 seconds]
+
+Initial chunk files | Names | Raw size
+main.js             | main  | 37.24 kB | 
+
+Application bundle generation complete. [0.702 seconds]
+
+Page reload sent to client(s).
+
+No output file changes.
+
+Application bundle generation complete. [1.139 seconds]
+
+Initial chunk files | Names           | Raw size
+main.js             | main            | 37.24 kB | 
+
+Lazy chunk files    | Names           | Raw size
+chunk-WOWPV4GG.js   | customer-module | 69.07 kB | 
+
+Application bundle generation complete. [3.898 seconds]
+
+Page reload sent to client(s).
+
+No output file changes.
+
+Application bundle generation complete. [0.873 seconds]
+
+Initial chunk files | Names           | Raw size
+chunk-LQT5DLIN.js   | -               | 74.99 kB | 
+main.js             | main            | 37.24 kB | 
+
+Lazy chunk files    | Names           | Raw size
+chunk-WP4NKG6Y.js   | auth-module     | 76.93 kB | 
+chunk-E4WXS6C4.js   | customer-module | 69.07 kB | 
+chunk-E2P4D2WI.js   | admin-module    | 53.66 kB | 
+chunk-4NW3JTXZ.js   | dealer-module   | 45.85 kB | 
+chunk-GEDLD7OT.js   | -               | 14.12 kB | 
+
+Application bundle generation complete. [12.614 seconds]
+
+Page reload sent to client(s).
+
+No output file changes.
+
+Application bundle generation complete. [0.389 seconds]
+
+
+No output file changes.
+
+Application bundle generation complete. [0.690 seconds]
+
+Initial chunk files | Names           | Raw size
+chunk-GVSJVAQO.js   | -               | 75.03 kB | 
+main.js             | main            | 37.24 kB | 
+
+Lazy chunk files    | Names           | Raw size
+chunk-UK5MURVU.js   | auth-module     | 76.93 kB | 
+chunk-F62LE342.js   | customer-module | 69.07 kB | 
+chunk-CQGG6WH5.js   | admin-module    | 53.66 kB | 
+chunk-4WUMJH7S.js   | dealer-module   | 45.85 kB | 
+chunk-FZQKY6XY.js   | -               | 14.12 kB | 
+
+Application bundle generation complete. [0.619 seconds]
+
+Page reload sent to client(s).
+
+No output file changes.
+
+Application bundle generation complete. [0.315 seconds]
+
+Application bundle generation failed. [9.047 seconds]
+
+Initial chunk files | Names           |  Raw size
+polyfills.js        | polyfills       |  88.09 kB | 
+chunk-GVSJVAQO.js   | -               |  75.03 kB | 
+main.js             | main            |  41.55 kB | 
+styles.css          | styles          |  21.94 kB | 
+
+                    | Initial total   | 226.61 kB
+
+Lazy chunk files    | Names           |  Raw size
+chunk-UK5MURVU.js   | auth-module     |  76.93 kB | 
+chunk-F62LE342.js   | customer-module |  69.07 kB | 
+chunk-CQGG6WH5.js   | admin-module    |  53.66 kB | 
+chunk-4WUMJH7S.js   | dealer-module   |  45.85 kB | 
+chunk-FZQKY6XY.js   | -               |  14.12 kB | 
+
+Application bundle generation complete. [0.886 seconds]
+
+Page reload sent to client(s).
+Initial chunk files | Names | Raw size
+main.js             | main  | 53.58 kB | 
+
+Application bundle generation complete. [1.618 seconds]
+
+Page reload sent to client(s).
+
+No output file changes.
+
+Application bundle generation complete. [1.033 seconds]
+
+Initial chunk files | Names  | Raw size
+styles.css          | styles | 28.24 kB | 
+
+Application bundle generation complete. [1.110 seconds]
+
+HMR update sent to client(s).
+
+No output file changes.
+
+Application bundle generation complete. [0.318 seconds]
+
+Initial chunk files | Names  | Raw size
+styles.css          | styles | 28.54 kB | 
+
+Application bundle generation complete. [0.705 seconds]
+
+HMR update sent to client(s).
+
+No output file changes.
+
+Application bundle generation complete. [0.368 seconds]
+
+
+No output file changes.
+
+Application bundle generation complete. [4.276 seconds]
+
+Initial chunk files | Names           | Raw size
+chunk-7ADTQS2M.js   | -               | 76.52 kB | 
+main.js             | main            | 53.58 kB | 
+
+Lazy chunk files    | Names           | Raw size
+chunk-M3SE2SJI.js   | auth-module     | 76.93 kB | 
+chunk-D3JYAQVP.js   | customer-module | 69.07 kB | 
+chunk-23MQEFR3.js   | admin-module    | 53.66 kB | 
+chunk-DF5I3WHV.js   | dealer-module   | 45.85 kB | 
+chunk-YPXZFMZK.js   | -               | 14.12 kB | 
+
+Application bundle generation complete. [41.677 seconds]
+
+Page reload sent to client(s).
+
+No output file changes.
+
+Application bundle generation complete. [0.392 seconds]
+
+Initial chunk files | Names           | Raw size
+chunk-EBG26MTT.js   | -               | 75.85 kB | 
+main.js             | main            | 53.58 kB | 
+
+Lazy chunk files    | Names           | Raw size
+chunk-YM6VZO47.js   | auth-module     | 76.93 kB | 
+chunk-FRCA6ABO.js   | customer-module | 69.07 kB | 
+chunk-PVEWDFFG.js   | admin-module    | 53.66 kB | 
+chunk-AT476OJS.js   | dealer-module   | 45.85 kB | 
+chunk-B3CRJRQN.js   | -               | 14.12 kB | 
+
+Application bundle generation complete. [11.998 seconds]
+
+Page reload sent to client(s).
+
+No output file changes.
+
+Application bundle generation complete. [0.410 seconds]
+
+Initial chunk files | Names           | Raw size
+chunk-PEW5TC7B.js   | -               | 76.49 kB | 
+main.js             | main            | 53.58 kB | 
+
+Lazy chunk files    | Names           | Raw size
+chunk-WWMYWLCC.js   | auth-module     | 76.93 kB | 
+chunk-QNHGOMT2.js   | customer-module | 69.07 kB | 
+chunk-3D3NZ3R7.js   | admin-module    | 53.66 kB | 
+chunk-EDCJLZLG.js   | dealer-module   | 45.85 kB | 
+chunk-G44LGJGT.js   | -               | 14.12 kB | 
+
+Application bundle generation complete. [3.801 seconds]
+
+Page reload sent to client(s).
+Initial chunk files | Names           | Raw size
+chunk-U5TJLWZQ.js   | -               | 76.53 kB | 
+main.js             | main            | 53.58 kB | 
+
+Lazy chunk files    | Names           | Raw size
+chunk-MR2R23B4.js   | auth-module     | 76.93 kB | 
+chunk-ZXU2ZNEO.js   | customer-module | 69.07 kB | 
+chunk-RXNDUPUC.js   | admin-module    | 53.66 kB | 
+chunk-JBWXD7UN.js   | dealer-module   | 45.85 kB | 
+chunk-E2YDOQ4F.js   | -               | 14.12 kB | 
+
+Application bundle generation complete. [1.029 seconds]
+
+Page reload sent to client(s).
+
+No output file changes.
+
+Application bundle generation complete. [0.928 seconds]
+
+Initial chunk files | Names           | Raw size
+chunk-PABVPU36.js   | -               | 76.55 kB | 
+main.js             | main            | 53.58 kB | 
+
+Lazy chunk files    | Names           | Raw size
+chunk-7MGN4IZF.js   | auth-module     | 76.93 kB | 
+chunk-RDVMFS57.js   | customer-module | 69.07 kB | 
+chunk-Y6DWUIRA.js   | admin-module    | 53.66 kB | 
+chunk-VQDDRVGA.js   | dealer-module   | 45.85 kB | 
+chunk-4PGLINWP.js   | -               | 14.12 kB | 
+
+Application bundle generation complete. [4.501 seconds]
+
+Page reload sent to client(s).
+
+No output file changes.
+
+Application bundle generation complete. [12.349 seconds]
+
+Initial chunk files | Names           | Raw size
+chunk-MVN3SM2J.js   | -               | 76.49 kB | 
+main.js             | main            | 53.58 kB | 
+
+Lazy chunk files    | Names           | Raw size
+chunk-7XBOGUCK.js   | auth-module     | 76.93 kB | 
+chunk-MXMZRONZ.js   | customer-module | 69.07 kB | 
+chunk-NFK2IGUD.js   | admin-module    | 53.66 kB | 
+chunk-QDMMAYHX.js   | dealer-module   | 45.85 kB | 
+chunk-H4A52B3M.js   | -               | 14.12 kB | 
+
+Application bundle generation complete. [2.271 seconds]
+
+Page reload sent to client(s).
+
+No output file changes.
+
+Application bundle generation complete. [0.450 seconds]
+
+Initial chunk files | Names           | Raw size
+chunk-SIJWQHKP.js   | -               | 76.53 kB | 
+main.js             | main            | 53.58 kB | 
+
+Lazy chunk files    | Names           | Raw size
+chunk-YPAWTHSY.js   | auth-module     | 76.93 kB | 
+chunk-GENVDUQG.js   | customer-module | 69.07 kB | 
+chunk-HXHKPCHI.js   | admin-module    | 53.66 kB | 
+chunk-2JAU6SXM.js   | dealer-module   | 45.85 kB | 
+chunk-LMNXUREA.js   | -               | 14.12 kB | 
+
+Application bundle generation complete. [2.884 seconds]
+
+Page reload sent to client(s).
+
+No output file changes.
+
+Application bundle generation complete. [2.391 seconds]
+
+Initial chunk files | Names | Raw size
+main.js             | main  | 53.61 kB | 
+
+Application bundle generation complete. [0.576 seconds]
+
+Page reload sent to client(s).
+
+No output file changes.
+
+Application bundle generation complete. [0.593 seconds]
+

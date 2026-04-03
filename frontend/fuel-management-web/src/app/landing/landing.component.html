@@ -1,76 +1,393 @@
-<main class="landing">
-  <header class="landing-nav">
-    <a class="brand" routerLink="/">
-      <span class="brand-mark" aria-hidden="true">FM</span>
-      <span class="brand-text">Fuel<span>Flow</span></span>
-    </a>
-
-    <nav class="nav-actions" aria-label="Primary navigation">
-      <a class="outline-btn" routerLink="/auth/login">Login</a>
-      <a class="primary-btn" routerLink="/auth/register">Sign Up</a>
-    </nav>
-  </header>
-
-  <div class="hero">
-    <div class="hero-copy">
-      <p class="eyebrow">Smart Fuel Operations Platform</p>
-      <h1>Power your stations with precision, speed, and complete visibility.</h1>
-      <p class="lead">
-        FuelFlow gives admins, dealers, and customers one connected experience for fuel pricing, inventory,
-        fraud detection, and transaction trust.
-      </p>
-
-      <div class="hero-actions">
-        <a class="primary-btn" routerLink="/auth/register">Launch Your Workspace</a>
-        <a class="outline-btn" routerLink="/auth/login">I Already Have an Account</a>
+<main class="landing-shell">
+  <section class="hero" id="overview">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="section-tag">FuelFlow Platform</span>
+        <h1>Stop overpaying for fuel. One AI-powered platform, maximum savings.</h1>
+        <p class="lead">
+          FuelFlow combines an AI-powered fuel marketplace with an intelligent ordering system -
+          giving you full visibility, automation, and cost savings.
+        </p>
+        <div class="hero-actions">
+          <a class="primary-btn landing-primary" routerLink="/auth/register">Book a Demo</a>
+          <a class="outline-btn landing-outline" routerLink="/auth/register">Start Saving Now</a>
+        </div>
+        <div class="hero-stats">
+          <div *ngFor="let stat of stats" class="hero-stat">
+            <strong>{{ stat.value }}</strong>
+            <span>{{ stat.label }}</span>
+          </div>
+        </div>
       </div>
 
-      <ul class="trust-strip">
-        <li>Live inventory intelligence</li>
-        <li>Role-based dashboards</li>
-        <li>Real-time fraud protection</li>
-      </ul>
+      <div class="hero-visual">
+        <div class="hero-card hero-card-main">
+          <p class="card-title">Expenditure Overview</p>
+          <strong class="card-metric">₹15.3k</strong>
+          <img
+            class="card-chart"
+            src="assets/landing/hero-line.svg"
+            alt="Expenditure trend chart" />
+          <div class="card-note">
+            <span class="dot"></span>
+            FuelFlow Index
+          </div>
+        </div>
+        <div class="hero-card hero-card-top">
+          <p class="card-title">Sales Overview</p>
+          <img
+            class="card-chart donut"
+            src="assets/landing/hero-donut-sales.svg"
+            alt="Sales overview" />
+        </div>
+        <div class="hero-card hero-card-right">
+          <p class="card-title">Fleet Share</p>
+          <img
+            class="card-chart"
+            src="assets/landing/hero-bars.svg"
+            alt="Fleet share" />
+        </div>
+        <div class="hero-card hero-card-bottom">
+          <p class="card-title">Coverage Index</p>
+          <img
+            class="card-chart donut"
+            src="assets/landing/hero-donut-coverage.svg"
+            alt="Coverage index" />
+        </div>
+      </div>
     </div>
+  </section>
 
-    <aside class="hero-panel">
-      <p class="panel-title">Network Pulse</p>
-      <div class="pulse-grid">
-        <article *ngFor="let stat of stats" class="pulse-card">
-          <strong>{{ stat.value }}</strong>
-          <span>{{ stat.label }}</span>
+  <section class="platform" id="platform">
+    <div class="section-head center">
+      <span class="section-tag">The FuelFlow Evolution</span>
+      <h2>One platform, total control</h2>
+      <p class="section-lead">
+        FuelFlow combines an AI-powered fuel marketplace with an intelligent ordering system,
+        giving you full visibility, automation, and cost savings.
+      </p>
+    </div>
+    <div class="module-row">
+      <button
+        class="module-pill"
+        type="button"
+        *ngFor="let module of modules; index as idx"
+        [class.active]="idx === 0">
+        {{ module }}
+      </button>
+    </div>
+    <div class="platform-card">
+      <div class="platform-copy">
+        <h3>AI-powered RFP and procurement engine</h3>
+        <p>
+          Launch and manage competitive fuel bids, compare pricing, and award contracts in-platform
+          with full historical audit trails.
+        </p>
+        <ul class="platform-list">
+          <li *ngFor="let item of platformHighlights">{{ item }}</li>
+        </ul>
+        <div class="platform-actions">
+          <a class="primary-btn landing-primary" routerLink="/auth/register">Start a Demo</a>
+          <a class="outline-btn landing-outline" routerLink="/auth/login">See Pricing</a>
+        </div>
+      </div>
+      <div class="platform-preview">
+        <img
+          src="assets/landing/platform-rfp.svg"
+          alt="RFP procurement workspace preview" />
+      </div>
+    </div>
+  </section>
+
+  <section class="benefits" id="benefits">
+    <div class="section-head center">
+      <span class="section-tag">Why FuelFlow</span>
+      <h2>The only fuel partner you'll ever need.</h2>
+      <p class="section-lead">
+        Smart fuel management integrated with a nationwide network of vendors so you can schedule,
+        request, or automate fuel deliveries without the usual headaches.
+      </p>
+    </div>
+    <div class="benefit-grid">
+      <article *ngFor="let benefit of benefits" class="benefit-card">
+        <span class="benefit-icon"></span>
+        <h3>{{ benefit.title }}</h3>
+        <p>{{ benefit.description }}</p>
+      </article>
+    </div>
+    <div class="coverage-grid">
+      <article class="coverage-card is-map">
+        <div class="coverage-media">
+          <img src="assets/landing/coverage-map.svg" alt="Delivery network map" />
+        </div>
+        <h4>Reliable delivery through a vetted vendor network.</h4>
+      </article>
+      <article class="coverage-card is-ring">
+        <div class="coverage-media">
+          <img src="assets/landing/coverage-network.svg" alt="Connected vendor network" />
+        </div>
+        <h4>One platform, one invoice, zero headaches.</h4>
+      </article>
+      <article class="coverage-card is-sla">
+        <div class="coverage-media">
+          <img src="assets/landing/coverage-sla.svg" alt="SLA response times" />
+        </div>
+        <h4>24/7/365 emergency fueling</h4>
+        <p>Guaranteed response times with clear SLA tiers.</p>
+      </article>
+      <article class="coverage-card is-chart">
+        <div class="coverage-media">
+          <img src="assets/landing/coverage-chart.svg" alt="Transparent pricing chart" />
+        </div>
+        <h4>Transparent pricing.</h4>
+        <p>Competitive rates with complete cost visibility.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="workflow" id="how">
+    <div class="section-head center">
+      <span class="section-tag">How it works</span>
+      <h2>How FuelFlow saves you time and money - from start to finish</h2>
+    </div>
+    <div class="workflow-card">
+      <div class="workflow-copy">
+        <h3>Issue, award, and track fuel orders in one workflow.</h3>
+        <p>
+          Streamline vendor selection with AI-powered sourcing, automated approvals, and clear
+          delivery proof.
+        </p>
+        <div class="workflow-steps">
+          <div *ngFor="let step of steps; index as idx" class="workflow-step">
+            <span class="step-index">0{{ idx + 1 }}</span>
+            <div>
+              <h4>{{ step.title }}</h4>
+              <p>{{ step.detail }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="workflow-preview">
+        <img
+          src="assets/landing/workflow-issue.svg"
+          alt="Issue RFP workflow preview" />
+      </div>
+    </div>
+  </section>
+
+  <section class="solutions" id="solutions">
+    <div class="section-head center">
+      <span class="section-tag">Fuel Solutions</span>
+      <h2>One partner. Total fuel management.</h2>
+      <p class="section-lead">
+        FuelFlow is more than just a fuel ordering platform. We deliver sourcing, payments,
+        tank management, sustainability initiatives, and emergency fuel in one place.
+      </p>
+    </div>
+    <div class="solutions-hero">
+      <div class="solutions-hero-copy">
+        <h3>Everything you need to source, deliver, and pay for fuel.</h3>
+        <p>
+          FuelFlow offers a one-stop shop for fleet fueling, bulk delivery, tank rentals, and
+          mission-critical emergency response - all backed by a national vendor network.
+        </p>
+        <div class="solutions-hero-actions">
+          <a class="primary-btn landing-primary" routerLink="/auth/register">Request a Call</a>
+          <a class="outline-btn landing-outline" routerLink="/auth/register">Start Saving Now</a>
+        </div>
+      </div>
+      <div class="solutions-hero-grid">
+        <article *ngFor="let card of solutionCards" class="solution-tile">
+          <span class="solution-tile-icon">{{ card.icon }}</span>
+          <h4>{{ card.title }}</h4>
+          <p>{{ card.description }}</p>
         </article>
       </div>
-      <div class="panel-callout">
-        <p>Next best action</p>
-        <strong>Update diesel pricing for 6 high-demand stations.</strong>
+    </div>
+
+    <div class="solutions-network">
+      <div class="solutions-network-copy">
+        <span class="solution-subtag">FuelConnect</span>
+        <h3>The smart network for fuel sourcing and delivery</h3>
+        <p>
+          FuelFlow seamlessly integrates with vendors to schedule, request, or automate fuel
+          deliveries nationwide.
+        </p>
+        <a class="primary-btn landing-primary" routerLink="/auth/register">Access FuelConnect Network</a>
       </div>
-    </aside>
-  </div>
-
-  <div class="feature-grid">
-    <article *ngFor="let feature of features" class="feature-card">
-      <span>{{ feature.tag }}</span>
-      <h2>{{ feature.title }}</h2>
-      <p>{{ feature.description }}</p>
-    </article>
-  </div>
-
-  <div class="journey">
-    <article *ngFor="let step of steps; index as idx" class="journey-step">
-      <span class="step-index">0{{ idx + 1 }}</span>
-      <h3>{{ step.title }}</h3>
-      <p>{{ step.detail }}</p>
-    </article>
-  </div>
-
-  <div class="cta-band">
-    <div>
-      <p class="eyebrow">Ready to modernize your fuel operations?</p>
-      <h2>Start with secure login and onboarding in minutes.</h2>
+      <div class="solutions-network-panel">
+        <div class="network-table">
+          <div class="network-head">
+            <span>Vendor</span>
+            <span>Region</span>
+            <span>Phone</span>
+          </div>
+          <div class="network-row" *ngFor="let vendor of networkVendors">
+            <span>{{ vendor.name }}</span>
+            <span>{{ vendor.region }}</span>
+            <span>{{ vendor.phone }}</span>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="cta-actions">
-      <a class="primary-btn" routerLink="/auth/register">Create Account</a>
-      <a class="outline-btn" routerLink="/auth/login">Continue to Login</a>
+
+    <div class="solutions-smart">
+      <div class="solutions-smart-copy">
+        <span class="solution-subtag">Future Ready</span>
+        <h3>Future with smart solutions.</h3>
+        <p>
+          FuelFlow provides sustainable fuel options, bio-blends, and carbon reduction strategies
+          to help companies reduce emissions.
+        </p>
+        <ul class="solutions-smart-list">
+          <li *ngFor="let item of smartSolutions">{{ item }}</li>
+        </ul>
+      </div>
+      <div class="solutions-smart-visual">
+        <div class="smart-visual-card">
+          <div class="smart-visual-badges">
+            <span>Compliance</span>
+            <span>ESG</span>
+          </div>
+          <div class="smart-visual-metrics">
+            <div class="metric">
+              <span>Idle reduction</span>
+              <strong>33%</strong>
+            </div>
+            <div class="metric">
+              <span>CO2 impact</span>
+              <strong>2,000 MT</strong>
+            </div>
+          </div>
+          <div class="smart-visual-chart">
+            <div class="chart-line"></div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
+
+    <div class="solutions-comparison">
+      <span class="solution-subtag">The FuelFlow Advantage</span>
+      <h3>A feature-by-feature comparison against traditional options</h3>
+      <div class="comparison-grid">
+        <div class="comparison-row comparison-header">
+          <span class="comparison-feature">Features</span>
+          <span
+            *ngFor="let header of comparisonHeaders; let idx = index"
+            [class.is-featured]="idx === 0">
+            {{ header }}
+          </span>
+        </div>
+        <div class="comparison-row" *ngFor="let row of comparisonRows">
+          <span class="comparison-feature">{{ row.feature }}</span>
+          <span
+            class="comparison-cell"
+            *ngFor="let value of row.values; let idx = index"
+            [class.is-featured]="idx === 0">
+            <span *ngIf="value" class="compare-check" aria-hidden="true"></span>
+            <span *ngIf="!value" class="compare-dash">-</span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="solutions-duo">
+      <article class="solution-panel rescue-panel">
+        <span class="solution-subtag">FuelRescue</span>
+        <h3>When the power cannot go out</h3>
+        <p>
+          Whether you need immediate fueling or a standby fuel supply, FuelRescue ensures
+          uninterrupted operations with guaranteed priority dispatch.
+        </p>
+        <ul class="solution-checklist">
+          <li *ngFor="let item of rescueHighlights">
+            <strong>{{ item.title }}</strong>
+            <span>{{ item.detail }}</span>
+          </li>
+        </ul>
+        <a class="primary-btn landing-primary" routerLink="/auth/register">
+          Secure Your Emergency Fuel Plan
+        </a>
+      </article>
+      <article class="solution-panel pay-panel">
+        <span class="solution-subtag">FuelPay</span>
+        <h3>Smart fuel payments on the road - no plastic, total control</h3>
+        <p>
+          FuelPay lets you fuel anywhere, track everything, and secure every transaction with
+          full visibility and control through AI-powered insights.
+        </p>
+        <a class="primary-btn landing-primary" routerLink="/auth/register">Sign Up for FuelPay</a>
+        <div class="pay-feature-grid">
+          <div class="pay-feature" *ngFor="let feature of payFeatures">
+            <h4>{{ feature.title }}</h4>
+            <p>{{ feature.detail }}</p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="testimonials" id="testimonials">
+    <div class="section-head center">
+      <span class="section-tag">Trusted by teams</span>
+      <h2>Fuel teams are saving more with FuelFlow</h2>
+    </div>
+    <div class="testimonial-grid">
+      <article *ngFor="let item of testimonials" class="testimonial-card">
+        <div class="rating">★★★★★</div>
+        <p>"{{ item.quote }}"</p>
+        <div class="testimonial-meta">
+          <strong>{{ item.name }}</strong>
+          <span>{{ item.role }}, {{ item.company }}</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="pricing" id="pricing">
+    <div class="section-head center">
+      <span class="section-tag">Pricing</span>
+      <h2>Choose the plan that fits your fleet</h2>
+      <p class="section-lead">Scale from small teams to multi-region operations with flexible plans.</p>
+    </div>
+    <div class="pricing-grid">
+      <article *ngFor="let plan of plans" class="pricing-card" [class.featured]="plan.featured">
+        <div class="plan-head">
+          <span class="plan-name">{{ plan.name }}</span>
+          <span class="plan-price">{{ plan.price }}</span>
+        </div>
+        <p class="plan-desc">{{ plan.description }}</p>
+        <ul class="plan-features">
+          <li *ngFor="let feature of plan.features">{{ feature }}</li>
+        </ul>
+        <a class="primary-btn landing-primary" routerLink="/auth/register">Get Started</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="faq" id="faq">
+    <div class="section-head center">
+      <span class="section-tag">FAQ</span>
+      <h2>Questions, answered</h2>
+    </div>
+    <div class="faq-list">
+      <details *ngFor="let faq of faqs">
+        <summary>{{ faq.question }}</summary>
+        <p>{{ faq.answer }}</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="cta-join" id="cta">
+    <div class="cta-join-inner">
+      <div>
+        <h2>Join our vendor network in minutes.</h2>
+        <p>
+          FuelFlow combines an AI-powered fuel marketplace with an intelligent ordering system,
+          giving you full visibility, automation, and cost savings.
+        </p>
+      </div>
+      <a class="primary-btn landing-primary" routerLink="/auth/register">Become a Vendor</a>
+    </div>
+  </section>
 </main>

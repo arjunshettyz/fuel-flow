@@ -1,0 +1,17 @@
+<svg width="520" height="320" viewBox="0 0 520 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="1" y="1" width="518" height="318" rx="22" fill="#F7FAFB" stroke="#E3ECEE"/>
+  <rect x="24" y="36" width="120" height="248" rx="18" fill="#EFF4F6"/>
+  <rect x="70" y="36" width="28" height="248" rx="14" fill="#FFFFFF" stroke="#DCE6E8"/>
+  <rect x="81" y="70" width="6" height="30" rx="3" fill="#16B9B0"/>
+  <rect x="81" y="132" width="6" height="30" rx="3" fill="#0D2B2B"/>
+  <rect x="176" y="60" width="300" height="200" rx="16" fill="#FFFFFF" stroke="#DCE6E8"/>
+  <text x="200" y="94" font-size="12" font-weight="700" fill="#7A8A8D" font-family="Spline Sans, Arial, sans-serif">Create RFP</text>
+  <rect x="200" y="112" width="252" height="36" rx="8" fill="#F5F7F8" stroke="#E3ECEE"/>
+  <text x="212" y="134" font-size="12" font-weight="600" fill="#0D2B2B" font-family="Spline Sans, Arial, sans-serif">Fleet Q3 Fuel</text>
+  <rect x="200" y="160" width="252" height="36" rx="8" fill="#F5F7F8" stroke="#E3ECEE"/>
+  <text x="212" y="182" font-size="12" font-weight="600" fill="#0D2B2B" font-family="Spline Sans, Arial, sans-serif">24 month contract</text>
+  <rect x="200" y="208" width="252" height="36" rx="8" fill="#F5F7F8" stroke="#E3ECEE"/>
+  <text x="212" y="230" font-size="12" font-weight="600" fill="#0D2B2B" font-family="Spline Sans, Arial, sans-serif">Award date: Aug 28</text>
+  <rect x="200" y="260" width="120" height="30" rx="15" fill="#0D2B2B"/>
+  <text x="224" y="280" font-size="11" font-weight="700" fill="#FFFFFF" font-family="Spline Sans, Arial, sans-serif">Issue RFP</text>
+</svg>

@@ -1,0 +1,17 @@
+<svg width="640" height="360" viewBox="0 0 640 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="1" y="1" width="638" height="358" rx="22" fill="#FFFFFF" stroke="#DCE6E8"/>
+  <rect x="32" y="28" width="120" height="26" rx="13" fill="#E9F6F5"/>
+  <text x="46" y="45" font-size="11" font-weight="700" fill="#0D2B2B" font-family="Spline Sans, Arial, sans-serif">RFP Collection</text>
+  <text x="32" y="86" font-size="16" font-weight="700" fill="#0D2B2B" font-family="Space Grotesk, Arial, sans-serif">RFP for Order PO#93293</text>
+  <rect x="32" y="108" width="576" height="200" rx="16" fill="#F7FAFB" stroke="#E6EEF0"/>
+  <text x="56" y="142" font-size="11" font-weight="700" fill="#7A8A8D" font-family="Spline Sans, Arial, sans-serif">Vendor</text>
+  <text x="56" y="164" font-size="13" font-weight="600" fill="#0D2B2B" font-family="Spline Sans, Arial, sans-serif">Construction LLC</text>
+  <text x="56" y="198" font-size="11" font-weight="700" fill="#7A8A8D" font-family="Spline Sans, Arial, sans-serif">Contract Duration</text>
+  <text x="56" y="220" font-size="13" font-weight="600" fill="#0D2B2B" font-family="Spline Sans, Arial, sans-serif">24 months</text>
+  <text x="320" y="142" font-size="11" font-weight="700" fill="#7A8A8D" font-family="Spline Sans, Arial, sans-serif">Expected Award</text>
+  <text x="320" y="164" font-size="13" font-weight="600" fill="#0D2B2B" font-family="Spline Sans, Arial, sans-serif">Aug 28, 2024</text>
+  <text x="320" y="198" font-size="11" font-weight="700" fill="#7A8A8D" font-family="Spline Sans, Arial, sans-serif">Contract Value</text>
+  <text x="320" y="220" font-size="13" font-weight="600" fill="#0D2B2B" font-family="Spline Sans, Arial, sans-serif">$1.2M</text>
+  <rect x="32" y="262" width="140" height="26" rx="13" fill="#0D2B2B"/>
+  <text x="56" y="280" font-size="11" font-weight="700" fill="#FFFFFF" font-family="Spline Sans, Arial, sans-serif">Review Vendors</text>
+</svg>

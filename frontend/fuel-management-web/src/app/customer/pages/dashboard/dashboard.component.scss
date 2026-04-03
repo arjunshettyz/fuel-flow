@@ -57,6 +57,25 @@
 	gap: 0.6rem;
 }
 
+.order-card {
+	display: grid;
+	gap: 0.8rem;
+}
+
+.order-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.6rem;
+}
+
+.order-highlights {
+	margin: 0;
+	padding-left: 1rem;
+	color: var(--ink-500);
+	display: grid;
+	gap: 0.4rem;
+}
+
 @media (max-width: 860px) {
 	.grid-two,
 	.receipt-inline {

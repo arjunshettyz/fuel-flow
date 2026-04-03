@@ -9,3 +9,4 @@ C:\Users\Arjun\Desktop\sprintproj\src\Shared\FuelManagement.Contracts\obj\Debug\
 C:\Users\Arjun\Desktop\sprintproj\src\Shared\FuelManagement.Contracts\obj\Debug\net10.0\FuelManagement.Contracts.pdb
 C:\Users\Arjun\Desktop\sprintproj\src\Shared\FuelManagement.Contracts\obj\Debug\net10.0\ref\FuelManagement.Contracts.dll
 C:\Users\Arjun\Desktop\sprintproj\src\Shared\FuelManagement.Contracts\obj\Debug\net10.0\FuelManagement.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\Arjun\Desktop\sprintproj\src\Shared\FuelManagement.Contracts\obj\Debug\net10.0\FuelManagement.Contracts.sourcelink.json

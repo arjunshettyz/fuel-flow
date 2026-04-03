@@ -10,3 +10,4 @@ C:\Users\Arjun\Desktop\sprintproj\src\Shared\FuelManagement.Common\obj\Debug\net
 C:\Users\Arjun\Desktop\sprintproj\src\Shared\FuelManagement.Common\obj\Debug\net10.0\FuelManagement.Common.pdb
 C:\Users\Arjun\Desktop\sprintproj\src\Shared\FuelManagement.Common\obj\Debug\net10.0\ref\FuelManagement.Common.dll
 C:\Users\Arjun\Desktop\sprintproj\src\Shared\FuelManagement.Common\obj\Debug\net10.0\FuelManagement.Common.csproj.AssemblyReference.cache
+C:\Users\Arjun\Desktop\sprintproj\src\Shared\FuelManagement.Common\obj\Debug\net10.0\FuelManagement.Common.sourcelink.json

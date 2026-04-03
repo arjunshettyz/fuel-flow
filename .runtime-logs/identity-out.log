@@ -1,17 +1,17 @@
 Using launch settings from src\Services\Identity\FuelManagement.Identity.API\Properties\launchSettings.json...
 Building...
 info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (61ms) [Parameters=[], CommandType='Text', CommandTimeout='0']
+      Executed DbCommand (82ms) [Parameters=[], CommandType='Text', CommandTimeout='0']
       SELECT 1
 info: Microsoft.EntityFrameworkCore.Migrations[20411]
       Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
 info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (249ms) [Parameters=[], CommandType='Text', CommandTimeout='0']
+      Executed DbCommand (3,418ms) [Parameters=[], CommandType='Text', CommandTimeout='0']
       DECLARE @result int;
       EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
       SELECT @result
 info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (41ms) [Parameters=[], CommandType='Text', CommandTimeout='0']
+      Executed DbCommand (175ms) [Parameters=[], CommandType='Text', CommandTimeout='0']
       IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
       BEGIN
           CREATE TABLE [__EFMigrationsHistory] (
@@ -21,25 +21,25 @@ info: Microsoft.EntityFrameworkCore.Database.Command[20101]
           );
       END;
 info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='0']
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='0']
       SELECT 1
 info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='0']
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='0']
       SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
 info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (43ms) [Parameters=[], CommandType='Text', CommandTimeout='0']
+      Executed DbCommand (284ms) [Parameters=[], CommandType='Text', CommandTimeout='0']
       SELECT [MigrationId], [ProductVersion]
       FROM [__EFMigrationsHistory]
       ORDER BY [MigrationId];
 info: Microsoft.EntityFrameworkCore.Migrations[20405]
       No migrations were applied. The database is already up to date.
 info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (106ms) [Parameters=[], CommandType='Text', CommandTimeout='0']
+      Executed DbCommand (189ms) [Parameters=[], CommandType='Text', CommandTimeout='0']
       DECLARE @result int;
       EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
       SELECT @result
 info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (87ms) [Parameters=[], CommandType='Text', CommandTimeout='0']
+      Executed DbCommand (4,395ms) [Parameters=[], CommandType='Text', CommandTimeout='0']
       
 IF OBJECT_ID(N'[EmailOtpTokens]', N'U') IS NULL
 BEGIN
@@ -68,7 +68,7 @@ BEGIN
         ON [EmailOtpTokens] ([Email], [Purpose], [CreatedAt]);
 END;
 info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (23ms) [Parameters=[], CommandType='Text', CommandTimeout='0']
+      Executed DbCommand (123ms) [Parameters=[], CommandType='Text', CommandTimeout='0']
       SELECT CASE
           WHEN EXISTS (
               SELECT 1
@@ -77,7 +77,7 @@ info: Microsoft.EntityFrameworkCore.Database.Command[20101]
           ELSE CAST(0 AS bit)
       END
 info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='0']
+      Executed DbCommand (122ms) [Parameters=[], CommandType='Text', CommandTimeout='0']
       SELECT CASE
           WHEN EXISTS (
               SELECT 1
@@ -93,5 +93,248 @@ info: Microsoft.Hosting.Lifetime[0]
       Hosting environment: Development
 info: Microsoft.Hosting.Lifetime[0]
       Content root path: C:\Users\Arjun\Desktop\sprintproj\src\Services\Identity\FuelManagement.Identity.API
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (97ms) [Parameters=[@__targetEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='0']
+      SELECT CASE
+          WHEN EXISTS (
+              SELECT 1
+              FROM [Users] AS [u]
+              WHERE [u].[Email] = @__targetEmail_0) THEN CAST(1 AS bit)
+          ELSE CAST(0 AS bit)
+      END
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (240ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256), @__normalizedPurpose_1='?' (Size = 64)], CommandType='Text', CommandTimeout='0']
+      SELECT [e].[Id], [e].[CodeHash], [e].[CreatedAt], [e].[Email], [e].[ExpiresAt], [e].[FailedAttempts], [e].[IsConsumed], [e].[IsVerified], [e].[Purpose], [e].[VerifiedAt]
+      FROM [EmailOtpTokens] AS [e]
+      WHERE [e].[Email] = @__normalizedEmail_0 AND [e].[Purpose] = @__normalizedPurpose_1 AND [e].[IsConsumed] = CAST(0 AS bit)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (151ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 200), @p2='?' (DbType = DateTime2), @p3='?' (Size = 256), @p4='?' (DbType = DateTime2), @p5='?' (DbType = Int32), @p6='?' (DbType = Boolean), @p7='?' (DbType = Boolean), @p8='?' (Size = 64), @p9='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='0']
+      SET IMPLICIT_TRANSACTIONS OFF;
+      SET NOCOUNT ON;
+      INSERT INTO [EmailOtpTokens] ([Id], [CodeHash], [CreatedAt], [Email], [ExpiresAt], [FailedAttempts], [IsConsumed], [IsVerified], [Purpose], [VerifiedAt])
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (102ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256), @__normalizedPurpose_1='?' (Size = 64)], CommandType='Text', CommandTimeout='0']
+      SELECT TOP(1) [e].[Id], [e].[CodeHash], [e].[CreatedAt], [e].[Email], [e].[ExpiresAt], [e].[FailedAttempts], [e].[IsConsumed], [e].[IsVerified], [e].[Purpose], [e].[VerifiedAt]
+      FROM [EmailOtpTokens] AS [e]
+      WHERE [e].[Email] = @__normalizedEmail_0 AND [e].[Purpose] = @__normalizedPurpose_1 AND [e].[IsConsumed] = CAST(0 AS bit)
+      ORDER BY [e].[CreatedAt] DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (103ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = Boolean), @p1='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='0']
+      SET IMPLICIT_TRANSACTIONS OFF;
+      SET NOCOUNT ON;
+      UPDATE [EmailOtpTokens] SET [IsVerified] = @p0, [VerifiedAt] = @p1
+      OUTPUT 1
+      WHERE [Id] = @p2;
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (43ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='0']
+      SELECT CASE
+          WHEN EXISTS (
+              SELECT 1
+              FROM [Users] AS [u]
+              WHERE [u].[Email] = @__normalizedEmail_0) THEN CAST(1 AS bit)
+          ELSE CAST(0 AS bit)
+      END
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (191ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256), @__normalizedPurpose_1='?' (Size = 64)], CommandType='Text', CommandTimeout='0']
+      SELECT TOP(1) [e].[Id], [e].[CodeHash], [e].[CreatedAt], [e].[Email], [e].[ExpiresAt], [e].[FailedAttempts], [e].[IsConsumed], [e].[IsVerified], [e].[Purpose], [e].[VerifiedAt]
+      FROM [EmailOtpTokens] AS [e]
+      WHERE [e].[Email] = @__normalizedEmail_0 AND [e].[Purpose] = @__normalizedPurpose_1 AND [e].[IsVerified] = CAST(1 AS bit) AND [e].[IsConsumed] = CAST(0 AS bit) AND [e].[ExpiresAt] > GETUTCDATE()
+      ORDER BY COALESCE([e].[VerifiedAt], [e].[CreatedAt]) DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (10ms) [Parameters=[@p1='?' (DbType = Guid), @p0='?' (DbType = Boolean)], CommandType='Text', CommandTimeout='0']
+      SET IMPLICIT_TRANSACTIONS OFF;
+      SET NOCOUNT ON;
+      UPDATE [EmailOtpTokens] SET [IsConsumed] = @p0
+      OUTPUT 1
+      WHERE [Id] = @p1;
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (73ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 256), @p3='?' (Size = 4000), @p4='?' (DbType = Boolean), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 50), @p8='?' (DbType = Guid), @p9='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='0']
+      SET IMPLICIT_TRANSACTIONS OFF;
+      SET NOCOUNT ON;
+      INSERT INTO [Users] ([Id], [CreatedAt], [Email], [FullName], [IsActive], [PasswordHash], [Phone], [Role], [StationId], [UpdatedAt])
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (97ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Boolean), @p4='?' (Size = 4000), @p5='?' (DbType = Guid)], CommandType='Text', CommandTimeout='0']
+      SET IMPLICIT_TRANSACTIONS OFF;
+      SET NOCOUNT ON;
+      INSERT INTO [RefreshTokens] ([Id], [CreatedAt], [ExpiresAt], [IsRevoked], [Token], [UserId])
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (67ms) [Parameters=[@__identifier_0='?' (Size = 256), @__identifier_0_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='0']
+      SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsActive], [u].[PasswordHash], [u].[Phone], [u].[Role], [u].[StationId], [u].[UpdatedAt]
+      FROM [Users] AS [u]
+      WHERE ([u].[Email] = @__identifier_0 OR [u].[Phone] = @__identifier_0_1) AND [u].[IsActive] = CAST(1 AS bit)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (13ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Boolean), @p4='?' (Size = 4000), @p5='?' (DbType = Guid)], CommandType='Text', CommandTimeout='0']
+      SET IMPLICIT_TRANSACTIONS OFF;
+      SET NOCOUNT ON;
+      INSERT INTO [RefreshTokens] ([Id], [CreatedAt], [ExpiresAt], [IsRevoked], [Token], [UserId])
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (99ms) [Parameters=[@__identifier_0='?' (Size = 256), @__identifier_0_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='0']
+      SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsActive], [u].[PasswordHash], [u].[Phone], [u].[Role], [u].[StationId], [u].[UpdatedAt]
+      FROM [Users] AS [u]
+      WHERE ([u].[Email] = @__identifier_0 OR [u].[Phone] = @__identifier_0_1) AND [u].[IsActive] = CAST(1 AS bit)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (189ms) [Parameters=[@__identifier_0='?' (Size = 256), @__identifier_0_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='0']
+      SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsActive], [u].[PasswordHash], [u].[Phone], [u].[Role], [u].[StationId], [u].[UpdatedAt]
+      FROM [Users] AS [u]
+      WHERE ([u].[Email] = @__identifier_0 OR [u].[Phone] = @__identifier_0_1) AND [u].[IsActive] = CAST(1 AS bit)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[@__identifier_0='?' (Size = 256), @__identifier_0_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='0']
+      SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsActive], [u].[PasswordHash], [u].[Phone], [u].[Role], [u].[StationId], [u].[UpdatedAt]
+      FROM [Users] AS [u]
+      WHERE ([u].[Email] = @__identifier_0 OR [u].[Phone] = @__identifier_0_1) AND [u].[IsActive] = CAST(1 AS bit)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__identifier_0='?' (Size = 256), @__identifier_0_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='0']
+      SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsActive], [u].[PasswordHash], [u].[Phone], [u].[Role], [u].[StationId], [u].[UpdatedAt]
+      FROM [Users] AS [u]
+      WHERE ([u].[Email] = @__identifier_0 OR [u].[Phone] = @__identifier_0_1) AND [u].[IsActive] = CAST(1 AS bit)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (8ms) [Parameters=[@__identifier_0='?' (Size = 256), @__identifier_0_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='0']
+      SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsActive], [u].[PasswordHash], [u].[Phone], [u].[Role], [u].[StationId], [u].[UpdatedAt]
+      FROM [Users] AS [u]
+      WHERE ([u].[Email] = @__identifier_0 OR [u].[Phone] = @__identifier_0_1) AND [u].[IsActive] = CAST(1 AS bit)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (830ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Boolean), @p4='?' (Size = 4000), @p5='?' (DbType = Guid)], CommandType='Text', CommandTimeout='0']
+      SET IMPLICIT_TRANSACTIONS OFF;
+      SET NOCOUNT ON;
+      INSERT INTO [RefreshTokens] ([Id], [CreatedAt], [ExpiresAt], [IsRevoked], [Token], [UserId])
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (195ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Boolean), @p4='?' (Size = 4000), @p5='?' (DbType = Guid)], CommandType='Text', CommandTimeout='0']
+      SET IMPLICIT_TRANSACTIONS OFF;
+      SET NOCOUNT ON;
+      INSERT INTO [RefreshTokens] ([Id], [CreatedAt], [ExpiresAt], [IsRevoked], [Token], [UserId])
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__identifier_0='?' (Size = 256), @__identifier_0_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='0']
+      SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsActive], [u].[PasswordHash], [u].[Phone], [u].[Role], [u].[StationId], [u].[UpdatedAt]
+      FROM [Users] AS [u]
+      WHERE ([u].[Email] = @__identifier_0 OR [u].[Phone] = @__identifier_0_1) AND [u].[IsActive] = CAST(1 AS bit)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (298ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Boolean), @p4='?' (Size = 4000), @p5='?' (DbType = Guid)], CommandType='Text', CommandTimeout='0']
+      SET IMPLICIT_TRANSACTIONS OFF;
+      SET NOCOUNT ON;
+      INSERT INTO [RefreshTokens] ([Id], [CreatedAt], [ExpiresAt], [IsRevoked], [Token], [UserId])
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (85ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Boolean), @p4='?' (Size = 4000), @p5='?' (DbType = Guid)], CommandType='Text', CommandTimeout='0']
+      SET IMPLICIT_TRANSACTIONS OFF;
+      SET NOCOUNT ON;
+      INSERT INTO [RefreshTokens] ([Id], [CreatedAt], [ExpiresAt], [IsRevoked], [Token], [UserId])
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (483ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Boolean), @p4='?' (Size = 4000), @p5='?' (DbType = Guid)], CommandType='Text', CommandTimeout='0']
+      SET IMPLICIT_TRANSACTIONS OFF;
+      SET NOCOUNT ON;
+      INSERT INTO [RefreshTokens] ([Id], [CreatedAt], [ExpiresAt], [IsRevoked], [Token], [UserId])
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (59ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Boolean), @p4='?' (Size = 4000), @p5='?' (DbType = Guid)], CommandType='Text', CommandTimeout='0']
+      SET IMPLICIT_TRANSACTIONS OFF;
+      SET NOCOUNT ON;
+      INSERT INTO [RefreshTokens] ([Id], [CreatedAt], [ExpiresAt], [IsRevoked], [Token], [UserId])
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__identifier_0='?' (Size = 256), @__identifier_0_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='0']
+      SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsActive], [u].[PasswordHash], [u].[Phone], [u].[Role], [u].[StationId], [u].[UpdatedAt]
+      FROM [Users] AS [u]
+      WHERE ([u].[Email] = @__identifier_0 OR [u].[Phone] = @__identifier_0_1) AND [u].[IsActive] = CAST(1 AS bit)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (9ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Boolean), @p4='?' (Size = 4000), @p5='?' (DbType = Guid)], CommandType='Text', CommandTimeout='0']
+      SET IMPLICIT_TRANSACTIONS OFF;
+      SET NOCOUNT ON;
+      INSERT INTO [RefreshTokens] ([Id], [CreatedAt], [ExpiresAt], [IsRevoked], [Token], [UserId])
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
 warn: Microsoft.AspNetCore.Server.Kestrel[22]
-      As of "03/31/2026 09:44:53 +00:00", the heartbeat has been running for "00:00:01.2231111" which is longer than "00:00:01". This could be caused by thread pool starvation.
+      As of "04/02/2026 09:52:05 +00:00", the heartbeat has been running for "00:00:01.5537941" which is longer than "00:00:01". This could be caused by thread pool starvation.
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (100ms) [Parameters=[@__identifier_0='?' (Size = 256), @__identifier_0_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='0']
+      SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsActive], [u].[PasswordHash], [u].[Phone], [u].[Role], [u].[StationId], [u].[UpdatedAt]
+      FROM [Users] AS [u]
+      WHERE ([u].[Email] = @__identifier_0 OR [u].[Phone] = @__identifier_0_1) AND [u].[IsActive] = CAST(1 AS bit)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (118ms) [Parameters=[@__identifier_0='?' (Size = 256), @__identifier_0_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='0']
+      SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsActive], [u].[PasswordHash], [u].[Phone], [u].[Role], [u].[StationId], [u].[UpdatedAt]
+      FROM [Users] AS [u]
+      WHERE ([u].[Email] = @__identifier_0 OR [u].[Phone] = @__identifier_0_1) AND [u].[IsActive] = CAST(1 AS bit)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (401ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Boolean), @p4='?' (Size = 4000), @p5='?' (DbType = Guid)], CommandType='Text', CommandTimeout='0']
+      SET IMPLICIT_TRANSACTIONS OFF;
+      SET NOCOUNT ON;
+      INSERT INTO [RefreshTokens] ([Id], [CreatedAt], [ExpiresAt], [IsRevoked], [Token], [UserId])
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (22ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Boolean), @p4='?' (Size = 4000), @p5='?' (DbType = Guid)], CommandType='Text', CommandTimeout='0']
+      SET IMPLICIT_TRANSACTIONS OFF;
+      SET NOCOUNT ON;
+      INSERT INTO [RefreshTokens] ([Id], [CreatedAt], [ExpiresAt], [IsRevoked], [Token], [UserId])
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (33ms) [Parameters=[@__identifier_0='?' (Size = 256), @__identifier_0_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='0']
+      SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsActive], [u].[PasswordHash], [u].[Phone], [u].[Role], [u].[StationId], [u].[UpdatedAt]
+      FROM [Users] AS [u]
+      WHERE ([u].[Email] = @__identifier_0 OR [u].[Phone] = @__identifier_0_1) AND [u].[IsActive] = CAST(1 AS bit)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (33ms) [Parameters=[@__identifier_0='?' (Size = 256), @__identifier_0_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='0']
+      SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsActive], [u].[PasswordHash], [u].[Phone], [u].[Role], [u].[StationId], [u].[UpdatedAt]
+      FROM [Users] AS [u]
+      WHERE ([u].[Email] = @__identifier_0 OR [u].[Phone] = @__identifier_0_1) AND [u].[IsActive] = CAST(1 AS bit)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (33ms) [Parameters=[@__identifier_0='?' (Size = 256), @__identifier_0_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='0']
+      SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsActive], [u].[PasswordHash], [u].[Phone], [u].[Role], [u].[StationId], [u].[UpdatedAt]
+      FROM [Users] AS [u]
+      WHERE ([u].[Email] = @__identifier_0 OR [u].[Phone] = @__identifier_0_1) AND [u].[IsActive] = CAST(1 AS bit)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (33ms) [Parameters=[@__identifier_0='?' (Size = 256), @__identifier_0_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='0']
+      SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsActive], [u].[PasswordHash], [u].[Phone], [u].[Role], [u].[StationId], [u].[UpdatedAt]
+      FROM [Users] AS [u]
+      WHERE ([u].[Email] = @__identifier_0 OR [u].[Phone] = @__identifier_0_1) AND [u].[IsActive] = CAST(1 AS bit)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (33ms) [Parameters=[@__identifier_0='?' (Size = 256), @__identifier_0_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='0']
+      SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsActive], [u].[PasswordHash], [u].[Phone], [u].[Role], [u].[StationId], [u].[UpdatedAt]
+      FROM [Users] AS [u]
+      WHERE ([u].[Email] = @__identifier_0 OR [u].[Phone] = @__identifier_0_1) AND [u].[IsActive] = CAST(1 AS bit)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (33ms) [Parameters=[@__identifier_0='?' (Size = 256), @__identifier_0_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='0']
+      SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsActive], [u].[PasswordHash], [u].[Phone], [u].[Role], [u].[StationId], [u].[UpdatedAt]
+      FROM [Users] AS [u]
+      WHERE ([u].[Email] = @__identifier_0 OR [u].[Phone] = @__identifier_0_1) AND [u].[IsActive] = CAST(1 AS bit)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (69ms) [Parameters=[@__identifier_0='?' (Size = 256), @__identifier_0_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='0']
+      SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsActive], [u].[PasswordHash], [u].[Phone], [u].[Role], [u].[StationId], [u].[UpdatedAt]
+      FROM [Users] AS [u]
+      WHERE ([u].[Email] = @__identifier_0 OR [u].[Phone] = @__identifier_0_1) AND [u].[IsActive] = CAST(1 AS bit)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[@__identifier_0='?' (Size = 256), @__identifier_0_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='0']
+      SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsActive], [u].[PasswordHash], [u].[Phone], [u].[Role], [u].[StationId], [u].[UpdatedAt]
+      FROM [Users] AS [u]
+      WHERE ([u].[Email] = @__identifier_0 OR [u].[Phone] = @__identifier_0_1) AND [u].[IsActive] = CAST(1 AS bit)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (13ms) [Parameters=[@__identifier_0='?' (Size = 256), @__identifier_0_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='0']
+      SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsActive], [u].[PasswordHash], [u].[Phone], [u].[Role], [u].[StationId], [u].[UpdatedAt]
+      FROM [Users] AS [u]
+      WHERE ([u].[Email] = @__identifier_0 OR [u].[Phone] = @__identifier_0_1) AND [u].[IsActive] = CAST(1 AS bit)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[@__identifier_0='?' (Size = 256), @__identifier_0_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='0']
+      SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsActive], [u].[PasswordHash], [u].[Phone], [u].[Role], [u].[StationId], [u].[UpdatedAt]
+      FROM [Users] AS [u]
+      WHERE ([u].[Email] = @__identifier_0 OR [u].[Phone] = @__identifier_0_1) AND [u].[IsActive] = CAST(1 AS bit)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[@__identifier_0='?' (Size = 256), @__identifier_0_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='0']
+      SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsActive], [u].[PasswordHash], [u].[Phone], [u].[Role], [u].[StationId], [u].[UpdatedAt]
+      FROM [Users] AS [u]
+      WHERE ([u].[Email] = @__identifier_0 OR [u].[Phone] = @__identifier_0_1) AND [u].[IsActive] = CAST(1 AS bit)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@__identifier_0='?' (Size = 256), @__identifier_0_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='0']
+      SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsActive], [u].[PasswordHash], [u].[Phone], [u].[Role], [u].[StationId], [u].[UpdatedAt]
+      FROM [Users] AS [u]
+      WHERE ([u].[Email] = @__identifier_0 OR [u].[Phone] = @__identifier_0_1) AND [u].[IsActive] = CAST(1 AS bit)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (23ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Boolean), @p4='?' (Size = 4000), @p5='?' (DbType = Guid)], CommandType='Text', CommandTimeout='0']
+      SET IMPLICIT_TRANSACTIONS OFF;
+      SET NOCOUNT ON;
+      INSERT INTO [RefreshTokens] ([Id], [CreatedAt], [ExpiresAt], [IsRevoked], [Token], [UserId])
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5);

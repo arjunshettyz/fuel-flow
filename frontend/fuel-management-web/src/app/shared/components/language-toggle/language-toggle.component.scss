@@ -1,11 +1,9 @@
 .lang-toggle {
 	display: inline-flex;
-	border: 1px solid rgba(198, 219, 236, 0.92);
+	border: 1px solid var(--border-color);
 	border-radius: 999px;
 	overflow: hidden;
-	background: rgba(255, 255, 255, 0.6);
-	-webkit-backdrop-filter: blur(8px);
-	backdrop-filter: blur(8px);
+	background: var(--paper-strong);
 }
 
 .lang-btn {
@@ -15,10 +13,10 @@
 	cursor: pointer;
 	font-size: 0.85rem;
 	font-weight: 600;
-	color: #2a4b65;
+	color: var(--ink-700);
 }
 
 .lang-btn.active {
-	background: linear-gradient(135deg, var(--primary-color), #4f9dff);
+	background: var(--accent-dark);
 	color: #ffffff;
 }

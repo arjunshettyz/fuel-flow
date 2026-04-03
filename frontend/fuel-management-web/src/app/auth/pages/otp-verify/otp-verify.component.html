@@ -11,6 +11,24 @@
 			</label>
 			<small class="error" *ngIf="form.controls.email.touched && form.controls.email.invalid">Enter a valid email address.</small>
 
+			<div class="role-select">
+				<span class="role-label">Login as</span>
+				<div class="role-options">
+					<label class="role-pill" [class.active]="form.controls.role.value === 'Customer'">
+						<input type="radio" formControlName="role" value="Customer" />
+						<span>Customer</span>
+					</label>
+					<label class="role-pill" [class.active]="form.controls.role.value === 'Dealer'">
+						<input type="radio" formControlName="role" value="Dealer" />
+						<span>Dealer</span>
+					</label>
+					<label class="role-pill" [class.active]="form.controls.role.value === 'Admin'">
+						<input type="radio" formControlName="role" value="Admin" />
+						<span>Admin</span>
+					</label>
+				</div>
+			</div>
+
 			<button class="outline-btn" type="button" (click)="sendOtp()" [disabled]="isSendingOtp || form.controls.email.invalid">
 				{{ isSendingOtp ? 'Sending OTP...' : 'Send Email OTP' }}
 			</button>

@@ -1,0 +1,130 @@
+<section class="page-wrap">
+	<header class="page-header">
+		<h1>Fuel Orders</h1>
+		<div class="quick-actions">
+			<a class="outline-btn" routerLink="/customer/dashboard">Back to Dashboard</a>
+			<a class="primary-btn" href="#track">Track Delivery</a>
+		</div>
+	</header>
+
+	<div class="grid-two">
+		<article class="card order-form">
+			<h2>Place a Fuel Order</h2>
+			<p>Schedule deliveries, set quantities, and keep orders synced with your fleet needs.</p>
+
+			<div class="grid-three">
+				<label>
+					Station
+					<select [(ngModel)]="newOrder.station">
+						<option>MG Road Fuel Hub</option>
+						<option>HSR Sector 2</option>
+						<option>Indiranagar 100ft</option>
+					</select>
+				</label>
+				<label>
+					Fuel Type
+					<select [(ngModel)]="newOrder.fuelType">
+						<option>Petrol</option>
+						<option>Diesel</option>
+						<option>CNG</option>
+						<option>Premium Petrol</option>
+					</select>
+				</label>
+				<label>
+					Quantity (Litres)
+					<input type="number" min="100" step="10" [(ngModel)]="newOrder.quantity" />
+				</label>
+			</div>
+
+			<div class="grid-two">
+				<label>
+					Delivery Window
+					<input type="text" [(ngModel)]="newOrder.deliveryWindow" placeholder="Within 2 hours" />
+				</label>
+				<label>
+					Notes
+					<input type="text" [(ngModel)]="newOrder.notes" placeholder="Add gate pass or access notes" />
+				</label>
+			</div>
+
+			<button class="primary-btn" type="button" (click)="placeOrder()">Place Order</button>
+			<p class="note">Orders placed before 6 PM are dispatched the same day.</p>
+		</article>
+
+		<article class="card order-list">
+			<h2>Active Orders</h2>
+			<div class="order-row" *ngFor="let order of orders" (click)="selectOrder(order.id)" [class.active]="order.id === activeOrderId">
+				<div>
+					<strong>{{ order.id }}</strong>
+					<span>{{ order.station }} · {{ order.fuelType }}</span>
+				</div>
+				<div class="order-meta">
+					<span class="status" [class.active]="order.status === 'Delivered'">{{ order.status }}</span>
+					<span>{{ order.quantity }} L</span>
+				</div>
+			</div>
+		</article>
+	</div>
+
+	<div class="grid-two">
+		<article class="card track-card" id="track">
+			<h2>Track Delivery</h2>
+			<div *ngIf="activeOrder; else noOrder">
+				<div class="track-meta">
+					<div>
+						<strong>{{ activeOrder.id }}</strong>
+						<span>{{ activeOrder.station }} · {{ activeOrder.fuelType }}</span>
+					</div>
+					<div>
+						<span>ETA</span>
+						<strong>{{ activeOrder.eta }}</strong>
+					</div>
+				</div>
+				<div class="track-steps">
+					<div class="track-step" *ngFor="let step of statusSteps; let i = index" [class.complete]="i <= stepIndex(activeOrder.status)">
+						<span class="step-dot"></span>
+						<div>
+							<strong>{{ step }}</strong>
+							<span>{{ i === stepIndex(activeOrder.status) ? activeOrder.lastUpdate : 'In queue' }}</span>
+						</div>
+					</div>
+				</div>
+				<p class="note">Last update: {{ activeOrder.lastUpdate }}</p>
+			</div>
+			<ng-template #noOrder>
+				<p>Select an order to view tracking details.</p>
+			</ng-template>
+		</article>
+
+		<article class="card update-card" id="update">
+			<h2>Update Order</h2>
+			<div *ngIf="activeOrder; else noUpdate">
+				<label>
+					Status
+					<select [(ngModel)]="updateForm.status">
+						<option>Requested</option>
+						<option>Confirmed</option>
+						<option>Dispatched</option>
+						<option>Delivered</option>
+					</select>
+				</label>
+				<label>
+					Quantity (Litres)
+					<input type="number" min="100" step="10" [(ngModel)]="updateForm.quantity" />
+				</label>
+				<label>
+					Delivery Window
+					<input type="text" [(ngModel)]="updateForm.deliveryWindow" />
+				</label>
+				<label>
+					Update Note
+					<input type="text" [(ngModel)]="updateForm.notes" placeholder="Driver instructions or change request" />
+				</label>
+				<button class="primary-btn" type="button" (click)="updateOrder()">Save Update</button>
+			</div>
+			<ng-template #noUpdate>
+				<p>Select an order to update delivery details.</p>
+			</ng-template>
+		</article>
+	</div>
+</section>

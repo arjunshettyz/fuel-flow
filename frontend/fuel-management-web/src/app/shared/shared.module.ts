@@ -7,10 +7,32 @@ import { PriceTickerComponent } from './components/price-ticker/price-ticker.com
 import { KpiCardComponent } from './components/kpi-card/kpi-card.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ChatPanelComponent } from './components/chat-panel/chat-panel.component';
+import { AiAssistantComponent } from './components/ai-assistant/ai-assistant.component';
 
 @NgModule({
-  declarations: [LanguageToggleComponent, PriceTickerComponent, KpiCardComponent, NavbarComponent, FooterComponent],
+  declarations: [
+    LanguageToggleComponent,
+    PriceTickerComponent,
+    KpiCardComponent,
+    NavbarComponent,
+    FooterComponent,
+    ChatPanelComponent,
+    AiAssistantComponent
+  ],
   imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterModule],
-  exports: [CommonModule, FormsModule, ReactiveFormsModule, RouterModule, LanguageToggleComponent, PriceTickerComponent, KpiCardComponent, NavbarComponent, FooterComponent]
+  exports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule,
+    LanguageToggleComponent,
+    PriceTickerComponent,
+    KpiCardComponent,
+    NavbarComponent,
+    FooterComponent,
+    ChatPanelComponent,
+    AiAssistantComponent
+  ]
 })
 export class SharedModule {}

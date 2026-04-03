@@ -1,5 +1,5 @@
 .auth-page {
-	min-height: 100vh;
+	min-height: calc(100vh - var(--nav-height));
 	display: grid;
 	place-items: center;
 	padding: 1rem;
@@ -12,12 +12,10 @@
 	width: min(440px, 100%);
 	margin: 0 auto;
 	padding: 1.1rem;
-	background: rgba(255, 255, 255, 0.9);
-	border: 1px solid rgba(207, 220, 232, 0.92);
-	border-radius: 22px;
-	box-shadow: var(--card-shadow-soft);
-	-webkit-backdrop-filter: blur(6px);
-	backdrop-filter: blur(6px);
+	background: var(--paper-strong);
+	border: 1px solid var(--border-color);
+	border-radius: var(--radius-lg);
+	box-shadow: var(--shadow-sm);
 }
 
 .back-home {
@@ -37,18 +35,62 @@ label {
 	gap: 0.3rem;
 }
 
+.role-select {
+	display: grid;
+	gap: 0.4rem;
+}
+
+.role-label {
+	font-size: 0.78rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--ink-500);
+}
+
+.role-options {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+
+.role-pill {
+	position: relative;
+	padding: 0.3rem 0.8rem;
+	border-radius: 999px;
+	border: 1px solid var(--border-color);
+	background: var(--paper);
+	font-size: 0.82rem;
+	font-weight: 600;
+	color: var(--ink-900);
+	cursor: pointer;
+	transition: all 0.18s ease;
+}
+
+.role-pill input {
+	position: absolute;
+	opacity: 0;
+	pointer-events: none;
+}
+
+.role-pill.active {
+	background: rgba(22, 185, 176, 0.18);
+	border-color: rgba(22, 185, 176, 0.55);
+	box-shadow: inset 0 0 0 1px rgba(22, 185, 176, 0.3);
+}
+
 .error-banner {
 	border-radius: 12px;
 	padding: 0.55rem 0.65rem;
-	background: #fff3ec;
-	border: 1px solid #ffd1bf;
+	background: rgba(244, 226, 216, 0.85);
+	border: 1px solid rgba(214, 150, 120, 0.6);
 	color: #cc4c24;
 }
 
 .ok-banner {
 	border-radius: 12px;
 	padding: 0.55rem 0.65rem;
-	background: #eefcf4;
-	border: 1px solid #bbebcd;
+	background: rgba(224, 244, 232, 0.8);
+	border: 1px solid rgba(150, 210, 180, 0.7);
 	color: #0f7f42;
 }

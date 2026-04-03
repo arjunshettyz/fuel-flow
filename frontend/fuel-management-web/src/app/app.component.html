@@ -1,7 +1,9 @@
+<a class="skip-link" href="#main-content">Skip to content</a>
 <div class="app-root">
-  <div class="bg-orb bg-orb-1" aria-hidden="true"></div>
-  <div class="bg-orb bg-orb-2" aria-hidden="true"></div>
-  <div class="bg-orb bg-orb-3" aria-hidden="true"></div>
-  <div class="bg-grid" aria-hidden="true"></div>
-  <router-outlet></router-outlet>
+  <app-navbar></app-navbar>
+  <div id="main-content" class="app-content">
+    <router-outlet></router-outlet>
+  </div>
+  <app-footer></app-footer>
+  <app-ai-assistant></app-ai-assistant>
 </div>

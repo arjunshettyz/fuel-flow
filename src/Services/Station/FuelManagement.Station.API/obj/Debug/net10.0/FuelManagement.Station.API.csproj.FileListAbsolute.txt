@@ -160,3 +160,4 @@ C:\Users\Arjun\Desktop\sprintproj\src\Services\Station\FuelManagement.Station.AP
 C:\Users\Arjun\Desktop\sprintproj\src\Services\Station\FuelManagement.Station.API\bin\Debug\net10.0\RabbitMQ.Client.dll
 C:\Users\Arjun\Desktop\sprintproj\src\Services\Station\FuelManagement.Station.API\bin\Debug\net10.0\FuelManagement.Common.dll
 C:\Users\Arjun\Desktop\sprintproj\src\Services\Station\FuelManagement.Station.API\bin\Debug\net10.0\FuelManagement.Common.pdb
+C:\Users\Arjun\Desktop\sprintproj\src\Services\Station\FuelManagement.Station.API\obj\Debug\net10.0\FuelManagement.Station.API.sourcelink.json

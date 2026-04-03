@@ -1,15 +1,44 @@
 <footer class="site-footer">
   <div class="footer-inner">
-    <div class="footer-brand">
-      <span class="footer-dot"></span>
-      <span class="footer-name">FuelFlow</span>
-      <span class="footer-tag">Smart Fuel Operations</span>
+    <div class="footer-brand-block">
+      <div class="footer-brand">
+        <span class="footer-mark" aria-hidden="true"></span>
+        <div>
+          <span class="footer-name">FuelFlow</span>
+          <span class="footer-tag">Smart Fuel Operations</span>
+        </div>
+      </div>
+      <div class="footer-contact">
+        <span>150 Harvest Dr, Suite 140, Burr Ridge, IL 60527</span>
+        <a href="mailto:sales&#64;fuelflow.me">sales&#64;fuelflow.me</a>
+        <a href="tel:+1833833563">(833) 833-3563</a>
+      </div>
     </div>
-    <div class="footer-links">
-      <a routerLink="/">Home</a>
-      <a routerLink="/auth/login">Login</a>
-      <a routerLink="/auth/register">Register</a>
+    <div class="footer-columns">
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <a routerLink="/" fragment="platform">Platform</a>
+        <a routerLink="/" fragment="solutions">Solutions</a>
+        <a routerLink="/" fragment="benefits">Benefits</a>
+        <a routerLink="/" fragment="pricing">Pricing</a>
+      </div>
+      <div class="footer-col">
+        <h4>Fuel Solutions</h4>
+        <a routerLink="/" fragment="how">How It Works</a>
+        <a routerLink="/" fragment="testimonials">Testimonials</a>
+        <a routerLink="/" fragment="faq">FAQ</a>
+        <a routerLink="/auth/register">Become a Vendor</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a routerLink="/" fragment="cta">Contact</a>
+        <a routerLink="/auth/login">Log In</a>
+        <a routerLink="/auth/register">Get Started</a>
+      </div>
     </div>
-    <div class="footer-copy">&copy; {{ year }} FuelFlow. All rights reserved.</div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; {{ year }} FuelFlow LLC. All rights reserved.</span>
+    <span class="footer-legal">Built for modern fuel operations.</span>
   </div>
 </footer>

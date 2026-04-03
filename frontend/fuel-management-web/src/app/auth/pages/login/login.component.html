@@ -21,8 +21,9 @@
 			<div class="sample-credentials">
 				<strong>Quick Demo Access:</strong>
 				<div class="sample-buttons">
-					<button type="button" (click)="loadSample('admin')">Load Admin</button>
 					<button type="button" (click)="loadSample('customer')">Load Customer</button>
+					<button type="button" (click)="loadSample('dealer')">Load Dealer</button>
+					<button type="button" (click)="loadSample('admin')">Load Admin</button>
 				</div>
 			</div>
 		</aside>
@@ -34,7 +35,6 @@
 					<h2>Login</h2>
 					<p>Use your email or mobile number to continue.</p>
 				</div>
-				<app-language-toggle></app-language-toggle>
 			</header>
 
 			<form [formGroup]="form" (ngSubmit)="submit()" novalidate>
@@ -45,6 +45,24 @@
 				<small class="error" *ngIf="form.controls.identifier.touched && form.controls.identifier.invalid">
 					Enter a valid email address or Indian mobile number.
 				</small>
+
+				<div class="role-select">
+					<span class="role-label">Login as</span>
+					<div class="role-options">
+						<label class="role-pill" [class.active]="form.controls.role.value === 'Customer'">
+							<input type="radio" formControlName="role" value="Customer" />
+							<span>Customer</span>
+						</label>
+						<label class="role-pill" [class.active]="form.controls.role.value === 'Dealer'">
+							<input type="radio" formControlName="role" value="Dealer" />
+							<span>Dealer</span>
+						</label>
+						<label class="role-pill" [class.active]="form.controls.role.value === 'Admin'">
+							<input type="radio" formControlName="role" value="Admin" />
+							<span>Admin</span>
+						</label>
+					</div>
+				</div>
 
 				<label>
 					Password

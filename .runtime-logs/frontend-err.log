@@ -1,2165 +1,702 @@
 - Building...
 
-- Changes detected. Rebuilding...
+X [ERROR] NG5002: Incomplete block "fuelflow". If you meant to write the @ character, you should use the "&#64;" HTML entity instead. [plugin angular-compiler]
 
-X [ERROR] Program does not contain "C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/shared/components/kpi-card/kpi-card.component.ngtypecheck.ts" - available files are C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es5.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2015.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2016.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2017.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2018.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2019.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2020.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2021.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2022.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.dom.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2015.core.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2015.collection.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2015.generator.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2015.iterable.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2015.promise.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2015.proxy.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2015.reflect.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2015.symbol.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2016.array.include.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2016.intl.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2017.date.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2017.object.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2017.sharedmemory.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2017.string.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2017.intl.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2017.typedarrays.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2018.asyncgenerator.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2018.asynciterable.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2018.intl.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2018.promise.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2018.regexp.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2019.array.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2019.object.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2019.string.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2019.symbol.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2019.intl.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2020.bigint.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2020.date.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2020.promise.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2020.sharedmemory.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2020.string.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2020.symbol.wellknown.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2020.intl.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2020.number.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2021.promise.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2021.string.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2021.weakref.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2021.intl.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2022.array.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2022.error.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2022.intl.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2022.object.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2022.sharedmemory.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2022.string.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.es2022.regexp.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.decorators.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/typescript/lib/lib.decorators.legacy.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/tslib/tslib.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/main.ngtypecheck.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/Subscription.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/Subscriber.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/Operator.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/Observable.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/types.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/audit.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/auditTime.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/buffer.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/bufferCount.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/bufferTime.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/bufferToggle.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/bufferWhen.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/catchError.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/combineLatestAll.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/combineAll.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/combineLatest.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/combineLatestWith.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/concat.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/concatAll.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/concatMap.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/concatMapTo.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/concatWith.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/connect.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/count.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/debounce.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/debounceTime.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/defaultIfEmpty.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/delay.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/delayWhen.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/dematerialize.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/distinct.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/distinctUntilChanged.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/distinctUntilKeyChanged.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/elementAt.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/endWith.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/every.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/exhaustAll.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/exhaust.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/exhaustMap.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/expand.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/filter.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/finalize.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/find.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/findIndex.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/first.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/Subject.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/groupBy.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/ignoreElements.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/isEmpty.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/last.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/map.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/mapTo.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/Notification.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/materialize.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/max.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/merge.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/mergeAll.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/mergeMap.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/flatMap.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/mergeMapTo.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/mergeScan.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/mergeWith.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/min.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/observable/ConnectableObservable.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/multicast.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/observeOn.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/onErrorResumeNextWith.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/pairwise.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/partition.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/pluck.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/publish.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/publishBehavior.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/publishLast.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/publishReplay.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/race.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/raceWith.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/reduce.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/repeat.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/repeatWhen.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/retry.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/retryWhen.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/refCount.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/sample.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/sampleTime.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/scan.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/sequenceEqual.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/share.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/shareReplay.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/single.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/skip.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/skipLast.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/skipUntil.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/skipWhile.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/startWith.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/subscribeOn.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/switchAll.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/switchMap.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/switchMapTo.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/switchScan.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/take.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/takeLast.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/takeUntil.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/takeWhile.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/tap.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/throttle.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/throttleTime.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/throwIfEmpty.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/timeInterval.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/timeout.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/timeoutWith.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/timestamp.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/toArray.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/window.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/windowCount.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/windowTime.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/windowToggle.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/windowWhen.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/withLatestFrom.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/zip.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/zipAll.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/operators/zipWith.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/operators/index.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/scheduler/Action.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/Scheduler.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/testing/TestMessage.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/testing/SubscriptionLog.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/testing/SubscriptionLoggable.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/testing/ColdObservable.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/testing/HotObservable.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/scheduler/AsyncScheduler.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/scheduler/timerHandle.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/scheduler/AsyncAction.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/scheduler/VirtualTimeScheduler.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/testing/TestScheduler.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/testing/index.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/symbol/observable.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/observable/dom/animationFrames.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/BehaviorSubject.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/ReplaySubject.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/AsyncSubject.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/scheduler/AsapScheduler.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/scheduler/asap.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/scheduler/async.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/scheduler/QueueScheduler.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/scheduler/queue.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/scheduler/AnimationFrameScheduler.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/scheduler/animationFrame.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/util/identity.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/util/pipe.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/util/noop.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/util/isObservable.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/lastValueFrom.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/firstValueFrom.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/util/ArgumentOutOfRangeError.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/util/EmptyError.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/util/NotFoundError.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/util/ObjectUnsubscribedError.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/util/SequenceError.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/util/UnsubscriptionError.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/observable/bindCallback.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/observable/bindNodeCallback.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/AnyCatcher.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/observable/combineLatest.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/observable/concat.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/observable/connectable.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/observable/defer.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/observable/empty.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/observable/forkJoin.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/observable/from.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/observable/fromEvent.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/observable/fromEventPattern.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/observable/generate.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/observable/iif.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/observable/interval.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/observable/merge.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/observable/never.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/observable/of.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/observable/onErrorResumeNext.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/observable/pairs.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/observable/partition.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/observable/race.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/observable/range.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/observable/throwError.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/observable/timer.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/observable/using.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/observable/zip.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/scheduled/scheduled.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/internal/config.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/rxjs/dist/types/index.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/@angular/core/primitives/signals/index.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/@angular/core/index.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/@angular/platform-browser-dynamic/index.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/app.module.ngtypecheck.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/@angular/common/index.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/@angular/common/http/index.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/@angular/platform-browser/index.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/@angular/animations/index.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/@angular/animations/browser/index.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/@angular/platform-browser/animations/index.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/app-routing.module.ngtypecheck.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/@angular/router/index.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/core/guards/auth.guard.ngtypecheck.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/core/services/auth.service.ngtypecheck.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/environments/environment.ngtypecheck.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/environments/environment.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/core/models/auth.models.ngtypecheck.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/core/models/auth.models.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/core/services/auth.service.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/core/guards/auth.guard.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/landing/landing.component.ngtypecheck.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/landing/landing.component.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/core/guards/role.guard.ngtypecheck.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/core/guards/role.guard.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/auth/auth.module.ngtypecheck.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/auth/auth-routing.module.ngtypecheck.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/auth/pages/forgot-password/forgot-password.component.ngtypecheck.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/@angular/forms/index.d.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/auth/pages/forgot-password/forgot-password.component.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/auth/pages/login/login.component.ngtypecheck.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/auth/pages/login/login.component.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/auth/pages/otp-verify/otp-verify.component.ngtypecheck.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/auth/pages/otp-verify/otp-verify.component.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/auth/pages/register/register.component.ngtypecheck.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/auth/pages/register/register.component.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/auth/pages/reset-password/reset-password.component.ngtypecheck.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/auth/pages/reset-password/reset-password.component.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/auth/auth-routing.module.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/auth/auth.module.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/customer/customer.module.ngtypecheck.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/customer/customer-routing.module.ngtypecheck.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/customer/pages/dashboard/dashboard.component.ngtypecheck.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/customer/pages/dashboard/dashboard.component.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/customer/pages/nearby-stations/nearby-stations.component.ngtypecheck.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/customer/pages/nearby-stations/nearby-stations.component.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/customer/pages/prices/prices.component.ngtypecheck.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/customer/pages/prices/prices.component.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/customer/pages/receipt-viewer/receipt-viewer.component.ngtypecheck.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/customer/pages/receipt-viewer/receipt-viewer.component.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/customer/pages/transactions/transactions.component.ngtypecheck.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/customer/pages/transactions/transactions.component.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/customer/customer-routing.module.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/shared-admin-dealer/shared-admin-dealer.module.ngtypecheck.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/shared-admin-dealer/components/tank-gauge/tank-gauge.component.ngtypecheck.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/shared-admin-dealer/components/tank-gauge/tank-gauge.component.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/shared-admin-dealer/components/station-map/station-map.component.ngtypecheck.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/shared-admin-dealer/components/station-map/station-map.component.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/shared-admin-dealer/components/recent-transactions/recent-transactions.component.ngtypecheck.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/shared-admin-dealer/components/recent-transactions/recent-transactions.component.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/shared-admin-dealer/shared-admin-dealer.module.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/customer/customer.module.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/dealer/dealer.module.ngtypecheck.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/dealer/dealer-routing.module.ngtypecheck.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/dealer/pages/dashboard/dashboard.component.ngtypecheck.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/dealer/pages/dashboard/dashboard.component.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/dealer/pages/inventory/inventory.component.ngtypecheck.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/dealer/pages/inventory/inventory.component.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/dealer/pages/pump-manager/pump-manager.component.ngtypecheck.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/dealer/pages/pump-manager/pump-manager.component.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/dealer/pages/sales-entry/sales-entry.component.ngtypecheck.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/dealer/pages/sales-entry/sales-entry.component.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/dealer/pages/shift-summary/shift-summary.component.ngtypecheck.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/dealer/pages/shift-summary/shift-summary.component.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/dealer/dealer-routing.module.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/dealer/dealer.module.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/admin/admin.module.ngtypecheck.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/admin/admin-routing.module.ngtypecheck.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/admin/pages/dashboard/dashboard.component.ngtypecheck.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/admin/pages/dashboard/dashboard.component.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/admin/pages/fraud/fraud.component.ngtypecheck.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/admin/pages/fraud/fraud.component.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/admin/pages/prices/prices.component.ngtypecheck.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/admin/pages/prices/prices.component.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/admin/pages/reports/reports.component.ngtypecheck.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/admin/pages/reports/reports.component.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/admin/pages/stations/stations.component.ngtypecheck.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/admin/pages/stations/stations.component.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/admin/pages/users/users.component.ngtypecheck.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/admin/pages/users/users.component.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/admin/admin-routing.module.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/admin/admin.module.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/app-routing.module.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/app.component.ngtypecheck.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/app.component.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/core/core.module.ngtypecheck.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/core/errors/global-error-handler.ngtypecheck.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/core/errors/global-error-handler.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/core/interceptors/auth.interceptor.ngtypecheck.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/core/interceptors/auth.interceptor.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/core/interceptors/error.interceptor.ngtypecheck.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/core/interceptors/error.interceptor.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/core/core.module.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/app/app.module.ts, C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/src/main.ts [plugin angular-compiler]
+    src/app/shared/components/footer/footer.component.html:13:48:
+      13 │         <a href="mailto:sales@fuelflow.me">sales@fuelflow.me</a>
+         ╵                                                 ~~~~~~~~~
 
-    node_modules/@angular-devkit/build-angular/src/tools/esbuild/angular/compilation/aot-compilation.js:124:121:
-      124 │ ...MPLATE', () => angularCompiler.getDiagnosticsForFile(sourceFil...
-          ╵                                   ^
+  Error occurs in the template of component FooterComponent.
 
-    at getSourceFileOrError (file:///C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/@angular/compiler-cli/bundles/chunk-75YFKYUJ.js:20:11)
-    at file:///C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/@angular/compiler-cli/bundles/chunk-LV7FGTGX.js:7866:24
-    at DelegatingPerfRecorder.inPhase (file:///C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/@angular/compiler-cli/bundles/chunk-R4KQI5XI.js:181:14)
-    at TemplateTypeCheckerImpl.getDiagnosticsForFile (file:///C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/@angular/compiler-cli/bundles/chunk-LV7FGTGX.js:7856:22)
-    at NgCompiler.getTemplateDiagnosticsForFile (file:///C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/@angular/compiler-cli/bundles/chunk-LV7FGTGX.js:9534:59)
-    at NgCompiler.getDiagnosticsForFile (file:///C:/Users/Arjun/Desktop/sprintproj/frontend/fuel-management-web/node_modules/@angular/compiler-cli/bundles/chunk-LV7FGTGX.js:9235:32)
-    at C:\Users\Arjun\Desktop\sprintproj\frontend\fuel-management-web\node_modules\@angular-devkit\build-angular\src\tools\esbuild\angular\compilation\aot-compilation.js:124:122
-    at profileSync (C:\Users\Arjun\Desktop\sprintproj\frontend\fuel-management-web\node_modules\@angular-devkit\build-angular\src\tools\esbuild\profiling.js:68:16)
-    at AotCompilation.collectDiagnostics (C:\Users\Arjun\Desktop\sprintproj\frontend\fuel-management-web\node_modules\@angular-devkit\build-angular\src\tools\esbuild\angular\compilation\aot-compilation.js:124:72)
-    at collectDiagnostics.next (<anonymous>)
-
-  This error came from the "onStart" callback registered here:
-
-    node_modules/@angular-devkit/build-angular/src/tools/esbuild/angular/compiler-plugin.js:81:18:
-      81 │             build.onStart(async () => {
-         ╵                   ~~~~~~~
-
-    at setup (C:\Users\Arjun\Desktop\sprintproj\frontend\fuel-management-web\node_modules\@angular-devkit\build-angular\src\tools\esbuild\angular\compiler-plugin.js:81:19)
-    at async handlePlugins (C:\Users\Arjun\Desktop\sprintproj\frontend\fuel-management-web\node_modules\esbuild\lib\main.js:1340:9)
+    src/app/shared/components/footer/footer.component.ts:2:50:
+      2 │ ...oter", templateUrl: "./footer.component.html", styleUrl: "./foot...
+        ╵                        ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 - Changes detected. Rebuilding...
 
-X [ERROR] TS2307: Cannot find module '../shared/shared.module' or its corresponding type declarations. [plugin angular-compiler]
+- Changes detected. Rebuilding...
 
-    src/app/admin/admin.module.ts:11:29:
-      11 │ import { SharedModule } from '../shared/shared.module';
-         ╵                              ~~~~~~~~~~~~~~~~~~~~~~~~~
+- Changes detected. Rebuilding...
 
+- Changes detected. Rebuilding...
 
-X [ERROR] NG8001: 'app-kpi-card' is not a known element:
-1. If 'app-kpi-card' is an Angular component, then verify that it is part of this module.
-2. If 'app-kpi-card' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message. [plugin angular-compiler]
+- Changes detected. Rebuilding...
 
-    src/app/admin/pages/dashboard/dashboard.component.html:12:2:
-      12 │     <app-kpi-card
-         ╵     ~~~~~~~~~~~~~
+- Changes detected. Rebuilding...
 
-  Error occurs in the template of component DashboardComponent.
+- Changes detected. Rebuilding...
 
-    src/app/admin/pages/dashboard/dashboard.component.ts:5:15:
-      5 │   templateUrl: './dashboard.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- Changes detected. Rebuilding...
 
+- Changes detected. Rebuilding...
 
-X [ERROR] NG8002: Can't bind to 'value' since it isn't a known property of 'app-kpi-card'.
-1. If 'app-kpi-card' is an Angular component and it has 'value' input, then verify that it is part of this module.
-2. If 'app-kpi-card' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
-3. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component. [plugin angular-compiler]
+- Changes detected. Rebuilding...
 
-    src/app/admin/pages/dashboard/dashboard.component.html:15:3:
-      15 │       [value]="kpi.value"
-         ╵       ~~~~~~~~~~~~~~~~~~~
+- Changes detected. Rebuilding...
 
-  Error occurs in the template of component DashboardComponent.
+- Changes detected. Rebuilding...
 
-    src/app/admin/pages/dashboard/dashboard.component.ts:5:15:
-      5 │   templateUrl: './dashboard.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- Changes detected. Rebuilding...
 
+- Changes detected. Rebuilding...
 
-X [ERROR] NG8002: Can't bind to 'subtitle' since it isn't a known property of 'app-kpi-card'.
-1. If 'app-kpi-card' is an Angular component and it has 'subtitle' input, then verify that it is part of this module.
-2. If 'app-kpi-card' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
-3. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component. [plugin angular-compiler]
+- Changes detected. Rebuilding...
 
-    src/app/admin/pages/dashboard/dashboard.component.html:16:3:
-      16 │       [subtitle]="kpi.subtitle"
-         ╵       ~~~~~~~~~~~~~~~~~~~~~~~~~
+- Changes detected. Rebuilding...
 
-  Error occurs in the template of component DashboardComponent.
+- Changes detected. Rebuilding...
 
-    src/app/admin/pages/dashboard/dashboard.component.ts:5:15:
-      5 │   templateUrl: './dashboard.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- Changes detected. Rebuilding...
 
+- Changes detected. Rebuilding...
 
-X [ERROR] NG8002: Can't bind to 'trend' since it isn't a known property of 'app-kpi-card'.
-1. If 'app-kpi-card' is an Angular component and it has 'trend' input, then verify that it is part of this module.
-2. If 'app-kpi-card' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
-3. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component. [plugin angular-compiler]
+- Changes detected. Rebuilding...
 
-    src/app/admin/pages/dashboard/dashboard.component.html:17:3:
-      17 │       [trend]="kpi.trend"
-         ╵       ~~~~~~~~~~~~~~~~~~~
+- Changes detected. Rebuilding...
 
-  Error occurs in the template of component DashboardComponent.
+- Changes detected. Rebuilding...
 
-    src/app/admin/pages/dashboard/dashboard.component.ts:5:15:
-      5 │   templateUrl: './dashboard.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- Changes detected. Rebuilding...
+
+- Changes detected. Rebuilding...
+
+X [ERROR] NG8002: Can't bind to 'ngModel' since it isn't a known property of 'select'. [plugin angular-compiler]
+
+    src/app/customer/pages/orders/orders.component.html:18:13:
+      18 │           <select [(ngModel)]="newOrder.station">
+         ╵                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component OrdersComponent.
+
+    src/app/customer/pages/orders/orders.component.ts:34:15:
+      34 │   templateUrl: './orders.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-X [ERROR] NG8002: Can't bind to 'tone' since it isn't a known property of 'app-kpi-card'.
-1. If 'app-kpi-card' is an Angular component and it has 'tone' input, then verify that it is part of this module.
-2. If 'app-kpi-card' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
-3. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component. [plugin angular-compiler]
+X [ERROR] NG8002: Can't bind to 'ngModel' since it isn't a known property of 'select'. [plugin angular-compiler]
 
-    src/app/admin/pages/dashboard/dashboard.component.html:18:3:
-      18 │       [tone]="kpi.tone"
-         ╵       ~~~~~~~~~~~~~~~~~
+    src/app/customer/pages/orders/orders.component.html:26:13:
+      26 │           <select [(ngModel)]="newOrder.fuelType">
+         ╵                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Error occurs in the template of component DashboardComponent.
+  Error occurs in the template of component OrdersComponent.
 
-    src/app/admin/pages/dashboard/dashboard.component.ts:5:15:
-      5 │   templateUrl: './dashboard.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    src/app/customer/pages/orders/orders.component.ts:34:15:
+      34 │   templateUrl: './orders.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-X [ERROR] NG8001: 'app-station-map' is not a known element:
-1. If 'app-station-map' is an Angular component, then verify that it is part of this module.
-2. If 'app-station-map' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message. [plugin angular-compiler]
+X [ERROR] NG8002: Can't bind to 'ngModel' since it isn't a known property of 'input'. [plugin angular-compiler]
 
-    src/app/admin/pages/dashboard/dashboard.component.html:25:3:
-      25 │       <app-station-map></app-station-map>
-         ╵       ~~~~~~~~~~~~~~~~~
+    src/app/customer/pages/orders/orders.component.html:35:46:
+      35 │ ...pe="number" min="100" step="10" [(ngModel)]="newOrder.quantity" />
+         ╵                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Error occurs in the template of component DashboardComponent.
+  Error occurs in the template of component OrdersComponent.
 
-    src/app/admin/pages/dashboard/dashboard.component.ts:5:15:
-      5 │   templateUrl: './dashboard.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    src/app/customer/pages/orders/orders.component.ts:34:15:
+      34 │   templateUrl: './orders.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-X [ERROR] NG8002: Can't bind to 'ngClass' since it isn't a known property of 'span'. [plugin angular-compiler]
+X [ERROR] NG8002: Can't bind to 'ngModel' since it isn't a known property of 'input'. [plugin angular-compiler]
 
-    src/app/admin/pages/fraud/fraud.component.html:27:30:
-      27 │ ...ass="badge" [ngClass]="alert.severity.toLowerCase()">{{ alert.s...
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    src/app/customer/pages/orders/orders.component.html:42:24:
+      42 │ ... type="text" [(ngModel)]="newOrder.deliveryWindow" placeholder=...
+         ╵                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Error occurs in the template of component FraudComponent.
+  Error occurs in the template of component OrdersComponent.
 
-    src/app/admin/pages/fraud/fraud.component.ts:15:15:
-      15 │   templateUrl: './fraud.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~
+    src/app/customer/pages/orders/orders.component.ts:34:15:
+      34 │   templateUrl: './orders.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-X [ERROR] NG1: Object is possibly 'null'. [plugin angular-compiler]
+X [ERROR] NG8002: Can't bind to 'ngModel' since it isn't a known property of 'input'. [plugin angular-compiler]
 
-    src/app/admin/pages/fraud/fraud.component.html:44:31:
-      44 │ ...<p><strong>{{ selectedAlert.alertId }}</strong> at {{ selectedA...
+    src/app/customer/pages/orders/orders.component.html:46:24:
+      46 │ ...input type="text" [(ngModel)]="newOrder.notes" placeholder="Add...
+         ╵                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component OrdersComponent.
+
+    src/app/customer/pages/orders/orders.component.ts:34:15:
+      34 │   templateUrl: './orders.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG2: Object is possibly 'undefined'. [plugin angular-compiler]
+
+    src/app/customer/pages/orders/orders.component.html:75:29:
+      75 │             <strong>{{ activeOrder.id }}</strong>
+         ╵                                    ~~
+
+  Error occurs in the template of component OrdersComponent.
+
+    src/app/customer/pages/orders/orders.component.ts:34:15:
+      34 │   templateUrl: './orders.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG2: Object is possibly 'undefined'. [plugin angular-compiler]
+
+    src/app/customer/pages/orders/orders.component.html:76:27:
+      76 │ ...       <span>{{ activeOrder.station }} · {{ activeOrder.fuelTy...
          ╵                                ~~~~~~~
 
-  Error occurs in the template of component FraudComponent.
+  Error occurs in the template of component OrdersComponent.
 
-    src/app/admin/pages/fraud/fraud.component.ts:15:15:
-      15 │   templateUrl: './fraud.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG1: Object is possibly 'null'. [plugin angular-compiler]
-
-    src/app/admin/pages/fraud/fraud.component.html:44:71:
-      44 │ ...lectedAlert.alertId }}</strong> at {{ selectedAlert.station }}</p>
-         ╵                                                        ~~~~~~~
-
-  Error occurs in the template of component FraudComponent.
-
-    src/app/admin/pages/fraud/fraud.component.ts:15:15:
-      15 │   templateUrl: './fraud.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~
+    src/app/customer/pages/orders/orders.component.ts:34:15:
+      34 │   templateUrl: './orders.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-X [ERROR] NG1: Object is possibly 'null'. [plugin angular-compiler]
+X [ERROR] NG2: Object is possibly 'undefined'. [plugin angular-compiler]
 
-    src/app/admin/pages/fraud/fraud.component.html:45:29:
-      45 │       <p>Rule: {{ selectedAlert.rule }}</p>
-         ╵                                 ~~~~
+    src/app/customer/pages/orders/orders.component.html:76:55:
+      76 │ ...pan>{{ activeOrder.station }} · {{ activeOrder.fuelType }}</span>
+         ╵                                                  ~~~~~~~~
 
-  Error occurs in the template of component FraudComponent.
+  Error occurs in the template of component OrdersComponent.
 
-    src/app/admin/pages/fraud/fraud.component.ts:15:15:
-      15 │   templateUrl: './fraud.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG1: Object is possibly 'null'. [plugin angular-compiler]
-
-    src/app/admin/pages/fraud/fraud.component.html:46:36:
-      46 │       <p>Transaction: {{ selectedAlert.transactionId }}</p>
-         ╵                                        ~~~~~~~~~~~~~
-
-  Error occurs in the template of component FraudComponent.
-
-    src/app/admin/pages/fraud/fraud.component.ts:15:15:
-      15 │   templateUrl: './fraud.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~
+    src/app/customer/pages/orders/orders.component.ts:34:15:
+      34 │   templateUrl: './orders.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-X [ERROR] NG1: Object is possibly 'null'. [plugin angular-compiler]
+X [ERROR] NG2: Object is possibly 'undefined'. [plugin angular-compiler]
 
-    src/app/admin/pages/fraud/fraud.component.html:47:33:
-      47 │       <p>Severity: {{ selectedAlert.severity }}</p>
-         ╵                                     ~~~~~~~~
+    src/app/customer/pages/orders/orders.component.html:80:29:
+      80 │             <strong>{{ activeOrder.eta }}</strong>
+         ╵                                    ~~~
 
-  Error occurs in the template of component FraudComponent.
+  Error occurs in the template of component OrdersComponent.
 
-    src/app/admin/pages/fraud/fraud.component.ts:15:15:
-      15 │   templateUrl: './fraud.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG1: Object is possibly 'null'. [plugin angular-compiler]
-
-    src/app/admin/pages/fraud/fraud.component.html:48:31:
-      48 │       <p>Status: {{ selectedAlert.status }}</p>
-         ╵                                   ~~~~~~
-
-  Error occurs in the template of component FraudComponent.
-
-    src/app/admin/pages/fraud/fraud.component.ts:15:15:
-      15 │   templateUrl: './fraud.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~
+    src/app/customer/pages/orders/orders.component.ts:34:15:
+      34 │   templateUrl: './orders.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-X [ERROR] NG8004: No pipe found with name 'currency'. [plugin angular-compiler]
+X [ERROR] NG2: Object is possibly 'undefined'. [plugin angular-compiler]
 
-    src/app/admin/pages/prices/prices.component.html:20:24:
-      20 │           <td>{{ row.price | currency: 'INR' : 'symbol' : '1.2-2' ...
-         ╵                              ~~~~~~~~
+    src/app/customer/pages/orders/orders.component.html:84:122:
+      84 │ ... i = index" [class.complete]="i <= stepIndex(activeOrder.status)">
+         ╵                                                             ~~~~~~
 
-  Error occurs in the template of component PricesComponent.
+  Error occurs in the template of component OrdersComponent.
 
-    src/app/admin/pages/prices/prices.component.ts:13:15:
-      13 │   templateUrl: './prices.component.html',
+    src/app/customer/pages/orders/orders.component.ts:34:15:
+      34 │   templateUrl: './orders.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG2: Object is possibly 'undefined'. [plugin angular-compiler]
+
+    src/app/customer/pages/orders/orders.component.html:88:44:
+      88 │ ... i === stepIndex(activeOrder.status) ? activeOrder.lastUpdate :...
+         ╵                                 ~~~~~~
+
+  Error occurs in the template of component OrdersComponent.
+
+    src/app/customer/pages/orders/orders.component.ts:34:15:
+      34 │   templateUrl: './orders.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG2: Object is possibly 'undefined'. [plugin angular-compiler]
+
+    src/app/customer/pages/orders/orders.component.html:88:66:
+      88 │ ...ctiveOrder.status) ? activeOrder.lastUpdate : 'In queue' }}</span>
+         ╵                                     ~~~~~~~~~~
+
+  Error occurs in the template of component OrdersComponent.
+
+    src/app/customer/pages/orders/orders.component.ts:34:15:
+      34 │   templateUrl: './orders.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG2: Object is possibly 'undefined'. [plugin angular-compiler]
+
+    src/app/customer/pages/orders/orders.component.html:92:48:
+      92 │         <p class="note">Last update: {{ activeOrder.lastUpdate }}</p>
+         ╵                                                     ~~~~~~~~~~
+
+  Error occurs in the template of component OrdersComponent.
+
+    src/app/customer/pages/orders/orders.component.ts:34:15:
+      34 │   templateUrl: './orders.component.html',
          ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 X [ERROR] NG8002: Can't bind to 'ngModel' since it isn't a known property of 'select'. [plugin angular-compiler]
 
-    src/app/admin/pages/reports/reports.component.html:10:11:
-      10 │       <select [(ngModel)]="reportType">
-         ╵               ~~~~~~~~~~~~~~~~~~~~~~~~
+    src/app/customer/pages/orders/orders.component.html:104:13:
+      104 │           <select [(ngModel)]="updateForm.status">
+          ╵                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Error occurs in the template of component ReportsComponent.
+  Error occurs in the template of component OrdersComponent.
 
-    src/app/admin/pages/reports/reports.component.ts:12:15:
-      12 │   templateUrl: './reports.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8004: No pipe found with name 'currency'. [plugin angular-compiler]
-
-    src/app/admin/pages/reports/reports.component.html:41:26:
-      41 │           <td>{{ row.revenue | currency: 'INR' : 'symbol' : '1.0-0...
-         ╵                                ~~~~~~~~
-
-  Error occurs in the template of component ReportsComponent.
-
-    src/app/admin/pages/reports/reports.component.ts:12:15:
-      12 │   templateUrl: './reports.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8001: 'app-station-map' is not a known element:
-1. If 'app-station-map' is an Angular component, then verify that it is part of this module.
-2. If 'app-station-map' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message. [plugin angular-compiler]
-
-    src/app/admin/pages/stations/stations.component.html:47:2:
-      47 │     <app-station-map></app-station-map>
-         ╵     ~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component StationsComponent.
-
-    src/app/admin/pages/stations/stations.component.ts:15:15:
-      15 │   templateUrl: './stations.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8002: Can't bind to 'ngModel' since it isn't a known property of 'select'. [plugin angular-compiler]
-
-    src/app/admin/pages/users/users.component.html:10:11:
-      10 │       <select [(ngModel)]="roleFilter">
-         ╵               ~~~~~~~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component UsersComponent.
-
-    src/app/admin/pages/users/users.component.ts:14:15:
-      14 │   templateUrl: './users.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8002: Can't bind to 'ngModel' since it isn't a known property of 'select'. [plugin angular-compiler]
-
-    src/app/admin/pages/users/users.component.html:38:14:
-      38 │             <select [(ngModel)]="user.role" aria-label="Assign role">
-         ╵                     ~~~~~~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component UsersComponent.
-
-    src/app/admin/pages/users/users.component.ts:14:15:
-      14 │   templateUrl: './users.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] TS2307: Cannot find module './shared/shared.module' or its corresponding type declarations. [plugin angular-compiler]
-
-    src/app/app.module.ts:8:29:
-      8 │ import { SharedModule } from "./shared/shared.module";
-        ╵                              ~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] TS-991010: Value at position 4 in the NgModule.imports of AppModule is not a reference
-  Value could not be determined statically. [plugin angular-compiler]
-
-    src/app/app.module.ts:12:11:
-      12 │   imports: [BrowserModule, BrowserAnimationsModule, CoreModule, Ap...
-         ╵            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-  Unknown reference.
-
-    src/app/app.module.ts:12:82:
-      12 │ ...wserAnimationsModule, CoreModule, AppRoutingModule, SharedModule],
-         ╵                                                        ~~~~~~~~~~~~
-
-
-X [ERROR] TS2307: Cannot find module '../shared/shared.module' or its corresponding type declarations. [plugin angular-compiler]
-
-    src/app/auth/auth.module.ts:10:29:
-      10 │ import { SharedModule } from '../shared/shared.module';
-         ╵                              ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] TS-991010: Value at position 2 in the NgModule.imports of AuthModule is not a reference
-  Value could not be determined statically. [plugin angular-compiler]
-
-    src/app/auth/auth.module.ts:21:11:
-      21 │   imports: [
-         ╵            ^
-
-  Unknown reference.
-
-    src/app/auth/auth.module.ts:24:4:
-      24 │     SharedModule,
-         ╵     ~~~~~~~~~~~~
-
-
-X [ERROR] NG8002: Can't bind to 'formGroup' since it isn't a known property of 'form'. [plugin angular-compiler]
-
-    src/app/auth/pages/forgot-password/forgot-password.component.html:7:8:
-      7 │     <form [formGroup]="form" (ngSubmit)="submit()">
-        ╵           ~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component ForgotPasswordComponent.
-
-    src/app/auth/pages/forgot-password/forgot-password.component.ts:6:15:
-      6 │   templateUrl: './forgot-password.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8001: 'app-language-toggle' is not a known element:
-1. If 'app-language-toggle' is an Angular component, then verify that it is part of this module.
-2. If 'app-language-toggle' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message. [plugin angular-compiler]
-
-    src/app/auth/pages/login/login.component.html:37:4:
-      37 │         <app-language-toggle></app-language-toggle>
-         ╵         ~~~~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component LoginComponent.
-
-    src/app/auth/pages/login/login.component.ts:11:15:
-      11 │   templateUrl: './login.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8002: Can't bind to 'formGroup' since it isn't a known property of 'form'. [plugin angular-compiler]
-
-    src/app/auth/pages/login/login.component.html:40:9:
-      40 │       <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
-         ╵             ~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component LoginComponent.
-
-    src/app/auth/pages/login/login.component.ts:11:15:
-      11 │   templateUrl: './login.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8002: Can't bind to 'formGroup' since it isn't a known property of 'form'. [plugin angular-compiler]
-
-    src/app/auth/pages/otp-verify/otp-verify.component.html:7:8:
-      7 │     <form [formGroup]="form" (ngSubmit)="submit()">
-        ╵           ~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component OtpVerifyComponent.
-
-    src/app/auth/pages/otp-verify/otp-verify.component.ts:10:15:
-      10 │   templateUrl: './otp-verify.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8002: Can't bind to 'formGroup' since it isn't a known property of 'form'. [plugin angular-compiler]
-
-    src/app/auth/pages/register/register.component.html:11:9:
-      11 │       <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
-         ╵             ~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component RegisterComponent.
-
-    src/app/auth/pages/register/register.component.ts:17:15:
-      17 │   templateUrl: './register.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8002: Can't bind to 'formGroup' since it isn't a known property of 'form'. [plugin angular-compiler]
-
-    src/app/auth/pages/reset-password/reset-password.component.html:5:8:
-      5 │     <form [formGroup]="form" (ngSubmit)="submit()">
-        ╵           ~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component ResetPasswordComponent.
-
-    src/app/auth/pages/reset-password/reset-password.component.ts:12:15:
-      12 │   templateUrl: './reset-password.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] TS2307: Cannot find module '../shared/shared.module' or its corresponding type declarations. [plugin angular-compiler]
-
-    src/app/customer/customer.module.ts:10:29:
-      10 │ import { SharedModule } from '../shared/shared.module';
-         ╵                              ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] TS-991010: Value at position 2 in the NgModule.imports of CustomerModule is not a reference
-  Value could not be determined statically. [plugin angular-compiler]
-
-    src/app/customer/customer.module.ts:22:11:
-      22 │   imports: [
-         ╵            ^
-
-  Unknown reference.
-
-    src/app/customer/customer.module.ts:25:4:
-      25 │     SharedModule,
-         ╵     ~~~~~~~~~~~~
-
-
-X [ERROR] NG8001: 'app-price-ticker' is not a known element:
-1. If 'app-price-ticker' is an Angular component, then verify that it is part of this module.
-2. If 'app-price-ticker' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message. [plugin angular-compiler]
-
-    src/app/customer/pages/dashboard/dashboard.component.html:14:3:
-      14 │       <app-price-ticker></app-price-ticker>
-         ╵       ~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component DashboardComponent.
-
-    src/app/customer/pages/dashboard/dashboard.component.ts:12:15:
-      12 │   templateUrl: './dashboard.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8004: No pipe found with name 'number'. [plugin angular-compiler]
-
-    src/app/customer/pages/dashboard/dashboard.component.html:19:42:
-      19 │       <div class="points">{{ loyaltyPoints | number }}</div>
-         ╵                                              ~~~~~~
-
-  Error occurs in the template of component DashboardComponent.
-
-    src/app/customer/pages/dashboard/dashboard.component.ts:12:15:
-      12 │   templateUrl: './dashboard.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8004: No pipe found with name 'currency'. [plugin angular-compiler]
-
-    src/app/customer/pages/dashboard/dashboard.component.html:20:45:
-      20 │ ...value: {{ redemptionValue | currency: 'INR' : 'symbol' : '1.0-0...
-         ╵                                ~~~~~~~~
-
-  Error occurs in the template of component DashboardComponent.
-
-    src/app/customer/pages/dashboard/dashboard.component.ts:12:15:
-      12 │   templateUrl: './dashboard.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8004: No pipe found with name 'currency'. [plugin angular-compiler]
-
-    src/app/customer/pages/dashboard/dashboard.component.html:31:27:
-      31 │ ...      <span>{{ row.amount | currency: 'INR' : 'symbol' : '1.0-0...
-         ╵                                ~~~~~~~~
-
-  Error occurs in the template of component DashboardComponent.
-
-    src/app/customer/pages/dashboard/dashboard.component.ts:12:15:
-      12 │   templateUrl: './dashboard.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8001: 'app-station-map' is not a known element:
-1. If 'app-station-map' is an Angular component, then verify that it is part of this module.
-2. If 'app-station-map' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message. [plugin angular-compiler]
-
-    src/app/customer/pages/dashboard/dashboard.component.html:49:2:
-      49 │     <app-station-map></app-station-map>
-         ╵     ~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component DashboardComponent.
-
-    src/app/customer/pages/dashboard/dashboard.component.ts:12:15:
-      12 │   templateUrl: './dashboard.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8001: 'app-station-map' is not a known element:
-1. If 'app-station-map' is an Angular component, then verify that it is part of this module.
-2. If 'app-station-map' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message. [plugin angular-compiler]
-
-    src/app/customer/pages/nearby-stations/nearby-stations.component.html:4:2:
-      4 │     <app-station-map></app-station-map>
-        ╵     ~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component NearbyStationsComponent.
-
-    src/app/customer/pages/nearby-stations/nearby-stations.component.ts:12:15:
-      12 │   templateUrl: './nearby-stations.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8002: Can't bind to 'ngClass' since it isn't a known property of 'span'. [plugin angular-compiler]
-
-    src/app/customer/pages/nearby-stations/nearby-stations.component.html:23:30:
-      23 │ ...="status" [ngClass]="station.stockStatus.toLowerCase()">{{ stat...
-         ╵              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component NearbyStationsComponent.
-
-    src/app/customer/pages/nearby-stations/nearby-stations.component.ts:12:15:
-      12 │   templateUrl: './nearby-stations.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8004: No pipe found with name 'currency'. [plugin angular-compiler]
-
-    src/app/customer/pages/prices/prices.component.html:21:26:
-      21 │           <td>{{ row.current | currency: 'INR' : 'symbol' : '1.2-2...
-         ╵                                ~~~~~~~~
-
-  Error occurs in the template of component PricesComponent.
-
-    src/app/customer/pages/prices/prices.component.ts:19:15:
-      19 │   templateUrl: './prices.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8004: No pipe found with name 'number'. [plugin angular-compiler]
-
-    src/app/customer/pages/prices/prices.component.html:23:77:
-      23 │ ...ay > 0 ? '+' : '' }}{{ row.deltaFromYesterday | number: '1.2-2' }}
-         ╵                                                    ~~~~~~
-
-  Error occurs in the template of component PricesComponent.
-
-    src/app/customer/pages/prices/prices.component.ts:19:15:
-      19 │   templateUrl: './prices.component.html',
+    src/app/customer/pages/orders/orders.component.ts:34:15:
+      34 │   templateUrl: './orders.component.html',
          ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 X [ERROR] NG8002: Can't bind to 'ngModel' since it isn't a known property of 'input'. [plugin angular-compiler]
 
-    src/app/customer/pages/prices/prices.component.html:44:25:
-      44 │         <input type="number" [(ngModel)]="dropAlertTarget" />
-         ╵                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    src/app/customer/pages/orders/orders.component.html:113:46:
+      113 │ ..."number" min="100" step="10" [(ngModel)]="updateForm.quantity" />
+          ╵                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Error occurs in the template of component PricesComponent.
+  Error occurs in the template of component OrdersComponent.
 
-    src/app/customer/pages/prices/prices.component.ts:19:15:
-      19 │   templateUrl: './prices.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8004: No pipe found with name 'number'. [plugin angular-compiler]
-
-    src/app/customer/pages/prices/prices.component.html:64:29:
-      64 │           <td>{{ station.petrol | number: '1.2-2' }}</td>
-         ╵                                   ~~~~~~
-
-  Error occurs in the template of component PricesComponent.
-
-    src/app/customer/pages/prices/prices.component.ts:19:15:
-      19 │   templateUrl: './prices.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8004: No pipe found with name 'number'. [plugin angular-compiler]
-
-    src/app/customer/pages/prices/prices.component.html:65:29:
-      65 │           <td>{{ station.diesel | number: '1.2-2' }}</td>
-         ╵                                   ~~~~~~
-
-  Error occurs in the template of component PricesComponent.
-
-    src/app/customer/pages/prices/prices.component.ts:19:15:
-      19 │   templateUrl: './prices.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8004: No pipe found with name 'number'. [plugin angular-compiler]
-
-    src/app/customer/pages/prices/prices.component.html:66:26:
-      66 │           <td>{{ station.cng | number: '1.2-2' }}</td>
-         ╵                                ~~~~~~
-
-  Error occurs in the template of component PricesComponent.
-
-    src/app/customer/pages/prices/prices.component.ts:19:15:
-      19 │   templateUrl: './prices.component.html',
+    src/app/customer/pages/orders/orders.component.ts:34:15:
+      34 │   templateUrl: './orders.component.html',
          ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 X [ERROR] NG8002: Can't bind to 'ngModel' since it isn't a known property of 'input'. [plugin angular-compiler]
 
-    src/app/customer/pages/receipt-viewer/receipt-viewer.component.html:6:22:
-      6 │ ...<input type="text" [(ngModel)]="receiptNumber" placeholder="Rece...
-        ╵                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    src/app/customer/pages/orders/orders.component.html:117:24:
+      117 │ ...    <input type="text" [(ngModel)]="updateForm.deliveryWindow" />
+          ╵                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Error occurs in the template of component ReceiptViewerComponent.
+  Error occurs in the template of component OrdersComponent.
 
-    src/app/customer/pages/receipt-viewer/receipt-viewer.component.ts:5:15:
-      5 │   templateUrl: './receipt-viewer.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    src/app/customer/pages/orders/orders.component.ts:34:15:
+      34 │   templateUrl: './orders.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-X [ERROR] NG1: Object is possibly 'null'. [plugin angular-compiler]
+X [ERROR] NG8002: Can't bind to 'ngModel' since it isn't a known property of 'input'. [plugin angular-compiler]
 
-    src/app/customer/pages/receipt-viewer/receipt-viewer.component.html:12:19:
-      12 │       <span>{{ result.station }}</span>
-         ╵                       ~~~~~~~
+    src/app/customer/pages/orders/orders.component.html:121:24:
+      121 │ ...put type="text" [(ngModel)]="updateForm.notes" placeholder="Dr...
+          ╵                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Error occurs in the template of component ReceiptViewerComponent.
+  Error occurs in the template of component OrdersComponent.
 
-    src/app/customer/pages/receipt-viewer/receipt-viewer.component.ts:5:15:
-      5 │   templateUrl: './receipt-viewer.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG1: Object is possibly 'null'. [plugin angular-compiler]
-
-    src/app/customer/pages/receipt-viewer/receipt-viewer.component.html:13:19:
-      13 │       <span>{{ result.date }}</span>
-         ╵                       ~~~~
-
-  Error occurs in the template of component ReceiptViewerComponent.
-
-    src/app/customer/pages/receipt-viewer/receipt-viewer.component.ts:5:15:
-      5 │   templateUrl: './receipt-viewer.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG1: Object is possibly 'null'. [plugin angular-compiler]
-
-    src/app/customer/pages/receipt-viewer/receipt-viewer.component.html:14:19:
-      14 │       <span>{{ result.amount | currency: 'INR' : 'symbol' : '1.0-0...
-         ╵                       ~~~~~~
-
-  Error occurs in the template of component ReceiptViewerComponent.
-
-    src/app/customer/pages/receipt-viewer/receipt-viewer.component.ts:5:15:
-      5 │   templateUrl: './receipt-viewer.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8004: No pipe found with name 'currency'. [plugin angular-compiler]
-
-    src/app/customer/pages/receipt-viewer/receipt-viewer.component.html:14:28:
-      14 │       <span>{{ result.amount | currency: 'INR' : 'symbol' : '1.0-0...
-         ╵                                ~~~~~~~~
-
-  Error occurs in the template of component ReceiptViewerComponent.
-
-    src/app/customer/pages/receipt-viewer/receipt-viewer.component.ts:5:15:
-      5 │   templateUrl: './receipt-viewer.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8002: Can't bind to 'ngModel' since it isn't a known property of 'select'. [plugin angular-compiler]
-
-    src/app/customer/pages/transactions/transactions.component.html:13:11:
-      13 │       <select [(ngModel)]="filters.fuelType">
-         ╵               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component TransactionsComponent.
-
-    src/app/customer/pages/transactions/transactions.component.ts:15:15:
-      15 │   templateUrl: './transactions.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8002: Can't bind to 'ngModel' since it isn't a known property of 'select'. [plugin angular-compiler]
-
-    src/app/customer/pages/transactions/transactions.component.html:24:11:
-      24 │       <select [(ngModel)]="filters.station">
-         ╵               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component TransactionsComponent.
-
-    src/app/customer/pages/transactions/transactions.component.ts:15:15:
-      15 │   templateUrl: './transactions.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8002: Can't bind to 'ngModel' since it isn't a known property of 'select'. [plugin angular-compiler]
-
-    src/app/customer/pages/transactions/transactions.component.html:34:11:
-      34 │       <select [(ngModel)]="filters.sortBy">
-         ╵               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component TransactionsComponent.
-
-    src/app/customer/pages/transactions/transactions.component.ts:15:15:
-      15 │   templateUrl: './transactions.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8004: No pipe found with name 'currency'. [plugin angular-compiler]
-
-    src/app/customer/pages/transactions/transactions.component.html:60:25:
-      60 │           <td>{{ row.amount | currency: 'INR' : 'symbol' : '1.0-0'...
-         ╵                               ~~~~~~~~
-
-  Error occurs in the template of component TransactionsComponent.
-
-    src/app/customer/pages/transactions/transactions.component.ts:15:15:
-      15 │   templateUrl: './transactions.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8004: No pipe found with name 'currency'. [plugin angular-compiler]
-
-    src/app/customer/pages/transactions/transactions.component.html:67:68:
-      67 │ ...cted range: {{ totalSpent | currency: 'INR' : 'symbol' : '1.0-0...
-         ╵                                ~~~~~~~~
-
-  Error occurs in the template of component TransactionsComponent.
-
-    src/app/customer/pages/transactions/transactions.component.ts:15:15:
-      15 │   templateUrl: './transactions.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] TS2307: Cannot find module '../shared/shared.module' or its corresponding type declarations. [plugin angular-compiler]
-
-    src/app/dealer/dealer.module.ts:10:29:
-      10 │ import { SharedModule } from '../shared/shared.module';
-         ╵                              ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8001: 'app-kpi-card' is not a known element:
-1. If 'app-kpi-card' is an Angular component, then verify that it is part of this module.
-2. If 'app-kpi-card' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message. [plugin angular-compiler]
-
-    src/app/dealer/pages/dashboard/dashboard.component.html:12:2:
-      12 │     <app-kpi-card
-         ╵     ~~~~~~~~~~~~~
-
-  Error occurs in the template of component DashboardComponent.
-
-    src/app/dealer/pages/dashboard/dashboard.component.ts:5:15:
-      5 │   templateUrl: './dashboard.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8002: Can't bind to 'value' since it isn't a known property of 'app-kpi-card'.
-1. If 'app-kpi-card' is an Angular component and it has 'value' input, then verify that it is part of this module.
-2. If 'app-kpi-card' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
-3. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component. [plugin angular-compiler]
-
-    src/app/dealer/pages/dashboard/dashboard.component.html:15:3:
-      15 │       [value]="kpi.value"
-         ╵       ~~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component DashboardComponent.
-
-    src/app/dealer/pages/dashboard/dashboard.component.ts:5:15:
-      5 │   templateUrl: './dashboard.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8002: Can't bind to 'subtitle' since it isn't a known property of 'app-kpi-card'.
-1. If 'app-kpi-card' is an Angular component and it has 'subtitle' input, then verify that it is part of this module.
-2. If 'app-kpi-card' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
-3. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component. [plugin angular-compiler]
-
-    src/app/dealer/pages/dashboard/dashboard.component.html:16:3:
-      16 │       [subtitle]="kpi.subtitle"
-         ╵       ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component DashboardComponent.
-
-    src/app/dealer/pages/dashboard/dashboard.component.ts:5:15:
-      5 │   templateUrl: './dashboard.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8002: Can't bind to 'trend' since it isn't a known property of 'app-kpi-card'.
-1. If 'app-kpi-card' is an Angular component and it has 'trend' input, then verify that it is part of this module.
-2. If 'app-kpi-card' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
-3. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component. [plugin angular-compiler]
-
-    src/app/dealer/pages/dashboard/dashboard.component.html:17:3:
-      17 │       [trend]="kpi.trend"
-         ╵       ~~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component DashboardComponent.
-
-    src/app/dealer/pages/dashboard/dashboard.component.ts:5:15:
-      5 │   templateUrl: './dashboard.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8002: Can't bind to 'tone' since it isn't a known property of 'app-kpi-card'.
-1. If 'app-kpi-card' is an Angular component and it has 'tone' input, then verify that it is part of this module.
-2. If 'app-kpi-card' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
-3. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component. [plugin angular-compiler]
-
-    src/app/dealer/pages/dashboard/dashboard.component.html:18:3:
-      18 │       [tone]="kpi.tone"
-         ╵       ~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component DashboardComponent.
-
-    src/app/dealer/pages/dashboard/dashboard.component.ts:5:15:
-      5 │   templateUrl: './dashboard.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8001: 'app-tank-gauge' is not a known element:
-1. If 'app-tank-gauge' is an Angular component, then verify that it is part of this module.
-2. If 'app-tank-gauge' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message. [plugin angular-compiler]
-
-    src/app/dealer/pages/dashboard/dashboard.component.html:30:4:
-      30 │         <app-tank-gauge fuelType="Petrol A" [currentLevel]="6800" ...
-         ╵         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component DashboardComponent.
-
-    src/app/dealer/pages/dashboard/dashboard.component.ts:5:15:
-      5 │   templateUrl: './dashboard.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8002: Can't bind to 'currentLevel' since it isn't a known property of 'app-tank-gauge'.
-1. If 'app-tank-gauge' is an Angular component and it has 'currentLevel' input, then verify that it is part of this module.
-2. If 'app-tank-gauge' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
-3. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component. [plugin angular-compiler]
-
-    src/app/dealer/pages/dashboard/dashboard.component.html:30:40:
-      30 │ ... fuelType="Petrol A" [currentLevel]="6800" [capacity]="10000"><...
-         ╵                         ~~~~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component DashboardComponent.
-
-    src/app/dealer/pages/dashboard/dashboard.component.ts:5:15:
-      5 │   templateUrl: './dashboard.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8002: Can't bind to 'capacity' since it isn't a known property of 'app-tank-gauge'.
-1. If 'app-tank-gauge' is an Angular component and it has 'capacity' input, then verify that it is part of this module.
-2. If 'app-tank-gauge' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
-3. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component. [plugin angular-compiler]
-
-    src/app/dealer/pages/dashboard/dashboard.component.html:30:62:
-      30 │ ...trol A" [currentLevel]="6800" [capacity]="10000"></app-tank-gauge>
-         ╵                                  ~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component DashboardComponent.
-
-    src/app/dealer/pages/dashboard/dashboard.component.ts:5:15:
-      5 │   templateUrl: './dashboard.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8001: 'app-tank-gauge' is not a known element:
-1. If 'app-tank-gauge' is an Angular component, then verify that it is part of this module.
-2. If 'app-tank-gauge' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message. [plugin angular-compiler]
-
-    src/app/dealer/pages/dashboard/dashboard.component.html:31:4:
-      31 │         <app-tank-gauge fuelType="Diesel B" [currentLevel]="1800" ...
-         ╵         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component DashboardComponent.
-
-    src/app/dealer/pages/dashboard/dashboard.component.ts:5:15:
-      5 │   templateUrl: './dashboard.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8002: Can't bind to 'currentLevel' since it isn't a known property of 'app-tank-gauge'.
-1. If 'app-tank-gauge' is an Angular component and it has 'currentLevel' input, then verify that it is part of this module.
-2. If 'app-tank-gauge' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
-3. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component. [plugin angular-compiler]
-
-    src/app/dealer/pages/dashboard/dashboard.component.html:31:40:
-      31 │ ... fuelType="Diesel B" [currentLevel]="1800" [capacity]="9000"></...
-         ╵                         ~~~~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component DashboardComponent.
-
-    src/app/dealer/pages/dashboard/dashboard.component.ts:5:15:
-      5 │   templateUrl: './dashboard.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8002: Can't bind to 'capacity' since it isn't a known property of 'app-tank-gauge'.
-1. If 'app-tank-gauge' is an Angular component and it has 'capacity' input, then verify that it is part of this module.
-2. If 'app-tank-gauge' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
-3. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component. [plugin angular-compiler]
-
-    src/app/dealer/pages/dashboard/dashboard.component.html:31:62:
-      31 │ ...iesel B" [currentLevel]="1800" [capacity]="9000"></app-tank-gauge>
-         ╵                                   ~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component DashboardComponent.
-
-    src/app/dealer/pages/dashboard/dashboard.component.ts:5:15:
-      5 │   templateUrl: './dashboard.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8001: 'app-tank-gauge' is not a known element:
-1. If 'app-tank-gauge' is an Angular component, then verify that it is part of this module.
-2. If 'app-tank-gauge' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message. [plugin angular-compiler]
-
-    src/app/dealer/pages/dashboard/dashboard.component.html:32:4:
-      32 │         <app-tank-gauge fuelType="Premium C" [currentLevel]="2900"...
-         ╵         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component DashboardComponent.
-
-    src/app/dealer/pages/dashboard/dashboard.component.ts:5:15:
-      5 │   templateUrl: './dashboard.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8002: Can't bind to 'currentLevel' since it isn't a known property of 'app-tank-gauge'.
-1. If 'app-tank-gauge' is an Angular component and it has 'currentLevel' input, then verify that it is part of this module.
-2. If 'app-tank-gauge' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
-3. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component. [plugin angular-compiler]
-
-    src/app/dealer/pages/dashboard/dashboard.component.html:32:41:
-      32 │ ...fuelType="Premium C" [currentLevel]="2900" [capacity]="7000"></...
-         ╵                         ~~~~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component DashboardComponent.
-
-    src/app/dealer/pages/dashboard/dashboard.component.ts:5:15:
-      5 │   templateUrl: './dashboard.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8002: Can't bind to 'capacity' since it isn't a known property of 'app-tank-gauge'.
-1. If 'app-tank-gauge' is an Angular component and it has 'capacity' input, then verify that it is part of this module.
-2. If 'app-tank-gauge' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
-3. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component. [plugin angular-compiler]
-
-    src/app/dealer/pages/dashboard/dashboard.component.html:32:63:
-      32 │ ...emium C" [currentLevel]="2900" [capacity]="7000"></app-tank-gauge>
-         ╵                                   ~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component DashboardComponent.
-
-    src/app/dealer/pages/dashboard/dashboard.component.ts:5:15:
-      5 │   templateUrl: './dashboard.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8001: 'app-recent-transactions' is not a known element:
-1. If 'app-recent-transactions' is an Angular component, then verify that it is part of this module.
-2. If 'app-recent-transactions' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message. [plugin angular-compiler]
-
-    src/app/dealer/pages/dashboard/dashboard.component.html:56:3:
-      56 │       <app-recent-transactions></app-recent-transactions>
-         ╵       ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component DashboardComponent.
-
-    src/app/dealer/pages/dashboard/dashboard.component.ts:5:15:
-      5 │   templateUrl: './dashboard.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8002: Can't bind to 'formGroup' since it isn't a known property of 'form'. [plugin angular-compiler]
-
-    src/app/dealer/pages/sales-entry/sales-entry.component.html:8:8:
-      8 │     <form [formGroup]="form" (ngSubmit)="submit()" class="sales-form">
-        ╵           ~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component SalesEntryComponent.
-
-    src/app/dealer/pages/sales-entry/sales-entry.component.ts:6:15:
-      6 │   templateUrl: './sales-entry.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8004: No pipe found with name 'number'. [plugin angular-compiler]
-
-    src/app/dealer/pages/sales-entry/sales-entry.component.html:76:63:
-      76 │ ...</strong> INR {{ currentPricePerLitre | number: '1.2-2' }} / litre
-         ╵                                            ~~~~~~
-
-  Error occurs in the template of component SalesEntryComponent.
-
-    src/app/dealer/pages/sales-entry/sales-entry.component.ts:6:15:
-      6 │   templateUrl: './sales-entry.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8004: No pipe found with name 'number'. [plugin angular-compiler]
-
-    src/app/dealer/pages/shift-summary/shift-summary.component.html:5:35:
-      5 │ ...v><strong>{{ totals.litres | number }}</strong><span>Litres Sold...
-        ╵                                 ~~~~~~
-
-  Error occurs in the template of component ShiftSummaryComponent.
-
-    src/app/dealer/pages/shift-summary/shift-summary.component.ts:5:15:
-      5 │   templateUrl: './shift-summary.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8004: No pipe found with name 'currency'. [plugin angular-compiler]
-
-    src/app/dealer/pages/shift-summary/shift-summary.component.html:6:36:
-      6 │ ...<strong>{{ totals.revenue | currency: 'INR' : 'symbol' : '1.0-0'...
-        ╵                                ~~~~~~~~
-
-  Error occurs in the template of component ShiftSummaryComponent.
-
-    src/app/dealer/pages/shift-summary/shift-summary.component.ts:5:15:
-      5 │   templateUrl: './shift-summary.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8004: No pipe found with name 'number'. [plugin angular-compiler]
-
-    src/app/shared-admin-dealer/components/recent-transactions/recent-transactions.component.html:17:24:
-      17 │         <td>{{ row.litres | number: '1.1-1' }}</td>
-         ╵                             ~~~~~~
-
-  Error occurs in the template of component RecentTransactionsComponent.
-
-    src/app/shared-admin-dealer/components/recent-transactions/recent-transactions.component.ts:13:15:
-      13 │   templateUrl: './recent-transactions.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8004: No pipe found with name 'currency'. [plugin angular-compiler]
-
-    src/app/shared-admin-dealer/components/recent-transactions/recent-transactions.component.html:18:24:
-      18 │         <td>{{ row.amount | currency: 'INR' : 'symbol' : '1.0-0' }...
-         ╵                             ~~~~~~~~
-
-  Error occurs in the template of component RecentTransactionsComponent.
-
-    src/app/shared-admin-dealer/components/recent-transactions/recent-transactions.component.ts:13:15:
-      13 │   templateUrl: './recent-transactions.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8002: Can't bind to 'ngClass' since it isn't a known property of 'span'. [plugin angular-compiler]
-
-    src/app/shared-admin-dealer/components/station-map/station-map.component.html:12:21:
-      12 │       <span class="dot" [ngClass]="station.stockHealth"></span>
-         ╵                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component StationMapComponent.
-
-    src/app/shared-admin-dealer/components/station-map/station-map.component.ts:11:15:
-      11 │   templateUrl: './station-map.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8002: Can't bind to 'ngClass' since it isn't a known property of 'div'. [plugin angular-compiler]
-
-    src/app/shared-admin-dealer/components/tank-gauge/tank-gauge.component.html:1:23:
-      1 │ <div class="tank-card" [ngClass]="statusClass">
-        ╵                        ~~~~~~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component TankGaugeComponent.
-
-    src/app/shared-admin-dealer/components/tank-gauge/tank-gauge.component.ts:6:15:
-      6 │   templateUrl: './tank-gauge.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8004: No pipe found with name 'number'. [plugin angular-compiler]
-
-    src/app/shared-admin-dealer/components/tank-gauge/tank-gauge.component.html:9:37:
-      9 │ ...ass="meta">{{ currentLevel | number: '1.0-0' }} L / {{ capacity ...
-        ╵                                 ~~~~~~
-
-  Error occurs in the template of component TankGaugeComponent.
-
-    src/app/shared-admin-dealer/components/tank-gauge/tank-gauge.component.ts:6:15:
-      6 │   templateUrl: './tank-gauge.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8004: No pipe found with name 'number'. [plugin angular-compiler]
-
-    src/app/shared-admin-dealer/components/tank-gauge/tank-gauge.component.html:9:74:
-      9 │ ...l | number: '1.0-0' }} L / {{ capacity | number: '1.0-0' }} L</div>
-        ╵                                             ~~~~~~
-
-  Error occurs in the template of component TankGaugeComponent.
-
-    src/app/shared-admin-dealer/components/tank-gauge/tank-gauge.component.ts:6:15:
-      6 │   templateUrl: './tank-gauge.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] TS2307: Cannot find module '../shared/shared.module' or its corresponding type declarations. [plugin angular-compiler]
-
-    src/app/shared-admin-dealer/shared-admin-dealer.module.ts:6:29:
-      6 │ import { SharedModule } from '../shared/shared.module';
-        ╵                              ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] TS-991010: Value at position 1 in the NgModule.imports of SharedAdminDealerModule is not a reference
-  Value could not be determined statically. [plugin angular-compiler]
-
-    src/app/shared-admin-dealer/shared-admin-dealer.module.ts:16:11:
-      16 │   imports: [
-         ╵            ^
-
-  Unknown reference.
-
-    src/app/shared-admin-dealer/shared-admin-dealer.module.ts:18:4:
-      18 │     SharedModule,
-         ╵     ~~~~~~~~~~~~
+    src/app/customer/pages/orders/orders.component.ts:34:15:
+      34 │   templateUrl: './orders.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 - Changes detected. Rebuilding...
 
-X [ERROR] NG8001: 'app-kpi-card' is not a known element:
-1. If 'app-kpi-card' is an Angular component, then verify that it is part of this module.
-2. If 'app-kpi-card' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message. [plugin angular-compiler]
+- Changes detected. Rebuilding...
 
-    src/app/admin/pages/dashboard/dashboard.component.html:12:2:
-      12 │     <app-kpi-card
-         ╵     ~~~~~~~~~~~~~
+- Changes detected. Rebuilding...
+
+- Changes detected. Rebuilding...
+
+- Changes detected. Rebuilding...
+
+X [ERROR] NG8001: 'app-chat-panel' is not a known element:
+1. If 'app-chat-panel' is an Angular component, then verify that it is part of this module.
+2. If 'app-chat-panel' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message. [plugin angular-compiler]
+
+    src/app/customer/pages/dashboard/dashboard.component.html:63:2:
+      63 │     <app-chat-panel
+         ╵     ~~~~~~~~~~~~~~~
 
   Error occurs in the template of component DashboardComponent.
 
-    src/app/admin/pages/dashboard/dashboard.component.ts:5:15:
-      5 │   templateUrl: './dashboard.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    src/app/customer/pages/dashboard/dashboard.component.ts:12:15:
+      12 │   templateUrl: './dashboard.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-X [ERROR] NG8002: Can't bind to 'value' since it isn't a known property of 'app-kpi-card'.
-1. If 'app-kpi-card' is an Angular component and it has 'value' input, then verify that it is part of this module.
-2. If 'app-kpi-card' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+X [ERROR] NG8002: Can't bind to 'suggestions' since it isn't a known property of 'app-chat-panel'.
+1. If 'app-chat-panel' is an Angular component and it has 'suggestions' input, then verify that it is part of this module.
+2. If 'app-chat-panel' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
 3. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component. [plugin angular-compiler]
 
-    src/app/admin/pages/dashboard/dashboard.component.html:15:3:
-      15 │       [value]="kpi.value"
-         ╵       ~~~~~~~~~~~~~~~~~~~
+    src/app/customer/pages/dashboard/dashboard.component.html:68:3:
+      68 │       [suggestions]="['Track my latest order', 'Update delivery wi...
+         ╵       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Error occurs in the template of component DashboardComponent.
 
-    src/app/admin/pages/dashboard/dashboard.component.ts:5:15:
-      5 │   templateUrl: './dashboard.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    src/app/customer/pages/dashboard/dashboard.component.ts:12:15:
+      12 │   templateUrl: './dashboard.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-X [ERROR] NG8002: Can't bind to 'subtitle' since it isn't a known property of 'app-kpi-card'.
-1. If 'app-kpi-card' is an Angular component and it has 'subtitle' input, then verify that it is part of this module.
-2. If 'app-kpi-card' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+- Changes detected. Rebuilding...
+
+X [ERROR] NG8001: 'app-chat-panel' is not a known element:
+1. If 'app-chat-panel' is an Angular component, then verify that it is part of this module.
+2. If 'app-chat-panel' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message. [plugin angular-compiler]
+
+    src/app/customer/pages/dashboard/dashboard.component.html:63:2:
+      63 │     <app-chat-panel
+         ╵     ~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component DashboardComponent.
+
+    src/app/customer/pages/dashboard/dashboard.component.ts:12:15:
+      12 │   templateUrl: './dashboard.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8002: Can't bind to 'suggestions' since it isn't a known property of 'app-chat-panel'.
+1. If 'app-chat-panel' is an Angular component and it has 'suggestions' input, then verify that it is part of this module.
+2. If 'app-chat-panel' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
 3. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component. [plugin angular-compiler]
 
-    src/app/admin/pages/dashboard/dashboard.component.html:16:3:
-      16 │       [subtitle]="kpi.subtitle"
-         ╵       ~~~~~~~~~~~~~~~~~~~~~~~~~
+    src/app/customer/pages/dashboard/dashboard.component.html:68:3:
+      68 │       [suggestions]="['Track my latest order', 'Update delivery wi...
+         ╵       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Error occurs in the template of component DashboardComponent.
 
-    src/app/admin/pages/dashboard/dashboard.component.ts:5:15:
-      5 │   templateUrl: './dashboard.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    src/app/customer/pages/dashboard/dashboard.component.ts:12:15:
+      12 │   templateUrl: './dashboard.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-X [ERROR] NG8002: Can't bind to 'trend' since it isn't a known property of 'app-kpi-card'.
-1. If 'app-kpi-card' is an Angular component and it has 'trend' input, then verify that it is part of this module.
-2. If 'app-kpi-card' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+- Changes detected. Rebuilding...
+
+X [ERROR] NG8001: 'app-chat-panel' is not a known element:
+1. If 'app-chat-panel' is an Angular component, then verify that it is part of this module.
+2. If 'app-chat-panel' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message. [plugin angular-compiler]
+
+    src/app/customer/pages/dashboard/dashboard.component.html:63:2:
+      63 │     <app-chat-panel
+         ╵     ~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component DashboardComponent.
+
+    src/app/customer/pages/dashboard/dashboard.component.ts:12:15:
+      12 │   templateUrl: './dashboard.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8002: Can't bind to 'suggestions' since it isn't a known property of 'app-chat-panel'.
+1. If 'app-chat-panel' is an Angular component and it has 'suggestions' input, then verify that it is part of this module.
+2. If 'app-chat-panel' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
 3. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component. [plugin angular-compiler]
 
-    src/app/admin/pages/dashboard/dashboard.component.html:17:3:
-      17 │       [trend]="kpi.trend"
-         ╵       ~~~~~~~~~~~~~~~~~~~
+    src/app/customer/pages/dashboard/dashboard.component.html:68:3:
+      68 │       [suggestions]="['Track my latest order', 'Update delivery wi...
+         ╵       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Error occurs in the template of component DashboardComponent.
 
-    src/app/admin/pages/dashboard/dashboard.component.ts:5:15:
-      5 │   templateUrl: './dashboard.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    src/app/customer/pages/dashboard/dashboard.component.ts:12:15:
+      12 │   templateUrl: './dashboard.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-X [ERROR] NG8002: Can't bind to 'tone' since it isn't a known property of 'app-kpi-card'.
-1. If 'app-kpi-card' is an Angular component and it has 'tone' input, then verify that it is part of this module.
-2. If 'app-kpi-card' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+- Changes detected. Rebuilding...
+
+X [ERROR] NG8001: 'app-chat-panel' is not a known element:
+1. If 'app-chat-panel' is an Angular component, then verify that it is part of this module.
+2. If 'app-chat-panel' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message. [plugin angular-compiler]
+
+    src/app/customer/pages/dashboard/dashboard.component.html:63:2:
+      63 │     <app-chat-panel
+         ╵     ~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component DashboardComponent.
+
+    src/app/customer/pages/dashboard/dashboard.component.ts:12:15:
+      12 │   templateUrl: './dashboard.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8002: Can't bind to 'suggestions' since it isn't a known property of 'app-chat-panel'.
+1. If 'app-chat-panel' is an Angular component and it has 'suggestions' input, then verify that it is part of this module.
+2. If 'app-chat-panel' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
 3. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component. [plugin angular-compiler]
 
-    src/app/admin/pages/dashboard/dashboard.component.html:18:3:
-      18 │       [tone]="kpi.tone"
-         ╵       ~~~~~~~~~~~~~~~~~
+    src/app/customer/pages/dashboard/dashboard.component.html:68:3:
+      68 │       [suggestions]="['Track my latest order', 'Update delivery wi...
+         ╵       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Error occurs in the template of component DashboardComponent.
 
-    src/app/admin/pages/dashboard/dashboard.component.ts:5:15:
+    src/app/customer/pages/dashboard/dashboard.component.ts:12:15:
+      12 │   templateUrl: './dashboard.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'app-chat-panel' is not a known element:
+1. If 'app-chat-panel' is an Angular component, then verify that it is part of this module.
+2. If 'app-chat-panel' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message. [plugin angular-compiler]
+
+    src/app/dealer/pages/dashboard/dashboard.component.html:60:1:
+      60 │   <app-chat-panel
+         ╵   ~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component DashboardComponent.
+
+    src/app/dealer/pages/dashboard/dashboard.component.ts:5:15:
       5 │   templateUrl: './dashboard.component.html',
         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-X [ERROR] NG8001: 'app-station-map' is not a known element:
-1. If 'app-station-map' is an Angular component, then verify that it is part of this module.
-2. If 'app-station-map' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message. [plugin angular-compiler]
+X [ERROR] NG8002: Can't bind to 'suggestions' since it isn't a known property of 'app-chat-panel'.
+1. If 'app-chat-panel' is an Angular component and it has 'suggestions' input, then verify that it is part of this module.
+2. If 'app-chat-panel' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+3. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component. [plugin angular-compiler]
 
-    src/app/admin/pages/dashboard/dashboard.component.html:25:3:
-      25 │       <app-station-map></app-station-map>
-         ╵       ~~~~~~~~~~~~~~~~~
+    src/app/dealer/pages/dashboard/dashboard.component.html:65:2:
+      65 │     [suggestions]="['Request emergency refill', 'Report pump outag...
+         ╵     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Error occurs in the template of component DashboardComponent.
 
-    src/app/admin/pages/dashboard/dashboard.component.ts:5:15:
+    src/app/dealer/pages/dashboard/dashboard.component.ts:5:15:
       5 │   templateUrl: './dashboard.component.html',
         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-X [ERROR] NG8002: Can't bind to 'ngClass' since it isn't a known property of 'span'. [plugin angular-compiler]
+- Changes detected. Rebuilding...
 
-    src/app/admin/pages/fraud/fraud.component.html:27:30:
-      27 │ ...ass="badge" [ngClass]="alert.severity.toLowerCase()">{{ alert.s...
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+X [ERROR] NG8001: 'app-chat-panel' is not a known element:
+1. If 'app-chat-panel' is an Angular component, then verify that it is part of this module.
+2. If 'app-chat-panel' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message. [plugin angular-compiler]
 
-  Error occurs in the template of component FraudComponent.
+    src/app/customer/pages/dashboard/dashboard.component.html:63:2:
+      63 │     <app-chat-panel
+         ╵     ~~~~~~~~~~~~~~~
 
-    src/app/admin/pages/fraud/fraud.component.ts:15:15:
-      15 │   templateUrl: './fraud.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~
+  Error occurs in the template of component DashboardComponent.
 
-
-X [ERROR] NG1: Object is possibly 'null'. [plugin angular-compiler]
-
-    src/app/admin/pages/fraud/fraud.component.html:44:31:
-      44 │ ...<p><strong>{{ selectedAlert.alertId }}</strong> at {{ selectedA...
-         ╵                                ~~~~~~~
-
-  Error occurs in the template of component FraudComponent.
-
-    src/app/admin/pages/fraud/fraud.component.ts:15:15:
-      15 │   templateUrl: './fraud.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~
+    src/app/customer/pages/dashboard/dashboard.component.ts:12:15:
+      12 │   templateUrl: './dashboard.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-X [ERROR] NG1: Object is possibly 'null'. [plugin angular-compiler]
+X [ERROR] NG8002: Can't bind to 'suggestions' since it isn't a known property of 'app-chat-panel'.
+1. If 'app-chat-panel' is an Angular component and it has 'suggestions' input, then verify that it is part of this module.
+2. If 'app-chat-panel' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+3. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component. [plugin angular-compiler]
 
-    src/app/admin/pages/fraud/fraud.component.html:44:71:
-      44 │ ...lectedAlert.alertId }}</strong> at {{ selectedAlert.station }}</p>
-         ╵                                                        ~~~~~~~
+    src/app/customer/pages/dashboard/dashboard.component.html:68:3:
+      68 │       [suggestions]="['Track my latest order', 'Update delivery wi...
+         ╵       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Error occurs in the template of component FraudComponent.
+  Error occurs in the template of component DashboardComponent.
 
-    src/app/admin/pages/fraud/fraud.component.ts:15:15:
-      15 │   templateUrl: './fraud.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG1: Object is possibly 'null'. [plugin angular-compiler]
-
-    src/app/admin/pages/fraud/fraud.component.html:45:29:
-      45 │       <p>Rule: {{ selectedAlert.rule }}</p>
-         ╵                                 ~~~~
-
-  Error occurs in the template of component FraudComponent.
-
-    src/app/admin/pages/fraud/fraud.component.ts:15:15:
-      15 │   templateUrl: './fraud.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~
+    src/app/customer/pages/dashboard/dashboard.component.ts:12:15:
+      12 │   templateUrl: './dashboard.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-X [ERROR] NG1: Object is possibly 'null'. [plugin angular-compiler]
+X [ERROR] NG8001: 'app-chat-panel' is not a known element:
+1. If 'app-chat-panel' is an Angular component, then verify that it is part of this module.
+2. If 'app-chat-panel' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message. [plugin angular-compiler]
 
-    src/app/admin/pages/fraud/fraud.component.html:46:36:
-      46 │       <p>Transaction: {{ selectedAlert.transactionId }}</p>
-         ╵                                        ~~~~~~~~~~~~~
+    src/app/dealer/pages/dashboard/dashboard.component.html:60:1:
+      60 │   <app-chat-panel
+         ╵   ~~~~~~~~~~~~~~~
 
-  Error occurs in the template of component FraudComponent.
+  Error occurs in the template of component DashboardComponent.
 
-    src/app/admin/pages/fraud/fraud.component.ts:15:15:
-      15 │   templateUrl: './fraud.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG1: Object is possibly 'null'. [plugin angular-compiler]
-
-    src/app/admin/pages/fraud/fraud.component.html:47:33:
-      47 │       <p>Severity: {{ selectedAlert.severity }}</p>
-         ╵                                     ~~~~~~~~
-
-  Error occurs in the template of component FraudComponent.
-
-    src/app/admin/pages/fraud/fraud.component.ts:15:15:
-      15 │   templateUrl: './fraud.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~
+    src/app/dealer/pages/dashboard/dashboard.component.ts:5:15:
+      5 │   templateUrl: './dashboard.component.html',
+        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-X [ERROR] NG1: Object is possibly 'null'. [plugin angular-compiler]
+X [ERROR] NG8002: Can't bind to 'suggestions' since it isn't a known property of 'app-chat-panel'.
+1. If 'app-chat-panel' is an Angular component and it has 'suggestions' input, then verify that it is part of this module.
+2. If 'app-chat-panel' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+3. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component. [plugin angular-compiler]
 
-    src/app/admin/pages/fraud/fraud.component.html:48:31:
-      48 │       <p>Status: {{ selectedAlert.status }}</p>
-         ╵                                   ~~~~~~
+    src/app/dealer/pages/dashboard/dashboard.component.html:65:2:
+      65 │     [suggestions]="['Request emergency refill', 'Report pump outag...
+         ╵     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Error occurs in the template of component FraudComponent.
+  Error occurs in the template of component DashboardComponent.
 
-    src/app/admin/pages/fraud/fraud.component.ts:15:15:
-      15 │   templateUrl: './fraud.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8004: No pipe found with name 'currency'. [plugin angular-compiler]
-
-    src/app/admin/pages/prices/prices.component.html:20:24:
-      20 │           <td>{{ row.price | currency: 'INR' : 'symbol' : '1.2-2' ...
-         ╵                              ~~~~~~~~
-
-  Error occurs in the template of component PricesComponent.
-
-    src/app/admin/pages/prices/prices.component.ts:13:15:
-      13 │   templateUrl: './prices.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~
+    src/app/dealer/pages/dashboard/dashboard.component.ts:5:15:
+      5 │   templateUrl: './dashboard.component.html',
+        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-X [ERROR] NG8002: Can't bind to 'ngModel' since it isn't a known property of 'select'. [plugin angular-compiler]
+- Changes detected. Rebuilding...
 
-    src/app/admin/pages/reports/reports.component.html:10:11:
-      10 │       <select [(ngModel)]="reportType">
-         ╵               ~~~~~~~~~~~~~~~~~~~~~~~~
+X [ERROR] TS2339: Property 'aiAssistantApiKey' does not exist on type '{ production: boolean; apiBaseUrl: string; lockoutSeconds: number; }'. [plugin angular-compiler]
 
-  Error occurs in the template of component ReportsComponent.
+    src/app/core/services/ai-assistant.service.ts:24:31:
+      24 │     const apiKey = environment.aiAssistantApiKey;
+         ╵                                ~~~~~~~~~~~~~~~~~
 
-    src/app/admin/pages/reports/reports.component.ts:12:15:
-      12 │   templateUrl: './reports.component.html',
+
+X [ERROR] NG8001: 'app-chat-panel' is not a known element:
+1. If 'app-chat-panel' is an Angular component, then verify that it is part of this module.
+2. If 'app-chat-panel' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message. [plugin angular-compiler]
+
+    src/app/customer/pages/dashboard/dashboard.component.html:63:2:
+      63 │     <app-chat-panel
+         ╵     ~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component DashboardComponent.
+
+    src/app/customer/pages/dashboard/dashboard.component.ts:12:15:
+      12 │   templateUrl: './dashboard.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8002: Can't bind to 'suggestions' since it isn't a known property of 'app-chat-panel'.
+1. If 'app-chat-panel' is an Angular component and it has 'suggestions' input, then verify that it is part of this module.
+2. If 'app-chat-panel' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+3. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component. [plugin angular-compiler]
+
+    src/app/customer/pages/dashboard/dashboard.component.html:68:3:
+      68 │       [suggestions]="['Track my latest order', 'Update delivery wi...
+         ╵       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component DashboardComponent.
+
+    src/app/customer/pages/dashboard/dashboard.component.ts:12:15:
+      12 │   templateUrl: './dashboard.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8001: 'app-chat-panel' is not a known element:
+1. If 'app-chat-panel' is an Angular component, then verify that it is part of this module.
+2. If 'app-chat-panel' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message. [plugin angular-compiler]
+
+    src/app/dealer/pages/dashboard/dashboard.component.html:60:1:
+      60 │   <app-chat-panel
+         ╵   ~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component DashboardComponent.
+
+    src/app/dealer/pages/dashboard/dashboard.component.ts:5:15:
+      5 │   templateUrl: './dashboard.component.html',
+        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG8002: Can't bind to 'suggestions' since it isn't a known property of 'app-chat-panel'.
+1. If 'app-chat-panel' is an Angular component and it has 'suggestions' input, then verify that it is part of this module.
+2. If 'app-chat-panel' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
+3. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component. [plugin angular-compiler]
+
+    src/app/dealer/pages/dashboard/dashboard.component.html:65:2:
+      65 │     [suggestions]="['Request emergency refill', 'Report pump outag...
+         ╵     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component DashboardComponent.
+
+    src/app/dealer/pages/dashboard/dashboard.component.ts:5:15:
+      5 │   templateUrl: './dashboard.component.html',
+        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+- Changes detected. Rebuilding...
+
+X [ERROR] TS2339: Property 'aiAssistantApiKey' does not exist on type '{ production: boolean; apiBaseUrl: string; lockoutSeconds: number; }'. [plugin angular-compiler]
+
+    src/app/core/services/ai-assistant.service.ts:24:31:
+      24 │     const apiKey = environment.aiAssistantApiKey;
+         ╵                                ~~~~~~~~~~~~~~~~~
+
+
+- Changes detected. Rebuilding...
+
+X [ERROR] TS2339: Property 'aiAssistantApiKey' does not exist on type '{ production: boolean; apiBaseUrl: string; lockoutSeconds: number; }'. [plugin angular-compiler]
+
+    src/app/core/services/ai-assistant.service.ts:24:31:
+      24 │     const apiKey = environment.aiAssistantApiKey;
+         ╵                                ~~~~~~~~~~~~~~~~~
+
+
+- Changes detected. Rebuilding...
+
+X [ERROR] TS2339: Property 'aiAssistantApiKey' does not exist on type '{ production: boolean; apiBaseUrl: string; lockoutSeconds: number; }'. [plugin angular-compiler]
+
+    src/app/core/services/ai-assistant.service.ts:24:31:
+      24 │     const apiKey = environment.aiAssistantApiKey;
+         ╵                                ~~~~~~~~~~~~~~~~~
+
+
+- Changes detected. Rebuilding...
+
+- Changes detected. Rebuilding...
+
+- Changes detected. Rebuilding...
+
+- Changes detected. Rebuilding...
+
+- Changes detected. Rebuilding...
+
+- Changes detected. Rebuilding...
+
+- Changes detected. Rebuilding...
+
+- Changes detected. Rebuilding...
+
+- Changes detected. Rebuilding...
+
+- Changes detected. Rebuilding...
+
+- Changes detected. Rebuilding...
+
+- Changes detected. Rebuilding...
+
+- Changes detected. Rebuilding...
+
+X [ERROR] NG9: Property 'solutionPills' does not exist on type 'LandingComponent'. [plugin angular-compiler]
+
+    src/app/landing/landing.component.html:187:28:
+      187 │         *ngFor="let pill of solutionPills; index as idx"
+          ╵                             ~~~~~~~~~~~~~
+
+  Error occurs in the template of component LandingComponent.
+
+    src/app/landing/landing.component.ts:58:15:
+      58 │   templateUrl: './landing.component.html',
          ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-X [ERROR] NG8004: No pipe found with name 'currency'. [plugin angular-compiler]
+- Changes detected. Rebuilding...
 
-    src/app/admin/pages/reports/reports.component.html:41:26:
-      41 │           <td>{{ row.revenue | currency: 'INR' : 'symbol' : '1.0-0...
-         ╵                                ~~~~~~~~
+- Changes detected. Rebuilding...
 
-  Error occurs in the template of component ReportsComponent.
+- Changes detected. Rebuilding...
 
-    src/app/admin/pages/reports/reports.component.ts:12:15:
-      12 │   templateUrl: './reports.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~
+- Changes detected. Rebuilding...
 
+- Changes detected. Rebuilding...
 
-X [ERROR] NG8001: 'app-station-map' is not a known element:
-1. If 'app-station-map' is an Angular component, then verify that it is part of this module.
-2. If 'app-station-map' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message. [plugin angular-compiler]
+- Changes detected. Rebuilding...
 
-    src/app/admin/pages/stations/stations.component.html:47:2:
-      47 │     <app-station-map></app-station-map>
-         ╵     ~~~~~~~~~~~~~~~~~
+- Changes detected. Rebuilding...
 
-  Error occurs in the template of component StationsComponent.
+- Changes detected. Rebuilding...
 
-    src/app/admin/pages/stations/stations.component.ts:15:15:
-      15 │   templateUrl: './stations.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- Changes detected. Rebuilding...
 
+- Changes detected. Rebuilding...
 
-X [ERROR] NG8002: Can't bind to 'ngModel' since it isn't a known property of 'select'. [plugin angular-compiler]
+- Changes detected. Rebuilding...
 
-    src/app/admin/pages/users/users.component.html:10:11:
-      10 │       <select [(ngModel)]="roleFilter">
-         ╵               ~~~~~~~~~~~~~~~~~~~~~~~~
+- Changes detected. Rebuilding...
 
-  Error occurs in the template of component UsersComponent.
+- Changes detected. Rebuilding...
 
-    src/app/admin/pages/users/users.component.ts:14:15:
-      14 │   templateUrl: './users.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~
+- Changes detected. Rebuilding...
 
+- Changes detected. Rebuilding...
 
-X [ERROR] NG8002: Can't bind to 'ngModel' since it isn't a known property of 'select'. [plugin angular-compiler]
+- Changes detected. Rebuilding...
 
-    src/app/admin/pages/users/users.component.html:38:14:
-      38 │             <select [(ngModel)]="user.role" aria-label="Assign role">
-         ╵                     ~~~~~~~~~~~~~~~~~~~~~~~
+- Changes detected. Rebuilding...
 
-  Error occurs in the template of component UsersComponent.
+- Changes detected. Rebuilding...
 
-    src/app/admin/pages/users/users.component.ts:14:15:
-      14 │   templateUrl: './users.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~
+- Changes detected. Rebuilding...
 
+- Changes detected. Rebuilding...
 
-X [ERROR] NG8002: Can't bind to 'formGroup' since it isn't a known property of 'form'. [plugin angular-compiler]
+- Changes detected. Rebuilding...
 
-    src/app/auth/pages/forgot-password/forgot-password.component.html:7:8:
-      7 │     <form [formGroup]="form" (ngSubmit)="submit()">
-        ╵           ~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component ForgotPasswordComponent.
-
-    src/app/auth/pages/forgot-password/forgot-password.component.ts:6:15:
-      6 │   templateUrl: './forgot-password.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8001: 'app-language-toggle' is not a known element:
-1. If 'app-language-toggle' is an Angular component, then verify that it is part of this module.
-2. If 'app-language-toggle' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message. [plugin angular-compiler]
-
-    src/app/auth/pages/login/login.component.html:37:4:
-      37 │         <app-language-toggle></app-language-toggle>
-         ╵         ~~~~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component LoginComponent.
-
-    src/app/auth/pages/login/login.component.ts:11:15:
-      11 │   templateUrl: './login.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8002: Can't bind to 'formGroup' since it isn't a known property of 'form'. [plugin angular-compiler]
-
-    src/app/auth/pages/login/login.component.html:40:9:
-      40 │       <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
-         ╵             ~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component LoginComponent.
-
-    src/app/auth/pages/login/login.component.ts:11:15:
-      11 │   templateUrl: './login.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8002: Can't bind to 'formGroup' since it isn't a known property of 'form'. [plugin angular-compiler]
-
-    src/app/auth/pages/otp-verify/otp-verify.component.html:7:8:
-      7 │     <form [formGroup]="form" (ngSubmit)="submit()">
-        ╵           ~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component OtpVerifyComponent.
-
-    src/app/auth/pages/otp-verify/otp-verify.component.ts:10:15:
-      10 │   templateUrl: './otp-verify.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8002: Can't bind to 'formGroup' since it isn't a known property of 'form'. [plugin angular-compiler]
-
-    src/app/auth/pages/register/register.component.html:11:9:
-      11 │       <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
-         ╵             ~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component RegisterComponent.
-
-    src/app/auth/pages/register/register.component.ts:17:15:
-      17 │   templateUrl: './register.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8002: Can't bind to 'formGroup' since it isn't a known property of 'form'. [plugin angular-compiler]
-
-    src/app/auth/pages/reset-password/reset-password.component.html:5:8:
-      5 │     <form [formGroup]="form" (ngSubmit)="submit()">
-        ╵           ~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component ResetPasswordComponent.
-
-    src/app/auth/pages/reset-password/reset-password.component.ts:12:15:
-      12 │   templateUrl: './reset-password.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8001: 'app-price-ticker' is not a known element:
-1. If 'app-price-ticker' is an Angular component, then verify that it is part of this module.
-2. If 'app-price-ticker' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message. [plugin angular-compiler]
-
-    src/app/customer/pages/dashboard/dashboard.component.html:14:3:
-      14 │       <app-price-ticker></app-price-ticker>
-         ╵       ~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component DashboardComponent.
-
-    src/app/customer/pages/dashboard/dashboard.component.ts:12:15:
-      12 │   templateUrl: './dashboard.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8004: No pipe found with name 'number'. [plugin angular-compiler]
-
-    src/app/customer/pages/dashboard/dashboard.component.html:19:42:
-      19 │       <div class="points">{{ loyaltyPoints | number }}</div>
-         ╵                                              ~~~~~~
-
-  Error occurs in the template of component DashboardComponent.
-
-    src/app/customer/pages/dashboard/dashboard.component.ts:12:15:
-      12 │   templateUrl: './dashboard.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8004: No pipe found with name 'currency'. [plugin angular-compiler]
-
-    src/app/customer/pages/dashboard/dashboard.component.html:20:45:
-      20 │ ...value: {{ redemptionValue | currency: 'INR' : 'symbol' : '1.0-0...
-         ╵                                ~~~~~~~~
-
-  Error occurs in the template of component DashboardComponent.
-
-    src/app/customer/pages/dashboard/dashboard.component.ts:12:15:
-      12 │   templateUrl: './dashboard.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8004: No pipe found with name 'currency'. [plugin angular-compiler]
-
-    src/app/customer/pages/dashboard/dashboard.component.html:31:27:
-      31 │ ...      <span>{{ row.amount | currency: 'INR' : 'symbol' : '1.0-0...
-         ╵                                ~~~~~~~~
-
-  Error occurs in the template of component DashboardComponent.
-
-    src/app/customer/pages/dashboard/dashboard.component.ts:12:15:
-      12 │   templateUrl: './dashboard.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8001: 'app-station-map' is not a known element:
-1. If 'app-station-map' is an Angular component, then verify that it is part of this module.
-2. If 'app-station-map' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message. [plugin angular-compiler]
-
-    src/app/customer/pages/dashboard/dashboard.component.html:49:2:
-      49 │     <app-station-map></app-station-map>
-         ╵     ~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component DashboardComponent.
-
-    src/app/customer/pages/dashboard/dashboard.component.ts:12:15:
-      12 │   templateUrl: './dashboard.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8001: 'app-station-map' is not a known element:
-1. If 'app-station-map' is an Angular component, then verify that it is part of this module.
-2. If 'app-station-map' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message. [plugin angular-compiler]
-
-    src/app/customer/pages/nearby-stations/nearby-stations.component.html:4:2:
-      4 │     <app-station-map></app-station-map>
-        ╵     ~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component NearbyStationsComponent.
-
-    src/app/customer/pages/nearby-stations/nearby-stations.component.ts:12:15:
-      12 │   templateUrl: './nearby-stations.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8002: Can't bind to 'ngClass' since it isn't a known property of 'span'. [plugin angular-compiler]
-
-    src/app/customer/pages/nearby-stations/nearby-stations.component.html:23:30:
-      23 │ ...="status" [ngClass]="station.stockStatus.toLowerCase()">{{ stat...
-         ╵              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component NearbyStationsComponent.
-
-    src/app/customer/pages/nearby-stations/nearby-stations.component.ts:12:15:
-      12 │   templateUrl: './nearby-stations.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8004: No pipe found with name 'currency'. [plugin angular-compiler]
-
-    src/app/customer/pages/prices/prices.component.html:21:26:
-      21 │           <td>{{ row.current | currency: 'INR' : 'symbol' : '1.2-2...
-         ╵                                ~~~~~~~~
-
-  Error occurs in the template of component PricesComponent.
-
-    src/app/customer/pages/prices/prices.component.ts:19:15:
-      19 │   templateUrl: './prices.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8004: No pipe found with name 'number'. [plugin angular-compiler]
-
-    src/app/customer/pages/prices/prices.component.html:23:77:
-      23 │ ...ay > 0 ? '+' : '' }}{{ row.deltaFromYesterday | number: '1.2-2' }}
-         ╵                                                    ~~~~~~
-
-  Error occurs in the template of component PricesComponent.
-
-    src/app/customer/pages/prices/prices.component.ts:19:15:
-      19 │   templateUrl: './prices.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8002: Can't bind to 'ngModel' since it isn't a known property of 'input'. [plugin angular-compiler]
-
-    src/app/customer/pages/prices/prices.component.html:44:25:
-      44 │         <input type="number" [(ngModel)]="dropAlertTarget" />
-         ╵                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component PricesComponent.
-
-    src/app/customer/pages/prices/prices.component.ts:19:15:
-      19 │   templateUrl: './prices.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8004: No pipe found with name 'number'. [plugin angular-compiler]
-
-    src/app/customer/pages/prices/prices.component.html:64:29:
-      64 │           <td>{{ station.petrol | number: '1.2-2' }}</td>
-         ╵                                   ~~~~~~
-
-  Error occurs in the template of component PricesComponent.
-
-    src/app/customer/pages/prices/prices.component.ts:19:15:
-      19 │   templateUrl: './prices.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8004: No pipe found with name 'number'. [plugin angular-compiler]
-
-    src/app/customer/pages/prices/prices.component.html:65:29:
-      65 │           <td>{{ station.diesel | number: '1.2-2' }}</td>
-         ╵                                   ~~~~~~
-
-  Error occurs in the template of component PricesComponent.
-
-    src/app/customer/pages/prices/prices.component.ts:19:15:
-      19 │   templateUrl: './prices.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8004: No pipe found with name 'number'. [plugin angular-compiler]
-
-    src/app/customer/pages/prices/prices.component.html:66:26:
-      66 │           <td>{{ station.cng | number: '1.2-2' }}</td>
-         ╵                                ~~~~~~
-
-  Error occurs in the template of component PricesComponent.
-
-    src/app/customer/pages/prices/prices.component.ts:19:15:
-      19 │   templateUrl: './prices.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8002: Can't bind to 'ngModel' since it isn't a known property of 'input'. [plugin angular-compiler]
-
-    src/app/customer/pages/receipt-viewer/receipt-viewer.component.html:6:22:
-      6 │ ...<input type="text" [(ngModel)]="receiptNumber" placeholder="Rece...
-        ╵                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component ReceiptViewerComponent.
-
-    src/app/customer/pages/receipt-viewer/receipt-viewer.component.ts:5:15:
-      5 │   templateUrl: './receipt-viewer.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG1: Object is possibly 'null'. [plugin angular-compiler]
-
-    src/app/customer/pages/receipt-viewer/receipt-viewer.component.html:12:19:
-      12 │       <span>{{ result.station }}</span>
-         ╵                       ~~~~~~~
-
-  Error occurs in the template of component ReceiptViewerComponent.
-
-    src/app/customer/pages/receipt-viewer/receipt-viewer.component.ts:5:15:
-      5 │   templateUrl: './receipt-viewer.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG1: Object is possibly 'null'. [plugin angular-compiler]
-
-    src/app/customer/pages/receipt-viewer/receipt-viewer.component.html:13:19:
-      13 │       <span>{{ result.date }}</span>
-         ╵                       ~~~~
-
-  Error occurs in the template of component ReceiptViewerComponent.
-
-    src/app/customer/pages/receipt-viewer/receipt-viewer.component.ts:5:15:
-      5 │   templateUrl: './receipt-viewer.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG1: Object is possibly 'null'. [plugin angular-compiler]
-
-    src/app/customer/pages/receipt-viewer/receipt-viewer.component.html:14:19:
-      14 │       <span>{{ result.amount | currency: 'INR' : 'symbol' : '1.0-0...
-         ╵                       ~~~~~~
-
-  Error occurs in the template of component ReceiptViewerComponent.
-
-    src/app/customer/pages/receipt-viewer/receipt-viewer.component.ts:5:15:
-      5 │   templateUrl: './receipt-viewer.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8004: No pipe found with name 'currency'. [plugin angular-compiler]
-
-    src/app/customer/pages/receipt-viewer/receipt-viewer.component.html:14:28:
-      14 │       <span>{{ result.amount | currency: 'INR' : 'symbol' : '1.0-0...
-         ╵                                ~~~~~~~~
-
-  Error occurs in the template of component ReceiptViewerComponent.
-
-    src/app/customer/pages/receipt-viewer/receipt-viewer.component.ts:5:15:
-      5 │   templateUrl: './receipt-viewer.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8002: Can't bind to 'ngModel' since it isn't a known property of 'select'. [plugin angular-compiler]
-
-    src/app/customer/pages/transactions/transactions.component.html:13:11:
-      13 │       <select [(ngModel)]="filters.fuelType">
-         ╵               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component TransactionsComponent.
-
-    src/app/customer/pages/transactions/transactions.component.ts:15:15:
-      15 │   templateUrl: './transactions.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8002: Can't bind to 'ngModel' since it isn't a known property of 'select'. [plugin angular-compiler]
-
-    src/app/customer/pages/transactions/transactions.component.html:24:11:
-      24 │       <select [(ngModel)]="filters.station">
-         ╵               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component TransactionsComponent.
-
-    src/app/customer/pages/transactions/transactions.component.ts:15:15:
-      15 │   templateUrl: './transactions.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8002: Can't bind to 'ngModel' since it isn't a known property of 'select'. [plugin angular-compiler]
-
-    src/app/customer/pages/transactions/transactions.component.html:34:11:
-      34 │       <select [(ngModel)]="filters.sortBy">
-         ╵               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component TransactionsComponent.
-
-    src/app/customer/pages/transactions/transactions.component.ts:15:15:
-      15 │   templateUrl: './transactions.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8004: No pipe found with name 'currency'. [plugin angular-compiler]
-
-    src/app/customer/pages/transactions/transactions.component.html:60:25:
-      60 │           <td>{{ row.amount | currency: 'INR' : 'symbol' : '1.0-0'...
-         ╵                               ~~~~~~~~
-
-  Error occurs in the template of component TransactionsComponent.
-
-    src/app/customer/pages/transactions/transactions.component.ts:15:15:
-      15 │   templateUrl: './transactions.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8004: No pipe found with name 'currency'. [plugin angular-compiler]
-
-    src/app/customer/pages/transactions/transactions.component.html:67:68:
-      67 │ ...cted range: {{ totalSpent | currency: 'INR' : 'symbol' : '1.0-0...
-         ╵                                ~~~~~~~~
-
-  Error occurs in the template of component TransactionsComponent.
-
-    src/app/customer/pages/transactions/transactions.component.ts:15:15:
-      15 │   templateUrl: './transactions.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8001: 'app-kpi-card' is not a known element:
-1. If 'app-kpi-card' is an Angular component, then verify that it is part of this module.
-2. If 'app-kpi-card' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message. [plugin angular-compiler]
-
-    src/app/dealer/pages/dashboard/dashboard.component.html:12:2:
-      12 │     <app-kpi-card
-         ╵     ~~~~~~~~~~~~~
-
-  Error occurs in the template of component DashboardComponent.
-
-    src/app/dealer/pages/dashboard/dashboard.component.ts:5:15:
-      5 │   templateUrl: './dashboard.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8002: Can't bind to 'value' since it isn't a known property of 'app-kpi-card'.
-1. If 'app-kpi-card' is an Angular component and it has 'value' input, then verify that it is part of this module.
-2. If 'app-kpi-card' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
-3. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component. [plugin angular-compiler]
-
-    src/app/dealer/pages/dashboard/dashboard.component.html:15:3:
-      15 │       [value]="kpi.value"
-         ╵       ~~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component DashboardComponent.
-
-    src/app/dealer/pages/dashboard/dashboard.component.ts:5:15:
-      5 │   templateUrl: './dashboard.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8002: Can't bind to 'subtitle' since it isn't a known property of 'app-kpi-card'.
-1. If 'app-kpi-card' is an Angular component and it has 'subtitle' input, then verify that it is part of this module.
-2. If 'app-kpi-card' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
-3. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component. [plugin angular-compiler]
-
-    src/app/dealer/pages/dashboard/dashboard.component.html:16:3:
-      16 │       [subtitle]="kpi.subtitle"
-         ╵       ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component DashboardComponent.
-
-    src/app/dealer/pages/dashboard/dashboard.component.ts:5:15:
-      5 │   templateUrl: './dashboard.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8002: Can't bind to 'trend' since it isn't a known property of 'app-kpi-card'.
-1. If 'app-kpi-card' is an Angular component and it has 'trend' input, then verify that it is part of this module.
-2. If 'app-kpi-card' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
-3. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component. [plugin angular-compiler]
-
-    src/app/dealer/pages/dashboard/dashboard.component.html:17:3:
-      17 │       [trend]="kpi.trend"
-         ╵       ~~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component DashboardComponent.
-
-    src/app/dealer/pages/dashboard/dashboard.component.ts:5:15:
-      5 │   templateUrl: './dashboard.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8002: Can't bind to 'tone' since it isn't a known property of 'app-kpi-card'.
-1. If 'app-kpi-card' is an Angular component and it has 'tone' input, then verify that it is part of this module.
-2. If 'app-kpi-card' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
-3. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component. [plugin angular-compiler]
-
-    src/app/dealer/pages/dashboard/dashboard.component.html:18:3:
-      18 │       [tone]="kpi.tone"
-         ╵       ~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component DashboardComponent.
-
-    src/app/dealer/pages/dashboard/dashboard.component.ts:5:15:
-      5 │   templateUrl: './dashboard.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8001: 'app-tank-gauge' is not a known element:
-1. If 'app-tank-gauge' is an Angular component, then verify that it is part of this module.
-2. If 'app-tank-gauge' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message. [plugin angular-compiler]
-
-    src/app/dealer/pages/dashboard/dashboard.component.html:30:4:
-      30 │         <app-tank-gauge fuelType="Petrol A" [currentLevel]="6800" ...
-         ╵         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component DashboardComponent.
-
-    src/app/dealer/pages/dashboard/dashboard.component.ts:5:15:
-      5 │   templateUrl: './dashboard.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8002: Can't bind to 'currentLevel' since it isn't a known property of 'app-tank-gauge'.
-1. If 'app-tank-gauge' is an Angular component and it has 'currentLevel' input, then verify that it is part of this module.
-2. If 'app-tank-gauge' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
-3. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component. [plugin angular-compiler]
-
-    src/app/dealer/pages/dashboard/dashboard.component.html:30:40:
-      30 │ ... fuelType="Petrol A" [currentLevel]="6800" [capacity]="10000"><...
-         ╵                         ~~~~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component DashboardComponent.
-
-    src/app/dealer/pages/dashboard/dashboard.component.ts:5:15:
-      5 │   templateUrl: './dashboard.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8002: Can't bind to 'capacity' since it isn't a known property of 'app-tank-gauge'.
-1. If 'app-tank-gauge' is an Angular component and it has 'capacity' input, then verify that it is part of this module.
-2. If 'app-tank-gauge' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
-3. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component. [plugin angular-compiler]
-
-    src/app/dealer/pages/dashboard/dashboard.component.html:30:62:
-      30 │ ...trol A" [currentLevel]="6800" [capacity]="10000"></app-tank-gauge>
-         ╵                                  ~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component DashboardComponent.
-
-    src/app/dealer/pages/dashboard/dashboard.component.ts:5:15:
-      5 │   templateUrl: './dashboard.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8001: 'app-tank-gauge' is not a known element:
-1. If 'app-tank-gauge' is an Angular component, then verify that it is part of this module.
-2. If 'app-tank-gauge' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message. [plugin angular-compiler]
-
-    src/app/dealer/pages/dashboard/dashboard.component.html:31:4:
-      31 │         <app-tank-gauge fuelType="Diesel B" [currentLevel]="1800" ...
-         ╵         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component DashboardComponent.
-
-    src/app/dealer/pages/dashboard/dashboard.component.ts:5:15:
-      5 │   templateUrl: './dashboard.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8002: Can't bind to 'currentLevel' since it isn't a known property of 'app-tank-gauge'.
-1. If 'app-tank-gauge' is an Angular component and it has 'currentLevel' input, then verify that it is part of this module.
-2. If 'app-tank-gauge' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
-3. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component. [plugin angular-compiler]
-
-    src/app/dealer/pages/dashboard/dashboard.component.html:31:40:
-      31 │ ... fuelType="Diesel B" [currentLevel]="1800" [capacity]="9000"></...
-         ╵                         ~~~~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component DashboardComponent.
-
-    src/app/dealer/pages/dashboard/dashboard.component.ts:5:15:
-      5 │   templateUrl: './dashboard.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8002: Can't bind to 'capacity' since it isn't a known property of 'app-tank-gauge'.
-1. If 'app-tank-gauge' is an Angular component and it has 'capacity' input, then verify that it is part of this module.
-2. If 'app-tank-gauge' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
-3. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component. [plugin angular-compiler]
-
-    src/app/dealer/pages/dashboard/dashboard.component.html:31:62:
-      31 │ ...iesel B" [currentLevel]="1800" [capacity]="9000"></app-tank-gauge>
-         ╵                                   ~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component DashboardComponent.
-
-    src/app/dealer/pages/dashboard/dashboard.component.ts:5:15:
-      5 │   templateUrl: './dashboard.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8001: 'app-tank-gauge' is not a known element:
-1. If 'app-tank-gauge' is an Angular component, then verify that it is part of this module.
-2. If 'app-tank-gauge' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message. [plugin angular-compiler]
-
-    src/app/dealer/pages/dashboard/dashboard.component.html:32:4:
-      32 │         <app-tank-gauge fuelType="Premium C" [currentLevel]="2900"...
-         ╵         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component DashboardComponent.
-
-    src/app/dealer/pages/dashboard/dashboard.component.ts:5:15:
-      5 │   templateUrl: './dashboard.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8002: Can't bind to 'currentLevel' since it isn't a known property of 'app-tank-gauge'.
-1. If 'app-tank-gauge' is an Angular component and it has 'currentLevel' input, then verify that it is part of this module.
-2. If 'app-tank-gauge' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
-3. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component. [plugin angular-compiler]
-
-    src/app/dealer/pages/dashboard/dashboard.component.html:32:41:
-      32 │ ...fuelType="Premium C" [currentLevel]="2900" [capacity]="7000"></...
-         ╵                         ~~~~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component DashboardComponent.
-
-    src/app/dealer/pages/dashboard/dashboard.component.ts:5:15:
-      5 │   templateUrl: './dashboard.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8002: Can't bind to 'capacity' since it isn't a known property of 'app-tank-gauge'.
-1. If 'app-tank-gauge' is an Angular component and it has 'capacity' input, then verify that it is part of this module.
-2. If 'app-tank-gauge' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
-3. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component. [plugin angular-compiler]
-
-    src/app/dealer/pages/dashboard/dashboard.component.html:32:63:
-      32 │ ...emium C" [currentLevel]="2900" [capacity]="7000"></app-tank-gauge>
-         ╵                                   ~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component DashboardComponent.
-
-    src/app/dealer/pages/dashboard/dashboard.component.ts:5:15:
-      5 │   templateUrl: './dashboard.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8001: 'app-recent-transactions' is not a known element:
-1. If 'app-recent-transactions' is an Angular component, then verify that it is part of this module.
-2. If 'app-recent-transactions' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message. [plugin angular-compiler]
-
-    src/app/dealer/pages/dashboard/dashboard.component.html:56:3:
-      56 │       <app-recent-transactions></app-recent-transactions>
-         ╵       ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component DashboardComponent.
-
-    src/app/dealer/pages/dashboard/dashboard.component.ts:5:15:
-      5 │   templateUrl: './dashboard.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8002: Can't bind to 'formGroup' since it isn't a known property of 'form'. [plugin angular-compiler]
-
-    src/app/dealer/pages/sales-entry/sales-entry.component.html:8:8:
-      8 │     <form [formGroup]="form" (ngSubmit)="submit()" class="sales-form">
-        ╵           ~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component SalesEntryComponent.
-
-    src/app/dealer/pages/sales-entry/sales-entry.component.ts:6:15:
-      6 │   templateUrl: './sales-entry.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8004: No pipe found with name 'number'. [plugin angular-compiler]
-
-    src/app/dealer/pages/sales-entry/sales-entry.component.html:76:63:
-      76 │ ...</strong> INR {{ currentPricePerLitre | number: '1.2-2' }} / litre
-         ╵                                            ~~~~~~
-
-  Error occurs in the template of component SalesEntryComponent.
-
-    src/app/dealer/pages/sales-entry/sales-entry.component.ts:6:15:
-      6 │   templateUrl: './sales-entry.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8004: No pipe found with name 'number'. [plugin angular-compiler]
-
-    src/app/dealer/pages/shift-summary/shift-summary.component.html:5:35:
-      5 │ ...v><strong>{{ totals.litres | number }}</strong><span>Litres Sold...
-        ╵                                 ~~~~~~
-
-  Error occurs in the template of component ShiftSummaryComponent.
-
-    src/app/dealer/pages/shift-summary/shift-summary.component.ts:5:15:
-      5 │   templateUrl: './shift-summary.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8004: No pipe found with name 'currency'. [plugin angular-compiler]
-
-    src/app/dealer/pages/shift-summary/shift-summary.component.html:6:36:
-      6 │ ...<strong>{{ totals.revenue | currency: 'INR' : 'symbol' : '1.0-0'...
-        ╵                                ~~~~~~~~
-
-  Error occurs in the template of component ShiftSummaryComponent.
-
-    src/app/dealer/pages/shift-summary/shift-summary.component.ts:5:15:
-      5 │   templateUrl: './shift-summary.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8004: No pipe found with name 'number'. [plugin angular-compiler]
-
-    src/app/shared-admin-dealer/components/recent-transactions/recent-transactions.component.html:17:24:
-      17 │         <td>{{ row.litres | number: '1.1-1' }}</td>
-         ╵                             ~~~~~~
-
-  Error occurs in the template of component RecentTransactionsComponent.
-
-    src/app/shared-admin-dealer/components/recent-transactions/recent-transactions.component.ts:13:15:
-      13 │   templateUrl: './recent-transactions.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8004: No pipe found with name 'currency'. [plugin angular-compiler]
-
-    src/app/shared-admin-dealer/components/recent-transactions/recent-transactions.component.html:18:24:
-      18 │         <td>{{ row.amount | currency: 'INR' : 'symbol' : '1.0-0' }...
-         ╵                             ~~~~~~~~
-
-  Error occurs in the template of component RecentTransactionsComponent.
-
-    src/app/shared-admin-dealer/components/recent-transactions/recent-transactions.component.ts:13:15:
-      13 │   templateUrl: './recent-transactions.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8002: Can't bind to 'ngClass' since it isn't a known property of 'span'. [plugin angular-compiler]
-
-    src/app/shared-admin-dealer/components/station-map/station-map.component.html:12:21:
-      12 │       <span class="dot" [ngClass]="station.stockHealth"></span>
-         ╵                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component StationMapComponent.
-
-    src/app/shared-admin-dealer/components/station-map/station-map.component.ts:11:15:
-      11 │   templateUrl: './station-map.component.html',
-         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8002: Can't bind to 'ngClass' since it isn't a known property of 'div'. [plugin angular-compiler]
-
-    src/app/shared-admin-dealer/components/tank-gauge/tank-gauge.component.html:1:23:
-      1 │ <div class="tank-card" [ngClass]="statusClass">
-        ╵                        ~~~~~~~~~~~~~~~~~~~~~~~
-
-  Error occurs in the template of component TankGaugeComponent.
-
-    src/app/shared-admin-dealer/components/tank-gauge/tank-gauge.component.ts:6:15:
-      6 │   templateUrl: './tank-gauge.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8004: No pipe found with name 'number'. [plugin angular-compiler]
-
-    src/app/shared-admin-dealer/components/tank-gauge/tank-gauge.component.html:9:37:
-      9 │ ...ass="meta">{{ currentLevel | number: '1.0-0' }} L / {{ capacity ...
-        ╵                                 ~~~~~~
-
-  Error occurs in the template of component TankGaugeComponent.
-
-    src/app/shared-admin-dealer/components/tank-gauge/tank-gauge.component.ts:6:15:
-      6 │   templateUrl: './tank-gauge.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-X [ERROR] NG8004: No pipe found with name 'number'. [plugin angular-compiler]
-
-    src/app/shared-admin-dealer/components/tank-gauge/tank-gauge.component.html:9:74:
-      9 │ ...l | number: '1.0-0' }} L / {{ capacity | number: '1.0-0' }} L</div>
-        ╵                                             ~~~~~~
-
-  Error occurs in the template of component TankGaugeComponent.
-
-    src/app/shared-admin-dealer/components/tank-gauge/tank-gauge.component.ts:6:15:
-      6 │   templateUrl: './tank-gauge.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+- Changes detected. Rebuilding...
 
 - Changes detected. Rebuilding...
 

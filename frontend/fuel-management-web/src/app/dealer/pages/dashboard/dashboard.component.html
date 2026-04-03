@@ -56,4 +56,12 @@
 			<app-recent-transactions></app-recent-transactions>
 		</article>
 	</div>
+
+	<app-chat-panel
+		context="dealer"
+		title="Dealer Ops Chat"
+		subtitle="Coordinate replenishment, shifts, and escalations with support."
+		placeholder="Ask about stock, pricing, or dispatch..."
+		[suggestions]="['Request emergency refill', 'Report pump outage', 'Confirm price update']">
+	</app-chat-panel>
 </section>

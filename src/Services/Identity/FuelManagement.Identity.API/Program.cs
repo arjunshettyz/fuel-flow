@@ -158,6 +158,22 @@ END;
         );
         db.SaveChanges();
     }
+
+    if (!db.Users.Any(u => u.Email == "dealer@fuel.local"))
+    {
+        db.Users.Add(
+            new FuelManagement.Identity.API.Models.ApplicationUser
+            {
+                FullName = "Sample Dealer",
+                Email = "dealer@fuel.local",
+                PasswordHash = BCrypt.Net.BCrypt.HashPassword("Dealer@123"),
+                Role = "Dealer",
+                Phone = "9876543212",
+                IsActive = true
+            }
+        );
+        db.SaveChanges();
+    }
 }
 
 app.UseSwagger();

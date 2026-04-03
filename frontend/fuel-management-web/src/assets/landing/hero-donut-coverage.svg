@@ -1,0 +1,6 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="60" cy="60" r="44" stroke="#E7F0F1" stroke-width="10" fill="none"/>
+  <circle cx="60" cy="60" r="44" stroke="#0D2B2B" stroke-width="10" stroke-linecap="round" stroke-dasharray="165 105" fill="none" transform="rotate(-90 60 60)"/>
+  <text x="60" y="54" text-anchor="middle" font-size="10" fill="#0D2B2B" font-family="Spline Sans, Arial, sans-serif">Coverage</text>
+  <text x="60" y="72" text-anchor="middle" font-size="14" font-weight="700" fill="#0D2B2B" font-family="Space Grotesk, Arial, sans-serif">4.3M</text>
+</svg>

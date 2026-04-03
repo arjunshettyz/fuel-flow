@@ -177,3 +177,4 @@ C:\Users\Arjun\Desktop\sprintproj\src\Services\Reporting\FuelManagement.Reportin
 C:\Users\Arjun\Desktop\sprintproj\src\Services\Reporting\FuelManagement.Reporting.API\bin\Debug\net10.0\RabbitMQ.Client.dll
 C:\Users\Arjun\Desktop\sprintproj\src\Services\Reporting\FuelManagement.Reporting.API\bin\Debug\net10.0\FuelManagement.Common.dll
 C:\Users\Arjun\Desktop\sprintproj\src\Services\Reporting\FuelManagement.Reporting.API\bin\Debug\net10.0\FuelManagement.Common.pdb
+C:\Users\Arjun\Desktop\sprintproj\src\Services\Reporting\FuelManagement.Reporting.API\obj\Debug\net10.0\FuelManagement.Reporting.API.sourcelink.json

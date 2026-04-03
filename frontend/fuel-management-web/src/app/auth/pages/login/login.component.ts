@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   readonly form = this.fb.nonNullable.group({
     identifier: ['', [Validators.required, Validators.pattern(/(^[^\s@]+@[^\s@]+\.[^\s@]+$)|(^[6-9]\d{9}$)/)]],
     password: ['', [Validators.required, Validators.minLength(8)]],
+    role: ['Customer', [Validators.required]],
     rememberMe: [true],
   });
 
@@ -56,18 +57,29 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.showPassword = !this.showPassword;
   }
 
-  loadSample(role: 'admin' | 'customer'): void {
+  loadSample(role: 'admin' | 'customer' | 'dealer'): void {
     if (role === 'admin') {
-      this.form.patchValue({ identifier: 'admin@fuel.local', password: 'Admin@123' });
-    } else {
-      this.form.patchValue({ identifier: 'customer@fuel.local', password: 'Customer@123' });
+      this.form.patchValue({ identifier: 'admin@fuel.local', password: 'Admin@123', role: 'Admin' });
+      this.errorMessage = '';
+      return;
     }
+
+    if (role === 'dealer') {
+      this.form.patchValue({ identifier: 'dealer@fuel.local', password: 'Dealer@123', role: 'Dealer' });
+      this.errorMessage = '';
+      return;
+    }
+
+    this.form.patchValue({ identifier: 'customer@fuel.local', password: 'Customer@123', role: 'Customer' });
     this.errorMessage = '';
   }
 
   loginWithOtp(): void {
     this.router.navigate(['/auth/otp-verify'], {
-      queryParams: { identifier: this.form.controls.identifier.value },
+      queryParams: {
+        identifier: this.form.controls.identifier.value,
+        role: this.form.controls.role.value,
+      },
     });
   }
 
@@ -77,7 +89,7 @@ export class LoginComponent implements OnInit, OnDestroy {
       return;
     }
 
-    const { identifier, password, rememberMe } = this.form.getRawValue();
+    const { identifier, password, rememberMe, role } = this.form.getRawValue();
 
     if (rememberMe) {
       this.auth.rememberIdentifier(identifier);
@@ -89,7 +101,7 @@ export class LoginComponent implements OnInit, OnDestroy {
       .login({ identifier, password })
       .pipe(
         catchError((error: any) => {
-          this.errorMessage = error?.error?.message || 'Invalid credentials';
+          this.errorMessage = error?.message || error?.error?.message || 'Invalid credentials';
           this.trackFailure();
           return EMPTY;
         })
@@ -97,6 +109,11 @@ export class LoginComponent implements OnInit, OnDestroy {
       .subscribe((response) => {
         this.errorMessage = '';
         this.failureCount = 0;
+        if (response.user.role.toLowerCase() !== role.toLowerCase()) {
+          this.auth.clearSession();
+          this.errorMessage = `This account is registered as ${response.user.role}. Please login as ${response.user.role}.`;
+          return;
+        }
         const returnUrl = this.route.snapshot.queryParamMap.get('returnUrl');
         this.router.navigateByUrl(returnUrl || this.auth.routeForRole(response.user.role));
       });

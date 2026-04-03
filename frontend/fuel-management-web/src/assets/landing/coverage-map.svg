@@ -1,0 +1,18 @@
+<svg width="320" height="200" viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="1" y="1" width="318" height="198" rx="18" fill="#F7FAFB" stroke="#E3ECEE"/>
+  <path d="M20 40H300" stroke="#E3ECEE" stroke-width="1" stroke-dasharray="4 6"/>
+  <path d="M20 80H300" stroke="#E3ECEE" stroke-width="1" stroke-dasharray="4 6"/>
+  <path d="M20 120H300" stroke="#E3ECEE" stroke-width="1" stroke-dasharray="4 6"/>
+  <path d="M60 20V180" stroke="#E3ECEE" stroke-width="1" stroke-dasharray="4 6"/>
+  <path d="M160 20V180" stroke="#E3ECEE" stroke-width="1" stroke-dasharray="4 6"/>
+  <path d="M260 20V180" stroke="#E3ECEE" stroke-width="1" stroke-dasharray="4 6"/>
+  <circle cx="92" cy="88" r="8" fill="#0D2B2B"/>
+  <circle cx="212" cy="58" r="8" fill="#16B9B0"/>
+  <circle cx="178" cy="132" r="8" fill="#0D2B2B"/>
+  <rect x="34" y="102" width="86" height="22" rx="11" fill="#0D2B2B"/>
+  <text x="46" y="118" font-size="10" font-weight="600" fill="#FFFFFF" font-family="Spline Sans, Arial, sans-serif">PO# 12345</text>
+  <rect x="190" y="32" width="90" height="22" rx="11" fill="#16B9B0"/>
+  <text x="202" y="48" font-size="10" font-weight="600" fill="#FFFFFF" font-family="Spline Sans, Arial, sans-serif">Scheduled</text>
+  <rect x="156" y="144" width="64" height="22" rx="11" fill="#0D2B2B"/>
+  <text x="170" y="160" font-size="10" font-weight="600" fill="#FFFFFF" font-family="Spline Sans, Arial, sans-serif">Paid</text>
+</svg>

@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from "@angular/core";
+import { Component, ElementRef, HostListener, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { AuthService } from "../../../core/services/auth.service";
 import { UserProfile } from "../../../core/models/auth.models";
@@ -13,13 +13,37 @@ export class NavbarComponent implements OnInit {
   scrolled = false;
   mobileOpen = false;
   userMenuOpen = false;
+  readonly publicLinks = [
+    { label: "Platform", fragment: "platform" },
+    { label: "Fuel Solutions", fragment: "solutions" },
+    { label: "Who We Serve", fragment: "benefits" },
+    { label: "Pricing", fragment: "pricing" },
+  ];
 
-  constructor(private readonly auth: AuthService, private readonly router: Router) {}
+  constructor(
+    private readonly auth: AuthService,
+    private readonly router: Router,
+    private readonly hostRef: ElementRef<HTMLElement>
+  ) {}
 
   ngOnInit(): void { this.auth.currentUser$.subscribe(u => this.user = u); }
 
   @HostListener("window:scroll")
   onScroll(): void { this.scrolled = window.scrollY > 20; }
+
+  @HostListener("document:click", ["$event"])
+  onDocumentClick(event: MouseEvent): void {
+    if (!this.hostRef.nativeElement.contains(event.target as Node)) {
+      this.userMenuOpen = false;
+      this.mobileOpen = false;
+    }
+  }
+
+  @HostListener("document:keydown.escape")
+  onEscape(): void {
+    this.userMenuOpen = false;
+    this.mobileOpen = false;
+  }
 
   get navLinks(): { label: string; path: string }[] {
     if (!this.user) return [];
@@ -41,6 +65,7 @@ export class NavbarComponent implements OnInit {
     return [
       { label: "Dashboard",    path: "/customer/dashboard" },
       { label: "Prices",       path: "/customer/prices" },
+      { label: "Orders",       path: "/customer/orders" },
       { label: "Transactions", path: "/customer/transactions" },
       { label: "Stations",     path: "/customer/stations" },
       { label: "Receipts",     path: "/customer/receipts" }

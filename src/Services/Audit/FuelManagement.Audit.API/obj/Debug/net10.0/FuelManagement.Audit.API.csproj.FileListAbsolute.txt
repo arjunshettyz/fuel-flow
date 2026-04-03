@@ -162,3 +162,4 @@ C:\Users\Arjun\Desktop\sprintproj\src\Services\Audit\FuelManagement.Audit.API\bi
 C:\Users\Arjun\Desktop\sprintproj\src\Services\Audit\FuelManagement.Audit.API\bin\Debug\net10.0\FuelManagement.Contracts.dll
 C:\Users\Arjun\Desktop\sprintproj\src\Services\Audit\FuelManagement.Audit.API\bin\Debug\net10.0\FuelManagement.Common.pdb
 C:\Users\Arjun\Desktop\sprintproj\src\Services\Audit\FuelManagement.Audit.API\bin\Debug\net10.0\FuelManagement.Contracts.pdb
+C:\Users\Arjun\Desktop\sprintproj\src\Services\Audit\FuelManagement.Audit.API\obj\Debug\net10.0\FuelManagement.Audit.API.sourcelink.json

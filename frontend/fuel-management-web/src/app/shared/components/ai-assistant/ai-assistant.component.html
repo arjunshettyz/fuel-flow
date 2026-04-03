@@ -1,0 +1,36 @@
+<div class="assistant-shell" [class.open]="open">
+	<button class="assistant-fab" type="button" (click)="toggle()" aria-label="Open AI assistant">
+		<span>AI</span>
+	</button>
+
+	<div class="assistant-panel" *ngIf="open">
+		<header class="assistant-header">
+			<div>
+				<strong>FuelFlow AI Atlas</strong>
+				<span>Instant help, 24/7</span>
+			</div>
+			<button class="ghost-btn" type="button" (click)="toggle()" aria-label="Close AI assistant">×</button>
+		</header>
+
+		<div class="assistant-body" #assistantBody>
+			<div class="assistant-message" *ngFor="let message of messages" [class.user]="message.role === 'user'">
+				<div class="bubble">{{ message.text }}</div>
+				<span class="timestamp">{{ message.time }}</span>
+			</div>
+			<div class="assistant-message typing" *ngIf="isSending">
+				<div class="bubble">Thinking...</div>
+			</div>
+		</div>
+
+		<div class="assistant-suggestions">
+			<button class="chip" type="button" *ngFor="let suggestion of suggestions" (click)="useSuggestion(suggestion)">
+				{{ suggestion }}
+			</button>
+		</div>
+
+		<form class="assistant-input" (ngSubmit)="send()">
+			<input type="text" name="assistantInput" [(ngModel)]="draft" placeholder="Ask FuelFlow AI..." />
+			<button class="primary-btn btn-sm" type="submit" [disabled]="isSending">Send</button>
+		</form>
+	</div>
+</div>

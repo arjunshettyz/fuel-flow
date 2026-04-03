@@ -8,3 +8,233 @@ info: Microsoft.Hosting.Lifetime[0]
       Hosting environment: Development
 info: Microsoft.Hosting.Lifetime[0]
       Content root path: C:\Users\Arjun\Desktop\sprintproj\src\Gateway\FuelManagement.Gateway
+info: Ocelot.RateLimiting.Middleware.RateLimitingMiddleware[0]
+      requestId: 33a6c766a0d144aa91b060255023eac7, previousRequestId: No PreviousRequestId, message: 'EndpointRateLimiting is not enabled for /api/auth/{everything}'
+info: Ocelot.Authentication.Middleware.AuthenticationMiddleware[0]
+      requestId: 33a6c766a0d144aa91b060255023eac7, previousRequestId: No PreviousRequestId, message: 'No authentication needed for path '/gateway/auth/email-otp/send'.'
+info: Ocelot.Authorization.Middleware.AuthorizationMiddleware[0]
+      requestId: 33a6c766a0d144aa91b060255023eac7, previousRequestId: No PreviousRequestId, message: '/api/auth/{everything} route does not require user to be authorized'
+info: Ocelot.Requester.Middleware.HttpRequesterMiddleware[0]
+      requestId: 33a6c766a0d144aa91b060255023eac7, previousRequestId: No PreviousRequestId, message: '200 (OK) status code of request URI: http://localhost:5001/api/auth/email-otp/send.'
+info: Ocelot.RateLimiting.Middleware.RateLimitingMiddleware[0]
+      requestId: 09979c62398c4346a19527b06ae154e1, previousRequestId: No PreviousRequestId, message: 'EndpointRateLimiting is not enabled for /api/auth/{everything}'
+info: Ocelot.Authentication.Middleware.AuthenticationMiddleware[0]
+      requestId: 09979c62398c4346a19527b06ae154e1, previousRequestId: No PreviousRequestId, message: 'No authentication needed for path '/gateway/auth/email-otp/verify'.'
+info: Ocelot.Authorization.Middleware.AuthorizationMiddleware[0]
+      requestId: 09979c62398c4346a19527b06ae154e1, previousRequestId: No PreviousRequestId, message: '/api/auth/{everything} route does not require user to be authorized'
+info: Ocelot.Requester.Middleware.HttpRequesterMiddleware[0]
+      requestId: 09979c62398c4346a19527b06ae154e1, previousRequestId: No PreviousRequestId, message: '200 (OK) status code of request URI: http://localhost:5001/api/auth/email-otp/verify.'
+info: Ocelot.RateLimiting.Middleware.RateLimitingMiddleware[0]
+      requestId: 06b05939a23a46d0b75b3b0caade0661, previousRequestId: No PreviousRequestId, message: 'EndpointRateLimiting is not enabled for /api/auth/{everything}'
+info: Ocelot.Authentication.Middleware.AuthenticationMiddleware[0]
+      requestId: 06b05939a23a46d0b75b3b0caade0661, previousRequestId: No PreviousRequestId, message: 'No authentication needed for path '/gateway/auth/register'.'
+info: Ocelot.Authorization.Middleware.AuthorizationMiddleware[0]
+      requestId: 06b05939a23a46d0b75b3b0caade0661, previousRequestId: No PreviousRequestId, message: '/api/auth/{everything} route does not require user to be authorized'
+info: Ocelot.Requester.Middleware.HttpRequesterMiddleware[0]
+      requestId: 06b05939a23a46d0b75b3b0caade0661, previousRequestId: No PreviousRequestId, message: '200 (OK) status code of request URI: http://localhost:5001/api/auth/register.'
+info: Ocelot.RateLimiting.Middleware.RateLimitingMiddleware[0]
+      requestId: 87f99397cf1e44068b09c4b423f0156f, previousRequestId: No PreviousRequestId, message: 'EndpointRateLimiting is not enabled for /api/auth/{everything}'
+info: Ocelot.Authentication.Middleware.AuthenticationMiddleware[0]
+      requestId: 87f99397cf1e44068b09c4b423f0156f, previousRequestId: No PreviousRequestId, message: 'No authentication needed for path '/gateway/auth/login'.'
+info: Ocelot.Authorization.Middleware.AuthorizationMiddleware[0]
+      requestId: 87f99397cf1e44068b09c4b423f0156f, previousRequestId: No PreviousRequestId, message: '/api/auth/{everything} route does not require user to be authorized'
+info: Ocelot.Requester.Middleware.HttpRequesterMiddleware[0]
+      requestId: 87f99397cf1e44068b09c4b423f0156f, previousRequestId: No PreviousRequestId, message: '200 (OK) status code of request URI: http://localhost:5001/api/auth/login.'
+warn: Microsoft.AspNetCore.Server.Kestrel[22]
+      As of "04/02/2026 07:01:48 +00:00", the heartbeat has been running for "00:00:01.0138676" which is longer than "00:00:01". This could be caused by thread pool starvation.
+warn: Microsoft.AspNetCore.Server.Kestrel[22]
+      As of "04/02/2026 07:02:20 +00:00", the heartbeat has been running for "00:00:02.0130074" which is longer than "00:00:01". This could be caused by thread pool starvation.
+warn: Microsoft.AspNetCore.Server.Kestrel[22]
+      As of "04/02/2026 07:09:19 +00:00", the heartbeat has been running for "00:00:02.3954928" which is longer than "00:00:01". This could be caused by thread pool starvation.
+warn: Microsoft.AspNetCore.Server.Kestrel[22]
+      As of "04/02/2026 07:13:09 +00:00", the heartbeat has been running for "00:00:01.9932364" which is longer than "00:00:01". This could be caused by thread pool starvation.
+info: Ocelot.RateLimiting.Middleware.RateLimitingMiddleware[0]
+      requestId: 01dad8d10e3c4c19a604f0032b5ea4ec, previousRequestId: No PreviousRequestId, message: 'EndpointRateLimiting is not enabled for /api/auth/{everything}'
+info: Ocelot.Authentication.Middleware.AuthenticationMiddleware[0]
+      requestId: 01dad8d10e3c4c19a604f0032b5ea4ec, previousRequestId: No PreviousRequestId, message: 'No authentication needed for path '/gateway/auth/login'.'
+info: Ocelot.Authorization.Middleware.AuthorizationMiddleware[0]
+      requestId: 01dad8d10e3c4c19a604f0032b5ea4ec, previousRequestId: No PreviousRequestId, message: '/api/auth/{everything} route does not require user to be authorized'
+info: Ocelot.RateLimiting.Middleware.RateLimitingMiddleware[0]
+      requestId: 16b0063f06a3447fb6d2c66b39708dad, previousRequestId: No PreviousRequestId, message: 'EndpointRateLimiting is not enabled for /api/auth/{everything}'
+info: Ocelot.Authentication.Middleware.AuthenticationMiddleware[0]
+      requestId: 16b0063f06a3447fb6d2c66b39708dad, previousRequestId: No PreviousRequestId, message: 'No authentication needed for path '/gateway/auth/login'.'
+info: Ocelot.Authorization.Middleware.AuthorizationMiddleware[0]
+      requestId: 16b0063f06a3447fb6d2c66b39708dad, previousRequestId: No PreviousRequestId, message: '/api/auth/{everything} route does not require user to be authorized'
+info: Ocelot.RateLimiting.Middleware.RateLimitingMiddleware[0]
+      requestId: 24a0df8e75df4b03820b247664e9741b, previousRequestId: No PreviousRequestId, message: 'EndpointRateLimiting is not enabled for /api/auth/{everything}'
+info: Ocelot.Authentication.Middleware.AuthenticationMiddleware[0]
+      requestId: 24a0df8e75df4b03820b247664e9741b, previousRequestId: No PreviousRequestId, message: 'No authentication needed for path '/gateway/auth/login'.'
+info: Ocelot.Authorization.Middleware.AuthorizationMiddleware[0]
+      requestId: 24a0df8e75df4b03820b247664e9741b, previousRequestId: No PreviousRequestId, message: '/api/auth/{everything} route does not require user to be authorized'
+info: Ocelot.RateLimiting.Middleware.RateLimitingMiddleware[0]
+      requestId: d8b7ab1ed3094e45934efc016d65d56b, previousRequestId: No PreviousRequestId, message: 'EndpointRateLimiting is not enabled for /api/auth/{everything}'
+info: Ocelot.Authentication.Middleware.AuthenticationMiddleware[0]
+      requestId: d8b7ab1ed3094e45934efc016d65d56b, previousRequestId: No PreviousRequestId, message: 'No authentication needed for path '/gateway/auth/login'.'
+info: Ocelot.Authorization.Middleware.AuthorizationMiddleware[0]
+      requestId: d8b7ab1ed3094e45934efc016d65d56b, previousRequestId: No PreviousRequestId, message: '/api/auth/{everything} route does not require user to be authorized'
+info: Ocelot.RateLimiting.Middleware.RateLimitingMiddleware[0]
+      requestId: a1ed31a31ad14716a6bd36d321d719be, previousRequestId: No PreviousRequestId, message: 'EndpointRateLimiting is not enabled for /api/auth/{everything}'
+info: Ocelot.Authentication.Middleware.AuthenticationMiddleware[0]
+      requestId: a1ed31a31ad14716a6bd36d321d719be, previousRequestId: No PreviousRequestId, message: 'No authentication needed for path '/gateway/auth/login'.'
+info: Ocelot.Authorization.Middleware.AuthorizationMiddleware[0]
+      requestId: a1ed31a31ad14716a6bd36d321d719be, previousRequestId: No PreviousRequestId, message: '/api/auth/{everything} route does not require user to be authorized'
+info: Ocelot.RateLimiting.Middleware.RateLimitingMiddleware[0]
+      requestId: 2e8c2528a06e4c8ca49521c889ed09dc, previousRequestId: No PreviousRequestId, message: 'EndpointRateLimiting is not enabled for /api/auth/{everything}'
+info: Ocelot.Authentication.Middleware.AuthenticationMiddleware[0]
+      requestId: 2e8c2528a06e4c8ca49521c889ed09dc, previousRequestId: No PreviousRequestId, message: 'No authentication needed for path '/gateway/auth/login'.'
+info: Ocelot.Authorization.Middleware.AuthorizationMiddleware[0]
+      requestId: 2e8c2528a06e4c8ca49521c889ed09dc, previousRequestId: No PreviousRequestId, message: '/api/auth/{everything} route does not require user to be authorized'
+info: Ocelot.Requester.Middleware.HttpRequesterMiddleware[0]
+      requestId: a1ed31a31ad14716a6bd36d321d719be, previousRequestId: No PreviousRequestId, message: '200 (OK) status code of request URI: http://localhost:5001/api/auth/login.'
+info: Ocelot.Requester.Middleware.HttpRequesterMiddleware[0]
+      requestId: 16b0063f06a3447fb6d2c66b39708dad, previousRequestId: No PreviousRequestId, message: '200 (OK) status code of request URI: http://localhost:5001/api/auth/login.'
+info: Ocelot.Requester.Middleware.HttpRequesterMiddleware[0]
+      requestId: 01dad8d10e3c4c19a604f0032b5ea4ec, previousRequestId: No PreviousRequestId, message: '200 (OK) status code of request URI: http://localhost:5001/api/auth/login.'
+info: Ocelot.Requester.Middleware.HttpRequesterMiddleware[0]
+      requestId: 24a0df8e75df4b03820b247664e9741b, previousRequestId: No PreviousRequestId, message: '200 (OK) status code of request URI: http://localhost:5001/api/auth/login.'
+info: Ocelot.RateLimiting.Middleware.RateLimitingMiddleware[0]
+      requestId: c24e3d1af9ec42549f7ede400ac45259, previousRequestId: No PreviousRequestId, message: 'EndpointRateLimiting is not enabled for /api/auth/{everything}'
+info: Ocelot.Authentication.Middleware.AuthenticationMiddleware[0]
+      requestId: c24e3d1af9ec42549f7ede400ac45259, previousRequestId: No PreviousRequestId, message: 'No authentication needed for path '/gateway/auth/login'.'
+info: Ocelot.Authorization.Middleware.AuthorizationMiddleware[0]
+      requestId: c24e3d1af9ec42549f7ede400ac45259, previousRequestId: No PreviousRequestId, message: '/api/auth/{everything} route does not require user to be authorized'
+info: Ocelot.Requester.Middleware.HttpRequesterMiddleware[0]
+      requestId: d8b7ab1ed3094e45934efc016d65d56b, previousRequestId: No PreviousRequestId, message: '200 (OK) status code of request URI: http://localhost:5001/api/auth/login.'
+info: Ocelot.Requester.Middleware.HttpRequesterMiddleware[0]
+      requestId: 2e8c2528a06e4c8ca49521c889ed09dc, previousRequestId: No PreviousRequestId, message: '200 (OK) status code of request URI: http://localhost:5001/api/auth/login.'
+info: Ocelot.Requester.Middleware.HttpRequesterMiddleware[0]
+      requestId: c24e3d1af9ec42549f7ede400ac45259, previousRequestId: No PreviousRequestId, message: '200 (OK) status code of request URI: http://localhost:5001/api/auth/login.'
+warn: Microsoft.AspNetCore.Server.Kestrel[22]
+      As of "04/02/2026 09:57:10 +00:00", the heartbeat has been running for "00:00:02.5970661" which is longer than "00:00:01". This could be caused by thread pool starvation.
+info: Ocelot.RateLimiting.Middleware.RateLimitingMiddleware[0]
+      requestId: 178836a7a4544ad7add3eba126e924bb, previousRequestId: No PreviousRequestId, message: 'EndpointRateLimiting is not enabled for /api/auth/{everything}'
+info: Ocelot.Authentication.Middleware.AuthenticationMiddleware[0]
+      requestId: 178836a7a4544ad7add3eba126e924bb, previousRequestId: No PreviousRequestId, message: 'No authentication needed for path '/gateway/auth/login'.'
+info: Ocelot.Authorization.Middleware.AuthorizationMiddleware[0]
+      requestId: 178836a7a4544ad7add3eba126e924bb, previousRequestId: No PreviousRequestId, message: '/api/auth/{everything} route does not require user to be authorized'
+info: Ocelot.RateLimiting.Middleware.RateLimitingMiddleware[0]
+      requestId: 82254b15aa0d46489033b32edfc93ff9, previousRequestId: No PreviousRequestId, message: 'EndpointRateLimiting is not enabled for /api/auth/{everything}'
+info: Ocelot.Authentication.Middleware.AuthenticationMiddleware[0]
+      requestId: 82254b15aa0d46489033b32edfc93ff9, previousRequestId: No PreviousRequestId, message: 'No authentication needed for path '/gateway/auth/login'.'
+info: Ocelot.Authorization.Middleware.AuthorizationMiddleware[0]
+      requestId: 82254b15aa0d46489033b32edfc93ff9, previousRequestId: No PreviousRequestId, message: '/api/auth/{everything} route does not require user to be authorized'
+info: Ocelot.Requester.Middleware.HttpRequesterMiddleware[0]
+      requestId: 178836a7a4544ad7add3eba126e924bb, previousRequestId: No PreviousRequestId, message: '200 (OK) status code of request URI: http://localhost:5001/api/auth/login.'
+info: Ocelot.Requester.Middleware.HttpRequesterMiddleware[0]
+      requestId: 82254b15aa0d46489033b32edfc93ff9, previousRequestId: No PreviousRequestId, message: '200 (OK) status code of request URI: http://localhost:5001/api/auth/login.'
+info: Ocelot.RateLimiting.Middleware.RateLimitingMiddleware[0]
+      requestId: 47b9fa5e78554233a7a994a330fe3fe7, previousRequestId: No PreviousRequestId, message: 'EndpointRateLimiting is not enabled for /api/auth/{everything}'
+info: Ocelot.Authentication.Middleware.AuthenticationMiddleware[0]
+      requestId: 47b9fa5e78554233a7a994a330fe3fe7, previousRequestId: No PreviousRequestId, message: 'No authentication needed for path '/gateway/auth/login'.'
+info: Ocelot.Authorization.Middleware.AuthorizationMiddleware[0]
+      requestId: 47b9fa5e78554233a7a994a330fe3fe7, previousRequestId: No PreviousRequestId, message: '/api/auth/{everything} route does not require user to be authorized'
+info: Ocelot.RateLimiting.Middleware.RateLimitingMiddleware[0]
+      requestId: 80fd301c98df40babe6c70f42f58f59f, previousRequestId: No PreviousRequestId, message: 'EndpointRateLimiting is not enabled for /api/auth/{everything}'
+info: Ocelot.Authentication.Middleware.AuthenticationMiddleware[0]
+      requestId: 80fd301c98df40babe6c70f42f58f59f, previousRequestId: No PreviousRequestId, message: 'No authentication needed for path '/gateway/auth/login'.'
+info: Ocelot.Authorization.Middleware.AuthorizationMiddleware[0]
+      requestId: 80fd301c98df40babe6c70f42f58f59f, previousRequestId: No PreviousRequestId, message: '/api/auth/{everything} route does not require user to be authorized'
+info: Ocelot.RateLimiting.Middleware.RateLimitingMiddleware[0]
+      requestId: e5b08f8228ec4179943c80681eecbcc9, previousRequestId: No PreviousRequestId, message: 'EndpointRateLimiting is not enabled for /api/auth/{everything}'
+info: Ocelot.Authentication.Middleware.AuthenticationMiddleware[0]
+      requestId: e5b08f8228ec4179943c80681eecbcc9, previousRequestId: No PreviousRequestId, message: 'No authentication needed for path '/gateway/auth/login'.'
+info: Ocelot.Authorization.Middleware.AuthorizationMiddleware[0]
+      requestId: e5b08f8228ec4179943c80681eecbcc9, previousRequestId: No PreviousRequestId, message: '/api/auth/{everything} route does not require user to be authorized'
+info: Ocelot.RateLimiting.Middleware.RateLimitingMiddleware[0]
+      requestId: 5a60bc33c9f844cfa90ad10413e7731d, previousRequestId: No PreviousRequestId, message: 'EndpointRateLimiting is not enabled for /api/auth/{everything}'
+info: Ocelot.Authentication.Middleware.AuthenticationMiddleware[0]
+      requestId: 5a60bc33c9f844cfa90ad10413e7731d, previousRequestId: No PreviousRequestId, message: 'No authentication needed for path '/gateway/auth/login'.'
+info: Ocelot.Authorization.Middleware.AuthorizationMiddleware[0]
+      requestId: 5a60bc33c9f844cfa90ad10413e7731d, previousRequestId: No PreviousRequestId, message: '/api/auth/{everything} route does not require user to be authorized'
+info: Ocelot.RateLimiting.Middleware.RateLimitingMiddleware[0]
+      requestId: a1eb6d2387684e5b969420b3841e13e8, previousRequestId: No PreviousRequestId, message: 'EndpointRateLimiting is not enabled for /api/auth/{everything}'
+info: Ocelot.Authentication.Middleware.AuthenticationMiddleware[0]
+      requestId: a1eb6d2387684e5b969420b3841e13e8, previousRequestId: No PreviousRequestId, message: 'No authentication needed for path '/gateway/auth/login'.'
+info: Ocelot.Authorization.Middleware.AuthorizationMiddleware[0]
+      requestId: a1eb6d2387684e5b969420b3841e13e8, previousRequestId: No PreviousRequestId, message: '/api/auth/{everything} route does not require user to be authorized'
+info: Ocelot.RateLimiting.Middleware.RateLimitingMiddleware[0]
+      requestId: 0d4c975bbf4b47228203be0952d50ddc, previousRequestId: No PreviousRequestId, message: 'EndpointRateLimiting is not enabled for /api/auth/{everything}'
+info: Ocelot.Authentication.Middleware.AuthenticationMiddleware[0]
+      requestId: 0d4c975bbf4b47228203be0952d50ddc, previousRequestId: No PreviousRequestId, message: 'No authentication needed for path '/gateway/auth/login'.'
+info: Ocelot.Authorization.Middleware.AuthorizationMiddleware[0]
+      requestId: 0d4c975bbf4b47228203be0952d50ddc, previousRequestId: No PreviousRequestId, message: '/api/auth/{everything} route does not require user to be authorized'
+warn: Ocelot.Requester.Middleware.HttpRequesterMiddleware[0]
+      requestId: 0d4c975bbf4b47228203be0952d50ddc, previousRequestId: No PreviousRequestId, message: '401 (Unauthorized) status code of request URI: http://localhost:5001/api/auth/login.'
+warn: Ocelot.Requester.Middleware.HttpRequesterMiddleware[0]
+      requestId: 5a60bc33c9f844cfa90ad10413e7731d, previousRequestId: No PreviousRequestId, message: '401 (Unauthorized) status code of request URI: http://localhost:5001/api/auth/login.'
+warn: Ocelot.Requester.Middleware.HttpRequesterMiddleware[0]
+      requestId: 80fd301c98df40babe6c70f42f58f59f, previousRequestId: No PreviousRequestId, message: '401 (Unauthorized) status code of request URI: http://localhost:5001/api/auth/login.'
+warn: Ocelot.Requester.Middleware.HttpRequesterMiddleware[0]
+      requestId: 47b9fa5e78554233a7a994a330fe3fe7, previousRequestId: No PreviousRequestId, message: '401 (Unauthorized) status code of request URI: http://localhost:5001/api/auth/login.'
+warn: Ocelot.Requester.Middleware.HttpRequesterMiddleware[0]
+      requestId: e5b08f8228ec4179943c80681eecbcc9, previousRequestId: No PreviousRequestId, message: '401 (Unauthorized) status code of request URI: http://localhost:5001/api/auth/login.'
+warn: Ocelot.Requester.Middleware.HttpRequesterMiddleware[0]
+      requestId: a1eb6d2387684e5b969420b3841e13e8, previousRequestId: No PreviousRequestId, message: '401 (Unauthorized) status code of request URI: http://localhost:5001/api/auth/login.'
+info: Ocelot.RateLimiting.Middleware.RateLimitingMiddleware[0]
+      requestId: 728bb81c8db34223b425f21b7a642036, previousRequestId: No PreviousRequestId, message: 'EndpointRateLimiting is not enabled for /api/auth/{everything}'
+info: Ocelot.Authentication.Middleware.AuthenticationMiddleware[0]
+      requestId: 728bb81c8db34223b425f21b7a642036, previousRequestId: No PreviousRequestId, message: 'No authentication needed for path '/gateway/auth/login'.'
+info: Ocelot.Authorization.Middleware.AuthorizationMiddleware[0]
+      requestId: 728bb81c8db34223b425f21b7a642036, previousRequestId: No PreviousRequestId, message: '/api/auth/{everything} route does not require user to be authorized'
+warn: Ocelot.Requester.Middleware.HttpRequesterMiddleware[0]
+      requestId: 728bb81c8db34223b425f21b7a642036, previousRequestId: No PreviousRequestId, message: '401 (Unauthorized) status code of request URI: http://localhost:5001/api/auth/login.'
+info: Ocelot.RateLimiting.Middleware.RateLimitingMiddleware[0]
+      requestId: 8840d8e0c60d468da1f9c09e054c856e, previousRequestId: No PreviousRequestId, message: 'EndpointRateLimiting is not enabled for /api/auth/{everything}'
+info: Ocelot.Authentication.Middleware.AuthenticationMiddleware[0]
+      requestId: 8840d8e0c60d468da1f9c09e054c856e, previousRequestId: No PreviousRequestId, message: 'No authentication needed for path '/gateway/auth/email-otp/send'.'
+info: Ocelot.Authorization.Middleware.AuthorizationMiddleware[0]
+      requestId: 8840d8e0c60d468da1f9c09e054c856e, previousRequestId: No PreviousRequestId, message: '/api/auth/{everything} route does not require user to be authorized'
+warn: Ocelot.Requester.Middleware.HttpRequesterMiddleware[0]
+      requestId: 8840d8e0c60d468da1f9c09e054c856e, previousRequestId: No PreviousRequestId, message: '400 (Bad Request) status code of request URI: http://localhost:5001/api/auth/email-otp/send.'
+info: Ocelot.RateLimiting.Middleware.RateLimitingMiddleware[0]
+      requestId: 99ff7736642645a4a33c42da83add600, previousRequestId: No PreviousRequestId, message: 'EndpointRateLimiting is not enabled for /api/auth/{everything}'
+info: Ocelot.Authentication.Middleware.AuthenticationMiddleware[0]
+      requestId: 99ff7736642645a4a33c42da83add600, previousRequestId: No PreviousRequestId, message: 'No authentication needed for path '/gateway/auth/email-otp/send'.'
+info: Ocelot.Authorization.Middleware.AuthorizationMiddleware[0]
+      requestId: 99ff7736642645a4a33c42da83add600, previousRequestId: No PreviousRequestId, message: '/api/auth/{everything} route does not require user to be authorized'
+warn: Ocelot.Requester.Middleware.HttpRequesterMiddleware[0]
+      requestId: 99ff7736642645a4a33c42da83add600, previousRequestId: No PreviousRequestId, message: '400 (Bad Request) status code of request URI: http://localhost:5001/api/auth/email-otp/send.'
+info: Ocelot.RateLimiting.Middleware.RateLimitingMiddleware[0]
+      requestId: 2d2bcd3f97b542e98c5a75737e7330d2, previousRequestId: No PreviousRequestId, message: 'EndpointRateLimiting is not enabled for /api/auth/{everything}'
+info: Ocelot.Authentication.Middleware.AuthenticationMiddleware[0]
+      requestId: 2d2bcd3f97b542e98c5a75737e7330d2, previousRequestId: No PreviousRequestId, message: 'No authentication needed for path '/gateway/auth/email-otp/send'.'
+info: Ocelot.Authorization.Middleware.AuthorizationMiddleware[0]
+      requestId: 2d2bcd3f97b542e98c5a75737e7330d2, previousRequestId: No PreviousRequestId, message: '/api/auth/{everything} route does not require user to be authorized'
+warn: Ocelot.Requester.Middleware.HttpRequesterMiddleware[0]
+      requestId: 2d2bcd3f97b542e98c5a75737e7330d2, previousRequestId: No PreviousRequestId, message: '400 (Bad Request) status code of request URI: http://localhost:5001/api/auth/email-otp/send.'
+info: Ocelot.RateLimiting.Middleware.RateLimitingMiddleware[0]
+      requestId: 5ae2bfa90baf44109725fc0c3cb6c750, previousRequestId: No PreviousRequestId, message: 'EndpointRateLimiting is not enabled for /api/auth/{everything}'
+info: Ocelot.Authentication.Middleware.AuthenticationMiddleware[0]
+      requestId: 5ae2bfa90baf44109725fc0c3cb6c750, previousRequestId: No PreviousRequestId, message: 'No authentication needed for path '/gateway/auth/email-otp/send'.'
+info: Ocelot.Authorization.Middleware.AuthorizationMiddleware[0]
+      requestId: 5ae2bfa90baf44109725fc0c3cb6c750, previousRequestId: No PreviousRequestId, message: '/api/auth/{everything} route does not require user to be authorized'
+warn: Ocelot.Requester.Middleware.HttpRequesterMiddleware[0]
+      requestId: 5ae2bfa90baf44109725fc0c3cb6c750, previousRequestId: No PreviousRequestId, message: '400 (Bad Request) status code of request URI: http://localhost:5001/api/auth/email-otp/send.'
+warn: Ocelot.DownstreamRouteFinder.Middleware.DownstreamRouteFinderMiddleware[0]
+      requestId: 65ecdc5de2b148af88793543642292ac, previousRequestId: No PreviousRequestId, message: 'DownstreamRouteFinderMiddleware setting pipeline errors. IDownstreamRouteFinder returned Error Code: UnableToFindDownstreamRouteError Message: Failed to match Route configuration for upstream path: /gateway/ai/chat, verb: POST.'
+warn: Ocelot.Responder.Middleware.ResponderMiddleware[0]
+      requestId: 65ecdc5de2b148af88793543642292ac, previousRequestId: No PreviousRequestId, message: 'Error Code: UnableToFindDownstreamRouteError Message: Failed to match Route configuration for upstream path: /gateway/ai/chat, verb: POST. errors found in ResponderMiddleware. Setting error response for request path:/gateway/ai/chat, request method: POST'
+warn: Ocelot.DownstreamRouteFinder.Middleware.DownstreamRouteFinderMiddleware[0]
+      requestId: 7bd7d281b39a4676b74a948dc8bb25f1, previousRequestId: No PreviousRequestId, message: 'DownstreamRouteFinderMiddleware setting pipeline errors. IDownstreamRouteFinder returned Error Code: UnableToFindDownstreamRouteError Message: Failed to match Route configuration for upstream path: /gateway/ai/chat, verb: POST.'
+warn: Ocelot.Responder.Middleware.ResponderMiddleware[0]
+      requestId: 7bd7d281b39a4676b74a948dc8bb25f1, previousRequestId: No PreviousRequestId, message: 'Error Code: UnableToFindDownstreamRouteError Message: Failed to match Route configuration for upstream path: /gateway/ai/chat, verb: POST. errors found in ResponderMiddleware. Setting error response for request path:/gateway/ai/chat, request method: POST'
+warn: Ocelot.DownstreamRouteFinder.Middleware.DownstreamRouteFinderMiddleware[0]
+      requestId: 782c3ca08fc540fa961f579c97734ec1, previousRequestId: No PreviousRequestId, message: 'DownstreamRouteFinderMiddleware setting pipeline errors. IDownstreamRouteFinder returned Error Code: UnableToFindDownstreamRouteError Message: Failed to match Route configuration for upstream path: /gateway/ai/chat, verb: POST.'
+warn: Ocelot.Responder.Middleware.ResponderMiddleware[0]
+      requestId: 782c3ca08fc540fa961f579c97734ec1, previousRequestId: No PreviousRequestId, message: 'Error Code: UnableToFindDownstreamRouteError Message: Failed to match Route configuration for upstream path: /gateway/ai/chat, verb: POST. errors found in ResponderMiddleware. Setting error response for request path:/gateway/ai/chat, request method: POST'
+warn: Ocelot.DownstreamRouteFinder.Middleware.DownstreamRouteFinderMiddleware[0]
+      requestId: 5571751afa244bd58c13522aa0e9a150, previousRequestId: No PreviousRequestId, message: 'DownstreamRouteFinderMiddleware setting pipeline errors. IDownstreamRouteFinder returned Error Code: UnableToFindDownstreamRouteError Message: Failed to match Route configuration for upstream path: /gateway/ai/chat, verb: POST.'
+warn: Ocelot.Responder.Middleware.ResponderMiddleware[0]
+      requestId: 5571751afa244bd58c13522aa0e9a150, previousRequestId: No PreviousRequestId, message: 'Error Code: UnableToFindDownstreamRouteError Message: Failed to match Route configuration for upstream path: /gateway/ai/chat, verb: POST. errors found in ResponderMiddleware. Setting error response for request path:/gateway/ai/chat, request method: POST'
+warn: Ocelot.DownstreamRouteFinder.Middleware.DownstreamRouteFinderMiddleware[0]
+      requestId: 950bbbea2fa64b34bb150f386a384159, previousRequestId: No PreviousRequestId, message: 'DownstreamRouteFinderMiddleware setting pipeline errors. IDownstreamRouteFinder returned Error Code: UnableToFindDownstreamRouteError Message: Failed to match Route configuration for upstream path: /gateway/ai/chat, verb: POST.'
+warn: Ocelot.Responder.Middleware.ResponderMiddleware[0]
+      requestId: 950bbbea2fa64b34bb150f386a384159, previousRequestId: No PreviousRequestId, message: 'Error Code: UnableToFindDownstreamRouteError Message: Failed to match Route configuration for upstream path: /gateway/ai/chat, verb: POST. errors found in ResponderMiddleware. Setting error response for request path:/gateway/ai/chat, request method: POST'
+info: Ocelot.RateLimiting.Middleware.RateLimitingMiddleware[0]
+      requestId: 0c02922df13449eba816fe021932f0a4, previousRequestId: No PreviousRequestId, message: 'EndpointRateLimiting is not enabled for /api/auth/{everything}'
+info: Ocelot.Authentication.Middleware.AuthenticationMiddleware[0]
+      requestId: 0c02922df13449eba816fe021932f0a4, previousRequestId: No PreviousRequestId, message: 'No authentication needed for path '/gateway/auth/login'.'
+info: Ocelot.Authorization.Middleware.AuthorizationMiddleware[0]
+      requestId: 0c02922df13449eba816fe021932f0a4, previousRequestId: No PreviousRequestId, message: '/api/auth/{everything} route does not require user to be authorized'
+info: Ocelot.Requester.Middleware.HttpRequesterMiddleware[0]
+      requestId: 0c02922df13449eba816fe021932f0a4, previousRequestId: No PreviousRequestId, message: '200 (OK) status code of request URI: http://localhost:5001/api/auth/login.'

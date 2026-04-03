@@ -3,6 +3,7 @@
 		<h1>Customer Dashboard</h1>
 		<nav>
 			<a routerLink="/customer/prices">Price Viewer</a>
+			<a routerLink="/customer/orders">Orders</a>
 			<a routerLink="/customer/transactions">Transactions</a>
 			<a routerLink="/customer/stations">Nearby Stations</a>
 		</nav>
@@ -42,6 +43,31 @@
 				<button class="primary-btn" routerLink="/customer/receipts">Download</button>
 			</div>
 		</article>
+	</div>
+
+	<div class="grid-two">
+		<article class="card order-card">
+			<h2>Fuel Orders</h2>
+			<p>Place, track, and update scheduled fuel deliveries without leaving your dashboard.</p>
+			<div class="order-actions">
+				<a class="primary-btn" routerLink="/customer/orders">Place Order</a>
+				<a class="outline-btn" routerLink="/customer/orders" fragment="track">Track Delivery</a>
+				<a class="outline-btn" routerLink="/customer/orders" fragment="update">Update Order</a>
+			</div>
+			<ul class="order-highlights">
+				<li>Next delivery: Petrol · Today, 13:10</li>
+				<li>Dispatch window: Diesel · Today, 6-8 PM</li>
+				<li>Open request: CNG · Tomorrow, 8-10 AM</li>
+			</ul>
+		</article>
+
+		<app-chat-panel
+			context="customer"
+			title="Customer Support Chat"
+			subtitle="Get help with orders, receipts, and delivery updates."
+			placeholder="Ask about your delivery or pricing..."
+			[suggestions]="['Track my latest order', 'Update delivery window', 'Need receipt help']">
+		</app-chat-panel>
 	</div>
 
 	<article class="card">

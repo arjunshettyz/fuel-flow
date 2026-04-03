@@ -7,6 +7,7 @@ import { PricesComponent } from './pages/prices/prices.component';
 import { TransactionsComponent } from './pages/transactions/transactions.component';
 import { ReceiptViewerComponent } from './pages/receipt-viewer/receipt-viewer.component';
 import { NearbyStationsComponent } from './pages/nearby-stations/nearby-stations.component';
+import { OrdersComponent } from './pages/orders/orders.component';
 import { SharedModule } from '../shared/shared.module';
 import { SharedAdminDealerModule } from '../shared-admin-dealer/shared-admin-dealer.module';
 
@@ -17,7 +18,8 @@ import { SharedAdminDealerModule } from '../shared-admin-dealer/shared-admin-dea
     PricesComponent,
     TransactionsComponent,
     ReceiptViewerComponent,
-    NearbyStationsComponent
+    NearbyStationsComponent,
+    OrdersComponent
   ],
   imports: [
     CommonModule,

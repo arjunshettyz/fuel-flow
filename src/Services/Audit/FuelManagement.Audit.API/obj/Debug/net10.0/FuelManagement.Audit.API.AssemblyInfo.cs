@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FuelManagement.Audit.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e6f4def598b372ac0ee42a57a27ea19e190f65fe")]
 [assembly: System.Reflection.AssemblyProductAttribute("FuelManagement.Audit.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FuelManagement.Audit.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

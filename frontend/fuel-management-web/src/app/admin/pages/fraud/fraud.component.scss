@@ -18,11 +18,11 @@
 }
 
 .card {
-	background: #ffffff;
+	background: var(--paper-strong);
 	border: 1px solid var(--border-color);
-	border-radius: 16px;
+	border-radius: var(--radius-lg);
 	padding: 1rem;
-	box-shadow: var(--card-shadow);
+	box-shadow: var(--shadow-sm);
 }
 
 .table {
@@ -68,7 +68,7 @@
 .text-btn {
 	border: none;
 	background: none;
-	color: var(--primary-color);
+	color: var(--accent);
 	cursor: pointer;
 	text-align: left;
 	padding: 0;
