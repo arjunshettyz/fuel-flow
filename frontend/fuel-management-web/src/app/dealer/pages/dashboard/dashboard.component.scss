@@ -17,6 +17,28 @@
 	gap: 0.6rem;
 }
 
+.sub-nav {
+	display: flex;
+	gap: 0.6rem;
+	padding: 0.5rem;
+	overflow-x: auto;
+}
+
+.sub-nav a {
+	text-decoration: none;
+	padding: 0.55rem 0.85rem;
+	border-radius: 999px;
+	font-weight: 700;
+	color: var(--ink-700);
+	white-space: nowrap;
+}
+
+.sub-nav a.active,
+.sub-nav a:hover {
+	background: rgba(24, 184, 176, 0.14);
+	color: var(--accent-dark);
+}
+
 .kpi-grid {
 	display: grid;
 	grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -87,9 +109,43 @@
 	background: linear-gradient(180deg, #146f9a, #2f8fbb);
 }
 
+.directory-list {
+	list-style: none;
+	padding: 0;
+	margin: 0.8rem 0 0;
+	display: grid;
+	gap: 0.45rem;
+}
+
+.directory-list li {
+	display: grid;
+	grid-template-columns: 1.1fr 1fr 1.2fr;
+	gap: 0.5rem;
+	padding: 0.45rem 0.6rem;
+	border: 1px solid var(--border-color);
+	border-radius: 10px;
+}
+
+.profile-form {
+	display: grid;
+	gap: 0.55rem;
+}
+
+.hint {
+	color: var(--ink-500);
+}
+
+.ok {
+	color: #0d8f4d;
+}
+
 @media (max-width: 1000px) {
 	.kpi-grid,
 	.grid-two {
+		grid-template-columns: 1fr;
+	}
+
+	.directory-list li {
 		grid-template-columns: 1fr;
 	}
 }

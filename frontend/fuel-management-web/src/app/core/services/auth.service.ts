@@ -14,6 +14,7 @@ import {
   UserRole,
   VerifyEmailOtpResponse,
 } from '../models/auth.models';
+import { DirectoryService } from './directory.service';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -25,7 +26,15 @@ export class AuthService {
   private readonly userSubject = new BehaviorSubject<UserProfile | null>(this.readUser());
   readonly currentUser$ = this.userSubject.asObservable();
 
-  constructor(private readonly http: HttpClient) {}
+  constructor(
+    private readonly http: HttpClient,
+    private readonly directory: DirectoryService,
+  ) {
+    const user = this.readUser();
+    if (user) {
+      this.directory.syncSessionUser(user);
+    }
+  }
 
   login(payload: LoginPayload): Observable<AuthResponse> {
     return this.http
@@ -76,6 +85,30 @@ export class AuthService {
     localStorage.setItem(this.tokenKey, response.accessToken);
     localStorage.setItem(this.userKey, JSON.stringify(response.user));
     this.userSubject.next(response.user);
+    this.directory.syncSessionUser(response.user);
+  }
+
+  updateCurrentUserProfile(payload: { fullName: string; email: string; phone: string }): UserProfile | null {
+    const current = this.getCurrentUser();
+    if (!current) {
+      return null;
+    }
+
+    const updatedDirectoryUser = this.directory.updateOwnProfile(current.id, payload);
+    if (!updatedDirectoryUser) {
+      return null;
+    }
+
+    const updatedUser: UserProfile = {
+      ...current,
+      fullName: updatedDirectoryUser.fullName,
+      email: updatedDirectoryUser.email,
+      phone: updatedDirectoryUser.phone,
+    };
+
+    localStorage.setItem(this.userKey, JSON.stringify(updatedUser));
+    this.userSubject.next(updatedUser);
+    return updatedUser;
   }
 
   clearSession(): void {
@@ -85,7 +118,11 @@ export class AuthService {
   }
 
   getToken(): string | null {
-    return localStorage.getItem(this.tokenKey);
+    const token = this.getValidTokenFromStorage();
+    if (!token && this.userSubject.value) {
+      this.userSubject.next(null);
+    }
+    return token;
   }
 
   getCurrentUser(): UserProfile | null {
@@ -93,7 +130,7 @@ export class AuthService {
   }
 
   isAuthenticated(): boolean {
-    return !!this.getToken();
+    return !!this.getValidTokenFromStorage();
   }
 
   hasRole(requiredRole: string): boolean {
@@ -126,6 +163,12 @@ export class AuthService {
   }
 
   private readUser(): UserProfile | null {
+    if (!this.isAuthenticated()) {
+      localStorage.removeItem(this.tokenKey);
+      localStorage.removeItem(this.userKey);
+      return null;
+    }
+
     const raw = localStorage.getItem(this.userKey);
     if (!raw) {
       return null;
@@ -133,6 +176,50 @@ export class AuthService {
 
     try {
       return JSON.parse(raw) as UserProfile;
+    } catch {
+      return null;
+    }
+  }
+
+  private getValidTokenFromStorage(): string | null {
+    const token = localStorage.getItem(this.tokenKey);
+    if (!token || token === 'undefined' || token === 'null') {
+      return null;
+    }
+
+    if (this.isJwtExpired(token)) {
+      localStorage.removeItem(this.tokenKey);
+      localStorage.removeItem(this.userKey);
+      return null;
+    }
+
+    return token;
+  }
+
+  private isJwtExpired(token: string): boolean {
+    const payload = this.decodeJwtPayload(token);
+    const exp = payload?.exp;
+
+    if (typeof exp !== 'number' || !Number.isFinite(exp)) {
+      return true;
+    }
+
+    const nowSeconds = Math.floor(Date.now() / 1000);
+    return nowSeconds >= exp;
+  }
+
+  private decodeJwtPayload(token: string): { exp?: number } | null {
+    const parts = token.split('.');
+    if (parts.length < 2) {
+      return null;
+    }
+
+    try {
+      const base64Url = parts[1];
+      const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+      const padded = base64.padEnd(base64.length + ((4 - (base64.length % 4)) % 4), '=');
+      const json = atob(padded);
+      return JSON.parse(json) as { exp?: number };
     } catch {
       return null;
     }

@@ -3,6 +3,7 @@ using FuelManagement.Common.Extensions;
 using FuelManagement.Common.Messaging;
 using FuelManagement.Notification.API;
 using FuelManagement.Notification.API.Data;
+using FuelManagement.Notification.API.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
@@ -12,6 +13,8 @@ using Microsoft.OpenApi.Models;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddSingleton<IRabbitMqService, RabbitMqService>();
 builder.Services.AddHostedService<NotificationBackgroundService>();
+builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
+builder.Services.AddSingleton<INotificationEmailSender, SmtpNotificationEmailSender>();
 builder.Services.AddDbContext<NotificationDbContext>(opts =>
 {
     opts.UseSqlServer(builder.Configuration.GetConnectionString("NotificationDb"));

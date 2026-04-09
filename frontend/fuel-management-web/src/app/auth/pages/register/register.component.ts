@@ -101,11 +101,9 @@ export class RegisterComponent implements OnInit {
 
         this.otpSent = true;
         this.otpVerified = false;
-        this.form.controls.otp.setValue(response.devOtpCode ?? '');
+        this.form.controls.otp.setValue('');
         this.submitError = '';
-        this.submitSuccess = response.devOtpCode
-          ? `${response.message} Dev OTP: ${response.devOtpCode}`
-          : response.message;
+        this.submitSuccess = response.message;
       });
   }
 

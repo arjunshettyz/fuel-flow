@@ -59,6 +59,34 @@ public class TanksController : ControllerBase
     public Task<IActionResult> List([FromQuery] Guid? stationId, [FromQuery] string? fuelType)
         => GetAll(stationId, fuelType);
 
+    /// <summary>Get current fuel prices grouped by fuel type</summary>
+    [HttpGet("prices")]
+    [ProducesResponseType(200)]
+    public async Task<IActionResult> GetCurrentPrices()
+    {
+        var tanks = await _context.Tanks
+            .AsNoTracking()
+            .Where(t => t.IsActive)
+            .ToListAsync();
+
+        var items = tanks
+            .GroupBy(t => t.FuelType)
+            .Select(g =>
+            {
+                var latest = g.OrderByDescending(t => t.LastUpdated).First();
+                return new
+                {
+                    fuelType = latest.FuelType,
+                    pricePerLitre = latest.PricePerLitre,
+                    updatedAt = latest.LastUpdated,
+                };
+            })
+            .OrderBy(x => x.fuelType)
+            .ToList();
+
+        return Ok(items);
+    }
+
     /// <summary>Get a specific fuel tank by ID</summary>
     [HttpGet("{id:guid}")]
     [ProducesResponseType(typeof(FuelTank), 200)]
@@ -131,10 +159,65 @@ public class TanksController : ControllerBase
     {
         var tank = await _context.Tanks.FindAsync(id);
         if (tank == null) return NotFound();
+
+        var oldPrice = tank.PricePerLitre;
         tank.PricePerLitre = req.PricePerLitre;
         tank.LastUpdated = DateTime.UtcNow;
         await _context.SaveChangesAsync();
+
+        var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "Unknown";
+        var priceEvt = new FuelPriceUpdatedEvent(
+            tank.Id,
+            tank.StationId,
+            tank.FuelType,
+            oldPrice,
+            tank.PricePerLitre,
+            userId,
+            DateTime.UtcNow);
+        await _bus.PublishAsync("fuel-price-updated", priceEvt);
+
         return Ok(tank);
+    }
+
+    /// <summary>Bulk update price for all tanks of a fuel type (Admin only)</summary>
+    [HttpPut("prices/bulk")]
+    [Authorize(Roles = "Admin")]
+    [ProducesResponseType(200)]
+    [ProducesResponseType(400)]
+    [ProducesResponseType(404)]
+    public async Task<IActionResult> BulkUpdatePrice([FromBody] BulkUpdatePriceRequest req)
+    {
+        var fuelType = (req.FuelType ?? string.Empty).Trim();
+        if (string.IsNullOrWhiteSpace(fuelType))
+            return BadRequest(new { message = "FuelType is required." });
+
+        var tanks = await _context.Tanks.Where(t => t.FuelType == fuelType).ToListAsync();
+        if (tanks.Count == 0)
+            return NotFound(new { message = $"No tanks found for fuel type '{fuelType}'." });
+
+        decimal? oldPriceSnapshot = tanks.Select(t => (decimal?)t.PricePerLitre).Max();
+        var now = DateTime.UtcNow;
+
+        foreach (var tank in tanks)
+        {
+            tank.PricePerLitre = req.PricePerLitre;
+            tank.LastUpdated = now;
+        }
+
+        await _context.SaveChangesAsync();
+
+        var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "Unknown";
+        var priceEvt = new FuelPriceUpdatedEvent(
+            TankId: null,
+            StationId: null,
+            FuelType: fuelType,
+            OldPricePerLitre: oldPriceSnapshot,
+            NewPricePerLitre: req.PricePerLitre,
+            UpdatedBy: userId,
+            Timestamp: now);
+        await _bus.PublishAsync("fuel-price-updated", priceEvt);
+
+        return Ok(new { updated = tanks.Count, fuelType, pricePerLitre = req.PricePerLitre, updatedAt = now });
     }
 }
 
@@ -267,6 +350,7 @@ public class ReplenishmentController : ControllerBase
 public record CreateTankRequest(Guid StationId, string FuelType, double CapacityLitres, double InitialLevelLitres, decimal PricePerLitre);
 public record UpdateLevelRequest(double NewLevelLitres, string Reason = "Manual update");
 public record UpdatePriceRequest(decimal PricePerLitre);
+public record BulkUpdatePriceRequest(string FuelType, decimal PricePerLitre);
 public record CreateAlertRequest(Guid TankId, string AlertType, double Threshold);
 public record CreateReplenishmentRequest(Guid TankId, double QuantityLitres, string? Notes);
 public record UpdateOrderStatusRequest(string Status);

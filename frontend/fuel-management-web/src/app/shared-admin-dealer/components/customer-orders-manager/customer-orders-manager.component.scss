@@ -1,0 +1,140 @@
+.page-wrap {
+	display: grid;
+	gap: 1rem;
+}
+
+.page-header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.8rem;
+}
+
+.quick-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.6rem;
+}
+
+.grid-two {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 1rem;
+}
+
+.card p {
+	margin-top: 0.4rem;
+	color: var(--ink-500);
+}
+
+.order-row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.6rem;
+	padding: 0.75rem;
+	border-radius: 14px;
+	border: 1px solid transparent;
+	cursor: pointer;
+	transition: all 0.18s ease;
+}
+
+.order-row:hover {
+	background: rgba(24, 184, 176, 0.08);
+	border-color: rgba(24, 184, 176, 0.3);
+}
+
+.order-row.active {
+	background: rgba(24, 184, 176, 0.14);
+	border-color: rgba(24, 184, 176, 0.45);
+}
+
+.order-row strong {
+	display: block;
+}
+
+.order-row span {
+	font-size: 0.85rem;
+	color: var(--ink-500);
+}
+
+.order-row .muted {
+	display: block;
+}
+
+.order-meta {
+	display: grid;
+	justify-items: end;
+	gap: 0.2rem;
+	font-weight: 600;
+}
+
+.track-meta {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1rem;
+	margin: 0.8rem 0;
+}
+
+.track-meta span {
+	display: block;
+	font-size: 0.78rem;
+	color: var(--ink-500);
+}
+
+.track-steps {
+	display: grid;
+	gap: 0.6rem;
+	margin-bottom: 0.8rem;
+}
+
+.track-step {
+	display: grid;
+	grid-template-columns: 20px 1fr;
+	gap: 0.6rem;
+	align-items: start;
+	color: var(--ink-500);
+}
+
+.track-step.complete {
+	color: var(--ink-900);
+}
+
+.step-dot {
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	border: 2px solid var(--border-color);
+	margin-top: 0.2rem;
+}
+
+.track-step.complete .step-dot {
+	border-color: var(--accent);
+	background: var(--accent);
+}
+
+.note {
+	font-size: 0.8rem;
+	color: var(--ink-500);
+}
+
+.update-card label {
+	display: grid;
+	gap: 0.35rem;
+	margin-bottom: 0.6rem;
+	font-weight: 600;
+	font-size: 0.9rem;
+}
+
+@media (max-width: 980px) {
+	.grid-two {
+		grid-template-columns: 1fr;
+	}
+
+	.track-meta {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+}

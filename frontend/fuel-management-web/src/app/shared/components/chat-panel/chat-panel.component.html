@@ -7,7 +7,7 @@
 		<span class="chat-status">Online</span>
 	</header>
 
-	<div class="chat-body">
+	<div class="chat-body" #chatBody>
 		<div class="chat-message" *ngFor="let message of messages" [class.user]="message.sender === 'user'">
 			<div class="bubble">{{ message.text }}</div>
 			<span class="timestamp">{{ message.time }}</span>

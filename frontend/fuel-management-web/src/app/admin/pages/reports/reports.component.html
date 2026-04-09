@@ -1,7 +1,7 @@
 <section class="page-wrap">
 	<header class="page-header">
 		<h1>Reports</h1>
-		<button class="outline-btn" type="button">Schedule Report</button>
+		<button class="outline-btn" type="button" (click)="scheduleReport()" [disabled]="isWorking">Schedule Report</button>
 	</header>
 
 	<article class="card filter-grid">
@@ -43,9 +43,13 @@
 			</tbody>
 		</table>
 		<div class="actions">
-			<button class="primary-btn" type="button">Download PDF</button>
-			<button class="outline-btn" type="button">Download Excel</button>
-			<button class="outline-btn" type="button">Fraud Analytics Report</button>
+			<button class="primary-btn" type="button" (click)="downloadPdf()" [disabled]="isWorking">
+				{{ isWorking ? 'Working...' : 'Download PDF' }}
+			</button>
+			<button class="outline-btn" type="button" (click)="downloadExcel()" [disabled]="isWorking">Download Excel</button>
+			<button class="outline-btn" type="button" (click)="downloadFraudAnalytics()" [disabled]="isWorking">Fraud Analytics Report</button>
 		</div>
+		<div class="error-banner" *ngIf="errorMessage">{{ errorMessage }}</div>
+		<small class="ok" *ngIf="statusMessage">{{ statusMessage }}</small>
 	</article>
 </section>

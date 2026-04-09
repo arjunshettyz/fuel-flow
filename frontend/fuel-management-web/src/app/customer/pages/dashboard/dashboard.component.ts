@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../../../core/services/auth.service';
+import { DirectoryService } from '../../../core/services/directory.service';
 
 interface RecentTransaction {
   date: string;
@@ -31,9 +33,38 @@ export class DashboardComponent {
   ];
 
   promoIndex = 0;
+  profileMessage = '';
+
+  profile = {
+    fullName: '',
+    email: '',
+    phone: '',
+  };
+
+  constructor(
+    private readonly auth: AuthService,
+    private readonly directory: DirectoryService,
+  ) {
+    const current = this.auth.getCurrentUser();
+    if (current) {
+      this.profile = {
+        fullName: current.fullName,
+        email: current.email,
+        phone: current.phone,
+      };
+      this.directory.syncSessionUser(current);
+    }
+  }
 
   nextPromo(): void {
     this.promoIndex = (this.promoIndex + 1) % this.promotions.length;
+  }
+
+  saveProfile(): void {
+    const updated = this.auth.updateCurrentUserProfile(this.profile);
+    this.profileMessage = updated
+      ? 'Profile updated. Role is locked and cannot be changed from customer account.'
+      : 'Unable to update profile. Please login again.';
   }
 
 }

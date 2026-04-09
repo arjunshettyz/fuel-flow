@@ -15,4 +15,8 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Shared\FuelManagement.Common\FuelManagement.Common.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="ocelot*.json" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
 </Project>

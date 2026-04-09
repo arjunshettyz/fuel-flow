@@ -27,7 +27,15 @@
 
 .table {
 	width: 100%;
+	min-width: 980px;
 	border-collapse: collapse;
+}
+
+.table-wrap {
+	width: 100%;
+	overflow-x: auto;
+	overflow-y: hidden;
+	-webkit-overflow-scrolling: touch;
 }
 
 .table th,
@@ -61,7 +69,8 @@
 }
 
 .action-row {
-	display: grid;
+	display: flex;
+	flex-wrap: wrap;
 	gap: 0.15rem;
 }
 
@@ -80,7 +89,6 @@
 	}
 
 	.table {
-		display: block;
-		overflow-x: auto;
+		min-width: 860px;
 	}
 }

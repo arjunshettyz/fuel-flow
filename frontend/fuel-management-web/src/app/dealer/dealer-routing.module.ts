@@ -5,6 +5,7 @@ import { InventoryComponent } from './pages/inventory/inventory.component';
 import { PumpManagerComponent } from './pages/pump-manager/pump-manager.component';
 import { SalesEntryComponent } from './pages/sales-entry/sales-entry.component';
 import { ShiftSummaryComponent } from './pages/shift-summary/shift-summary.component';
+import { CustomerOrdersManagerComponent } from '../shared-admin-dealer/components/customer-orders-manager/customer-orders-manager.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,10 @@ const routes: Routes = [
   {
     path: 'inventory',
     component: InventoryComponent,
+  },
+  {
+    path: 'customer-orders',
+    component: CustomerOrdersManagerComponent,
   },
   {
     path: 'pumps',

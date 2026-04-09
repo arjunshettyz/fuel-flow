@@ -43,7 +43,11 @@
 				Alert target
 				<input type="number" [(ngModel)]="dropAlertTarget" />
 			</label>
-			<button class="primary-btn" type="button">Subscribe</button>
+			<button class="primary-btn" type="button" (click)="subscribePriceDropAlert()" [disabled]="isSubscribing">
+				{{ isSubscribing ? 'Subscribing...' : 'Subscribe' }}
+			</button>
+			<div class="error-banner" *ngIf="subscribeError">{{ subscribeError }}</div>
+			<small class="ok" *ngIf="subscribeMessage">{{ subscribeMessage }}</small>
 		</article>
 	</div>
 

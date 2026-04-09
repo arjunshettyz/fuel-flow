@@ -1,4 +1,5 @@
 using System.Net.Http.Json;
+using System.Security.Cryptography;
 using System.Text;
 using FuelManagement.Common.Extensions;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -12,7 +13,12 @@ var builder = WebApplication.CreateBuilder(args);
 LoadEnvFile(builder.Environment.ContentRootPath);
 builder.Configuration.AddEnvironmentVariables();
 
-builder.Configuration.AddJsonFile("ocelot.json", optional: false, reloadOnChange: true);
+var ocelotFile =
+    builder.Configuration["Ocelot:File"]
+    ?? builder.Configuration["OCELOT_FILE"]
+    ?? "ocelot.json";
+
+builder.Configuration.AddJsonFile(ocelotFile, optional: false, reloadOnChange: true);
 
 // JWT Auth for gateway-level validation
 var jwtSecret = builder.Configuration["JwtSettings:Secret"]!;
@@ -88,6 +94,8 @@ app.UseEndpoints(endpoints =>
 {
     // These endpoints must run BEFORE Ocelot (Ocelot is terminal middleware)
     endpoints.MapHealthChecks("/healthz");
+    endpoints.MapMethods("/gateway/{**catchAll}", new[] { "OPTIONS" }, () => Results.NoContent())
+        .ExcludeFromDescription();
     endpoints.MapGet("/", () => Results.Redirect("/swagger")).ExcludeFromDescription();
     endpoints.MapGet("/health", () => Results.Ok(new { Status = "Healthy", Timestamp = DateTime.UtcNow, Services = new[] {
         "Identity:5001", "Inventory:5002", "Sales:5003", "Reporting:5004",
@@ -119,7 +127,7 @@ app.UseEndpoints(endpoints =>
                     role = "user",
                     parts = new[]
                     {
-                        new { text = "You are FuelFlow AI, a helpful assistant for fuel operations. Keep answers concise, actionable, and aligned to orders, pricing, logistics, and account help.\nUser: " + request.Message }
+                        new { text = "You are FuelFlow AI assistant for the Fuel Management website. Help users understand and use product features step-by-step. Explain navigation paths and workflows in simple language. Cover modules: FuelEvent (RFP/procurement), FuelControl (operations), FuelIQ (analytics/fraud insights), FuelRescue (emergency fueling), FuelIntel (reports/compliance), FuelConnect (vendor network). Also help with account login, OTP, customer receipts/PDF download, dealer pump and sales forms, inventory updates, and admin actions. Keep answers concise, practical, and UI-oriented with exact menu/page guidance. If feature data is unavailable, provide safe temporary guidance and ask user to retry.\nUser: " + request.Message }
                     }
                 }
             },
@@ -134,13 +142,18 @@ app.UseEndpoints(endpoints =>
         try
         {
             var response = await http.PostAsJsonAsync(
-                $"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={apiKey}",
+                $"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={apiKey}",
                 payload);
 
             if (!response.IsSuccessStatusCode)
             {
+                if ((int)response.StatusCode == 429)
+                {
+                    return Results.Ok(new AiChatResponse(GetFallbackAiReply(request.Message)));
+                }
+
                 return Results.Ok(new AiChatResponse(
-                    $"I had trouble reaching the AI service (status {(int)response.StatusCode}). Please try again shortly."));
+                    $"I had trouble reaching the AI service (status {(int)response.StatusCode}). {GetFallbackAiReply(request.Message)}"));
             }
 
             var data = await response.Content.ReadFromJsonAsync<GeminiResponse>();
@@ -151,8 +164,96 @@ app.UseEndpoints(endpoints =>
         }
         catch
         {
-            return Results.Ok(new AiChatResponse("I had trouble reaching the AI service. Please try again shortly."));
+            return Results.Ok(new AiChatResponse(GetFallbackAiReply(request.Message)));
         }
+    });
+
+    endpoints.MapPost("/gateway/payments/create-order", async (
+        RazorpayCreateOrderRequest request,
+        IConfiguration config,
+        IHttpClientFactory httpClientFactory) =>
+    {
+        if (request.Amount <= 0)
+        {
+            return Results.BadRequest(new { message = "Amount must be greater than zero." });
+        }
+
+        var keyId = config["RAZORPAY_KEY_ID"];
+        var keySecret = config["RAZORPAY_KEY_SECRET"];
+        if (string.IsNullOrWhiteSpace(keyId) || string.IsNullOrWhiteSpace(keySecret))
+        {
+            return Results.BadRequest(new { message = "Razorpay is not configured. Add RAZORPAY_KEY_ID and RAZORPAY_KEY_SECRET." });
+        }
+
+        var amountInPaise = (int)Math.Round(request.Amount * 100m, MidpointRounding.AwayFromZero);
+        var razorpayRequest = new
+        {
+            amount = amountInPaise,
+            currency = string.IsNullOrWhiteSpace(request.Currency) ? "INR" : request.Currency,
+            receipt = string.IsNullOrWhiteSpace(request.Receipt) ? $"rcpt_{Guid.NewGuid():N}" : request.Receipt,
+            notes = request.Notes,
+            payment_capture = 1,
+        };
+
+        var authToken = Convert.ToBase64String(Encoding.UTF8.GetBytes($"{keyId}:{keySecret}"));
+        var http = httpClientFactory.CreateClient();
+        http.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", authToken);
+
+        var response = await http.PostAsJsonAsync("https://api.razorpay.com/v1/orders", razorpayRequest);
+        if (!response.IsSuccessStatusCode)
+        {
+            var body = await response.Content.ReadAsStringAsync();
+            return Results.BadRequest(new { message = "Unable to create Razorpay order.", status = (int)response.StatusCode, body });
+        }
+
+        var order = await response.Content.ReadFromJsonAsync<RazorpayOrderResponse>();
+        if (order == null || string.IsNullOrWhiteSpace(order.id))
+        {
+            return Results.BadRequest(new { message = "Invalid order response from Razorpay." });
+        }
+
+        return Results.Ok(new
+        {
+            keyId,
+            orderId = order.id,
+            amount = order.amount,
+            currency = order.currency,
+            receipt = order.receipt,
+        });
+    });
+
+    endpoints.MapPost("/gateway/payments/verify", (
+        RazorpayVerifyPaymentRequest request,
+        IConfiguration config) =>
+    {
+        var keySecret = config["RAZORPAY_KEY_SECRET"];
+        if (string.IsNullOrWhiteSpace(keySecret))
+        {
+            return Results.BadRequest(new { verified = false, message = "Razorpay secret is not configured." });
+        }
+
+        if (string.IsNullOrWhiteSpace(request.razorpay_order_id) ||
+            string.IsNullOrWhiteSpace(request.razorpay_payment_id) ||
+            string.IsNullOrWhiteSpace(request.razorpay_signature))
+        {
+            return Results.BadRequest(new { verified = false, message = "Missing payment verification fields." });
+        }
+
+        var payload = $"{request.razorpay_order_id}|{request.razorpay_payment_id}";
+        using var hmac = new HMACSHA256(Encoding.UTF8.GetBytes(keySecret));
+        var hash = hmac.ComputeHash(Encoding.UTF8.GetBytes(payload));
+        var expectedSignature = Convert.ToHexString(hash).ToLowerInvariant();
+
+        var verified = CryptographicOperations.FixedTimeEquals(
+            Encoding.UTF8.GetBytes(expectedSignature),
+            Encoding.UTF8.GetBytes(request.razorpay_signature.ToLowerInvariant()));
+
+        if (!verified)
+        {
+            return Results.BadRequest(new { verified = false, message = "Invalid Razorpay signature." });
+        }
+
+        return Results.Ok(new { verified = true, message = "Payment verified successfully." });
     });
 });
 
@@ -195,9 +296,39 @@ static void LoadEnvFile(string contentRootPath)
     }
 }
 
+static string GetFallbackAiReply(string message)
+{
+    var q = message.ToLowerInvariant();
+
+    if (q.Contains("price") || q.Contains("tier") || q.Contains("plan"))
+    {
+        return "Pricing tiers: Essential (basic dashboards), Growth (AI workflows + automation), and Enterprise (custom integrations + compliance). Open Landing > Pricing for the latest numbers.";
+    }
+
+    if (q.Contains("track") || q.Contains("order") || q.Contains("delivery"))
+    {
+        return "To track order status, open Customer > Orders, search by order ID, then filter by In Transit or Delivered.";
+    }
+
+    if (q.Contains("pump") || q.Contains("inventory") || q.Contains("replenishment"))
+    {
+        return "For dealer operations: use Dealer > Pumps for status, Dealer > Inventory for dip and delivery updates, and Dealer > Replenishment Request for stock refill.";
+    }
+
+    if (q.Contains("receipt") || q.Contains("pdf"))
+    {
+        return "For receipt PDFs, go to Customer > Receipts or Customer > Transactions and click the PDF action for the record.";
+    }
+
+    return "I am Atlas, your FuelFlow assistant. Ask about orders, pricing, inventory, receipts, or account support and I will guide you step-by-step.";
+}
+
 sealed record AiChatRequest(string Message);
 sealed record AiChatResponse(string Reply);
 sealed record GeminiResponse(GeminiCandidate[]? Candidates);
 sealed record GeminiCandidate(GeminiContent? Content);
 sealed record GeminiContent(GeminiPart[]? Parts);
 sealed record GeminiPart(string? Text);
+sealed record RazorpayCreateOrderRequest(decimal Amount, string? Currency, string? Receipt, Dictionary<string, string>? Notes);
+sealed record RazorpayOrderResponse(string id, int amount, string currency, string receipt);
+sealed record RazorpayVerifyPaymentRequest(string razorpay_order_id, string razorpay_payment_id, string razorpay_signature);

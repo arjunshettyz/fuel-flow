@@ -2,10 +2,38 @@
 	<header class="page-header">
 		<h1>Station Management</h1>
 		<div class="actions">
-			<button class="primary-btn" type="button">Add Station</button>
-			<button class="outline-btn" type="button">Station Map View</button>
+			<button class="primary-btn" type="button" (click)="toggleAddStation()">
+				{{ adding ? 'Cancel' : 'Add Station' }}
+			</button>
+			<button class="outline-btn" type="button" (click)="toggleMapView()">
+				{{ showMap ? 'Hide Map View' : 'Station Map View' }}
+			</button>
 		</div>
 	</header>
+	<small class="ok" *ngIf="stationMessage">{{ stationMessage }}</small>
+
+	<article class="card" *ngIf="adding">
+		<h2>Add Station</h2>
+		<div class="form-grid">
+			<label>Code <input type="text" [(ngModel)]="draft.code" /></label>
+			<label>Name <input type="text" [(ngModel)]="draft.name" /></label>
+			<label>City <input type="text" [(ngModel)]="draft.city" /></label>
+			<label>Dealer <input type="text" [(ngModel)]="draft.dealerName" /></label>
+			<label>Active Pumps <input type="number" min="1" [(ngModel)]="draft.activePumps" /></label>
+			<label>Stock Health
+				<select [(ngModel)]="draft.stockHealth">
+					<option>Green</option>
+					<option>Yellow</option>
+					<option>Red</option>
+				</select>
+			</label>
+			<label>Latitude <input type="number" step="0.0001" [(ngModel)]="draft.lat" /></label>
+			<label>Longitude <input type="number" step="0.0001" [(ngModel)]="draft.lng" /></label>
+		</div>
+		<div class="action-row">
+			<button class="primary-btn" type="button" (click)="addStation()">Save Station</button>
+		</div>
+	</article>
 
 	<article class="card">
 		<table class="table">
@@ -26,13 +54,13 @@
 					<td>{{ station.code }}</td>
 					<td>{{ station.name }}</td>
 					<td>{{ station.city }}</td>
-					<td>{{ station.dealer }}</td>
+					<td>{{ station.dealerName }}</td>
 					<td>{{ station.activePumps }}</td>
 					<td>{{ station.stockHealth }}</td>
 					<td>{{ station.active ? 'Active' : 'Inactive' }}</td>
 					<td class="action-row">
-						<button class="text-btn" type="button">View</button>
-						<button class="text-btn" type="button">Edit</button>
+						<button class="text-btn" type="button" (click)="viewStation(station)">View</button>
+						<button class="text-btn" type="button" (click)="editStation(station)">Edit</button>
 						<button class="text-btn" type="button" (click)="toggleStation(station)">
 							{{ station.active ? 'Deactivate' : 'Activate' }}
 						</button>
@@ -42,8 +70,18 @@
 		</table>
 	</article>
 
-	<article class="card">
+	<article class="card" *ngIf="selectedStation">
+		<h2>Station Detail</h2>
+		<p><strong>{{ selectedStation.name }}</strong> ({{ selectedStation.code }})</p>
+		<p>City: {{ selectedStation.city }}</p>
+		<p>Dealer: {{ selectedStation.dealerName }}</p>
+		<p>Active Pumps: {{ selectedStation.activePumps }}</p>
+		<p>Stock Health: {{ selectedStation.stockHealth }}</p>
+		<p>Status: {{ selectedStation.active ? 'Active' : 'Inactive' }}</p>
+	</article>
+
+	<article class="card" *ngIf="showMap">
 		<h2>All Stations Map</h2>
-		<app-station-map></app-station-map>
+		<app-station-map [stationsInput]="stations"></app-station-map>
 	</article>
 </section>

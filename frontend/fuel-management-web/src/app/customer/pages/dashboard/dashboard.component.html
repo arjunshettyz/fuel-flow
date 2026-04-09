@@ -80,4 +80,16 @@
 		<p>{{ promotions[promoIndex] }}</p>
 		<button class="outline-btn" (click)="nextPromo()">Next Offer</button>
 	</article>
+
+	<article class="card">
+		<h2>Edit My Profile</h2>
+		<div class="profile-form">
+			<label>Full Name <input type="text" [(ngModel)]="profile.fullName" /></label>
+			<label>Email <input type="email" [(ngModel)]="profile.email" /></label>
+			<label>Phone <input type="text" [(ngModel)]="profile.phone" /></label>
+			<button class="primary-btn" type="button" (click)="saveProfile()">Save Profile</button>
+			<small class="hint">Role cannot be changed from customer account.</small>
+			<small class="ok" *ngIf="profileMessage">{{ profileMessage }}</small>
+		</div>
+	</article>
 </section>

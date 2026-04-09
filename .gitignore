@@ -1,1 +1,9 @@
 .env
+
+# .NET build output
+**/bin/
+**/obj/
+
+# Local artifacts / temp files
+artifacts/
+tmp_report.*

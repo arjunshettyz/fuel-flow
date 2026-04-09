@@ -11,6 +11,23 @@
 	box-shadow: var(--card-shadow);
 }
 
+.dealer-list {
+	list-style: none;
+	margin: 0.9rem 0 0;
+	padding: 0;
+	display: grid;
+	gap: 0.45rem;
+}
+
+.dealer-list li {
+	display: grid;
+	grid-template-columns: 1.2fr 1fr 1.2fr;
+	gap: 0.5rem;
+	padding: 0.5rem 0.6rem;
+	border: 1px solid var(--border-color);
+	border-radius: 10px;
+}
+
 .table {
 	width: 100%;
 	border-collapse: collapse;
@@ -46,4 +63,10 @@
 .red {
 	background: #fff0eb;
 	color: #c04722;
+}
+
+@media (max-width: 920px) {
+	.dealer-list li {
+		grid-template-columns: 1fr;
+	}
 }

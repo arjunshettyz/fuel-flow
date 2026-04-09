@@ -1,9 +1,15 @@
+using System.Globalization;
 using System.Security.Claims;
 using FuelManagement.Reporting.API.Data;
 using FuelManagement.Reporting.API.Models;
+using iText.IO.Font.Constants;
+using iText.Kernel.Colors;
+using iText.Kernel.Font;
 using iText.Kernel.Pdf;
 using iText.Layout;
+using iText.Layout.Borders;
 using iText.Layout.Element;
+using iText.Layout.Properties;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -61,11 +67,16 @@ public class ReportsController : ControllerBase
     public async Task<IActionResult> Generate([FromBody] GenerateReportRequest req)
     {
         var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? Guid.Empty.ToString();
+
+        var normalizedFormat = req.Format.Equals("Excel", StringComparison.OrdinalIgnoreCase)
+            ? "Excel"
+            : "PDF";
+
         var report = new Report
         {
             ReportType = req.ReportType,
             Title = req.Title,
-            Format = req.Format,
+            Format = normalizedFormat,
             Parameters = req.Parameters ?? "{}",
             RequestedBy = Guid.Parse(userId),
             Status = "Generating"
@@ -79,10 +90,12 @@ public class ReportsController : ControllerBase
             var reportsDir = Path.Combine(_env.ContentRootPath, "GeneratedReports");
             Directory.CreateDirectory(reportsDir);
 
-            var fileName = $"{report.ReportType}_{report.Id}.{req.Format.ToLower()}";
+            var safeReportType = SanitizeFileNamePart(report.ReportType);
+            var extension = normalizedFormat == "Excel" ? "xlsx" : "pdf";
+            var fileName = $"{safeReportType}_{report.Id}.{extension}";
             var filePath = Path.Combine(reportsDir, fileName);
 
-            if (req.Format.Equals("Excel", StringComparison.OrdinalIgnoreCase))
+            if (normalizedFormat == "Excel")
                 GenerateExcel(filePath, report);
             else
                 GeneratePdf(filePath, report);
@@ -94,7 +107,8 @@ public class ReportsController : ControllerBase
         catch (Exception ex)
         {
             report.Status = "Failed";
-            report.ErrorMessage = ex.Message;
+            report.ErrorMessage = ex.InnerException?.Message ?? ex.Message;
+            Console.Error.WriteLine(ex);
         }
 
         await _context.SaveChangesAsync();
@@ -126,11 +140,20 @@ public class ReportsController : ControllerBase
         ws.Cells[1, 1].Value = "Report Type"; ws.Cells[1, 2].Value = report.ReportType;
         ws.Cells[2, 1].Value = "Title"; ws.Cells[2, 2].Value = report.Title;
         ws.Cells[3, 1].Value = "Generated At"; ws.Cells[3, 2].Value = report.GeneratedAt.ToString("yyyy-MM-dd HH:mm");
-        ws.Cells[5, 1].Value = "Station"; ws.Cells[5, 2].Value = "Fuel Type"; ws.Cells[5, 3].Value = "Litres"; ws.Cells[5, 4].Value = "Revenue (₹)";
-        // Sample data rows
-        ws.Cells[6, 1].Value = "Station 1"; ws.Cells[6, 2].Value = "Petrol"; ws.Cells[6, 3].Value = 5000; ws.Cells[6, 4].Value = 450000;
-        ws.Cells[7, 1].Value = "Station 1"; ws.Cells[7, 2].Value = "Diesel"; ws.Cells[7, 3].Value = 3000; ws.Cells[7, 4].Value = 255000;
-        ws.Cells["A1:D7"].AutoFitColumns();
+        ws.Cells[5, 1].Value = "Station"; ws.Cells[5, 2].Value = "Fuel Type"; ws.Cells[5, 3].Value = "Litres"; ws.Cells[5, 4].Value = "Revenue";
+
+        // Sample preview rows (aligned with the web Preview Data table)
+        var rows = GetSamplePreviewRows(report.ReportType);
+        for (var i = 0; i < rows.Count; i++)
+        {
+            var excelRow = 6 + i;
+            ws.Cells[excelRow, 1].Value = rows[i].Station;
+            ws.Cells[excelRow, 2].Value = rows[i].FuelType;
+            ws.Cells[excelRow, 3].Value = rows[i].Litres;
+            ws.Cells[excelRow, 4].Value = rows[i].Revenue;
+        }
+
+        ws.Cells[$"A1:D{5 + rows.Count + 1}"].AutoFitColumns();
         package.SaveAs(new FileInfo(filePath));
     }
 
@@ -138,19 +161,169 @@ public class ReportsController : ControllerBase
     {
         using var writer = new PdfWriter(filePath);
         using var pdf = new PdfDocument(writer);
-        var doc = new Document(pdf);
-        doc.Add(new Paragraph($"Indian Fuel Management System").SetFontSize(18));
-        doc.Add(new Paragraph($"Report: {report.Title}").SetFontSize(14));
-        doc.Add(new Paragraph($"Type: {report.ReportType}  |  Generated: {report.GeneratedAt:yyyy-MM-dd HH:mm}"));
-        doc.Add(new Paragraph("─────────────────────────────────────────────"));
-        doc.Add(new Paragraph("Summary Data").SetFontSize(12));
-        var table = new Table(4);
-        table.AddHeaderCell("Station"); table.AddHeaderCell("Fuel Type");
-        table.AddHeaderCell("Litres"); table.AddHeaderCell("Revenue (₹)");
-        table.AddCell("Station 1"); table.AddCell("Petrol"); table.AddCell("5000"); table.AddCell("₹4,50,000");
-        table.AddCell("Station 1"); table.AddCell("Diesel"); table.AddCell("3000"); table.AddCell("₹2,55,000");
-        doc.Add(table);
-        doc.Close();
+        using var doc = new Document(pdf, iText.Kernel.Geom.PageSize.A4);
+
+        doc.SetMargins(36, 36, 42, 36);
+
+        // Theme colors (mirrors frontend CSS variables in frontend/fuel-management-web/src/styles.scss)
+        var ink900 = new DeviceRgb(15, 22, 28);
+        var ink500 = new DeviceRgb(91, 99, 108);
+        var accentSoft = new DeviceRgb(223, 245, 244); // approx of rgba(24,184,176,0.14) on white
+        var borderColor = new DeviceRgb(226, 229, 232); // approx of rgba(16,22,28,0.12) on white
+
+        var regularFont = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
+        var boldFont = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
+
+        doc.Add(
+            new Paragraph("Fuel Management")
+                .SetFont(boldFont)
+                .SetFontSize(11)
+                .SetFontColor(ink500)
+                .SetMarginTop(0)
+                .SetMarginBottom(4));
+
+        doc.Add(
+            new Paragraph(report.Title)
+                .SetFont(boldFont)
+                .SetFontSize(22)
+                .SetFontColor(ink900)
+                .SetMarginTop(0)
+                .SetMarginBottom(10));
+
+        var meta = new Table(UnitValue.CreatePercentArray(new float[] { 1, 1 }))
+            .UseAllAvailableWidth()
+            .SetBorder(Border.NO_BORDER)
+            .SetMarginBottom(14);
+
+        meta.AddCell(
+            new Cell()
+                .SetBorder(Border.NO_BORDER)
+                .Add(
+                    new Paragraph($"Report Type: {report.ReportType}")
+                        .SetFont(regularFont)
+                        .SetFontSize(10)
+                        .SetFontColor(ink500)));
+
+        meta.AddCell(
+            new Cell()
+                .SetBorder(Border.NO_BORDER)
+                .SetTextAlignment(TextAlignment.RIGHT)
+                .Add(
+                    new Paragraph($"Generated: {report.GeneratedAt.ToLocalTime():dd MMM yyyy HH:mm}")
+                        .SetFont(regularFont)
+                        .SetFontSize(10)
+                        .SetFontColor(ink500)));
+
+        doc.Add(meta);
+
+        var card = new Div()
+            .SetBorder(new SolidBorder(borderColor, 1))
+            .SetPadding(14)
+            .SetMarginBottom(10);
+
+        card.Add(
+            new Paragraph("Preview Data")
+                .SetFont(boldFont)
+                .SetFontSize(14)
+                .SetFontColor(ink900)
+                .SetMarginTop(0)
+                .SetMarginBottom(10));
+
+        var table = new Table(UnitValue.CreatePercentArray(new float[] { 3.2f, 2.2f, 1.4f, 2.2f }))
+            .UseAllAvailableWidth()
+            .SetMarginTop(0)
+            .SetBorder(Border.NO_BORDER);
+
+        table.AddHeaderCell(CreateHeaderCell("Station", boldFont, ink900, accentSoft, borderColor));
+        table.AddHeaderCell(CreateHeaderCell("Fuel Type", boldFont, ink900, accentSoft, borderColor));
+        table.AddHeaderCell(CreateHeaderCell("Litres", boldFont, ink900, accentSoft, borderColor));
+        table.AddHeaderCell(CreateHeaderCell("Revenue", boldFont, ink900, accentSoft, borderColor));
+
+        var culture = CultureInfo.GetCultureInfo("en-IN");
+        var rows = GetSamplePreviewRows(report.ReportType);
+        foreach (var row in rows)
+        {
+            table.AddCell(CreateBodyCell(row.Station, regularFont, ink900, borderColor));
+            table.AddCell(CreateBodyCell(row.FuelType, regularFont, ink900, borderColor));
+            table.AddCell(CreateBodyCell(row.Litres.ToString("N0", culture), regularFont, ink900, borderColor));
+            table.AddCell(CreateBodyCell(row.Revenue.ToString("C0", culture), regularFont, ink900, borderColor));
+        }
+
+        card.Add(table);
+        doc.Add(card);
+
+        doc.Add(
+            new Paragraph("Generated by Fuel Management Reporting Service")
+                .SetFont(regularFont)
+                .SetFontSize(9)
+                .SetFontColor(ink500)
+                .SetMarginTop(10)
+                .SetMarginBottom(0));
+    }
+
+    private static Cell CreateHeaderCell(
+        string text,
+        PdfFont font,
+        Color fontColor,
+        Color backgroundColor,
+        Color borderColor)
+    {
+        return new Cell()
+            .SetBorderTop(Border.NO_BORDER)
+            .SetBorderLeft(Border.NO_BORDER)
+            .SetBorderRight(Border.NO_BORDER)
+            .SetBorderBottom(new SolidBorder(borderColor, 1))
+            .SetBackgroundColor(backgroundColor)
+            .SetPadding(8)
+            .Add(
+                new Paragraph(text)
+                    .SetFont(font)
+                    .SetFontSize(10)
+                    .SetFontColor(fontColor));
+    }
+
+    private static Cell CreateBodyCell(string text, PdfFont font, Color fontColor, Color borderColor)
+    {
+        return new Cell()
+            .SetBorderTop(Border.NO_BORDER)
+            .SetBorderLeft(Border.NO_BORDER)
+            .SetBorderRight(Border.NO_BORDER)
+            .SetBorderBottom(new SolidBorder(borderColor, 1))
+            .SetPadding(8)
+            .Add(
+                new Paragraph(text)
+                    .SetFont(font)
+                    .SetFontSize(10)
+                    .SetFontColor(fontColor));
+    }
+
+    private static IReadOnlyList<PreviewDataRow> GetSamplePreviewRows(string reportType)
+    {
+        // This service is demo-oriented; keep sample rows consistent across report types.
+        return new List<PreviewDataRow>
+        {
+            new("MG Road", "Petrol", 4200, 409_500),
+            new("HSR Sector 2", "Diesel", 3300, 293_800),
+            new("Indiranagar", "CNG", 1500, 117_000),
+        };
+    }
+
+    private sealed record PreviewDataRow(string Station, string FuelType, decimal Litres, decimal Revenue);
+
+    private static string SanitizeFileNamePart(string value)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            return "report";
+        }
+
+        var invalidChars = Path.GetInvalidFileNameChars();
+        var sanitized = new string(value
+            .Trim()
+            .Select(ch => invalidChars.Contains(ch) ? '_' : ch)
+            .ToArray());
+
+        return string.IsNullOrWhiteSpace(sanitized) ? "report" : sanitized;
     }
 }
 

@@ -1,7 +1,19 @@
 <section class="page-wrap">
 	<article class="card">
 		<h1>Nearby Stations</h1>
-		<app-station-map></app-station-map>
+		<app-station-map [stationsInput]="stations"></app-station-map>
+	</article>
+
+	<article class="card">
+		<h2>Find Dealers</h2>
+		<input type="text" [(ngModel)]="dealerSearch" placeholder="Search dealer by name, email, phone" />
+		<ul class="dealer-list">
+			<li *ngFor="let dealer of filteredDealers">
+				<strong>{{ dealer.fullName }}</strong>
+				<span>{{ dealer.phone }}</span>
+				<span>{{ dealer.email }}</span>
+			</li>
+		</ul>
 	</article>
 
 	<article class="card">
@@ -19,8 +31,8 @@
 				<tr *ngFor="let station of stations">
 					<td>{{ station.name }}</td>
 					<td>{{ station.city }}</td>
-					<td>{{ station.distanceKm }}</td>
-					<td><span class="status" [ngClass]="station.stockStatus.toLowerCase()">{{ station.stockStatus }}</span></td>
+					<td>--</td>
+					<td><span class="status" [ngClass]="station.stockHealth.toLowerCase()">{{ station.stockHealth }}</span></td>
 				</tr>
 			</tbody>
 		</table>

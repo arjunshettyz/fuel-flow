@@ -1,0 +1,95 @@
+<section class="page-wrap">
+	<header class="page-header">
+		<h1>Customer Orders</h1>
+		<div class="quick-actions">
+			<a class="outline-btn" [routerLink]="dashboardLink">Back to Dashboard</a>
+		</div>
+	</header>
+
+	<div class="grid-two">
+		<article class="card order-list">
+			<h2>All Orders</h2>
+			<div
+				class="order-row"
+				*ngFor="let order of orders"
+				(click)="selectOrder(order.id)"
+				[class.active]="order.id === activeOrderId">
+				<div>
+					<strong>{{ order.id }}</strong>
+					<span>{{ order.station }} · {{ order.fuelType }}</span>
+					<span class="muted" *ngIf="order.customerEmail">{{ order.customerEmail }}</span>
+				</div>
+				<div class="order-meta">
+					<span class="status" [class.active]="order.status === 'Delivered'">{{ order.status }}</span>
+					<span>{{ order.quantity }} L</span>
+				</div>
+			</div>
+			<p class="note" *ngIf="!orders.length">No customer orders yet.</p>
+		</article>
+
+		<article class="card track-card">
+			<h2>Track Delivery</h2>
+			<div *ngIf="activeOrder; else noOrder">
+				<div class="track-meta">
+					<div>
+						<strong>{{ activeOrder.id }}</strong>
+						<span>{{ activeOrder.station }} · {{ activeOrder.fuelType }}</span>
+						<span class="muted" *ngIf="activeOrder.customerName">{{ activeOrder.customerName }}</span>
+					</div>
+					<div>
+						<span>ETA</span>
+						<strong>{{ activeOrder.eta }}</strong>
+					</div>
+				</div>
+
+				<div class="track-steps">
+					<div
+						class="track-step"
+						*ngFor="let step of statusSteps; let i = index"
+						[class.complete]="i <= stepIndex(activeOrder.status)">
+						<span class="step-dot"></span>
+						<div>
+							<strong>{{ step }}</strong>
+							<span>{{ i === stepIndex(activeOrder.status) ? activeOrder.lastUpdate : 'In queue' }}</span>
+						</div>
+					</div>
+				</div>
+				<p class="note">Last update: {{ activeOrder.lastUpdate }}</p>
+			</div>
+			<ng-template #noOrder>
+				<p>Select an order to view tracking details.</p>
+			</ng-template>
+		</article>
+	</div>
+
+	<article class="card update-card">
+		<h2>Manage Tracking</h2>
+		<div *ngIf="activeOrder; else noUpdate">
+			<label>
+				Status
+				<select [(ngModel)]="updateForm.status">
+					<option>Requested</option>
+					<option>Confirmed</option>
+					<option>Dispatched</option>
+					<option>Delivered</option>
+				</select>
+			</label>
+
+			<label>
+				ETA / Delivery Window
+				<input type="text" [(ngModel)]="updateForm.eta" placeholder="Today, 18:45" />
+			</label>
+
+			<label>
+				Update Note
+				<input type="text" [(ngModel)]="updateForm.notes" placeholder="Driver assigned / delay / dispatch note" />
+			</label>
+
+			<button class="primary-btn" type="button" (click)="saveUpdate()">Save Update</button>
+			<p class="note">Updates here appear in the customer tracking view.</p>
+		</div>
+		<ng-template #noUpdate>
+			<p>Select an order to manage tracking.</p>
+		</ng-template>
+	</article>
+</section>

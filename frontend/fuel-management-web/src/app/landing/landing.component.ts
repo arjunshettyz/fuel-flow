@@ -53,6 +53,14 @@ interface SolutionHighlight {
   readonly detail: string;
 }
 
+interface PlatformModuleInfo {
+  readonly title: string;
+  readonly description: string;
+  readonly points: string[];
+  readonly image: string;
+  readonly imageAlt: string;
+}
+
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.component.html',
@@ -96,6 +104,85 @@ export class LandingComponent implements OnInit, OnDestroy {
     'FuelIntel',
     'FuelConnect',
   ];
+
+  selectedModule = this.modules[0];
+
+  readonly moduleDetails: Record<string, PlatformModuleInfo> = {
+    FuelEvent: {
+      title: 'AI-powered RFP and procurement engine',
+      description: 'Launch and manage competitive fuel bids, compare pricing, and award contracts in-platform with full historical audit trails.',
+      points: [
+        'Launch AI-assisted RFPs in minutes.',
+        'Compare supplier pricing with live market indexes.',
+        'Award contracts with audit-ready documentation.',
+      ],
+      image: 'assets/landing/platform-rfp.svg',
+      imageAlt: 'RFP procurement workspace preview',
+    },
+    FuelControl: {
+      title: 'Daily operations control center',
+      description: 'Track dispatch, deliveries, invoices, and station-level exceptions from a unified operations command panel.',
+      points: [
+        'Unified order lifecycle timeline.',
+        'Live station fulfillment status.',
+        'Centralized payment and invoice controls.',
+      ],
+      image: 'assets/landing/workflow-issue.svg',
+      imageAlt: 'Operations control dashboard preview',
+    },
+    FuelIQ: {
+      title: 'Intelligence and anomaly detection',
+      description: 'Use AI insights to detect usage anomalies, forecast demand, and optimize route-level fueling decisions.',
+      points: [
+        'Demand forecasting by location.',
+        'Fraud pattern detection alerts.',
+        'Cost variance analytics with trend views.',
+      ],
+      image: 'assets/landing/hero-line.svg',
+      imageAlt: 'Fuel intelligence analytics preview',
+    },
+    FuelRescue: {
+      title: 'Emergency response orchestration',
+      description: 'Trigger critical fuel replenishment workflows with SLA-backed response windows and coordinated dispatch.',
+      points: [
+        'Emergency request escalation path.',
+        'SLA countdown and response tracking.',
+        'Multi-vendor fallback dispatch.',
+      ],
+      image: 'assets/landing/coverage-sla.svg',
+      imageAlt: 'Emergency fueling SLA panel preview',
+    },
+    FuelIntel: {
+      title: 'Executive intelligence layer',
+      description: 'Access strategic reports for spend, performance, and compliance with export-ready dashboards.',
+      points: [
+        'Board-ready performance snapshots.',
+        'Compliance-ready data trails.',
+        'Spend trends across vendors and geographies.',
+      ],
+      image: 'assets/landing/coverage-chart.svg',
+      imageAlt: 'Executive intelligence chart preview',
+    },
+    FuelConnect: {
+      title: 'Connected supplier network',
+      description: 'Operate through a nationwide fuel partner network with transparent pricing and automated coordination.',
+      points: [
+        'Unified partner directory and onboarding.',
+        'Rate cards with transparent benchmarks.',
+        'Automated dispatch communication loops.',
+      ],
+      image: 'assets/landing/coverage-network.svg',
+      imageAlt: 'Fuel supplier network preview',
+    },
+  };
+
+  get activeModule(): PlatformModuleInfo {
+    return this.moduleDetails[this.selectedModule] ?? this.moduleDetails['FuelEvent'];
+  }
+
+  selectModule(module: string): void {
+    this.selectedModule = module;
+  }
 
   readonly platformHighlights: string[] = [
     'Launch AI-assisted RFPs in minutes.',

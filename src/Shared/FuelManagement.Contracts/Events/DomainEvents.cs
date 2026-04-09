@@ -44,3 +44,12 @@ public record NotificationEvent(
     string Subject,
     string Message,
     DateTime Timestamp);
+
+public record FuelPriceUpdatedEvent(
+    Guid? TankId,
+    Guid? StationId,
+    string FuelType,
+    decimal? OldPricePerLitre,
+    decimal NewPricePerLitre,
+    string UpdatedBy,
+    DateTime Timestamp);

@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ElementRef, ViewChild } from '@angular/core';
+import { AiAssistantService } from '../ai-assistant/ai-assistant.service';
 
 type ChatSender = 'user' | 'agent';
 
@@ -14,6 +16,7 @@ interface ChatMessage {
   styleUrl: './chat-panel.component.scss'
 })
 export class ChatPanelComponent implements OnInit {
+  @ViewChild('chatBody') private chatBody?: ElementRef<HTMLDivElement>;
   @Input() title = 'Support Chat';
   @Input() subtitle = 'Connect with the operations team.';
   @Input() placeholder = 'Type a message...';
@@ -23,6 +26,8 @@ export class ChatPanelComponent implements OnInit {
   draft = '';
   isResponding = false;
   messages: ChatMessage[] = [];
+
+  constructor(private readonly assistant: AiAssistantService) {}
 
   ngOnInit(): void {
     if (!this.messages.length) {
@@ -42,7 +47,7 @@ export class ChatPanelComponent implements OnInit {
 
     this.pushMessage('user', text);
     this.draft = '';
-    this.mockReply(text);
+    this.aiReply(text);
   }
 
   useSuggestion(text: string): void {
@@ -59,45 +64,19 @@ export class ChatPanelComponent implements OnInit {
         time: this.timeStamp(),
       },
     ];
+    this.queueScroll();
   }
 
-  private mockReply(text: string): void {
+  private aiReply(text: string): void {
     this.isResponding = true;
-    const lower = text.toLowerCase();
-    const response = this.context === 'dealer'
-      ? this.dealerReply(lower)
-      : this.customerReply(lower);
+    const prompt = this.context === 'dealer'
+      ? `Dealer Ops: ${text}`
+      : `Customer Support: ${text}`;
 
-    setTimeout(() => {
+    this.assistant.sendMessage(prompt).subscribe((response) => {
       this.isResponding = false;
       this.pushMessage('agent', response);
-    }, 650);
-  }
-
-  private customerReply(text: string): string {
-    if (text.includes('track') || text.includes('delivery')) {
-      return 'I can check the ETA and latest dispatch note. Which order ID should I pull?';
-    }
-    if (text.includes('receipt')) {
-      return 'Share the receipt number and I will fetch the PDF link for you.';
-    }
-    if (text.includes('update') || text.includes('window')) {
-      return 'Got it. Tell me the new delivery window and we will confirm the change.';
-    }
-    return 'Thanks for reaching out. How can I help with your fuel order today?';
-  }
-
-  private dealerReply(text: string): string {
-    if (text.includes('refill') || text.includes('inventory')) {
-      return 'I can raise an emergency replenishment ticket. Which tank and current level?';
-    }
-    if (text.includes('pump') || text.includes('outage')) {
-      return 'Understood. Share the pump ID and issue details so we can dispatch maintenance.';
-    }
-    if (text.includes('price')) {
-      return 'I will confirm the latest price revision and notify your shift lead.';
-    }
-    return 'Dealer ops here. Let me know what needs attention on the forecourt.';
+    });
   }
 
   private getDefaultMessages(): ChatMessage[] {
@@ -115,5 +94,15 @@ export class ChatPanelComponent implements OnInit {
 
   private timeStamp(): string {
     return new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  }
+
+  private queueScroll(): void {
+    setTimeout(() => {
+      const body = this.chatBody?.nativeElement;
+      if (!body) {
+        return;
+      }
+      body.scrollTop = body.scrollHeight;
+    }, 0);
   }
 }

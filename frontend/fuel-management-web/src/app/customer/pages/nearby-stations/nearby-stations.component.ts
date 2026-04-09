@@ -1,11 +1,5 @@
 import { Component } from '@angular/core';
-
-interface NearbyStation {
-  name: string;
-  distanceKm: number;
-  city: string;
-  stockStatus: 'Green' | 'Yellow' | 'Red';
-}
+import { DirectoryService, DirectoryStation, DirectoryUser } from '../../../core/services/directory.service';
 
 @Component({
   selector: 'app-nearby-stations',
@@ -13,12 +7,29 @@ interface NearbyStation {
   styleUrl: './nearby-stations.component.scss'
 })
 export class NearbyStationsComponent {
-  stations: NearbyStation[] = [
-    { name: 'MG Road Fuel Hub', distanceKm: 1.2, city: 'Bengaluru', stockStatus: 'Green' },
-    { name: 'HSR Sector 2', distanceKm: 2.8, city: 'Bengaluru', stockStatus: 'Yellow' },
-    { name: 'Koramangala 5th', distanceKm: 3.1, city: 'Bengaluru', stockStatus: 'Green' },
-    { name: 'Indiranagar 100ft', distanceKm: 3.9, city: 'Bengaluru', stockStatus: 'Red' },
-    { name: 'Hebbal Ring Road', distanceKm: 5.0, city: 'Bengaluru', stockStatus: 'Green' },
-  ];
+  stations: DirectoryStation[] = [];
+  dealerSearch = '';
+  dealers: DirectoryUser[] = [];
+
+  constructor(private readonly directory: DirectoryService) {
+    this.directory.stations$.subscribe((stations) => {
+      this.stations = stations;
+    });
+
+    this.directory.users$.subscribe((users) => {
+      this.dealers = users.filter((user) => user.role === 'Dealer');
+    });
+  }
+
+  get filteredDealers(): DirectoryUser[] {
+    const q = this.dealerSearch.trim().toLowerCase();
+    if (!q) {
+      return this.dealers;
+    }
+
+    return this.dealers.filter((dealer) =>
+      [dealer.fullName, dealer.email, dealer.phone].some((field) => field.toLowerCase().includes(q))
+    );
+  }
 
 }

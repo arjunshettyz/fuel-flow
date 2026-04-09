@@ -76,6 +76,19 @@
 	gap: 0.4rem;
 }
 
+.profile-form {
+	display: grid;
+	gap: 0.55rem;
+}
+
+.hint {
+	color: var(--ink-500);
+}
+
+.ok {
+	color: #0d8f4d;
+}
+
 @media (max-width: 860px) {
 	.grid-two,
 	.receipt-inline {

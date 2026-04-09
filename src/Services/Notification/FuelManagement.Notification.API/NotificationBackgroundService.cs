@@ -2,6 +2,8 @@ using FuelManagement.Notification.API.Data;
 using FuelManagement.Notification.API.Models;
 using FuelManagement.Common.Messaging;
 using FuelManagement.Contracts.Events;
+using FuelManagement.Notification.API.Services;
+using Microsoft.EntityFrameworkCore;
 
 namespace FuelManagement.Notification.API;
 
@@ -47,6 +49,88 @@ public class NotificationBackgroundService : BackgroundService
                 await CreateNotification("Admin", "Email", "High Value Sale Alert", $"Sale of {evt.TotalAmount} recorded at Station {evt.StationId}");
                 _logger.LogWarning("Sale notification created for high value transaction.");
             }
+        });
+
+        // Subscribe to Fuel Price Updates (Price Drop Alerts)
+        await _bus.SubscribeAsync<FuelPriceUpdatedEvent>("fuel-price-updated", async (evt) =>
+        {
+            if (string.IsNullOrWhiteSpace(evt.FuelType))
+                return;
+
+            using var scope = _serviceProvider.CreateScope();
+            var context = scope.ServiceProvider.GetRequiredService<NotificationDbContext>();
+            var emailSender = scope.ServiceProvider.GetRequiredService<INotificationEmailSender>();
+
+            var now = DateTime.UtcNow;
+            var fuelType = evt.FuelType.Trim();
+
+            var subscriptions = await context.PriceDropSubscriptions
+                .Where(s => s.IsActive && s.FuelType == fuelType)
+                .ToListAsync();
+
+            foreach (var sub in subscriptions)
+            {
+                if (evt.NewPricePerLitre > sub.TargetPricePerLitre)
+                    continue;
+
+                var shouldAlert = false;
+
+                if (sub.LastAlertSentAt == null || sub.LastAlertedPricePerLitre == null)
+                {
+                    shouldAlert = true;
+                }
+                else
+                {
+                    var previousPrice = evt.OldPricePerLitre ?? sub.LastAlertedPricePerLitre;
+                    if (previousPrice.HasValue)
+                    {
+                        shouldAlert = previousPrice.Value > sub.TargetPricePerLitre;
+                    }
+                }
+
+                if (!shouldAlert)
+                    continue;
+
+                var subject = $"Fuel Flow: {fuelType} price dropped below your target";
+                var html = EmailTemplates.RenderPriceDropAlert(
+                    fuelType,
+                    sub.TargetPricePerLitre,
+                    evt.NewPricePerLitre,
+                    evt.OldPricePerLitre,
+                    evt.StationId,
+                    evt.Timestamp);
+                var text = EmailTemplates.RenderPlainTextPriceDropAlert(
+                    fuelType,
+                    sub.TargetPricePerLitre,
+                    evt.NewPricePerLitre,
+                    evt.OldPricePerLitre,
+                    evt.StationId,
+                    evt.Timestamp);
+
+                var sendResult = await emailSender.SendEmailAsync(sub.Email, subject, html, text);
+
+                context.NotificationLogs.Add(new NotificationLog
+                {
+                    RecipientId = sub.UserId.ToString(),
+                    RecipientContact = sub.Email,
+                    Channel = "Email",
+                    Subject = subject,
+                    Message = html,
+                    Status = sendResult.Status,
+                    ErrorMessage = sendResult.ErrorMessage,
+                    CreatedAt = now,
+                    SentAt = sendResult.Sent ? now : null,
+                });
+
+                if (sendResult.Sent)
+                {
+                    sub.LastAlertSentAt = now;
+                    sub.LastAlertedPricePerLitre = evt.NewPricePerLitre;
+                    sub.UpdatedAt = now;
+                }
+            }
+
+            await context.SaveChangesAsync();
         });
     }
 

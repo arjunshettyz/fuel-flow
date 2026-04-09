@@ -1,10 +1,26 @@
 <section class="page-wrap">
 	<header class="page-header">
 		<h1>User Management</h1>
-		<button class="primary-btn" type="button">Create User</button>
+		<button class="primary-btn" type="button" (click)="createUser()">Create User</button>
 	</header>
+	<small class="ok" *ngIf="actionMessage">{{ actionMessage }}</small>
+
+	<div class="kpi-grid">
+		<article class="card stat-card">
+			<h2>Total Dealers</h2>
+			<strong>{{ totalDealers }}</strong>
+		</article>
+		<article class="card stat-card">
+			<h2>Total Customers</h2>
+			<strong>{{ totalCustomers }}</strong>
+		</article>
+	</div>
 
 	<article class="card filter-row">
+		<label>
+			Search users
+			<input type="text" [(ngModel)]="search" placeholder="Search name, email, phone" />
+		</label>
 		<label>
 			Filter by role
 			<select [(ngModel)]="roleFilter">
@@ -14,6 +30,15 @@
 				<option value="Auditor">Auditor</option>
 			</select>
 		</label>
+	</article>
+
+	<article class="card" *ngIf="selectedUser">
+		<h2>User Profile</h2>
+		<p><strong>{{ selectedUser.fullName }}</strong></p>
+		<p>Email: {{ selectedUser.email }}</p>
+		<p>Phone: {{ selectedUser.phone }}</p>
+		<p>Role: {{ selectedUser.role }}</p>
+		<p>Status: {{ selectedUser.status }}</p>
 	</article>
 
 	<article class="card">
@@ -31,11 +56,11 @@
 			</thead>
 			<tbody>
 				<tr *ngFor="let user of filteredUsers">
-					<td>{{ user.name }}</td>
+					<td>{{ user.fullName }}</td>
 					<td>{{ user.email }}</td>
 					<td>{{ user.phone }}</td>
 					<td>
-						<select [(ngModel)]="user.role" aria-label="Assign role">
+						<select [ngModel]="user.role" (ngModelChange)="updateRole(user, $event)" aria-label="Assign role">
 							<option>Customer</option>
 							<option>Dealer</option>
 							<option>Auditor</option>
@@ -47,9 +72,9 @@
 					</td>
 					<td>{{ user.lastLogin }}</td>
 					<td class="action-row">
-						<button class="text-btn" type="button">Profile</button>
+						<button class="text-btn" type="button" (click)="viewProfile(user)">Profile</button>
 						<button class="text-btn" type="button" (click)="toggleStatus(user)">{{ user.status === 'Active' ? 'Lock' : 'Unlock' }}</button>
-						<button class="text-btn" type="button">Deactivate</button>
+						<button class="text-btn" type="button" (click)="deactivate(user)">Deactivate</button>
 					</td>
 				</tr>
 			</tbody>

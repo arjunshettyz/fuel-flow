@@ -62,12 +62,8 @@ export class OtpVerifyComponent {
         }
 
         this.otpSent = true;
-        this.infoMessage = response.devOtpCode
-          ? `${response.message} Dev OTP: ${response.devOtpCode}`
-          : response.message;
-        if (response.devOtpCode) {
-          this.form.controls.otp.setValue(response.devOtpCode);
-        }
+        this.infoMessage = response.message;
+        this.form.controls.otp.setValue('');
       });
   }
 
@@ -103,7 +99,7 @@ export class OtpVerifyComponent {
           return;
         }
 
-        this.router.navigateByUrl(this.auth.routeForRole(response.user.role));
+        this.router.navigateByUrl(this.auth.routeForRole(response.user.role), { replaceUrl: true });
       });
   }
 

@@ -1,12 +1,13 @@
 <section class="page-wrap">
 	<header class="page-header">
 		<h1>Dealer Dashboard</h1>
-		<div class="quick-actions">
-			<a routerLink="/dealer/sales/new" class="primary-btn">New Sale</a>
-			<a routerLink="/dealer/inventory" class="outline-btn">Replenishment Request</a>
-			<a routerLink="/dealer/shift-summary" class="outline-btn">Shift Summary</a>
-		</div>
 	</header>
+
+	<nav class="sub-nav card">
+		<a routerLink="/dealer/sales/new" routerLinkActive="active">New Sale</a>
+		<a routerLink="/dealer/inventory" routerLinkActive="active">Replenishment Request</a>
+		<a routerLink="/dealer/shift-summary" routerLinkActive="active">Shift Summary</a>
+	</nav>
 
 	<div class="kpi-grid">
 		<app-kpi-card
@@ -64,4 +65,30 @@
 		placeholder="Ask about stock, pricing, or dispatch..."
 		[suggestions]="['Request emergency refill', 'Report pump outage', 'Confirm price update']">
 	</app-chat-panel>
+
+	<div class="grid-two">
+		<article class="card">
+			<h2>Find Customers</h2>
+			<input type="text" [(ngModel)]="customerSearch" placeholder="Search customer by name, email, phone" />
+			<ul class="directory-list">
+				<li *ngFor="let customer of filteredCustomers">
+					<strong>{{ customer.fullName }}</strong>
+					<span>{{ customer.phone }}</span>
+					<span>{{ customer.email }}</span>
+				</li>
+			</ul>
+		</article>
+
+		<article class="card">
+			<h2>Edit My Profile</h2>
+			<div class="profile-form">
+				<label>Full Name <input type="text" [(ngModel)]="profile.fullName" /></label>
+				<label>Email <input type="email" [(ngModel)]="profile.email" /></label>
+				<label>Phone <input type="text" [(ngModel)]="profile.phone" /></label>
+				<button class="primary-btn" type="button" (click)="saveProfile()">Save Profile</button>
+				<small class="hint">Role cannot be changed from dealer account.</small>
+				<small class="ok" *ngIf="profileMessage">{{ profileMessage }}</small>
+			</div>
+		</article>
+	</div>
 </section>

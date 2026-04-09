@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../../../core/services/auth.service';
+import { DirectoryService, DirectoryUser } from '../../../core/services/directory.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -22,5 +24,52 @@ export class DashboardComponent {
     { name: 'Pump 03', status: 'Active' },
     { name: 'Pump 04', status: 'Offline' },
   ];
+
+  customerSearch = '';
+  customers: DirectoryUser[] = [];
+  profileMessage = '';
+
+  profile = {
+    fullName: '',
+    email: '',
+    phone: '',
+  };
+
+  constructor(
+    private readonly directory: DirectoryService,
+    private readonly auth: AuthService,
+  ) {
+    this.directory.users$.subscribe((users) => {
+      this.customers = users.filter((user) => user.role === 'Customer');
+    });
+
+    const current = this.auth.getCurrentUser();
+    if (current) {
+      this.profile = {
+        fullName: current.fullName,
+        email: current.email,
+        phone: current.phone,
+      };
+      this.directory.syncSessionUser(current);
+    }
+  }
+
+  get filteredCustomers(): DirectoryUser[] {
+    const q = this.customerSearch.trim().toLowerCase();
+    if (!q) {
+      return this.customers;
+    }
+
+    return this.customers.filter((customer) =>
+      [customer.fullName, customer.email, customer.phone].some((field) => field.toLowerCase().includes(q))
+    );
+  }
+
+  saveProfile(): void {
+    const updated = this.auth.updateCurrentUserProfile(this.profile);
+    this.profileMessage = updated
+      ? 'Profile updated. Role is locked and cannot be changed from dealer account.'
+      : 'Unable to update profile. Please login again.';
+  }
 
 }

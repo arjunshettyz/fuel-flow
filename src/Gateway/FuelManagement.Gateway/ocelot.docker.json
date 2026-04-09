@@ -1,0 +1,209 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/auth/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "identity",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/auth/{everything}",
+      "UpstreamHttpMethod": ["GET", "POST", "PUT", "DELETE"],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": ""
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/users/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "identity",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/users/{everything}",
+      "UpstreamHttpMethod": ["GET", "POST", "PUT", "DELETE"],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "1m",
+        "PeriodTimespan": 60,
+        "Limit": 100
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/tanks/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "inventory",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/inventory/tanks/{everything}",
+      "UpstreamHttpMethod": ["GET", "POST", "PUT", "DELETE"],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RateLimitOptions": {
+        "EnableRateLimiting": true,
+        "Period": "1m",
+        "Limit": 200
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/alerts/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "inventory",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/inventory/alerts/{everything}",
+      "UpstreamHttpMethod": ["GET", "POST", "PUT", "DELETE"],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/replenishment/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "inventory",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/inventory/replenishment/{everything}",
+      "UpstreamHttpMethod": ["GET", "POST", "PUT", "DELETE"],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/transactions/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "sales",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/sales/transactions/{everything}",
+      "UpstreamHttpMethod": ["GET", "POST", "PUT", "DELETE"],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RateLimitOptions": {
+        "EnableRateLimiting": true,
+        "Period": "1m",
+        "Limit": 300
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/pumps/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "sales",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/sales/pumps/{everything}",
+      "UpstreamHttpMethod": ["GET", "POST", "PUT", "DELETE"],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/reports/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "reporting",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/reporting/{everything}",
+      "UpstreamHttpMethod": ["GET", "POST", "PUT", "DELETE"],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/notifications/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "notification",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/notifications/{everything}",
+      "UpstreamHttpMethod": ["GET", "POST", "PUT", "DELETE"],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/fraud/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "fraud",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/fraud/{everything}",
+      "UpstreamHttpMethod": ["GET", "POST", "PUT", "DELETE"],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/stations/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "station",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/stations/{everything}",
+      "UpstreamHttpMethod": ["GET", "POST", "PUT", "DELETE"],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/audit/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "audit",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/audit/{everything}",
+      "UpstreamHttpMethod": ["GET", "POST", "PUT", "DELETE"],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:5000",
+    "RateLimitOptions": {
+      "DisableRateLimitHeaders": false,
+      "QuotaExceededMessage": "Rate limit exceeded. Please slow down.",
+      "HttpStatusCode": 429
+    }
+  }
+}

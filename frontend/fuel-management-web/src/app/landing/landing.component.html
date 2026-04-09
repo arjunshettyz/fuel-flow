@@ -72,19 +72,19 @@
         class="module-pill"
         type="button"
         *ngFor="let module of modules; index as idx"
-        [class.active]="idx === 0">
+        [class.active]="module === selectedModule"
+        (click)="selectModule(module)">
         {{ module }}
       </button>
     </div>
     <div class="platform-card">
       <div class="platform-copy">
-        <h3>AI-powered RFP and procurement engine</h3>
+        <h3>{{ activeModule.title }}</h3>
         <p>
-          Launch and manage competitive fuel bids, compare pricing, and award contracts in-platform
-          with full historical audit trails.
+          {{ activeModule.description }}
         </p>
         <ul class="platform-list">
-          <li *ngFor="let item of platformHighlights">{{ item }}</li>
+          <li *ngFor="let item of activeModule.points">{{ item }}</li>
         </ul>
         <div class="platform-actions">
           <a class="primary-btn landing-primary" routerLink="/auth/register">Start a Demo</a>
@@ -93,8 +93,8 @@
       </div>
       <div class="platform-preview">
         <img
-          src="assets/landing/platform-rfp.svg"
-          alt="RFP procurement workspace preview" />
+          [src]="activeModule.image"
+          [alt]="activeModule.imageAlt" />
       </div>
     </div>
   </section>

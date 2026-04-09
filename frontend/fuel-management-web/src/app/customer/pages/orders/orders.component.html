@@ -61,8 +61,10 @@
 				<div class="order-meta">
 					<span class="status" [class.active]="order.status === 'Delivered'">{{ order.status }}</span>
 					<span>{{ order.quantity }} L</span>
+					<button class="outline-btn" type="button" (click)="payForOrder(order, $event)">Pay Now</button>
 				</div>
 			</div>
+			<p class="note" *ngIf="paymentMessage">{{ paymentMessage }}</p>
 		</article>
 	</div>
 

@@ -21,6 +21,7 @@ export class SalesEntryComponent {
   stockWarning = '';
   customerLookupName = '';
   submitSuccess = '';
+  lastReceipt: string | null = null;
 
   readonly form = this.fb.group({
     pumpId: ['pump-01', [Validators.required]],
@@ -91,7 +92,15 @@ export class SalesEntryComponent {
       this.form.markAllAsTouched();
       return;
     }
+
+    const value = this.form.getRawValue();
+    this.lastReceipt = `Receipt ${new Date().toISOString()} | Vehicle ${value.vehicleNumber} | Fuel ${value.fuelType} | Qty ${value.quantityLitres}L | Amount INR ${value.totalAmount}`;
+    localStorage.setItem('fuel.last.sale.receipt', this.lastReceipt);
     this.submitSuccess = 'Transaction recorded and receipt generated for printing.';
+
+    setTimeout(() => {
+      window.print();
+    }, 250);
   }
 
   private checkStock(quantity: number): void {

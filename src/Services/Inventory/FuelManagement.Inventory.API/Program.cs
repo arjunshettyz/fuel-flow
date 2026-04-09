@@ -2,6 +2,7 @@ using System.Text;
 using FuelManagement.Common.Extensions;
 using FuelManagement.Common.Messaging;
 using FuelManagement.Inventory.API.Data;
+using FuelManagement.Inventory.API.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
@@ -78,6 +79,33 @@ using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<InventoryDbContext>();
     db.Database.Migrate();
+
+    // Seed sample tanks for demo-friendly pricing flows
+    if (!db.Tanks.Any())
+    {
+        var now = DateTime.UtcNow;
+
+        // Station IDs are opaque GUIDs here (no FK), so we can seed safely.
+        var mgRoad = Guid.Parse("11111111-1111-1111-1111-111111111111");
+        var hsr = Guid.Parse("22222222-2222-2222-2222-222222222222");
+        var indiranagar = Guid.Parse("33333333-3333-3333-3333-333333333333");
+
+        db.Tanks.AddRange(
+            new FuelTank { StationId = mgRoad, FuelType = "Petrol", CapacityLitres = 20000, CurrentLevelLitres = 14500, PricePerLitre = 97.45m, LastUpdated = now, CreatedAt = now },
+            new FuelTank { StationId = mgRoad, FuelType = "Diesel", CapacityLitres = 25000, CurrentLevelLitres = 16200, PricePerLitre = 89.10m, LastUpdated = now, CreatedAt = now },
+            new FuelTank { StationId = mgRoad, FuelType = "CNG", CapacityLitres = 12000, CurrentLevelLitres = 8200, PricePerLitre = 78.25m, LastUpdated = now, CreatedAt = now },
+
+            new FuelTank { StationId = hsr, FuelType = "Petrol", CapacityLitres = 18000, CurrentLevelLitres = 12100, PricePerLitre = 97.60m, LastUpdated = now, CreatedAt = now },
+            new FuelTank { StationId = hsr, FuelType = "Diesel", CapacityLitres = 24000, CurrentLevelLitres = 14350, PricePerLitre = 89.35m, LastUpdated = now, CreatedAt = now },
+            new FuelTank { StationId = hsr, FuelType = "CNG", CapacityLitres = 12000, CurrentLevelLitres = 7600, PricePerLitre = 78.25m, LastUpdated = now, CreatedAt = now },
+
+            new FuelTank { StationId = indiranagar, FuelType = "Petrol", CapacityLitres = 19000, CurrentLevelLitres = 13020, PricePerLitre = 97.55m, LastUpdated = now, CreatedAt = now },
+            new FuelTank { StationId = indiranagar, FuelType = "Diesel", CapacityLitres = 23000, CurrentLevelLitres = 15010, PricePerLitre = 89.20m, LastUpdated = now, CreatedAt = now },
+            new FuelTank { StationId = indiranagar, FuelType = "CNG", CapacityLitres = 12000, CurrentLevelLitres = 7900, PricePerLitre = 78.40m, LastUpdated = now, CreatedAt = now }
+        );
+
+        db.SaveChanges();
+    }
 }
 
 app.UseSwagger();

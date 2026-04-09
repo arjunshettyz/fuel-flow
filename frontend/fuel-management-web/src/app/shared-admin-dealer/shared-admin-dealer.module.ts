@@ -4,6 +4,7 @@ import { TankGaugeComponent } from './components/tank-gauge/tank-gauge.component
 import { StationMapComponent } from './components/station-map/station-map.component';
 import { RecentTransactionsComponent } from './components/recent-transactions/recent-transactions.component';
 import { SharedModule } from '../shared/shared.module';
+import { CustomerOrdersManagerComponent } from './components/customer-orders-manager/customer-orders-manager.component';
 
 
 
@@ -11,7 +12,8 @@ import { SharedModule } from '../shared/shared.module';
   declarations: [
     TankGaugeComponent,
     StationMapComponent,
-    RecentTransactionsComponent
+    RecentTransactionsComponent,
+    CustomerOrdersManagerComponent,
   ],
   imports: [
     CommonModule,
@@ -22,6 +24,7 @@ import { SharedModule } from '../shared/shared.module';
     TankGaugeComponent,
     StationMapComponent,
     RecentTransactionsComponent,
+    CustomerOrdersManagerComponent,
   ],
 })
 export class SharedAdminDealerModule { }

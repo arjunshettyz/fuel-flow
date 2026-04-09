@@ -6,6 +6,7 @@ import { PricesComponent } from './pages/prices/prices.component';
 import { ReportsComponent } from './pages/reports/reports.component';
 import { StationsComponent } from './pages/stations/stations.component';
 import { UsersComponent } from './pages/users/users.component';
+import { CustomerOrdersManagerComponent } from '../shared-admin-dealer/components/customer-orders-manager/customer-orders-manager.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path: 'prices',
     component: PricesComponent,
+  },
+  {
+    path: 'customer-orders',
+    component: CustomerOrdersManagerComponent,
   },
 ];
 

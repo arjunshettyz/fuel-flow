@@ -23,6 +23,26 @@ export class AiAssistantService {
         'To track an order, open Orders in your dashboard and search by order ID or vendor name. You can also filter by status to see in-transit vs delivered fuel orders.',
     },
     {
+      match: ['fuelevent', 'rfp', 'procurement'],
+      reply:
+        'FuelEvent helps with procurement: open Platform on the landing page, select FuelEvent, then create an RFP, compare supplier offers, and award the best quote.',
+    },
+    {
+      match: ['fuelcontrol', 'inventory', 'pump'],
+      reply:
+        'FuelControl supports dealer operations: go to Dealer > Inventory to save dip readings and delivery entries, and Dealer > Pumps to cycle and persist pump status.',
+    },
+    {
+      match: ['fueliq', 'fraud', 'analytics', 'report'],
+      reply:
+        'FuelIQ and FuelIntel provide insights: use Admin > Fraud for anomaly review and Admin > Reports for station-level trends and downloadable summaries.',
+    },
+    {
+      match: ['pdf', 'receipt', 'download'],
+      reply:
+        'To download a receipt PDF, open Customer > Receipts or Customer > Transactions and click the PDF action for the receipt you want.',
+    },
+    {
       match: ['login', 'sign in', 'password', 'account', 'locked'],
       reply:
         'For login help, use the Forgot Password link on the sign-in page. If your account is locked after multiple attempts, wait a minute and try again or contact support.',
@@ -40,16 +60,28 @@ export class AiAssistantService {
     return this.http
       .post<AiAssistantResponse>(this.assistantUrl, { message })
       .pipe(
-        map((response) => response.reply ?? 'I was unable to generate a response.'),
+        map((response) => {
+          const reply = response.reply ?? this.getDefaultFallbackReply();
+          if (this.isTransientFailureReply(reply)) {
+            return this.getFallbackReply(message) ?? this.getDefaultFallbackReply();
+          }
+          return reply;
+        }),
         catchError((error: HttpErrorResponse) => {
           const fallback = this.getFallbackReply(message);
           if (fallback) {
             return of(fallback);
           }
-          const status = error.status ? ` (status ${error.status})` : '';
-          return of(`I had trouble reaching the AI service${status}. Please try again shortly.`);
+          return of(this.getDefaultFallbackReply());
         })
       );
+  }
+
+  private isTransientFailureReply(reply: string): boolean {
+    const normalized = reply.toLowerCase();
+    return normalized.includes('trouble reaching the ai service')
+      || normalized.includes('status 429')
+      || normalized.includes('rate limit');
   }
 
   private getFallbackReply(message: string): string | null {
@@ -58,5 +90,9 @@ export class AiAssistantService {
       entry.match.some((keyword) => normalized.includes(keyword))
     );
     return match?.reply ?? null;
+  }
+
+  private getDefaultFallbackReply(): string {
+    return 'I can still help right now. Tell me your goal and I will guide you step-by-step across Orders, Pricing, Receipts, Dealer Operations, or Admin actions.';
   }
 }

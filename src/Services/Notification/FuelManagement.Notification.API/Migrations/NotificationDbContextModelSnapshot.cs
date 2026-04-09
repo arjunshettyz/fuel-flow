@@ -67,6 +67,55 @@ namespace FuelManagement.Notification.API.Migrations
 
                     b.ToTable("NotificationLogs");
                 });
+
+            modelBuilder.Entity("FuelManagement.Notification.API.Models.PriceDropSubscription", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("FuelType")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("LastAlertSentAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<decimal?>("LastAlertedPricePerLitre")
+                        .HasPrecision(10, 2)
+                        .HasColumnType("decimal(10,2)");
+
+                    b.Property<decimal>("TargetPricePerLitre")
+                        .HasPrecision(10, 2)
+                        .HasColumnType("decimal(10,2)");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FuelType");
+
+                    b.HasIndex("UserId", "FuelType")
+                        .IsUnique();
+
+                    b.ToTable("PriceDropSubscriptions");
+                });
 #pragma warning restore 612, 618
         }
     }

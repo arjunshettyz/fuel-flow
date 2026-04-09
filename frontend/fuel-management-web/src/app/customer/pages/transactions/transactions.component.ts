@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { jsPDF } from 'jspdf';
 
 interface TransactionRow {
   date: string;
@@ -70,6 +71,77 @@ export class TransactionsComponent {
 
   prevPage(): void {
     this.page = Math.max(1, this.page - 1);
+  }
+
+  exportCsv(): void {
+    const headers = ['Date', 'Station', 'Fuel', 'Quantity', 'Amount', 'Payment', 'Receipt'];
+    const lines = this.filteredRows.map((r) => [r.date, r.station, r.fuelType, `${r.quantity}`, `${r.amount}`, r.paymentMethod, r.receipt]);
+    const csv = [headers, ...lines]
+      .map((row) => row.map((col) => `"${String(col).replace(/"/g, '""')}"`).join(','))
+      .join('\n');
+
+    this.downloadFile(new Blob([csv], { type: 'text/csv;charset=utf-8;' }), 'transactions.csv');
+  }
+
+  exportExcel(): void {
+    const rows = this.filteredRows
+      .map((r) => `<tr><td>${r.date}</td><td>${r.station}</td><td>${r.fuelType}</td><td>${r.quantity}</td><td>${r.amount}</td><td>${r.paymentMethod}</td><td>${r.receipt}</td></tr>`)
+      .join('');
+    const html = `<table><tr><th>Date</th><th>Station</th><th>Fuel</th><th>Quantity</th><th>Amount</th><th>Payment</th><th>Receipt</th></tr>${rows}</table>`;
+    this.downloadFile(new Blob([html], { type: 'application/vnd.ms-excel' }), 'transactions.xls');
+  }
+
+  downloadReceiptPdf(row: TransactionRow): void {
+    const doc = new jsPDF({ unit: 'pt', format: 'a4' });
+    doc.setFillColor(15, 47, 47);
+    doc.rect(0, 0, 595, 88, 'F');
+    doc.setTextColor(255, 255, 255);
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(22);
+    doc.text('FuelFlow Receipt', 42, 56);
+
+    doc.setTextColor(23, 29, 35);
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(11);
+    doc.text(`Receipt: ${row.receipt}`, 42, 120);
+    doc.text(`Date: ${row.date}`, 42, 140);
+
+    doc.roundedRect(42, 162, 511, 210, 12, 12);
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(14);
+    doc.text('Transaction Summary', 58, 188);
+
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(11);
+    const summary = [
+      ['Station', row.station],
+      ['Fuel Type', row.fuelType],
+      ['Quantity', `${row.quantity} L`],
+      ['Payment', row.paymentMethod],
+      ['Total', `INR ${row.amount.toLocaleString('en-IN')}`],
+    ];
+
+    let y = 218;
+    for (const [label, value] of summary) {
+      doc.setTextColor(87, 97, 108);
+      doc.text(label, 58, y);
+      doc.setTextColor(20, 27, 35);
+      doc.setFont('helvetica', 'bold');
+      doc.text(value, 220, y);
+      doc.setFont('helvetica', 'normal');
+      y += 30;
+    }
+
+    doc.save(`${row.receipt}.pdf`);
+  }
+
+  private downloadFile(blob: Blob, fileName: string): void {
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = fileName;
+    link.click();
+    URL.revokeObjectURL(url);
   }
 
 }

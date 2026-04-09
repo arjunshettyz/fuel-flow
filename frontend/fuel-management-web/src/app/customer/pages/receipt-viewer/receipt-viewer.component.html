@@ -11,8 +11,9 @@
 			<strong>{{ receiptNumber }}</strong>
 			<span>{{ result.station }}</span>
 			<span>{{ result.date }}</span>
+			<span>{{ result.fuelType }} · {{ result.litres }} L · {{ result.paymentMethod }}</span>
 			<span>{{ result.amount | currency: 'INR' : 'symbol' : '1.0-0' }}</span>
-			<button class="outline-btn" type="button">Download PDF</button>
+			<button class="outline-btn" type="button" (click)="downloadPdf()">Download PDF</button>
 		</div>
 	</article>
 </section>

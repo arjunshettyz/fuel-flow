@@ -23,6 +23,7 @@ export class FraudComponent {
   ];
 
   selectedAlert: FraudAlert | null = null;
+  bulkMessage = '';
 
   openDetails(alert: FraudAlert): void {
     this.selectedAlert = alert;
@@ -33,6 +34,23 @@ export class FraudComponent {
     if (this.selectedAlert?.alertId === alert.alertId) {
       this.selectedAlert = { ...alert };
     }
+  }
+
+  bulkDismissLowSeverity(): void {
+    let dismissed = 0;
+    for (const alert of this.alerts) {
+      if (alert.severity === 'Low' && alert.status !== 'Dismissed') {
+        alert.status = 'Dismissed';
+        dismissed += 1;
+      }
+    }
+
+    if (this.selectedAlert) {
+      const refreshed = this.alerts.find((a) => a.alertId === this.selectedAlert?.alertId);
+      this.selectedAlert = refreshed ? { ...refreshed } : this.selectedAlert;
+    }
+
+    this.bulkMessage = dismissed > 0 ? `Dismissed ${dismissed} low severity alerts.` : 'No low severity alerts to dismiss.';
   }
 
 }

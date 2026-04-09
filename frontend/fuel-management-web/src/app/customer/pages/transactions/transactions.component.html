@@ -2,8 +2,8 @@
 	<header class="page-header">
 		<h1>Transaction History</h1>
 		<div class="export-actions">
-			<button class="outline-btn" type="button">Export CSV</button>
-			<button class="outline-btn" type="button">Export Excel</button>
+			<button class="outline-btn" type="button" (click)="exportCsv()">Export CSV</button>
+			<button class="outline-btn" type="button" (click)="exportExcel()">Export Excel</button>
 		</div>
 	</header>
 
@@ -59,7 +59,7 @@
 					<td>{{ row.quantity }}</td>
 					<td>{{ row.amount | currency: 'INR' : 'symbol' : '1.0-0' }}</td>
 					<td>{{ row.paymentMethod }}</td>
-					<td><button class="text-btn" type="button">PDF</button></td>
+					<td><button class="text-btn" type="button" (click)="downloadReceiptPdf(row)">PDF</button></td>
 				</tr>
 			</tbody>
 			<tfoot>

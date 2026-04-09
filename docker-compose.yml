@@ -1,4 +1,23 @@
 services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: fuel_sqlserver
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: "Developer"
+      MSSQL_SA_PASSWORD: ${MSSQL_SA_PASSWORD:-FuelFlow_SA_Password!123}
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+    healthcheck:
+      test: ["CMD-SHELL", "bash -c 'echo > /dev/tcp/localhost/1433'"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+      start_period: 20s
+    restart: unless-stopped
+
   redis:
     image: redis:7-alpine
     container_name: fuel_redis
@@ -6,6 +25,11 @@ services:
       - "6379:6379"
     volumes:
       - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
     restart: unless-stopped
 
   rabbitmq:
@@ -19,8 +43,190 @@ services:
       - "15672:15672" # Management UI
     volumes:
       - rabbitmq_data:/var/lib/rabbitmq
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "-q", "ping"]
+      interval: 10s
+      timeout: 10s
+      retries: 30
+    restart: unless-stopped
+
+  identity:
+    build:
+      context: .
+      dockerfile: src/Services/Identity/FuelManagement.Identity.API/Dockerfile
+    container_name: fuel_identity
+    env_file:
+      - .env
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__IdentityDb: "Server=sqlserver,1433;Database=FuelIdentityDb;User Id=sa;Password=${MSSQL_SA_PASSWORD:-FuelFlow_SA_Password!123};TrustServerCertificate=True;Encrypt=False;"
+    ports:
+      - "5001:8080"
+    depends_on:
+      sqlserver:
+        condition: service_healthy
+    restart: unless-stopped
+
+  inventory:
+    build:
+      context: .
+      dockerfile: src/Services/Inventory/FuelManagement.Inventory.API/Dockerfile
+    container_name: fuel_inventory
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__InventoryDb: "Server=sqlserver,1433;Database=FuelInventoryDb;User Id=sa;Password=${MSSQL_SA_PASSWORD:-FuelFlow_SA_Password!123};TrustServerCertificate=True;Encrypt=False;"
+      ConnectionStrings__Redis: "redis:6379"
+      RabbitMQ__Host: "rabbitmq"
+      RabbitMQ__Port: "5672"
+    ports:
+      - "5002:8080"
+    depends_on:
+      sqlserver:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+    restart: unless-stopped
+
+  sales:
+    build:
+      context: .
+      dockerfile: src/Services/Sales/FuelManagement.Sales.API/Dockerfile
+    container_name: fuel_sales
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__SalesDb: "Server=sqlserver,1433;Database=FuelSalesDb;User Id=sa;Password=${MSSQL_SA_PASSWORD:-FuelFlow_SA_Password!123};TrustServerCertificate=True;Encrypt=False;"
+      RabbitMQ__Host: "rabbitmq"
+      RabbitMQ__Port: "5672"
+    ports:
+      - "5003:8080"
+    depends_on:
+      sqlserver:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+    restart: unless-stopped
+
+  reporting:
+    build:
+      context: .
+      dockerfile: src/Services/Reporting/FuelManagement.Reporting.API/Dockerfile
+    container_name: fuel_reporting
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__ReportingDb: "Server=sqlserver,1433;Database=FuelReportingDb;User Id=sa;Password=${MSSQL_SA_PASSWORD:-FuelFlow_SA_Password!123};TrustServerCertificate=True;Encrypt=False;"
+    ports:
+      - "5004:8080"
+    depends_on:
+      sqlserver:
+        condition: service_healthy
+    restart: unless-stopped
+
+  notification:
+    build:
+      context: .
+      dockerfile: src/Services/Notification/FuelManagement.Notification.API/Dockerfile
+    container_name: fuel_notification
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__NotificationDb: "Server=sqlserver,1433;Database=FuelNotificationDb;User Id=sa;Password=${MSSQL_SA_PASSWORD:-FuelFlow_SA_Password!123};TrustServerCertificate=True;Encrypt=False;"
+      RabbitMQ__Host: "rabbitmq"
+      RabbitMQ__Port: "5672"
+    ports:
+      - "5005:8080"
+    depends_on:
+      sqlserver:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+    restart: unless-stopped
+
+  fraud:
+    build:
+      context: .
+      dockerfile: src/Services/FraudDetection/FuelManagement.FraudDetection.API/Dockerfile
+    container_name: fuel_fraud
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__FraudDb: "Server=sqlserver,1433;Database=FuelFraudDb;User Id=sa;Password=${MSSQL_SA_PASSWORD:-FuelFlow_SA_Password!123};TrustServerCertificate=True;Encrypt=False;"
+      RabbitMQ__Host: "rabbitmq"
+      RabbitMQ__Port: "5672"
+    ports:
+      - "5006:8080"
+    depends_on:
+      sqlserver:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+    restart: unless-stopped
+
+  station:
+    build:
+      context: .
+      dockerfile: src/Services/Station/FuelManagement.Station.API/Dockerfile
+    container_name: fuel_station
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__StationDb: "Server=sqlserver,1433;Database=FuelStationDb;User Id=sa;Password=${MSSQL_SA_PASSWORD:-FuelFlow_SA_Password!123};TrustServerCertificate=True;Encrypt=False;"
+    ports:
+      - "5007:8080"
+    depends_on:
+      sqlserver:
+        condition: service_healthy
+    restart: unless-stopped
+
+  audit:
+    build:
+      context: .
+      dockerfile: src/Services/Audit/FuelManagement.Audit.API/Dockerfile
+    container_name: fuel_audit
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__AuditDb: "Server=sqlserver,1433;Database=FuelAuditDb;User Id=sa;Password=${MSSQL_SA_PASSWORD:-FuelFlow_SA_Password!123};TrustServerCertificate=True;Encrypt=False;"
+      RabbitMQ__Host: "rabbitmq"
+      RabbitMQ__Port: "5672"
+    ports:
+      - "5008:8080"
+    depends_on:
+      sqlserver:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+    restart: unless-stopped
+
+  gateway:
+    build:
+      context: .
+      dockerfile: src/Gateway/FuelManagement.Gateway/Dockerfile
+    container_name: fuel_gateway
+    env_file:
+      - .env
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      OCELOT_FILE: ocelot.docker.json
+    ports:
+      - "5000:8080"
+    depends_on:
+      identity:
+        condition: service_started
+      inventory:
+        condition: service_started
+      sales:
+        condition: service_started
+      reporting:
+        condition: service_started
+      notification:
+        condition: service_started
+      fraud:
+        condition: service_started
+      station:
+        condition: service_started
+      audit:
+        condition: service_started
     restart: unless-stopped
 
 volumes:
+  sqlserver_data:
   redis_data:
   rabbitmq_data:

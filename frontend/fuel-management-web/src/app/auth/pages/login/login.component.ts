@@ -36,6 +36,16 @@ export class LoginComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
+    if (this.auth.isAuthenticated()) {
+      const currentUser = this.auth.getCurrentUser();
+      if (currentUser) {
+        const returnUrl = this.route.snapshot.queryParamMap.get('returnUrl');
+        const safeReturnUrl = returnUrl && !returnUrl.startsWith('/auth') ? returnUrl : null;
+        this.router.navigateByUrl(safeReturnUrl || this.auth.routeForRole(currentUser.role), { replaceUrl: true });
+        return;
+      }
+    }
+
     const rememberedIdentifier = this.auth.getRememberedIdentifier();
     if (rememberedIdentifier) {
       this.form.patchValue({
@@ -115,7 +125,8 @@ export class LoginComponent implements OnInit, OnDestroy {
           return;
         }
         const returnUrl = this.route.snapshot.queryParamMap.get('returnUrl');
-        this.router.navigateByUrl(returnUrl || this.auth.routeForRole(response.user.role));
+        const safeReturnUrl = returnUrl && !returnUrl.startsWith('/auth') ? returnUrl : null;
+        this.router.navigateByUrl(safeReturnUrl || this.auth.routeForRole(response.user.role), { replaceUrl: true });
       });
   }
 
