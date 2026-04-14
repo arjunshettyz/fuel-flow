@@ -22,6 +22,9 @@
         <member name="M:FuelManagement.Inventory.API.Controllers.TanksController.UpdatePrice(System.Guid,FuelManagement.Inventory.API.Controllers.UpdatePriceRequest)">
             <summary>Update fuel price for a tank</summary>
         </member>
+        <member name="M:FuelManagement.Inventory.API.Controllers.TanksController.BulkUpdatePrice(FuelManagement.Inventory.API.Controllers.BulkUpdatePriceRequest)">
+            <summary>Bulk update price for all tanks of a fuel type (Admin only)</summary>
+        </member>
         <member name="M:FuelManagement.Inventory.API.Controllers.AlertsController.GetAll(System.Nullable{System.Boolean})">
             <summary>Get all active stock alerts</summary>
         </member>

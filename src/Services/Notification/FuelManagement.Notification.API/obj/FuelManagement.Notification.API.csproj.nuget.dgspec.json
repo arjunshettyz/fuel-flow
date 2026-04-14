@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Arjun\\Desktop\\sprintproj\\src\\Services\\Notification\\FuelManagement.Notification.API\\FuelManagement.Notification.API.csproj": {}
+    "C:\\Users\\arjun\\OneDrive\\Desktop\\project\\fuel-flow\\src\\Services\\Notification\\FuelManagement.Notification.API\\FuelManagement.Notification.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Arjun\\Desktop\\sprintproj\\src\\Services\\Notification\\FuelManagement.Notification.API\\FuelManagement.Notification.API.csproj": {
+    "C:\\Users\\arjun\\OneDrive\\Desktop\\project\\fuel-flow\\src\\Services\\Notification\\FuelManagement.Notification.API\\FuelManagement.Notification.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Arjun\\Desktop\\sprintproj\\src\\Services\\Notification\\FuelManagement.Notification.API\\FuelManagement.Notification.API.csproj",
+        "projectUniqueName": "C:\\Users\\arjun\\OneDrive\\Desktop\\project\\fuel-flow\\src\\Services\\Notification\\FuelManagement.Notification.API\\FuelManagement.Notification.API.csproj",
         "projectName": "FuelManagement.Notification.API",
-        "projectPath": "C:\\Users\\Arjun\\Desktop\\sprintproj\\src\\Services\\Notification\\FuelManagement.Notification.API\\FuelManagement.Notification.API.csproj",
-        "packagesPath": "C:\\Users\\Arjun\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Arjun\\Desktop\\sprintproj\\src\\Services\\Notification\\FuelManagement.Notification.API\\obj\\",
+        "projectPath": "C:\\Users\\arjun\\OneDrive\\Desktop\\project\\fuel-flow\\src\\Services\\Notification\\FuelManagement.Notification.API\\FuelManagement.Notification.API.csproj",
+        "packagesPath": "C:\\Users\\arjun\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\arjun\\OneDrive\\Desktop\\project\\fuel-flow\\src\\Services\\Notification\\FuelManagement.Notification.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Arjun\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\arjun\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -32,11 +32,11 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\Arjun\\Desktop\\sprintproj\\src\\Shared\\FuelManagement.Common\\FuelManagement.Common.csproj": {
-                "projectPath": "C:\\Users\\Arjun\\Desktop\\sprintproj\\src\\Shared\\FuelManagement.Common\\FuelManagement.Common.csproj"
+              "C:\\Users\\arjun\\OneDrive\\Desktop\\project\\fuel-flow\\src\\Shared\\FuelManagement.Common\\FuelManagement.Common.csproj": {
+                "projectPath": "C:\\Users\\arjun\\OneDrive\\Desktop\\project\\fuel-flow\\src\\Shared\\FuelManagement.Common\\FuelManagement.Common.csproj"
               },
-              "C:\\Users\\Arjun\\Desktop\\sprintproj\\src\\Shared\\FuelManagement.Contracts\\FuelManagement.Contracts.csproj": {
-                "projectPath": "C:\\Users\\Arjun\\Desktop\\sprintproj\\src\\Shared\\FuelManagement.Contracts\\FuelManagement.Contracts.csproj"
+              "C:\\Users\\arjun\\OneDrive\\Desktop\\project\\fuel-flow\\src\\Shared\\FuelManagement.Contracts\\FuelManagement.Contracts.csproj": {
+                "projectPath": "C:\\Users\\arjun\\OneDrive\\Desktop\\project\\fuel-flow\\src\\Shared\\FuelManagement.Contracts\\FuelManagement.Contracts.csproj"
               }
             }
           }
@@ -51,12 +51,16 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
         "net10.0": {
           "targetAlias": "net10.0",
           "dependencies": {
+            "MailKit": {
+              "target": "Package",
+              "version": "[4.15.1, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[9.0.3, )"
@@ -97,7 +101,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.101/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
             "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",
@@ -515,20 +519,20 @@
         }
       }
     },
-    "C:\\Users\\Arjun\\Desktop\\sprintproj\\src\\Shared\\FuelManagement.Common\\FuelManagement.Common.csproj": {
+    "C:\\Users\\arjun\\OneDrive\\Desktop\\project\\fuel-flow\\src\\Shared\\FuelManagement.Common\\FuelManagement.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Arjun\\Desktop\\sprintproj\\src\\Shared\\FuelManagement.Common\\FuelManagement.Common.csproj",
+        "projectUniqueName": "C:\\Users\\arjun\\OneDrive\\Desktop\\project\\fuel-flow\\src\\Shared\\FuelManagement.Common\\FuelManagement.Common.csproj",
         "projectName": "FuelManagement.Common",
-        "projectPath": "C:\\Users\\Arjun\\Desktop\\sprintproj\\src\\Shared\\FuelManagement.Common\\FuelManagement.Common.csproj",
-        "packagesPath": "C:\\Users\\Arjun\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Arjun\\Desktop\\sprintproj\\src\\Shared\\FuelManagement.Common\\obj\\",
+        "projectPath": "C:\\Users\\arjun\\OneDrive\\Desktop\\project\\fuel-flow\\src\\Shared\\FuelManagement.Common\\FuelManagement.Common.csproj",
+        "packagesPath": "C:\\Users\\arjun\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\arjun\\OneDrive\\Desktop\\project\\fuel-flow\\src\\Shared\\FuelManagement.Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Arjun\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\arjun\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -555,7 +559,7 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
         "net10.0": {
@@ -585,7 +589,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.101/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
             "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",
@@ -1003,20 +1007,20 @@
         }
       }
     },
-    "C:\\Users\\Arjun\\Desktop\\sprintproj\\src\\Shared\\FuelManagement.Contracts\\FuelManagement.Contracts.csproj": {
+    "C:\\Users\\arjun\\OneDrive\\Desktop\\project\\fuel-flow\\src\\Shared\\FuelManagement.Contracts\\FuelManagement.Contracts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Arjun\\Desktop\\sprintproj\\src\\Shared\\FuelManagement.Contracts\\FuelManagement.Contracts.csproj",
+        "projectUniqueName": "C:\\Users\\arjun\\OneDrive\\Desktop\\project\\fuel-flow\\src\\Shared\\FuelManagement.Contracts\\FuelManagement.Contracts.csproj",
         "projectName": "FuelManagement.Contracts",
-        "projectPath": "C:\\Users\\Arjun\\Desktop\\sprintproj\\src\\Shared\\FuelManagement.Contracts\\FuelManagement.Contracts.csproj",
-        "packagesPath": "C:\\Users\\Arjun\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Arjun\\Desktop\\sprintproj\\src\\Shared\\FuelManagement.Contracts\\obj\\",
+        "projectPath": "C:\\Users\\arjun\\OneDrive\\Desktop\\project\\fuel-flow\\src\\Shared\\FuelManagement.Contracts\\FuelManagement.Contracts.csproj",
+        "packagesPath": "C:\\Users\\arjun\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\arjun\\OneDrive\\Desktop\\project\\fuel-flow\\src\\Shared\\FuelManagement.Contracts\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Arjun\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\arjun\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -1043,7 +1047,7 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
         "net10.0": {
@@ -1064,7 +1068,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.101/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",

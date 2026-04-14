@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Arjun\\Desktop\\sprintproj\\src\\Gateway\\FuelManagement.Gateway\\FuelManagement.Gateway.csproj": {}
+    "C:\\Users\\arjun\\OneDrive\\Desktop\\project\\fuel-flow\\src\\Gateway\\FuelManagement.Gateway\\FuelManagement.Gateway.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Arjun\\Desktop\\sprintproj\\src\\Gateway\\FuelManagement.Gateway\\FuelManagement.Gateway.csproj": {
+    "C:\\Users\\arjun\\OneDrive\\Desktop\\project\\fuel-flow\\src\\Gateway\\FuelManagement.Gateway\\FuelManagement.Gateway.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Arjun\\Desktop\\sprintproj\\src\\Gateway\\FuelManagement.Gateway\\FuelManagement.Gateway.csproj",
+        "projectUniqueName": "C:\\Users\\arjun\\OneDrive\\Desktop\\project\\fuel-flow\\src\\Gateway\\FuelManagement.Gateway\\FuelManagement.Gateway.csproj",
         "projectName": "FuelManagement.Gateway",
-        "projectPath": "C:\\Users\\Arjun\\Desktop\\sprintproj\\src\\Gateway\\FuelManagement.Gateway\\FuelManagement.Gateway.csproj",
-        "packagesPath": "C:\\Users\\Arjun\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Arjun\\Desktop\\sprintproj\\src\\Gateway\\FuelManagement.Gateway\\obj\\",
+        "projectPath": "C:\\Users\\arjun\\OneDrive\\Desktop\\project\\fuel-flow\\src\\Gateway\\FuelManagement.Gateway\\FuelManagement.Gateway.csproj",
+        "packagesPath": "C:\\Users\\arjun\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\arjun\\OneDrive\\Desktop\\project\\fuel-flow\\src\\Gateway\\FuelManagement.Gateway\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Arjun\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\arjun\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -32,8 +32,8 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\Arjun\\Desktop\\sprintproj\\src\\Shared\\FuelManagement.Common\\FuelManagement.Common.csproj": {
-                "projectPath": "C:\\Users\\Arjun\\Desktop\\sprintproj\\src\\Shared\\FuelManagement.Common\\FuelManagement.Common.csproj"
+              "C:\\Users\\arjun\\OneDrive\\Desktop\\project\\fuel-flow\\src\\Shared\\FuelManagement.Common\\FuelManagement.Common.csproj": {
+                "projectPath": "C:\\Users\\arjun\\OneDrive\\Desktop\\project\\fuel-flow\\src\\Shared\\FuelManagement.Common\\FuelManagement.Common.csproj"
               }
             }
           }
@@ -48,7 +48,7 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
         "net10.0": {
@@ -86,7 +86,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.101/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
             "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",
@@ -504,20 +504,20 @@
         }
       }
     },
-    "C:\\Users\\Arjun\\Desktop\\sprintproj\\src\\Shared\\FuelManagement.Common\\FuelManagement.Common.csproj": {
+    "C:\\Users\\arjun\\OneDrive\\Desktop\\project\\fuel-flow\\src\\Shared\\FuelManagement.Common\\FuelManagement.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Arjun\\Desktop\\sprintproj\\src\\Shared\\FuelManagement.Common\\FuelManagement.Common.csproj",
+        "projectUniqueName": "C:\\Users\\arjun\\OneDrive\\Desktop\\project\\fuel-flow\\src\\Shared\\FuelManagement.Common\\FuelManagement.Common.csproj",
         "projectName": "FuelManagement.Common",
-        "projectPath": "C:\\Users\\Arjun\\Desktop\\sprintproj\\src\\Shared\\FuelManagement.Common\\FuelManagement.Common.csproj",
-        "packagesPath": "C:\\Users\\Arjun\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Arjun\\Desktop\\sprintproj\\src\\Shared\\FuelManagement.Common\\obj\\",
+        "projectPath": "C:\\Users\\arjun\\OneDrive\\Desktop\\project\\fuel-flow\\src\\Shared\\FuelManagement.Common\\FuelManagement.Common.csproj",
+        "packagesPath": "C:\\Users\\arjun\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\arjun\\OneDrive\\Desktop\\project\\fuel-flow\\src\\Shared\\FuelManagement.Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Arjun\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\arjun\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -544,7 +544,7 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
         "net10.0": {
@@ -574,7 +574,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.101/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
             "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",
