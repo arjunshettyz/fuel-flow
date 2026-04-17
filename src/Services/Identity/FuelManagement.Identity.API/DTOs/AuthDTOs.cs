@@ -16,6 +16,8 @@ public record SendEmailOtpRequest(string Email, string Purpose = "Register");
 
 public record VerifyEmailOtpRequest(string Email, string Otp, string Purpose = "Register");
 
+public record ForgotPasswordResetRequest(string Identifier, string Otp, string NewPassword);
+
 public record SendEmailOtpResponse(string Message, int ExpiresInSeconds, string? DevOtpCode = null);
 
 public record VerifyEmailOtpResponse(bool Verified, string Message);

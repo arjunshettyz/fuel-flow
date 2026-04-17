@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { jsPDF } from 'jspdf';
+import { downloadReceiptPdf } from '../../../shared/utils/receipt-pdf';
 
 interface TransactionRow {
   date: string;
@@ -92,47 +92,18 @@ export class TransactionsComponent {
   }
 
   downloadReceiptPdf(row: TransactionRow): void {
-    const doc = new jsPDF({ unit: 'pt', format: 'a4' });
-    doc.setFillColor(15, 47, 47);
-    doc.rect(0, 0, 595, 88, 'F');
-    doc.setTextColor(255, 255, 255);
-    doc.setFont('helvetica', 'bold');
-    doc.setFontSize(22);
-    doc.text('FuelFlow Receipt', 42, 56);
-
-    doc.setTextColor(23, 29, 35);
-    doc.setFont('helvetica', 'normal');
-    doc.setFontSize(11);
-    doc.text(`Receipt: ${row.receipt}`, 42, 120);
-    doc.text(`Date: ${row.date}`, 42, 140);
-
-    doc.roundedRect(42, 162, 511, 210, 12, 12);
-    doc.setFont('helvetica', 'bold');
-    doc.setFontSize(14);
-    doc.text('Transaction Summary', 58, 188);
-
-    doc.setFont('helvetica', 'normal');
-    doc.setFontSize(11);
-    const summary = [
-      ['Station', row.station],
-      ['Fuel Type', row.fuelType],
-      ['Quantity', `${row.quantity} L`],
-      ['Payment', row.paymentMethod],
-      ['Total', `INR ${row.amount.toLocaleString('en-IN')}`],
-    ];
-
-    let y = 218;
-    for (const [label, value] of summary) {
-      doc.setTextColor(87, 97, 108);
-      doc.text(label, 58, y);
-      doc.setTextColor(20, 27, 35);
-      doc.setFont('helvetica', 'bold');
-      doc.text(value, 220, y);
-      doc.setFont('helvetica', 'normal');
-      y += 30;
-    }
-
-    doc.save(`${row.receipt}.pdf`);
+    downloadReceiptPdf(
+      {
+        receiptNumber: row.receipt,
+        date: row.date,
+        station: row.station,
+        fuelType: row.fuelType,
+        litres: row.quantity,
+        paymentMethod: row.paymentMethod,
+        amountInInr: row.amount,
+      },
+      `${row.receipt}.pdf`
+    );
   }
 
   private downloadFile(blob: Blob, fileName: string): void {

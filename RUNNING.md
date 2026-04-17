@@ -148,3 +148,29 @@ docker compose logs -f gateway
 ```
 
 (Replace `gateway` with `identity`, `inventory`, etc.)
+
+---
+
+## Email (OTP + Price Drop Alerts)
+
+Both the **Identity** service (OTP emails) and the **Notification** service (Price Drop Alert confirmation + alerts) use the same `MailSettings` configuration.
+
+1) Copy `.env.example` → `.env`
+2) Set these values in `.env`:
+
+```env
+MAILSETTINGS__ENABLED=true
+MAILSETTINGS__SMTPHOST=<your_smtp_host>
+MAILSETTINGS__SMTPPORT=587
+MAILSETTINGS__USESSL=true
+MAILSETTINGS__USERNAME=<smtp_username>
+MAILSETTINGS__PASSWORD=<smtp_password>
+MAILSETTINGS__FROMEMAIL=<from_email>
+MAILSETTINGS__FROMNAME=Fuel Flow
+```
+
+Then rebuild/restart containers:
+
+```powershell
+docker compose up -d --build
+```

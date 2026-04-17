@@ -35,7 +35,7 @@ public class AuthController : ControllerBase
         
         string targetEmail = identifier;
 
-        if (purpose == MailOtpPurposes.Login)
+        if (purpose == MailOtpPurposes.Login || purpose == MailOtpPurposes.ForgotPassword)
         {
             var user = await _context.Users.FirstOrDefaultAsync(u => 
                 (u.Email == identifier || u.Phone == identifier) && u.IsActive, cancellationToken);
@@ -68,7 +68,7 @@ public class AuthController : ControllerBase
         var purpose = MailOtpPurposes.Normalize(req.Purpose);
         string targetEmail = identifier;
 
-        if (purpose == MailOtpPurposes.Login)
+        if (purpose == MailOtpPurposes.Login || purpose == MailOtpPurposes.ForgotPassword)
         {
             var user = await _context.Users.FirstOrDefaultAsync(u => 
                 (u.Email == identifier || u.Phone == identifier), cancellationToken);
@@ -84,6 +84,42 @@ public class AuthController : ControllerBase
             return BadRequest(new VerifyEmailOtpResponse(false, result.Message));
 
         return Ok(new VerifyEmailOtpResponse(true, result.Message));
+    }
+
+    /// <summary>Reset password using verified email OTP</summary>
+    [HttpPost("forgot-password/reset")]
+    [ProducesResponseType(200)]
+    [ProducesResponseType(400)]
+    public async Task<IActionResult> ResetForgotPassword([FromBody] ForgotPasswordResetRequest req, CancellationToken cancellationToken)
+    {
+        var identifier = (req.Identifier ?? string.Empty).Trim().ToLowerInvariant();
+        if (string.IsNullOrWhiteSpace(identifier))
+            return BadRequest(new { message = "Email or phone is required." });
+
+        if (string.IsNullOrWhiteSpace(req.NewPassword) || req.NewPassword.Length < 8)
+            return BadRequest(new { message = "New password must be at least 8 characters." });
+
+        var user = await _context.Users.FirstOrDefaultAsync(
+            u => (u.Email == identifier || u.Phone == identifier) && u.IsActive,
+            cancellationToken);
+
+        if (user == null)
+            return BadRequest(new { message = "Account not found." });
+
+        var verify = await _emailOtpService.VerifyOtpAsync(
+            user.Email,
+            req.Otp,
+            MailOtpPurposes.ForgotPassword,
+            consumeOnSuccess: true,
+            cancellationToken);
+
+        if (!verify.Verified)
+            return BadRequest(new { message = verify.Message });
+
+        user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(req.NewPassword);
+        await _context.SaveChangesAsync(cancellationToken);
+
+        return Ok(new { message = "Password reset successful." });
     }
 
     /// <summary>Register a new user</summary>

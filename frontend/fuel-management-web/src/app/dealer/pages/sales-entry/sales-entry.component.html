@@ -83,3 +83,54 @@
 		</form>
 	</article>
 </section>
+
+<section class="print-receipt" *ngIf="lastReceipt">
+	<header class="print-header">
+		<div class="print-brand">
+			<div class="print-mark"></div>
+			<div>
+				<div class="print-name">Fuel Flow</div>
+				<div class="print-tag">Sales receipt</div>
+			</div>
+		</div>
+
+		<div class="print-meta">
+			<div class="print-meta-row">
+				<span>Receipt</span>
+				<strong>{{ lastReceipt.receiptNumber }}</strong>
+			</div>
+			<div class="print-meta-row">
+				<span>Date</span>
+				<strong>{{ lastReceipt.issuedAt }}</strong>
+			</div>
+		</div>
+	</header>
+
+	<article class="print-card">
+		<h2>Transaction Summary</h2>
+		<div class="print-grid">
+			<div class="label">Pump</div>
+			<div class="value">{{ lastReceipt.pump }}</div>
+
+			<div class="label">Fuel Type</div>
+			<div class="value">{{ lastReceipt.fuelType }}</div>
+
+			<div class="label">Quantity</div>
+			<div class="value">{{ lastReceipt.quantityLitres }} L</div>
+
+			<div class="label">Vehicle</div>
+			<div class="value">{{ lastReceipt.vehicleNumber }}</div>
+
+			<div class="label">Payment</div>
+			<div class="value">{{ lastReceipt.paymentMethod }}</div>
+
+			<div class="label">Total</div>
+			<div class="value strong">₹{{ lastReceipt.totalAmountInInr | number: '1.0-2' }}</div>
+		</div>
+	</article>
+
+	<footer class="print-footer">
+		<strong>Thank you for choosing Fuel Flow.</strong>
+		<div>For support, contact support@fuelflow.me</div>
+	</footer>
+</section>

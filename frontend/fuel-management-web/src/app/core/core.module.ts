@@ -4,6 +4,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { GlobalErrorHandler } from './errors/global-error-handler';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
+import { SuccessNoteInterceptor } from './interceptors/success-note.interceptor';
 
 
 
@@ -22,6 +23,11 @@ import { ErrorInterceptor } from './interceptors/error.interceptor';
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ErrorInterceptor,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: SuccessNoteInterceptor,
       multi: true,
     },
     {

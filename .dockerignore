@@ -1,0 +1,27 @@
+# Reduce Docker build context size and improve build performance.
+# (docker-compose.yml uses build context "." for every service)
+
+# Build outputs
+**/bin/
+**/obj/
+
+# Node
+**/node_modules/
+**/dist/
+**/.angular/
+
+# Local tooling
+**/.vs/
+**/.vscode/
+**/.idea/
+
+# Repo artifacts / publishes
+artifacts/
+
+# Test results / coverage
+**/TestResults/
+**/coverage/
+**/coverage-report/
+
+# Logs
+**/*.log

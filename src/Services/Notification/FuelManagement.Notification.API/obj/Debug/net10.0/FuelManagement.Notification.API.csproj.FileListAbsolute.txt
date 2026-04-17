@@ -331,3 +331,5 @@ C:\Users\arjun\OneDrive\Desktop\project\fuel-flow\src\Services\Notification\Fuel
 C:\Users\arjun\OneDrive\Desktop\project\fuel-flow\src\Services\Notification\FuelManagement.Notification.API\obj\Debug\net10.0\FuelMana.BF3AC0B7.Up2Date
 C:\Users\arjun\OneDrive\Desktop\project\fuel-flow\src\Services\Notification\FuelManagement.Notification.API\obj\Debug\net10.0\FuelManagement.Notification.API.genruntimeconfig.cache
 C:\Users\arjun\OneDrive\Desktop\project\fuel-flow\src\Services\Notification\FuelManagement.Notification.API\obj\Debug\net10.0\ref\FuelManagement.Notification.API.dll
+C:\Users\arjun\OneDrive\Desktop\project\fuel-flow\src\Services\Notification\FuelManagement.Notification.API\bin\Debug\net10.0\DotNetEnv.dll
+C:\Users\arjun\OneDrive\Desktop\project\fuel-flow\src\Services\Notification\FuelManagement.Notification.API\bin\Debug\net10.0\Sprache.dll

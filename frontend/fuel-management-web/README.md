@@ -14,6 +14,31 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
+## Freepik icons (optional)
+
+Some UI areas (e.g., the landing page benefit cards) use SVG icons stored under `src/assets/icons/benefits/`.
+
+If you want to refresh those icons from Freepik via their Icons API, run:
+
+PowerShell:
+
+```powershell
+$env:FREEPIK_API_KEY = "<your_api_key>"
+npm run fetch:freepik-icons
+```
+
+CMD:
+
+```bat
+set FREEPIK_API_KEY=<your_api_key>
+npm run fetch:freepik-icons
+```
+
+Notes:
+
+- Freepik API keys are private (server-to-server). Do **not** put the key in Angular `environment.ts`.
+- The script overwrites the local SVG files in `src/assets/icons/benefits/`.
+
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).

@@ -358,3 +358,5 @@ C:\Users\arjun\OneDrive\Desktop\project\fuel-flow\src\Services\Reporting\FuelMan
 C:\Users\arjun\OneDrive\Desktop\project\fuel-flow\src\Services\Reporting\FuelManagement.Reporting.API\obj\Debug\net10.0\FuelManagement.Reporting.API.pdb
 C:\Users\arjun\OneDrive\Desktop\project\fuel-flow\src\Services\Reporting\FuelManagement.Reporting.API\obj\Debug\net10.0\FuelManagement.Reporting.API.genruntimeconfig.cache
 C:\Users\arjun\OneDrive\Desktop\project\fuel-flow\src\Services\Reporting\FuelManagement.Reporting.API\obj\Debug\net10.0\ref\FuelManagement.Reporting.API.dll
+C:\Users\arjun\OneDrive\Desktop\project\fuel-flow\src\Services\Reporting\FuelManagement.Reporting.API\bin\Debug\net10.0\BouncyCastle.Cryptography.dll
+C:\Users\arjun\OneDrive\Desktop\project\fuel-flow\src\Services\Reporting\FuelManagement.Reporting.API\bin\Debug\net10.0\itext.bouncy-castle-adapter.dll

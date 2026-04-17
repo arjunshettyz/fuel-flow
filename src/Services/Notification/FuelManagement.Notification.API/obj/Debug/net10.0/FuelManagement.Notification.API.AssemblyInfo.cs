@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FuelManagement.Notification.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8b9520a5485987131cb382db6bb2399ba70ca1a8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7b403f0637de6b2bd36d147049a045dd40e52c05")]
 [assembly: System.Reflection.AssemblyProductAttribute("FuelManagement.Notification.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FuelManagement.Notification.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

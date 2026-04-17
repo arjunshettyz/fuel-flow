@@ -10,6 +10,9 @@
         <member name="M:FuelManagement.Inventory.API.Controllers.TanksController.List(System.Nullable{System.Guid},System.String)">
             <summary>Compatibility alias for list-style clients.</summary>
         </member>
+        <member name="M:FuelManagement.Inventory.API.Controllers.TanksController.GetCurrentPrices">
+            <summary>Get current fuel prices grouped by fuel type</summary>
+        </member>
         <member name="M:FuelManagement.Inventory.API.Controllers.TanksController.Get(System.Guid)">
             <summary>Get a specific fuel tank by ID</summary>
         </member>

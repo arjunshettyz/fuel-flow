@@ -90,6 +90,38 @@ public static class EmailTemplates
         return $"Subscription confirmed\n\nFuel: {fuelType}\nTarget: {targetPricePerLitre:0.00} INR / litre\nSubscribed at: {whenLocal}\n\nYou will get an email when the price falls below your target.";
     }
 
+    public static string RenderContactFormSubmission(
+        string name,
+        string email,
+        string phone,
+        string message,
+        DateTime submittedAtUtc)
+    {
+        var safeName = Html(name);
+        var safeEmail = Html(email);
+        var safePhone = string.IsNullOrWhiteSpace(phone) ? "-" : Html(phone);
+        var safeMessage = Html(message);
+        var submittedAtLocal = submittedAtUtc.ToLocalTime().ToString("dd MMM yyyy, HH:mm");
+
+        return Wrap($@"
+            <h1 style=""margin:0;font-size:22px;line-height:1.25;color:{Ink};"">New contact message</h1>
+            <p style=""margin:10px 0 0;color:{Muted};font-size:14px;"">You received a message from the Fuel Flow website contact form.</p>
+
+            <div style=""margin:18px 0 0;border:1px solid {Border};border-radius:16px;background:{Paper};padding:16px;"">
+              <div style=""font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:{Muted};font-weight:700;"">Sender</div>
+              <div style=""margin-top:8px;font-size:16px;font-weight:900;color:{Ink};"">{safeName}</div>
+              <div style=""margin-top:6px;color:{Muted};font-size:13px;"">{safeEmail}</div>
+              <div style=""margin-top:6px;color:{Muted};font-size:13px;"">Phone: {safePhone}</div>
+              <div style=""margin-top:6px;color:{Muted};font-size:13px;"">Submitted: {Html(submittedAtLocal)}</div>
+            </div>
+
+            <div style=""margin:18px 0 0;border:1px solid {Border};border-radius:16px;background:{Paper};padding:16px;"">
+              <div style=""font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:{Muted};font-weight:700;"">Message</div>
+              <div style=""margin-top:10px;color:{Ink};font-size:14px;line-height:1.6;white-space:pre-wrap;"">{safeMessage}</div>
+            </div>
+        ");
+    }
+
     public static string RenderPlainTextPriceDropAlert(
         string fuelType,
         decimal targetPricePerLitre,

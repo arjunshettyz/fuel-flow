@@ -18,7 +18,7 @@
 
     <div class="nav-right">
       <div class="nav-actions" *ngIf="!user">
-        <a routerLink="/" fragment="cta" class="outline-btn btn-sm">Contact</a>
+        <a routerLink="/" fragment="contact" class="outline-btn btn-sm">Contact</a>
         <a routerLink="/auth/login" class="primary-btn btn-sm">Log In</a>
       </div>
       <div class="user-menu-wrap" *ngIf="user">
@@ -73,7 +73,7 @@
       </li>
     </ul>
     <div class="mobile-actions" *ngIf="!user">
-      <a routerLink="/" fragment="cta" class="outline-btn btn-sm" (click)="closeMobile()">Contact</a>
+      <a routerLink="/" fragment="contact" class="outline-btn btn-sm" (click)="closeMobile()">Contact</a>
       <a routerLink="/auth/login" class="primary-btn btn-sm" (click)="closeMobile()">Log In</a>
     </div>
     <button *ngIf="user" class="outline-btn btn-sm danger" (click)="logout()" type="button">Sign Out</button>

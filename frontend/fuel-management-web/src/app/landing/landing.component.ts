@@ -1,5 +1,8 @@
-import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import { environment } from '../../environments/environment';
 
 interface LandingStat {
   readonly value: string;
@@ -29,6 +32,12 @@ interface LandingTestimonial {
 interface LandingFaq {
   readonly question: string;
   readonly answer: string;
+}
+
+interface LandingBenefit {
+  readonly icon: 'coverage' | 'search' | 'emergency' | 'pricing';
+  readonly title: string;
+  readonly description: string;
 }
 
 interface SolutionCard {
@@ -67,7 +76,124 @@ interface PlatformModuleInfo {
   styleUrl: './landing.component.scss'
 })
 export class LandingComponent implements OnInit, OnDestroy {
-  constructor(@Inject(DOCUMENT) private readonly document: Document) {}
+  contactSubmitting = false;
+  contactSuccess = false;
+  contactError = '';
+
+  readonly contactForm = this.fb.nonNullable.group({
+    name: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(100)]],
+    email: ['', [Validators.required, Validators.email, Validators.maxLength(254)]],
+    phone: ['', [Validators.maxLength(40)]],
+    message: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(4000)]],
+  });
+
+  constructor(
+    @Inject(DOCUMENT) private readonly document: Document,
+    private readonly fb: FormBuilder,
+    private readonly http: HttpClient
+  ) {}
+
+  submitContact(): void {
+    this.contactSuccess = false;
+    this.contactError = '';
+
+    if (this.contactSubmitting) {
+      return;
+    }
+
+    if (this.contactForm.invalid) {
+      this.contactForm.markAllAsTouched();
+      return;
+    }
+
+    this.contactSubmitting = true;
+
+    const payload = {
+      name: this.contactForm.controls.name.value.trim(),
+      email: this.contactForm.controls.email.value.trim(),
+      phone: this.contactForm.controls.phone.value.trim(),
+      message: this.contactForm.controls.message.value.trim(),
+    };
+
+    this.http.post(`${environment.apiBaseUrl}/gateway/public/contact`, payload).subscribe({
+      next: () => {
+        this.contactSubmitting = false;
+        this.contactSuccess = true;
+        this.contactForm.reset({ name: '', email: '', phone: '', message: '' });
+      },
+      error: (err: HttpErrorResponse) => {
+        this.contactSubmitting = false;
+        this.contactError = this.resolveContactError(err);
+      },
+    });
+  }
+
+  private resolveContactError(err: HttpErrorResponse): string {
+    if (err.status === 0) {
+      return `Server is not reachable (${environment.apiBaseUrl}). Please start the backend and try again.`;
+    }
+
+    if (err.status === 429) {
+      return 'Too many requests. Please wait a minute and try again.';
+    }
+
+    const message = this.extractErrorMessage(err.error);
+    if (message) {
+      return message;
+    }
+
+    if (err.status === 503) {
+      return 'Service is temporarily unavailable. Please try again in a moment.';
+    }
+
+    if (err.status >= 500) {
+      return `Server error (${err.status}). Please try again later.`;
+    }
+
+    if (err.status >= 400) {
+      return `Request failed (${err.status}). Please try again.`;
+    }
+
+    return 'Could not send your message. Please try again.';
+  }
+
+  private extractErrorMessage(error: unknown): string {
+    if (typeof error === 'string') {
+      const text = error.trim();
+      return text && !text.toLowerCase().includes('<html') ? text : '';
+    }
+
+    if (!error || typeof error !== 'object') {
+      return '';
+    }
+
+    const obj = error as Record<string, unknown>;
+
+    if (typeof obj['message'] === 'string' && obj['message'].trim()) {
+      return obj['message'].trim();
+    }
+
+    const errors = obj['errors'] ?? obj['Errors'];
+    if (Array.isArray(errors) && errors.length > 0) {
+      const first = errors[0] as unknown;
+      if (typeof first === 'string' && first.trim()) {
+        return first.trim();
+      }
+
+      if (first && typeof first === 'object') {
+        const firstObj = first as Record<string, unknown>;
+        if (typeof firstObj['message'] === 'string' && firstObj['message'].trim()) {
+          return firstObj['message'].trim();
+        }
+
+        if (typeof firstObj['Message'] === 'string' && firstObj['Message'].trim()) {
+          return firstObj['Message'].trim();
+        }
+      }
+    }
+
+    return '';
+  }
 
   ngOnInit(): void {
     this.document.body.classList.add('landing-theme');
@@ -190,20 +316,24 @@ export class LandingComponent implements OnInit, OnDestroy {
     'Award contracts with audit-ready documentation.',
   ];
 
-  readonly benefits: { title: string; description: string }[] = [
+  readonly benefits: LandingBenefit[] = [
     {
+      icon: 'coverage',
       title: 'Nationwide coverage',
       description: 'Tap into a vetted network of vendors and on-demand delivery coverage.',
     },
     {
+      icon: 'search',
       title: 'No more searching',
       description: 'One platform manages procurement, fulfillment, and billing in one flow.',
     },
     {
+      icon: 'emergency',
       title: '24/7 emergency fueling',
       description: 'Guaranteed SLA-backed response times when fuel cannot wait.',
     },
     {
+      icon: 'pricing',
       title: 'Transparent pricing',
       description: 'Know exactly what you are paying with instant cost visibility.',
     },

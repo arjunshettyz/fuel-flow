@@ -1,6 +1,19 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 
+interface SaleReceipt {
+  readonly receiptNumber: string;
+  readonly issuedAt: string;
+  readonly pump: string;
+  readonly fuelType: string;
+  readonly quantityLitres: number;
+  readonly totalAmountInInr: number;
+  readonly vehicleNumber: string;
+  readonly paymentMethod: string;
+  readonly reference?: string;
+  readonly customerPhone?: string;
+}
+
 @Component({
   selector: 'app-sales-entry',
   templateUrl: './sales-entry.component.html',
@@ -21,7 +34,7 @@ export class SalesEntryComponent {
   stockWarning = '';
   customerLookupName = '';
   submitSuccess = '';
-  lastReceipt: string | null = null;
+  lastReceipt: SaleReceipt | null = null;
 
   readonly form = this.fb.group({
     pumpId: ['pump-01', [Validators.required]],
@@ -94,8 +107,23 @@ export class SalesEntryComponent {
     }
 
     const value = this.form.getRawValue();
-    this.lastReceipt = `Receipt ${new Date().toISOString()} | Vehicle ${value.vehicleNumber} | Fuel ${value.fuelType} | Qty ${value.quantityLitres}L | Amount INR ${value.totalAmount}`;
-    localStorage.setItem('fuel.last.sale.receipt', this.lastReceipt);
+    const now = new Date();
+    const matchedPump = this.pumps.find((pump) => pump.id === value.pumpId);
+    const receipt: SaleReceipt = {
+      receiptNumber: `REC-${now.getTime()}`,
+      issuedAt: now.toLocaleString(),
+      pump: matchedPump?.name ?? value.pumpId ?? 'Pump',
+      fuelType: value.fuelType ?? '',
+      quantityLitres: Number(value.quantityLitres ?? 0),
+      totalAmountInInr: Number(value.totalAmount ?? 0),
+      vehicleNumber: value.vehicleNumber ?? '',
+      paymentMethod: value.paymentMethod ?? '',
+      reference: value.reference ?? undefined,
+      customerPhone: value.customerPhone ?? undefined,
+    };
+
+    this.lastReceipt = receipt;
+    localStorage.setItem('fuel.last.sale.receipt', JSON.stringify(receipt));
     this.submitSuccess = 'Transaction recorded and receipt generated for printing.';
 
     setTimeout(() => {

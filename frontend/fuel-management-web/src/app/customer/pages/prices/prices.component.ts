@@ -1,12 +1,8 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, DestroyRef, OnInit } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { environment } from '../../../../environments/environment';
-
-interface FuelPriceSnapshotDto {
-  fuelType: string;
-  pricePerLitre: number;
-  updatedAt: string;
-}
+import { FuelPricesService } from '../../../core/services/fuel-prices.service';
 
 interface FuelPriceRow {
   fuelType: string;
@@ -49,10 +45,29 @@ export class PricesComponent implements OnInit {
   subscribeMessage = '';
   subscribeError = '';
 
-  constructor(private readonly http: HttpClient) {}
+  constructor(
+    private readonly http: HttpClient,
+    private readonly fuelPrices: FuelPricesService,
+    private readonly destroyRef: DestroyRef,
+  ) {}
 
   ngOnInit(): void {
-    this.loadCurrentPrices();
+    this.fuelPrices.ensureLoaded();
+
+    this.fuelPrices.prices$
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe((items) => {
+        if (!Array.isArray(items) || items.length === 0) {
+          return;
+        }
+
+        this.rows = items.map((x) => ({
+          fuelType: x.fuelType,
+          current: x.pricePerLitre,
+          deltaFromYesterday: 0,
+          lastUpdated: x.updatedAt ? new Date(x.updatedAt).toLocaleString() : '',
+        }));
+      });
   }
 
   subscribePriceDropAlert(): void {
@@ -80,28 +95,6 @@ export class PricesComponent implements OnInit {
           const message = error instanceof Error ? error.message : 'Subscription failed.';
           this.subscribeError = message;
           this.isSubscribing = false;
-        },
-      });
-  }
-
-  private loadCurrentPrices(): void {
-    this.http
-      .get<FuelPriceSnapshotDto[]>(`${environment.apiBaseUrl}/gateway/inventory/tanks/prices`)
-      .subscribe({
-        next: (items) => {
-          if (!Array.isArray(items) || items.length === 0) {
-            return;
-          }
-
-          this.rows = items.map((x) => ({
-            fuelType: x.fuelType,
-            current: x.pricePerLitre,
-            deltaFromYesterday: 0,
-            lastUpdated: x.updatedAt ? new Date(x.updatedAt).toLocaleString() : '',
-          }));
-        },
-        error: () => {
-          // Keep demo fallback prices if API is unreachable.
         },
       });
   }

@@ -10,6 +10,9 @@
         <member name="M:FuelManagement.Identity.API.Controllers.AuthController.VerifyEmailOtp(FuelManagement.Identity.API.DTOs.VerifyEmailOtpRequest,System.Threading.CancellationToken)">
             <summary>Verify OTP sent to email</summary>
         </member>
+        <member name="M:FuelManagement.Identity.API.Controllers.AuthController.ResetForgotPassword(FuelManagement.Identity.API.DTOs.ForgotPasswordResetRequest,System.Threading.CancellationToken)">
+            <summary>Reset password using verified email OTP</summary>
+        </member>
         <member name="M:FuelManagement.Identity.API.Controllers.AuthController.Register(FuelManagement.Identity.API.DTOs.RegisterRequest)">
             <summary>Register a new user</summary>
         </member>

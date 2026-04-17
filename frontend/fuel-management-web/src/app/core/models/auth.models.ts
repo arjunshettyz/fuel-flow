@@ -23,7 +23,7 @@ export interface LoginPayload {
   password: string;
 }
 
-export type OtpPurpose = 'Register' | 'Login';
+export type OtpPurpose = 'Register' | 'Login' | 'ForgotPassword';
 
 export interface LoginWithOtpPayload {
   email: string;

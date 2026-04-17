@@ -73,6 +73,14 @@ export class AuthService {
     });
   }
 
+  resetForgotPassword(identifier: string, otp: string, newPassword: string): Observable<{ message: string }> {
+    return this.http.post<{ message: string }>(`${this.baseUrl}/gateway/auth/forgot-password/reset`, {
+      identifier: identifier.trim().toLowerCase(),
+      otp: otp.trim(),
+      newPassword,
+    });
+  }
+
   logout(): Observable<void> {
     return this.http.post(`${this.baseUrl}/gateway/auth/logout`, {}).pipe(
       map(() => void 0),

@@ -10,6 +10,8 @@ using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 
+DotNetEnv.Env.TraversePath().Load();
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddSingleton<IRabbitMqService, RabbitMqService>();
 builder.Services.AddHostedService<NotificationBackgroundService>();
@@ -44,7 +46,16 @@ builder.Services.AddSwaggerGen(c =>
 });
 var app = builder.Build();
 app.UseFuelManagementApiDefaults();
-using (var scope = app.Services.CreateScope()) { scope.ServiceProvider.GetRequiredService<NotificationDbContext>().Database.Migrate(); }
+try
+{
+    using var scope = app.Services.CreateScope();
+    scope.ServiceProvider.GetRequiredService<NotificationDbContext>().Database.Migrate();
+}
+catch (Exception ex)
+{
+    // Keep the service running for endpoints that don't depend on the DB (e.g. public contact form)
+    app.Logger.LogError(ex, "Failed to migrate Notification database. Continuing without DB migrations.");
+}
 app.UseSwagger();
 app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "Notification Service v1"); c.DocumentTitle = "Notification Service — Fuel Management"; });
 app.UseAuthentication();

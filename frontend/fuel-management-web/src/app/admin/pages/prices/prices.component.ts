@@ -1,12 +1,8 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, DestroyRef, OnInit } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { environment } from '../../../../environments/environment';
-
-interface FuelPriceSnapshotDto {
-  fuelType: string;
-  pricePerLitre: number;
-  updatedAt: string;
-}
+import { FuelPricesService } from '../../../core/services/fuel-prices.service';
 
 interface PriceHistoryRow {
   fuelType: string;
@@ -43,10 +39,31 @@ export class PricesComponent implements OnInit {
   saveMessage = '';
   saveError = '';
 
-  constructor(private readonly http: HttpClient) {}
+  constructor(
+    private readonly http: HttpClient,
+    private readonly fuelPrices: FuelPricesService,
+    private readonly destroyRef: DestroyRef,
+  ) {}
 
   ngOnInit(): void {
-    this.loadCurrentPrices();
+    this.fuelPrices.ensureLoaded();
+
+    this.fuelPrices.prices$
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe((items) => {
+        if (!Array.isArray(items) || items.length === 0) {
+          return;
+        }
+
+        this.currentPrices = items.map((x) => {
+          const when = x.updatedAt ? new Date(x.updatedAt).toLocaleString() : '';
+          return {
+            fuelType: x.fuelType,
+            price: x.pricePerLitre,
+            effectiveDate: when,
+          };
+        });
+      });
   }
 
   scrollToUpdateForm(): void {
@@ -70,6 +87,9 @@ export class PricesComponent implements OnInit {
       return;
     }
 
+    const currentRow = this.currentPrices.find((x) => x.fuelType === fuelType);
+    const oldPrice = currentRow?.price ?? price;
+
     this.isSaving = true;
     this.http
       .put<{ updated: number; fuelType: string; pricePerLitre: number; updatedAt: string }>(
@@ -84,15 +104,7 @@ export class PricesComponent implements OnInit {
           const updatedAt = resp.updatedAt ? new Date(resp.updatedAt) : new Date();
           const when = updatedAt.toLocaleString();
 
-          const currentRow = this.currentPrices.find((x) => x.fuelType === resp.fuelType);
-          const oldPrice = currentRow?.price ?? resp.pricePerLitre;
-
-          if (currentRow) {
-            currentRow.price = resp.pricePerLitre;
-            currentRow.effectiveDate = when;
-          } else {
-            this.currentPrices.unshift({ fuelType: resp.fuelType, price: resp.pricePerLitre, effectiveDate: when });
-          }
+          this.fuelPrices.applyServerUpdate(resp);
 
           this.history.unshift({
             fuelType: resp.fuelType,
@@ -108,30 +120,6 @@ export class PricesComponent implements OnInit {
         error: (error: unknown) => {
           this.saveError = error instanceof Error ? error.message : 'Failed to update price.';
           this.isSaving = false;
-        },
-      });
-  }
-
-  private loadCurrentPrices(): void {
-    this.http
-      .get<FuelPriceSnapshotDto[]>(`${environment.apiBaseUrl}/gateway/inventory/tanks/prices`)
-      .subscribe({
-        next: (items) => {
-          if (!Array.isArray(items) || items.length === 0) {
-            return;
-          }
-
-          this.currentPrices = items.map((x) => {
-            const when = x.updatedAt ? new Date(x.updatedAt).toLocaleString() : '';
-            return {
-              fuelType: x.fuelType,
-              price: x.pricePerLitre,
-              effectiveDate: when,
-            };
-          });
-        },
-        error: () => {
-          // Keep demo fallback prices if API is unreachable.
         },
       });
   }

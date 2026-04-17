@@ -17,9 +17,30 @@ namespace FuelManagement.Inventory.API.Controllers;
 [Produces("application/json")]
 public class TanksController : ControllerBase
 {
+    private const string PricesCacheKey = "tanks:prices";
+
     private readonly InventoryDbContext _context;
     private readonly IDatabase? _redis;
     private readonly IRabbitMqService _bus;
+
+    private static string TanksCacheKey(Guid? stationId, string? fuelType) => $"tanks:{stationId}:{fuelType}";
+
+    private Task InvalidateTankCachesAsync(Guid stationId, string fuelType)
+    {
+        if (_redis == null)
+        {
+            return Task.CompletedTask;
+        }
+
+        return _redis.KeyDeleteAsync(new RedisKey[]
+        {
+            TanksCacheKey(stationId, null),
+            TanksCacheKey(stationId, fuelType),
+            TanksCacheKey(null, fuelType),
+            TanksCacheKey(null, null),
+            PricesCacheKey,
+        });
+    }
 
     public TanksController(InventoryDbContext context, IConnectionMultiplexer? redis = null, IRabbitMqService bus = null!)
     {
@@ -33,7 +54,7 @@ public class TanksController : ControllerBase
     [ProducesResponseType(typeof(List<FuelTank>), 200)]
     public async Task<IActionResult> GetAll([FromQuery] Guid? stationId, [FromQuery] string? fuelType)
     {
-        var cacheKey = $"tanks:{stationId}:{fuelType}";
+        var cacheKey = TanksCacheKey(stationId, fuelType);
         if (_redis != null)
         {
             var cached = await _redis.StringGetAsync(cacheKey);
@@ -64,6 +85,23 @@ public class TanksController : ControllerBase
     [ProducesResponseType(200)]
     public async Task<IActionResult> GetCurrentPrices()
     {
+        const string cacheKey = PricesCacheKey;
+        if (_redis != null)
+        {
+            var cached = await _redis.StringGetAsync(cacheKey);
+            if (cached.HasValue)
+            {
+                try
+                {
+                    return Ok(JsonSerializer.Deserialize<object>((string)cached!));
+                }
+                catch
+                {
+                    // Ignore bad cache entries.
+                }
+            }
+        }
+
         var tanks = await _context.Tanks
             .AsNoTracking()
             .Where(t => t.IsActive)
@@ -83,6 +121,9 @@ public class TanksController : ControllerBase
             })
             .OrderBy(x => x.fuelType)
             .ToList();
+
+        if (_redis != null)
+            await _redis.StringSetAsync(cacheKey, JsonSerializer.Serialize(items), TimeSpan.FromMinutes(5));
 
         return Ok(items);
     }
@@ -113,6 +154,7 @@ public class TanksController : ControllerBase
         };
         _context.Tanks.Add(tank);
         await _context.SaveChangesAsync();
+        await InvalidateTankCachesAsync(tank.StationId, tank.FuelType);
         return CreatedAtAction(nameof(Get), new { id = tank.Id }, tank);
     }
 
@@ -146,7 +188,7 @@ public class TanksController : ControllerBase
         await _bus.PublishAsync("stock-updated", stockEvt);
 
         // Invalidate cache
-        if (_redis != null) await _redis.KeyDeleteAsync($"tanks:{tank.StationId}:*");
+        await InvalidateTankCachesAsync(tank.StationId, tank.FuelType);
 
         return Ok(tank);
     }
@@ -175,6 +217,8 @@ public class TanksController : ControllerBase
             userId,
             DateTime.UtcNow);
         await _bus.PublishAsync("fuel-price-updated", priceEvt);
+
+        await InvalidateTankCachesAsync(tank.StationId, tank.FuelType);
 
         return Ok(tank);
     }
@@ -216,6 +260,24 @@ public class TanksController : ControllerBase
             UpdatedBy: userId,
             Timestamp: now);
         await _bus.PublishAsync("fuel-price-updated", priceEvt);
+
+        if (_redis != null)
+        {
+            var keys = new List<RedisKey>
+            {
+                PricesCacheKey,
+                TanksCacheKey(null, null),
+                TanksCacheKey(null, fuelType),
+            };
+
+            foreach (var stationId in tanks.Select(t => t.StationId).Distinct())
+            {
+                keys.Add(TanksCacheKey(stationId, null));
+                keys.Add(TanksCacheKey(stationId, fuelType));
+            }
+
+            await _redis.KeyDeleteAsync(keys.ToArray());
+        }
 
         return Ok(new { updated = tanks.Count, fuelType, pricePerLitre = req.PricePerLitre, updatedAt = now });
     }

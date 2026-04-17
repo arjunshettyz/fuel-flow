@@ -128,6 +128,8 @@ services:
       context: .
       dockerfile: src/Services/Notification/FuelManagement.Notification.API/Dockerfile
     container_name: fuel_notification
+    env_file:
+      - .env
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ConnectionStrings__NotificationDb: "Server=sqlserver,1433;Database=FuelNotificationDb;User Id=sa;Password=${MSSQL_SA_PASSWORD:-FuelFlow_SA_Password!123};TrustServerCertificate=True;Encrypt=False;"

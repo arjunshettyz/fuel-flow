@@ -1,12 +1,6 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { environment } from '../../../../environments/environment';
-
-interface FuelPriceSnapshotDto {
-  fuelType: string;
-  pricePerLitre: number;
-  updatedAt: string;
-}
+import { Component, DestroyRef, OnInit } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { FuelPricesService } from '../../../core/services/fuel-prices.service';
 
 interface FuelPrice {
   fuelType: string;
@@ -30,27 +24,32 @@ export class PriceTickerComponent implements OnInit {
 
   now = new Date();
 
-  constructor(private readonly http: HttpClient) {}
+  constructor(
+    private readonly fuelPrices: FuelPricesService,
+    private readonly destroyRef: DestroyRef,
+  ) {}
 
   ngOnInit(): void {
-    this.http
-      .get<FuelPriceSnapshotDto[]>(`${environment.apiBaseUrl}/gateway/inventory/tanks/prices`)
-      .subscribe({
-        next: (items) => {
-          if (!Array.isArray(items) || items.length === 0) {
-            return;
-          }
+    this.fuelPrices.ensureLoaded();
 
-          this.prices = items.map((x) => ({
-            fuelType: x.fuelType,
-            price: x.pricePerLitre,
-            delta: 0,
-          }));
-          this.now = new Date();
-        },
-        error: () => {
-          // Keep demo fallback prices if API is unreachable.
-        },
+    this.fuelPrices.prices$
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe((items) => {
+        if (!Array.isArray(items) || items.length === 0) {
+          return;
+        }
+
+        this.prices = items.map((x) => ({
+          fuelType: x.fuelType,
+          price: x.pricePerLitre,
+          delta: 0,
+        }));
+
+        const timestamps = items
+          .map((x) => Date.parse(x.updatedAt))
+          .filter((t) => Number.isFinite(t));
+
+        this.now = timestamps.length ? new Date(Math.max(...timestamps)) : new Date();
       });
   }
 

@@ -3,6 +3,115 @@
 	gap: 1rem;
 }
 
+.print-receipt {
+	display: none;
+	color: var(--ink-900);
+}
+
+.print-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: 1rem;
+	border-bottom: 1px solid var(--border-color);
+	padding-bottom: 0.85rem;
+	margin-bottom: 1rem;
+}
+
+.print-brand {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+}
+
+.print-mark {
+	width: 40px;
+	height: 40px;
+	border-radius: 14px;
+	background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+}
+
+.print-name {
+	font-family: 'Space Grotesk', 'Spline Sans', sans-serif;
+	font-weight: 700;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	font-size: 0.85rem;
+	color: var(--ink-700);
+}
+
+.print-tag {
+	color: var(--muted-color);
+	font-size: 0.85rem;
+}
+
+.print-meta {
+	display: grid;
+	gap: 0.5rem;
+	text-align: right;
+}
+
+.print-meta-row {
+	display: grid;
+	gap: 0.2rem;
+	font-size: 0.9rem;
+}
+
+.print-meta-row span {
+	color: var(--muted-color);
+	font-size: 0.78rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.print-card {
+	border: 1px solid var(--border-color);
+	border-radius: 16px;
+	background: #ffffff;
+	padding: 1rem;
+}
+
+.print-card h2 {
+	margin: 0 0 0.9rem;
+	font-size: 1.15rem;
+}
+
+.print-grid {
+	display: grid;
+	grid-template-columns: 160px 1fr;
+	gap: 0.55rem 0.85rem;
+	align-items: baseline;
+}
+
+.print-grid .label {
+	color: var(--muted-color);
+	font-weight: 600;
+}
+
+.print-grid .value {
+	color: var(--ink-900);
+	font-weight: 600;
+}
+
+.print-grid .value.strong {
+	font-weight: 800;
+}
+
+.print-footer {
+	margin-top: 1rem;
+	border-radius: 14px;
+	border: 1px solid var(--border-color);
+	background: var(--paper);
+	padding: 0.8rem 1rem;
+	color: var(--ink-700);
+}
+
+.print-footer div {
+	margin-top: 0.35rem;
+	color: var(--muted-color);
+	font-size: 0.9rem;
+}
+
 .page-header {
 	display: flex;
 	justify-content: space-between;
@@ -87,5 +196,25 @@ select {
 @media (max-width: 900px) {
 	.grid-two {
 		grid-template-columns: 1fr;
+	}
+}
+
+@media print {
+	.page-wrap {
+		display: none !important;
+	}
+
+	.print-receipt {
+		display: block !important;
+		padding: 0;
+	}
+
+	.print-header {
+		border-bottom-color: #d6dde2;
+	}
+
+	.print-card,
+	.print-footer {
+		box-shadow: none;
 	}
 }

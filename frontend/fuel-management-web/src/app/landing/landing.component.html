@@ -9,8 +9,8 @@
           giving you full visibility, automation, and cost savings.
         </p>
         <div class="hero-actions">
-          <a class="primary-btn landing-primary" routerLink="/auth/register">Book a Demo</a>
-          <a class="outline-btn landing-outline" routerLink="/auth/register">Start Saving Now</a>
+          <a class="primary-btn landing-primary" routerLink="/" fragment="contact">Book a Demo</a>
+          <a class="outline-btn landing-outline" routerLink="/" fragment="pricing">Start Saving Now</a>
         </div>
         <div class="hero-stats">
           <div *ngFor="let stat of stats" class="hero-stat">
@@ -87,8 +87,8 @@
           <li *ngFor="let item of activeModule.points">{{ item }}</li>
         </ul>
         <div class="platform-actions">
-          <a class="primary-btn landing-primary" routerLink="/auth/register">Start a Demo</a>
-          <a class="outline-btn landing-outline" routerLink="/auth/login">See Pricing</a>
+          <a class="primary-btn landing-primary" routerLink="/" fragment="contact">Start a Demo</a>
+          <a class="outline-btn landing-outline" routerLink="/" fragment="pricing">See Pricing</a>
         </div>
       </div>
       <div class="platform-preview">
@@ -110,7 +110,7 @@
     </div>
     <div class="benefit-grid">
       <article *ngFor="let benefit of benefits" class="benefit-card">
-        <span class="benefit-icon"></span>
+        <span class="benefit-icon" [attr.data-icon]="benefit.icon" aria-hidden="true"></span>
         <h3>{{ benefit.title }}</h3>
         <p>{{ benefit.description }}</p>
       </article>
@@ -192,8 +192,8 @@
           mission-critical emergency response - all backed by a national vendor network.
         </p>
         <div class="solutions-hero-actions">
-          <a class="primary-btn landing-primary" routerLink="/auth/register">Request a Call</a>
-          <a class="outline-btn landing-outline" routerLink="/auth/register">Start Saving Now</a>
+          <a class="primary-btn landing-primary" routerLink="/" fragment="contact">Request a Call</a>
+          <a class="outline-btn landing-outline" routerLink="/" fragment="pricing">Start Saving Now</a>
         </div>
       </div>
       <div class="solutions-hero-grid">
@@ -213,7 +213,7 @@
           FuelFlow seamlessly integrates with vendors to schedule, request, or automate fuel
           deliveries nationwide.
         </p>
-        <a class="primary-btn landing-primary" routerLink="/auth/register">Access FuelConnect Network</a>
+        <a class="primary-btn landing-primary" routerLink="/" fragment="contact">Access FuelConnect Network</a>
       </div>
       <div class="solutions-network-panel">
         <div class="network-table">
@@ -305,7 +305,7 @@
             <span>{{ item.detail }}</span>
           </li>
         </ul>
-        <a class="primary-btn landing-primary" routerLink="/auth/register">
+        <a class="primary-btn landing-primary" routerLink="/" fragment="contact">
           Secure Your Emergency Fuel Plan
         </a>
       </article>
@@ -316,7 +316,7 @@
           FuelPay lets you fuel anywhere, track everything, and secure every transaction with
           full visibility and control through AI-powered insights.
         </p>
-        <a class="primary-btn landing-primary" routerLink="/auth/register">Sign Up for FuelPay</a>
+        <a class="primary-btn landing-primary" routerLink="/" fragment="pricing">Sign Up for FuelPay</a>
         <div class="pay-feature-grid">
           <div class="pay-feature" *ngFor="let feature of payFeatures">
             <h4>{{ feature.title }}</h4>
@@ -378,16 +378,92 @@
     </div>
   </section>
 
-  <section class="cta-join" id="cta">
-    <div class="cta-join-inner">
-      <div>
-        <h2>Join our vendor network in minutes.</h2>
+  <section class="cta-join" id="contact">
+    <div class="cta-join-inner contact-cta">
+      <div class="contact-copy">
+        <h2>Contact FuelFlow</h2>
         <p>
-          FuelFlow combines an AI-powered fuel marketplace with an intelligent ordering system,
-          giving you full visibility, automation, and cost savings.
+          Have a question, want a demo, or need help getting started? Send us a message and we’ll get back to you.
         </p>
       </div>
-      <a class="primary-btn landing-primary" routerLink="/auth/register">Become a Vendor</a>
+
+      <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="submitContact()" novalidate>
+        <div class="contact-grid">
+          <div class="field">
+            <label for="contactName">Name (2-100 characters)</label>
+            <input
+              id="contactName"
+              type="text"
+              formControlName="name"
+              placeholder="Your name"
+              autocomplete="name"
+              maxlength="100" />
+            <small
+              class="field-error"
+              *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.invalid">
+              Name is required (2-100 characters).
+            </small>
+          </div>
+
+          <div class="field">
+            <label for="contactEmail">Email</label>
+            <input
+              id="contactEmail"
+              type="email"
+              formControlName="email"
+              placeholder="you@example.com"
+              autocomplete="email"
+              maxlength="254" />
+            <small
+              class="field-error"
+              *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.invalid">
+              Enter a valid email.
+            </small>
+          </div>
+
+          <div class="field field-full">
+            <label for="contactPhone">Phone (optional, max 40 characters)</label>
+            <input
+              id="contactPhone"
+              type="tel"
+              formControlName="phone"
+              placeholder="+1 (555) 000-0000"
+              autocomplete="tel"
+              maxlength="40" />
+          </div>
+
+          <div class="field field-full">
+            <label for="contactMessage">Message (10-4000 characters)</label>
+            <textarea
+              id="contactMessage"
+              rows="4"
+              formControlName="message"
+              placeholder="How can we help?"
+              maxlength="4000"></textarea>
+            <small
+              class="field-error"
+              *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.invalid">
+              Message is required (10-4000 characters).
+            </small>
+          </div>
+        </div>
+
+        <div class="contact-actions">
+          <button
+            type="submit"
+            class="primary-btn landing-primary"
+            [disabled]="contactSubmitting || contactForm.invalid">
+            {{ contactSubmitting ? 'Sending...' : 'Send Message' }}
+          </button>
+
+          <p *ngIf="contactSuccess" class="contact-status ok">
+            Message sent. We’ll reply soon.
+          </p>
+          <p *ngIf="contactError" class="contact-status err">
+            {{ contactError }}
+          </p>
+        </div>
+      </form>
     </div>
   </section>
 </main>

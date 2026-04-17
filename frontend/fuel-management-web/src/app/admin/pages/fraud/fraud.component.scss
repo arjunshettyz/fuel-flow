@@ -13,8 +13,16 @@
 
 .grid-two {
 	display: grid;
-	grid-template-columns: 2fr 1fr;
+	grid-template-columns: 1fr;
 	gap: 1rem;
+}
+
+.grid-two.has-detail {
+	grid-template-columns: 2fr 1fr;
+}
+
+.grid-two > .card {
+	min-width: 0;
 }
 
 .card {
@@ -84,7 +92,7 @@
 }
 
 @media (max-width: 1200px) {
-	.grid-two {
+	.grid-two.has-detail {
 		grid-template-columns: 1fr;
 	}
 

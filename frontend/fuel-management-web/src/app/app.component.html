@@ -1,5 +1,8 @@
 <a class="skip-link" href="#main-content">Skip to content</a>
 <div class="app-root">
+  <div class="global-success-note" *ngIf="successNote$ | async as note">
+    <strong>{{ note.message }}</strong>
+  </div>
   <app-navbar></app-navbar>
   <div id="main-content" class="app-content">
     <router-outlet></router-outlet>

@@ -94,8 +94,9 @@ app.UseEndpoints(endpoints =>
 {
     // These endpoints must run BEFORE Ocelot (Ocelot is terminal middleware)
     endpoints.MapHealthChecks("/healthz");
-    endpoints.MapMethods("/gateway/{**catchAll}", new[] { "OPTIONS" }, () => Results.NoContent())
-        .ExcludeFromDescription();
+    // NOTE: Don't add a catch-all endpoint like /gateway/{**catchAll} (even for OPTIONS only).
+    // Endpoint routing would match the path and return 405 for other verbs before Ocelot runs.
+    // CORS preflight for /gateway/* is handled by app.UseCors() above.
     endpoints.MapGet("/", () => Results.Redirect("/swagger")).ExcludeFromDescription();
     endpoints.MapGet("/health", () => Results.Ok(new { Status = "Healthy", Timestamp = DateTime.UtcNow, Services = new[] {
         "Identity:5001", "Inventory:5002", "Sales:5003", "Reporting:5004",
@@ -117,6 +118,10 @@ app.UseEndpoints(endpoints =>
         {
             return Results.Ok(new AiChatResponse("AI assistant is not configured. Add your API key to enable responses."));
         }
+
+        var model = config["AI_ASSISTANT_MODEL"]
+            ?? config["AiAssistant:Model"]
+            ?? "gemini-2.0-flash";
 
         var payload = new
         {
@@ -142,14 +147,15 @@ app.UseEndpoints(endpoints =>
         try
         {
             var response = await http.PostAsJsonAsync(
-                $"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={apiKey}",
+                $"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={apiKey}",
                 payload);
 
             if (!response.IsSuccessStatusCode)
             {
                 if ((int)response.StatusCode == 429)
                 {
-                    return Results.Ok(new AiChatResponse(GetFallbackAiReply(request.Message)));
+                    return Results.Ok(new AiChatResponse(
+                        $"I had trouble reaching the AI service (status 429). {GetFallbackAiReply(request.Message)}"));
                 }
 
                 return Results.Ok(new AiChatResponse(
@@ -164,7 +170,8 @@ app.UseEndpoints(endpoints =>
         }
         catch
         {
-            return Results.Ok(new AiChatResponse(GetFallbackAiReply(request.Message)));
+            return Results.Ok(new AiChatResponse(
+                $"I had trouble reaching the AI service. {GetFallbackAiReply(request.Message)}"));
         }
     });
 
