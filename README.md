@@ -76,7 +76,7 @@ The gateway exposes `/gateway/*` routes which proxy to each service.
 
 Some actions “fan out” to multiple services using RabbitMQ queues:
 
-```mermaid
+```
 flowchart LR
   UI[Angular SPA] -->|HTTP /gateway/*| G[API Gateway\n(Ocelot)]
 
